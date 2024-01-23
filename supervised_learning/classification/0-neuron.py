@@ -15,7 +15,10 @@ class Neuron:
     indent them like anything else protected by a colon.
 
     Attributes:
-
+        Public instance attributes:
+        	W: weights. Upon instantiation, initialized using random normal distribution.
+        	b: bias for the neuron. Upon instantiation,initialized to 0.
+        	A: output. Upon instantiation,initialized to 0.
     """
 
     pass
@@ -32,8 +35,8 @@ class Neuron:
             IN THAT ORDER
 
         Public instance attributes:
-        W: weights. Upon instantiation, initialized using random normal distribution.
-        b: bias for the neuron. Upon instantiation,initialized to 0.
-        A: output. Upon instantiation,initialized to 0.
+        W: initialized using random normal distribution.
+        b: initialized to 0.
+        A: initialized to 0.
         """
         pass
