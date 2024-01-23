@@ -3,16 +3,11 @@
 """module documentation
 
 this module, 0-neuron.py, creates a class: Neuron
-
 """
 
 
 class Neuron:
     """Object-class summary documentation.
-
-
-    attributes will be documented in the below section
-    indent them like anything else protected by a colon.
 
     Attributes:
         Public instance attributes:
@@ -39,4 +34,8 @@ class Neuron:
         b: initialized to 0.
         A: initialized to 0.
         """
-        pass
+        if isinstance(nx, int) is False:
+            raise TypeError("nx must be an integer")
+        if nx < 0:
+            raise ValueError("nx must be >= 0")
+        self.__nx = nx
