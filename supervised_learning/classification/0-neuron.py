@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-if __name__ == "__main__":
-    import numpy as np
+
+import numpy as np
+
 """module documentation
 
 this module, 0-neuron.py, creates a class: Neuron
