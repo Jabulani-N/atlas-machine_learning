@@ -20,12 +20,20 @@ class Neuron:
 
     pass
 
-    def __init__(self):
+    def __init__(self, nx):
         """__init__ method documentation
 
         __init__ can optionally instead be documented in the class section
         do not include 'self' as an arg
 
-        'Args:' would go here
+        nx is the number of input features to the neuron
+			If nx is not  integer, raise TypeError: "nx must be an integer"
+            If nx < 1, raise ValueError: "nx must be a positive integer"
+            IN THAT ORDER
+
+        Public instance attributes:
+        W: weights. Upon instantiation, initialized using random normal distribution.
+        b: bias for the neuron. Upon instantiation,initialized to 0.
+        A: output. Upon instantiation,initialized to 0.
         """
         pass
