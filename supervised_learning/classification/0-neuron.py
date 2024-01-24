@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-
-import numpy as np
 """module documentation
 this module, 0-neuron.py, creates a class: Neuron
 """
+import numpy as np
 
 
 class Neuron:
@@ -32,6 +31,7 @@ class Neuron:
         b: initialized to 0.
         A: initialized to 0.
         """
+
         if isinstance(nx, int) is False:
             raise TypeError("nx must be an integer")
         if nx < 0:
