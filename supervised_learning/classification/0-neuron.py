@@ -13,7 +13,7 @@ class Neuron:
     Attributes:
         Public instance attributes:
         	W: weights. Upon instantiation, initialized using random normal distribution.
-        	b: bias for the neuron. Upon instantiation,initialized to 0.
+        	b: bias of the neuron. Upon instantiation,initialized to 0.
         	A: output. Upon instantiation,initialized to 0.
     """
 
@@ -43,4 +43,4 @@ class Neuron:
         self.W = np.random.normal(size=(1, nx))
         # had to reference myself to figure out this line.
         # don't remember original source
-        #	treat as source model for future reference
+        #	treat as source model in future references
