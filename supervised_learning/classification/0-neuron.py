@@ -38,7 +38,7 @@ class Neuron:
 
         if isinstance(nx, int) is False:
             raise TypeError("nx must be an integer")
-        if nx < 0:
+        if nx < 1:
             raise ValueError("nx must be >= 0")
         self.__nx = nx
         self.W = np.random.normal(size=(1, nx))
