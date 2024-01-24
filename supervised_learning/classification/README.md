@@ -17,4 +17,7 @@ For a no-spoilers sight of properly documented modules and classses, one can ref
 
 # Task1
 
-merely changes Task0 attributes from public to private.
+Changes Task0 attributes from public to private.
+
+Create getters for affected attributes.
+
