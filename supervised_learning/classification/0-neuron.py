@@ -10,13 +10,11 @@ class Neuron:
     """Object-class summary documentation.
 
     Attributes:
-        Public instance attributes:
-            W: weights. Upon instantiation, initialized to
-                random normal distribution.
-            b: bias of the neuron. Upon instantiation,initialized to 0.
-            A: output. Upon instantiation,initialized to 0.
+        W - weights. Upon instantiation, initialized to
+            random normal distribution.
+        b - bias of the neuron. Upon instantiation,initialized to 0.
+        A -output. Upon instantiation,initialized to 0.
     """
-
 
     def __init__(self, nx):
         """__init__ method documentation
