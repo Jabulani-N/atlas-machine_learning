@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
 import numpy as np
-
 """module documentation
-
 this module, 0-neuron.py, creates a class: Neuron
 """
 
@@ -19,7 +17,6 @@ class Neuron:
             A: output. Upon instantiation,initialized to 0.
     """
 
-    pass
 
     def __init__(self, nx):
         """__init__ method documentation
