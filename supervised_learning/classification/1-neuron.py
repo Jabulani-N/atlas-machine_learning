@@ -46,3 +46,18 @@ class Neuron:
         #   treat as source model in future references
         self.__b = 0
         self.__A = 0
+
+    @property
+    def W(self):
+        """returns weights"""
+        return self.__W
+
+    @property
+    def b(self):
+        """returns bias"""
+        return self.__b
+
+    @property
+    def A(self):
+        """returns prediction (output; 'answer')"""
+        return self.__A
