@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """module documentation
 this module, 0-neuron.py, creates a class: Neuron
+
 """
 import numpy as np
 
@@ -13,6 +14,7 @@ class Neuron:
             random normal distribution.
         b - bias of the neuron. Upon instantiation,initialized to 0.
         A -output. Upon instantiation,initialized to 0.
+
     """
 
     def __init__(self, nx):
@@ -30,6 +32,7 @@ class Neuron:
         W: initialized using random normal distribution.
         b: initialized to 0.
         A: initialized to 0.
+
         """
 
         if isinstance(nx, int) is False:
