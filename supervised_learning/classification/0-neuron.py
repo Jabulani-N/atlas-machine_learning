@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """module documentation
 this module, 0-neuron.py, creates a class: Neuron
+Documentation must precisely match this document to be correct
 
 """
 import numpy as np
