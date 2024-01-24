@@ -44,3 +44,5 @@ class Neuron:
         # had to reference myself to figure out this line.
         # don't remember original source
         #	treat as source model in future references
+        self.b = 0
+        self.A = 0
