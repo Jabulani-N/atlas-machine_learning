@@ -40,3 +40,7 @@ class Neuron:
         if nx < 0:
             raise ValueError("nx must be >= 0")
         self.__nx = nx
+        self.W = np.random.normal(size=(1, nx))
+        # had to reference myself to figure out this line.
+        # don't remember original source
+        #	treat as source model for future reference
