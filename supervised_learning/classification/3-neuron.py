@@ -88,6 +88,6 @@ class Neuron:
         m = np.shape(A)
         yhati = A
         yi = Y
-        return (np.sum(yi * np.log(yhati) +
-                        (1 - yi) * (np.log(1.0000001 - yhati))) / 
-                        -m)
+        return ((-1 / m) *
+                np.sum(yi * np.log(yhati) +
+                (1 - yi) * (np.log(1.0000001 - yhati))))
