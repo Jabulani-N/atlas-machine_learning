@@ -22,3 +22,7 @@ Changes Task0 attributes from public to private.
 Create getters for affected attributes.
 
 * [Example](https://github.com/Jabulani-N/holbertonschool-higher_level_programming/blob/main/python-more_classes/7-rectangle.py)
+
+# Taask2
+
+Use sigmoid function on the input array
