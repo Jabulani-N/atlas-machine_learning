@@ -71,6 +71,6 @@ class Neuron:
         """returns sigmoid function of z"""
         return (1 / (1 + np.exp(-1 * z)))
 
-    def logistic(self):
-        """returns logistic regression of"""
+    def logistic(self, X):
+        """returns logistic regression of array X"""
         pass
