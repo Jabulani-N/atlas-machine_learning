@@ -25,6 +25,8 @@ Create getters for affected attributes.
 
 # Taask2
 
-Use sigmoid function on the input array.
+Use sigmoid function on the *weighted* input array.
+
+* multiply weights array with input array.
 
 Incredible as always, [numpy has a tool](https://numpy.org/doc/stable/reference/generated/numpy.exp.html) to find `e` of an array
