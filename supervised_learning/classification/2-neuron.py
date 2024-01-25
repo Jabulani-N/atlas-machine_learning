@@ -64,7 +64,7 @@ class Neuron:
 
     def forward_prop(self, X):
         """__A = sigmoid function on X"""
-        self.__A = sigmoid(X)
+        self.__A = self.sigmoid(X)
 
     def sigmoid(self, z):
         """returns sigmoid function of z"""
