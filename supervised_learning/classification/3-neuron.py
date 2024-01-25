@@ -85,7 +85,7 @@ class Neuron:
             1.0000001 - A instead of 1 - A
         """
 
-        m = A.shape
+        m = np.shape(A)[0]
         yhati = A
         yi = Y
         return ((-1 / m) *
