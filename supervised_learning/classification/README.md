@@ -43,7 +43,8 @@ function `def cost(self, Y, A):`
         * array(transpose), aka array^T, is a mathematic operation that [numpy has built in](https://numpy.org/doc/stable/reference/generated/numpy.transpose.html)
     * [subsequent video on using logistic regression for loss calculation and cost calculation](https://www.youtube.com/watch?v=SHEPb1JHw5o&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=9).
       * **loss** function = `(ŷ - y(correct)) ^ 2 / 2`
-      * **cost** function = `J(w, b) = - 1 / m * (sum{i = 1 to m}(y))`
+      *  when `yi = y superscript i` and `ŷi = ŷ superscript i`, **cost** function = cost = `J(w, b) = - 1 / m * (sum{i = 1 to m}(yi * log(ŷi) + (1 - yi) * (log(1 - ŷi)))`
+         *  m = shape of Y = `numpy.shape(Y) = m`
     * Note to self: when reaching the gradiant descent task, use this [resource video](https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&index=1) (long.)
 
 * recieves correct answers, and predicted answers (an array same shape as `self.__A`,) but **does not pull it's own self.__A**

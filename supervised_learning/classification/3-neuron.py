@@ -72,8 +72,21 @@ class Neuron:
         return (1 / (1 + np.exp(-1 * z)))
 
     def logistic_reg(self, X):
-        """returns logistic regression of array X"""
+        """returns logistic regression of array X
+        This calculation proved obsolete: we needed COST, not LOSS
+        """
         return self.sigmoid(np.transpose(self.__W) * X + self.__b)
 
     def cost(self, Y, A):
-        """returns loss function of A; Y is the correct answer"""
+        """returns loss function of A; Y is the correct answer
+        A = ŷ = yhat. Y is y.
+
+        avoids dividing by 0 via
+            1.0000001 - A instead of 1 - A
+        """
+
+        m = np.shape(A)
+        yhati = A
+        yi = Y
+        return ((-1 / m) * np.sum(yi * np.log(yhati) + (1 - yi) * (np.log(1.0000001 - yhati))))
+    
