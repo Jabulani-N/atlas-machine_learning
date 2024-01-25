@@ -37,7 +37,11 @@ function `def cost(self, Y, A):`
 
 * calculates cost/loss function.
 
-* * uses logistic regression formula ([video](https://www.youtube.com/watch?v=hjrYrynGWGA&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=9)).
+  * uses logistic regressionformula
+    * [video on logistic regression](https://www.youtube.com/watch?v=hjrYrynGWGA&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=9)
+      * logistic regression = `ŷ = sigmoid(W(transpose)x + b)`
+        * array(transpose), aka array^T, is a mathematic operation that [numpy has built in](https://numpy.org/doc/stable/reference/generated/numpy.transpose.html)
+    * [subsequent video on using logistic regression for loss calculation](https://www.youtube.com/watch?v=SHEPb1JHw5o&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=9)).
 
 * recieves correct answers, and predicted answers (an array same shape as `self.__A`,) but **does not pull it's own self.__A**
 
