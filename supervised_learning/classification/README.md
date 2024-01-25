@@ -37,7 +37,7 @@ function `def cost(self, Y, A):`
 
 * calculates cost/loss function.
 
-* * uses logistic regression formula.
+* * uses logistic regression formula ([video](https://www.youtube.com/watch?v=hjrYrynGWGA&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=9)).
 
 * recieves correct answers, and predicted answers (an array same shape as `self.__A`,) but **does not pull it's own self.__A**
 
