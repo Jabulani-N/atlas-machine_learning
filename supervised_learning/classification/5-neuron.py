@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """module documentation
-this module, 4-neuron.py, creates a class: Neuron
+this module, 5-neuron.py, creates a class: Neuron
 
 """
 import numpy as np
