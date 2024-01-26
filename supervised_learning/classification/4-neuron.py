@@ -102,5 +102,5 @@ class Neuron:
             anything below returns 0
         """
 
-        A = np.trunc(np.multiply(self.forward_prop(X), 2))
+        A = np.trunc(np.multiply(self.forward_prop(X), 2)).astype(int)[0]
         return A, self.cost(Y, A)
