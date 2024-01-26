@@ -52,3 +52,9 @@ function `def cost(self, Y, A):`
 use 1.0000001 - A instead of 1 - A
 
 return cost
+
+# Task 4 - Evaluate Neuron
+
+Create pubic method `def evaluate(self, X, Y):`.
+
+* Returns both prediction and cost
