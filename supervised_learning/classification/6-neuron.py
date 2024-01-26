@@ -119,5 +119,6 @@ class Neuron:
 
     def train(self, X, Y, iterations=5000, alpha=0.05):
         """performs gradient descent iterations times"""
+        
         for i in range(iterations):
-            self.gradient_descent(X, Y, A, alpha)
+            self.gradient_descent(X, Y, self.__A, alpha)
