@@ -120,6 +120,15 @@ class Neuron:
     def train(self, X, Y, iterations=5000, alpha=0.05):
         """performs gradient descent iterations times"""
 
+        if isinstance(iterations, int) is False:
+            raise TypeError("iterations must be an integer")
+        if iterations > 0:
+            raise ValueError("iterations must be a positive integer")
+
+        if isinstance(alpha, float) is False:
+            raise TypeError("alpha must be a float")
+        if alpha <= 0:
+            raise ValueError("alpha must be positive")
         for i in range(iterations):
             self.gradient_descent(X, Y, self.__A, alpha)
         return self.evaluate(X, Y)
