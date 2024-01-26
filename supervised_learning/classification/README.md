@@ -61,3 +61,15 @@ Create pubic method `def evaluate(self, X, Y):`.
 
 ~~Because we want 0.5 to equal 1, and anything below to be 0, we can double everything in the cell, and then truncate. everything 0.5 and up will be 1 or more, truncating to 1. everything else is 0.999999999 or less, truncating to 0.~~
 Numpy has an "[is greater than or equal to](https://numpy.org/doc/stable/reference/generated/numpy.greater_equal.html)" built-in function, and it's boolean result [can be converted to an array of integers](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.astype.html).
+
+# Task 5
+
+create public method `def gradient_descent(self, X, Y, A, alpha=0.05):` to [calculate Gradiant Descent](https://www.youtube.com/watch?v=uJryes5Vk1o&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=12). This does not return anyting.
+
+* alpha = α = learning rate.
+* Instad of returning, this method updates self.__W and self.__b by a single step of gadiant descent.
+  * each step of gradiant descent does
+    * note: `x :=` means "the updated value of x ="...
+    * `w := w - α * d/dW(J(W))`
+      * J(W,b) = cost function, so just derive it with te respect to W
+    * `b := b - α * d/db(J(b))`
