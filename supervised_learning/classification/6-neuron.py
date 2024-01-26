@@ -122,3 +122,4 @@ class Neuron:
 
         for i in range(iterations):
             self.gradient_descent(X, Y, self.__A, alpha)
+        return self.evaluate(X, Y)
