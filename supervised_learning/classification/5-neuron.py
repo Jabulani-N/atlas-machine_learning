@@ -104,3 +104,15 @@ class Neuron:
 
         Prediction = np.greater_equal(self.forward_prop(X), 0.5).astype(int)
         return Prediction, self.cost(Y, self.__A)
+
+    def gradient_descent(self, X, Y, A, alpha=0.05):
+        """updates self W,b by learning rate * gradient of cost
+        alpha = α = learning rate
+        """
+
+        self.forward_prop(X)
+        # we will already have a starting point for
+        #   self.__W, self.__b
+        cost = self.cost(Y, A)
+        self.__W = self.__W - np.multiply(np.gradient(cost), alpha)
+        self.__b = self.__b - np.multiply(np.gradient(cost), alpha)
