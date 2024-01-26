@@ -110,9 +110,9 @@ class Neuron:
         alpha = α = learning rate
         """
 
-        self.forward_prop(X)
-        # we will already have a starting point for
-        #   self.__W, self.__b
-        cost = self.cost(Y, A)
-        self.__W = self.__W - np.multiply(np.gradient(cost), alpha)
-        self.__b = self.__b - np.multiply(np.gradient(cost), alpha)
+        m = Y.shape[1]
+        dz = A - Y
+        dw = np.dot(X, dz.T) / m
+        db = np.sum(dz) / m
+        self.__W -= alpha * dw.T
+        self.__b -= alpha * db
