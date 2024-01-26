@@ -75,6 +75,10 @@ create public method `def gradient_descent(self, X, Y, A, alpha=0.05):` to [calc
     * `b := b - α * d/db(J(b))`
   * Thankfully, [**numpy has a gradient method built in**](https://numpy.org/doc/stable/reference/generated/numpy.gradient.html)
 
-I wasn't able to use the above, though it provides useful background knowledge, so I ended up using the exact calculations provided [here](https://www.analyticsvidhya.com/blog/2018/10/introduction-neural-networks-deep-learning/). search "derivative of the parameters," and it'll list the calculations you need. Disable the advertizing element that pops up to block you.
+I wasn't able to use the above, though it provides useful background knowledge, so I ended up using the exact calculations provided [here](https://www.analyticsvidhya.com/blog/2018/10/introduction-neural-networks-deep-learning/). search "derivative of the parameters," and it'll list the calculations you need.
 
 * I did not fully understand this part, so further research and reading of that above source may be appropriate.
+
+# Task 6
+
+create public method `def train(self, X, Y, iterations=5000, alpha=0.05):`, which does the same thing as 5, except you can tell it how many times to repeat.
