@@ -58,3 +58,5 @@ return cost
 Create pubic method `def evaluate(self, X, Y):`.
 
 * Returns both prediction and cost
+
+Because we want 0.5 to equal 1, and anything below to be 0, we can double everything in the cell, and then truncate. everything 0.5 and up will be 1 or more, truncating to 1. everything else is 0.999999999 or less, truncating to 0.

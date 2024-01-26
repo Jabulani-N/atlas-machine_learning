@@ -96,7 +96,11 @@ class Neuron:
         """Returns both prediction and cost respectively
         X = input data
         Y = correct answer, as used by  cost function
+        Prediction is A, as used in Forward Prop, except
+            0.5 is the threshold value.
+            anything at or above 0.5 returns 1
+            anything below returns 0
         """
 
-        A = self.forward_prop(X)
+        A = np.trunc(np.multiply(self.forward_prop(X), 2))
         return A, self.cost(Y, A)
