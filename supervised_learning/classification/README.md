@@ -74,3 +74,7 @@ create public method `def gradient_descent(self, X, Y, A, alpha=0.05):` to [calc
       * J(W,b) = cost function, so just derive it with te respect to W
     * `b := b - α * d/db(J(b))`
   * Thankfully, [**numpy has a gradient method built in**](https://numpy.org/doc/stable/reference/generated/numpy.gradient.html)
+
+I wasn't able to use the above, though it provides useful background knowledge, so I ended up using the exact calculations provided [here](https://www.analyticsvidhya.com/blog/2018/10/introduction-neural-networks-deep-learning/). search "derivative of the parameters," and it'll list the calculations you need. Disable the advertizing element that pops up to block you.
+
+* I did not fully understand this part, so further research and reading of that above source may be appropriate.
