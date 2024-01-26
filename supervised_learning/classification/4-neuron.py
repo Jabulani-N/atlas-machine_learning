@@ -102,6 +102,5 @@ class Neuron:
             anything below returns 0
         """
 
-
         Prediction = np.greater_equal(self.forward_prop(X), 0.5).astype(int)
         return Prediction, self.cost(Y, self.__A)
