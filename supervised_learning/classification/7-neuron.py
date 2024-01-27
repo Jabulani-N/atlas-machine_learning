@@ -138,7 +138,11 @@ class Neuron:
                 raise TypeError("step must be an integer")
             if step < 0 or step > iterations:
                 raise ValueError("step must be positive and <= iterations")
+
         for i in range(iterations):
             self.forward_prop(X)
             self.gradient_descent(X, Y, self.__A, alpha)
+            if verbose:
+                if step % (i + 1) == 0:
+                    pass
         return self.evaluate(X, Y)
