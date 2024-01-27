@@ -103,3 +103,4 @@ updates the `train` method created in task 6
 
 `Step`
 * only verify the `step` input if either `verbose` or `graph` is true.
+* needs to be between `0` and `iterations`
