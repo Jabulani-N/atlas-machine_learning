@@ -144,5 +144,5 @@ class Neuron:
             self.gradient_descent(X, Y, self.__A, alpha)
             if verbose:
                 if step % (i + 1) == 0:
-                    pass
+                    print("Cost after", i, "iterations:", self.cost(Y, self.__A))
         return self.evaluate(X, Y)
