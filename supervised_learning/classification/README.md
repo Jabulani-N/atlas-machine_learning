@@ -99,7 +99,7 @@ updates the `train` method created in task 6
 `Graph`, `Step`
 * boolean
 * decides wether we display a graphical representation of every `step` counts of training.
-* note to self: details go here in subsequent bullet points
+* **note to self**: details go here in subsequent bullet points
 
 `Step`
 * only verify the `step` input if either `verbose` or `graph` is true.
