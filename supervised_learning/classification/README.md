@@ -84,3 +84,7 @@ I wasn't able to use the above, though it provides useful background knowledge, 
 create public method `def train(self, X, Y, iterations=5000, alpha=0.05):`, which does the same thing as 5, except you can tell it how many times to repeat.
 
 You'll have to use your own A, though.
+
+# Task 7
+
+updates the `train` method created in task 6
