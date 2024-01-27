@@ -88,3 +88,5 @@ You'll have to use your own A, though.
 # Task 7
 
 updates the `train` method created in task 6
+* from `def train(self, X, Y, iterations=5000, alpha=0.05):`
+* to `def train(self, X, Y, iterations=5000, alpha=0.05, verbose=True, graph=True, step=100):`
