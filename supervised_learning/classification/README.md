@@ -90,3 +90,16 @@ You'll have to use your own A, though.
 updates the `train` method created in task 6
 * from `def train(self, X, Y, iterations=5000, alpha=0.05):`
 * to `def train(self, X, Y, iterations=5000, alpha=0.05, verbose=True, graph=True, step=100):`
+
+`Verbose`, `Step`
+* boolean
+* decides wether we print some words after every `step` counts of training.
+* Easy
+
+`Graph`, `Step`
+* boolean
+* decides wether we display a graphical representation of every `step` counts of training.
+
+
+`Step`
+* only verify the `step` input if either `verbose` or `graph` is true.
