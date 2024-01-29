@@ -76,3 +76,7 @@ class NeuralNetwork:
     def A2(self):
         """returns prediction output node"""
         return self.__A2
+
+    def forward_prop(self, X):
+        """calculates the forward propagation of the neural network"""
+        pass

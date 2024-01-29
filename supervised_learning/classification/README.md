@@ -132,4 +132,8 @@ def priv(self):
     return self.__priv
 ```
 
-# tasks
+# task 10
+
+creates public method `def forward_prop(self, X):`.
+
+This is for the entire network to propagate once.
