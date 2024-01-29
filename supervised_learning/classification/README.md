@@ -23,7 +23,7 @@ Create getters for affected attributes.
 
 * [Example](https://github.com/Jabulani-N/holbertonschool-higher_level_programming/blob/main/python-more_classes/7-rectangle.py)
 
-# Taask 2
+# Task 2 Neuron Forward Propagation
 
 Use sigmoid function on the *weighted* input array.
 

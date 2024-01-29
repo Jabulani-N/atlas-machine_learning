@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """module documentation
-this module, 9-neural_network.py, creates a class: NeuralNetwork
+this module, 10-neural_network.py, creates a class: NeuralNetwork
 
 """
 
@@ -78,5 +78,14 @@ class NeuralNetwork:
         return self.__A2
 
     def forward_prop(self, X):
-        """calculates the forward propagation of the neural network"""
-        pass
+        """calculates the forward propagation of the neural network
+        A = sigmoid function on  input
+        X = input array
+        """
+        self.__A1 = self.sigmoid(np.matmul(self.__W1,X) + self.__b1)
+        self.__A2 = self.sigmoid(np.matmul(self.__W2, self.__A1) + self.__b2)
+        return self.__A1, self.__A2
+
+    def sigmoid(self, z):
+        """returns sigmoid function of z"""
+        return (1 / (1 + np.exp(-1 * z)))
