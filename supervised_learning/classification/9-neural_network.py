@@ -41,3 +41,38 @@ class NeuralNetwork:
         self.__W2 = np.random.normal(size=(1, nodes))
         self.__b2 = 0
         self.__A2 = 0
+
+    @property
+    def W1(self):
+        """returns weights of hidden layer inputs"""
+        return self.__W1
+
+    @property
+    def W2(self):
+        """returns weights of output layer inputs"""
+        return self.__W2
+
+    @property
+    def W1(self):
+        """returns weights of hidden layer inputs"""
+        return self.__W1
+
+    @property
+    def b1(self):
+        """returns biases of each hidden layer node as array of arrays"""
+        return self.__b1
+
+    @property
+    def b2(self):
+        """returns bias of output node"""
+        return self.__b2
+
+    @property
+    def A1(self):
+        """returns prediction (output) of hidden layer"""
+        return self.__A1
+
+    @property
+    def A2(self):
+        """returns prediction output node"""
+        return self.__A2
