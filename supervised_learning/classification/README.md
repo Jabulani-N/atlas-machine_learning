@@ -119,3 +119,17 @@ The output layer recieves the hidden layer as it's input, so there are `nodes` n
 # Task 9
 
 Privatizes the attributes created in task 8
+```
+
+self.pub = "im a public attribute!"
+self.__priv = "im a private attribute!"
+
+...
+
+@property
+def priv(self):
+    """I'm a getter"""
+    return self.__priv
+```
+
+# tasks
