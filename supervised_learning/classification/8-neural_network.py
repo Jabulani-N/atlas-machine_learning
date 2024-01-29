@@ -7,7 +7,7 @@ this module, 8-neural_network.py, creates a class: NeuralNetwork
 import numpy as np
 
 
-class Neuron:
+class NeuralNetwork:
     """Object-class summary documentation.
 
     Attributes:
