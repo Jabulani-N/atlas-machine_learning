@@ -106,3 +106,10 @@ updates the `train` method created in task 6
 * needs to be between `0` and `iterations`
 
 To ensure the completion of a minimum viable product, the `graph` functionality of this class has been left incomplete, until other, more vital tasks are completed.
+
+# Task 8 Neural Network
+
+attributes ending with 1 are related to the hidden layer
+attributes ending with 2 are related to the output layer
+    if you really wanted, you could make more hiddedn layers before output layer.
+        this would be done via making a new set of attributes with 3 for output layer, and 2 would be hidden layer 2.
