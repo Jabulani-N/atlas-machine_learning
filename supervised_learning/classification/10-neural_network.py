@@ -82,7 +82,7 @@ class NeuralNetwork:
         A = sigmoid function on  input
         X = input array
         """
-        self.__A1 = self.sigmoid(np.matmul(self.__W1,X) + self.__b1)
+        self.__A1 = self.sigmoid(np.matmul(self.__W1, X) + self.__b1)
         self.__A2 = self.sigmoid(np.matmul(self.__W2, self.__A1) + self.__b2)
         return self.__A1, self.__A2
 
