@@ -21,4 +21,16 @@ class Neuron:
     """
 
     def __init__(self, nx, nodes):
-        """initialization documentation"""
+        """nx = no of input features
+        nodes = no of nodes in hidden layer
+        """
+
+        if isinstance(nx, int) is False:
+            raise TypeError("nx must be an integer")
+        if nx < 1:
+            raise ValueError("nx must be a positive integer")
+
+        if isinstance(nodes, int) is False:
+            raise TypeError("nodes must be an integer")
+        if nodes < 1:
+            raise ValueError("nodes must be a positive integer")
