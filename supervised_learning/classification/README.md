@@ -105,4 +105,4 @@ updates the `train` method created in task 6
 * only verify the `step` input if either `verbose` or `graph` is true.
 * needs to be between `0` and `iterations`
 
-To ensure the completion of a minimum viable product, the `graph` functionality of this  task has been left incomplete, until other, more vital tasks are completed.
+To ensure the completion of a minimum viable product, the `graph` functionality of this class has been left incomplete, until other, more vital tasks are completed.
