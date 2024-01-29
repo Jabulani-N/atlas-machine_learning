@@ -115,3 +115,7 @@ attributes ending with 2 are related to the output layer
         this would be done via making a new set of attributes with 3 for output layer, and 2 would be hidden layer 2.
 
 The output layer recieves the hidden layer as it's input, so there are `nodes` number of inputs for the output layer. in the same way, however many layers you have, each layer will have as many inputs as the previous layer has outputs.
+
+# Task 9
+
+Privatizes the attributes created in task 8
