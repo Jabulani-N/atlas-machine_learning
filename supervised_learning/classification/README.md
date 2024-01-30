@@ -155,3 +155,11 @@ See Task 3 for formulae and detials.
 
 Effectively identical to Task 4, creataing `def evaluate(self, X, Y):`.
 Be sure to remember that forward prop in our Neural Network tasks returns two items. You only want the final `A2` output to be evaluated. We don't care about the first one, A1
+
+# Task 13 NeuralNetwork Gradient Descent
+
+performs Gradient Descent via `def gradient_descent(self, X, Y, A1, A2, alpha=0.05):`.
+
+* alpha is learning rate.
+
+The idea will be the same as Task 5
