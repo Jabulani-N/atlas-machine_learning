@@ -121,7 +121,8 @@ class NeuralNetwork:
         db1 = np.sum(dz1) / m
         print("the shape of W1 is", np.shape(self.__W1))
         print("the shape of dw1.t is", np.shape(dw1.T))
-        self.__W1 -= alpha * dw1.T
+        print("the shape of alpha is", np.shape(alpha))
+        self.__W1 -= np.matmul(alpha, dw1.T)
         self.__b1 -= alpha * db1
 
         m = np.shape(Y)[1]
