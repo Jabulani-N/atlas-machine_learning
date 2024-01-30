@@ -131,3 +131,19 @@ class NeuralNetwork:
         db1 = np.sum(dz1, axis=1, keepdims=True) / m
         self.__W1 -= alpha * dw1.T
         self.__b1 -= alpha * db1
+
+    def train(self, X, Y, iterations=5000, alpha=0.05):
+        """performs multiple forward propagations and gradient descents"""
+        if isinstance(iterations, int) is False:
+            raise TypeError("iterations must be an integer")
+        if iterations < 0:
+            raise ValueError("iterations must be a positive integer")
+
+        if isinstance(alpha, float) is False:
+            raise TypeError("alpha must be a float")
+        if alpha <= 0:
+            raise ValueError("alpha must be positive")
+        for i in range(iterations):
+            self.forward_prop(X)
+            self.gradient_descent(X, Y, self.__A, alpha)
+        return self.evaluate(X, Y)
