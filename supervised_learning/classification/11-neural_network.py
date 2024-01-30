@@ -92,4 +92,9 @@ class NeuralNetwork:
 
     def cost(self, Y, A):
         """calculates and reutrns cost of a single forward propagation"""
-        pass
+        m = np.shape(A)[1]
+        yhati = A
+        yi = Y
+        return (np.sum(yi * np.log(yhati) +
+                (1 - yi) * (np.log(1.0000001 - yhati)))
+                / -m)

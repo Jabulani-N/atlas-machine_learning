@@ -146,3 +146,7 @@ Adds public method `def cost(self, Y, A):`. This calculates the cost of a single
 
 * Y = correct answer
 * A = forward prop's answer.
+
+See Task 3 for formulae and detials.
+
+* Currently identical to Task 3, as there is no change in formulae nor implimentation
