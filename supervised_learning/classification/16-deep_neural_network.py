@@ -19,7 +19,7 @@ class DeepNeuralNetwork:
 
     def __init__(self, nx, layers):
         """nx = no of input features
-        nodes = no of nodes in hidden layer
+        layers = list containing no of nodes in each layer
         """
 
         if isinstance(nx, int) is False:
@@ -27,7 +27,8 @@ class DeepNeuralNetwork:
         if nx < 1:
             raise ValueError("nx must be a positive integer")
 
-        if isinstance(layers, int) is False:
-            raise TypeError("layers must be an integer")
-        if layers < 1:
-            raise ValueError("layers must be a positive integer")
+        if isinstance(layers, list) is False or layers == []:
+            raise TypeError("layers must be a list of positive integers")
+        if all(np.greater_equal(layers, 1)) is False or\
+        all(isinstance(item, int) for item in layers) is False:
+            raise ValueError("layers must be a list of positive integers")

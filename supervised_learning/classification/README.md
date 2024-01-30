@@ -186,3 +186,5 @@ This improved method has the option to display a report every `step` iterations.
 # Task 16 DeepNeuralNetwork
 
 Creates class `DeepNeuralNetwork` iniitialized via `def __init__(self, nx, layers):`.
+
+elementwise type checking: https://stackoverflow.com/questions/6009589/how-to-test-if-every-item-in-a-list-of-type-int
