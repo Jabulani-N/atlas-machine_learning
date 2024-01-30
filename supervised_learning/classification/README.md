@@ -174,3 +174,5 @@ Because we are updating two layers, we'll need to update both sets of weights an
 Same idea as Task 6.
 
 creates public method `def train(self, X, Y, iterations=5000, alpha=0.05):`, performing `iterations` `forward propogation`s and `gradient descent`s. Finally, returns evaluation afterwards.
+
+This requires task 13 to work in order to work, being  dependant on `gradient descent`.

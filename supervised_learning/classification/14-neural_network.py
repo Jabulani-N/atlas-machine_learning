@@ -147,3 +147,4 @@ class NeuralNetwork:
             self.forward_prop(X)
             self.gradient_descent(X, Y, self.__A1, self.__A2, alpha)
         return self.evaluate(X, Y)
+    # possible: gradient descent method is causing imperfectoins
