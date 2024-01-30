@@ -176,3 +176,9 @@ Same idea as Task 6.
 creates public method `def train(self, X, Y, iterations=5000, alpha=0.05):`, performing `iterations` `forward propogation`s and `gradient descent`s. Finally, returns evaluation afterwards.
 
 This requires task 13 to work in order to work, being  dependant on `gradient descent`.
+
+# Task 15 Upgrade Train NeuralNetwork
+
+improves Tas k14 with `def train(self, X, Y, iterations=5000, alpha=0.05, verbose=True, graph=True, step=100):`.
+
+This improved method has the option to display a report every `step` iterations. See Task 7.
