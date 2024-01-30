@@ -132,8 +132,10 @@ class NeuralNetwork:
         self.__W1 -= alpha * dw1.T
         self.__b1 -= alpha * db1
 
-    def train(self, X, Y, iterations=5000, alpha=0.05):
-        """performs multiple forward propagations and gradient descents"""
+    def train(self, X, Y, iterations=5000, alpha=0.05, verbose=True, graph=True, step=100):
+        """performs multiple forward propagations and gradient descents
+        Possess additional functionality
+        """
         if isinstance(iterations, int) is False:
             raise TypeError("iterations must be an integer")
         if iterations < 0:
@@ -143,8 +145,13 @@ class NeuralNetwork:
         if alpha <= 0:
             raise ValueError("alpha must be positive")
 
+        if verbose or graph:
+            if isinstance(step, int) is False:
+                raise TypeError("step must be an integer")
+            if step < 0 or step > iterations:
+                raise ValueError("step must be positive and <= iterations")
+
         for i in range(iterations):
             self.forward_prop(X)
             self.gradient_descent(X, Y, self.__A1, self.__A2, alpha)
         return self.evaluate(X, Y)
-    # possible: gradient descent method is causing imperfectoins

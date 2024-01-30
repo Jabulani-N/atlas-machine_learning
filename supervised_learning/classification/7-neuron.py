@@ -145,4 +145,6 @@ class Neuron:
             if verbose:
                 if step % (i + 1) == 0:
                     print("Cost after", i, "iterations:", self.cost(Y, self.__A))
+            if graph:
+                pass
         return self.evaluate(X, Y)
