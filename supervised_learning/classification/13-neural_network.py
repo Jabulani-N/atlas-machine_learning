@@ -119,8 +119,8 @@ class NeuralNetwork:
         dz1 = A1 - Y
         dw1 = np.dot(X, dz1.T) / m
         db1 = np.sum(dz1) / m
-        print("my W1 is", self.__W1)
-        print("my dw1.t is", dw1.T)
+        print("the shape of W1 is", np.shape(self.__W1))
+        print("the shape of dw1.t is", np.shape(dw1.T))
         self.__W1 -= alpha * dw1.T
         self.__b1 -= alpha * db1
 
