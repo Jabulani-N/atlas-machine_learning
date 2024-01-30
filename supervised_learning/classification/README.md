@@ -163,5 +163,12 @@ performs Gradient Descent via `def gradient_descent(self, X, Y, A1, A2, alpha=0.
 * alpha is learning rate.
 
 The idea will be the same as Task 5
+* pay attention to what is relevant input for eacah layer, and what is output. This is important for how layer 2's input comes from layer 1's outputs.
 
 Because we are updating two layers, we'll need to update both sets of weights and biases.
+
+# Tasks 14 Train Neural Network
+
+Same idea as Task 6.
+
+creates public method `def train(self, X, Y, iterations=5000, alpha=0.05):`, performing `iterations` forward propogations and returns evaluation afterwards.
