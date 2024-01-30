@@ -124,7 +124,7 @@ class NeuralNetwork:
         db2 = np.sum(dz2, axis=1, keepdims=True) / m
         self.__W2 -= alpha * dw2.T
         self.__b2 -= alpha * db2
-
+        # layer 2 is confirmed right now functional
         m = np.shape(Y)[1]
         dz1 = np.dot(self.__W2.T, dz2) * (A1 * (1 - A1))
         dw1 = np.dot(X, dz1.T) / m
