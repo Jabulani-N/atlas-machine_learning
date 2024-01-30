@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """module documentation
-this module, 13-neural_network.py, creates a class: NeuralNetwork
+this module, 15-neural_network.py, creates a class: NeuralNetwork
 
 """
 
