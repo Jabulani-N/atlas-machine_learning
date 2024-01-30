@@ -120,15 +120,15 @@ class NeuralNetwork:
 
         m = np.shape(Y)[1]
         dz2 = A2 - Y
-        dw2 = np.dot(X, dz2.T) / m
-        db2 = np.sum(dz2) / m
+        dw2 = np.dot(A1, dz2.T) / m
+        db2 = np.sum(dz2, axis=1, keepdims=True) / m
         self.__W2 -= alpha * dw2.T
         self.__b2 -= alpha * db2
 
         m = np.shape(Y)[1]
-        dz1 = A1 - Y
+        dz1 = np.dot(self.__W2.T, dz2) * (A1 * (1 - A1))
         dw1 = np.dot(X, dz1.T) / m
-        db1 = np.sum(dz1) / m
+        db1 = np.sum(dz1, axis=1, keepdims=True) / m
         print("the shape of W1 is", np.shape(self.__W1))
         print("the shape of dw1.t is", np.shape(dw1.T))
         print("the shape of alpha is", np.shape(alpha))
