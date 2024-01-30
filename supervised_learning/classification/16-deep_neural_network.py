@@ -30,7 +30,7 @@ class DeepNeuralNetwork:
 
         if isinstance(layers, list) is False or layers == []:
             raise TypeError("layers must be a list of positive integers")
-        if all(np.greater_equal(layers, 0)) is False:
+        if all(np.greater_equal(layers, 1)) is False:
             raise ValueError("layers must be a list of positive integers")
 
         self.L = len(layers)
