@@ -154,3 +154,4 @@ See Task 3 for formulae and detials.
 # Task 12 Evaluate Neural Network
 
 Effectively identical to Task 4, creataing `def evaluate(self, X, Y):`.
+Be sure to remember that forward prop in our Neural Network tasks returns two items. You only want the final `A2` output to be evaluated. We don't care about the first one, A1

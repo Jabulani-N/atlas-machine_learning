@@ -108,3 +108,4 @@ class NeuralNetwork:
         """
         Prediction = np.greater_equal(self.forward_prop(X)[1], 0.5).astype(int)
         return Prediction, self.cost(Y, self.__A2)
+        # this is only assigning the __A2 value to Prediction
