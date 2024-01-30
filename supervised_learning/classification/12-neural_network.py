@@ -107,4 +107,4 @@ class NeuralNetwork:
         considers anything at least 0.5 as 1; else 0.
         """
         Prediction = np.greater_equal(self.forward_prop(X), 0.5).astype(int)
-        return Prediction, self.cost(Y, self.__A)
+        return Prediction, self.cost(Y, self.__A2)
