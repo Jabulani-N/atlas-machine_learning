@@ -137,3 +137,12 @@ def priv(self):
 creates public method `def forward_prop(self, X):`.
 
 This is for the entire network to propagate once.
+
+Numpy can recieve arrays just as well as it recieves integers, so one can use the same input-output logic as used in Task 2.
+
+# Task 11 NeuralNetwork Cost
+
+Adds public method `def cost(self, Y, A):`. This calculates the cost of a single forward propagation.
+
+* Y = correct answer
+* A = forward prop's answer.
