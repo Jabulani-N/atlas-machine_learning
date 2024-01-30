@@ -163,3 +163,5 @@ performs Gradient Descent via `def gradient_descent(self, X, Y, A1, A2, alpha=0.
 * alpha is learning rate.
 
 The idea will be the same as Task 5
+
+Because we are updating two layers, we'll need to update both sets of weights and biases.
