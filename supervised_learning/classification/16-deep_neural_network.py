@@ -36,3 +36,4 @@ class DeepNeuralNetwork:
 
         L = len(layers)
         cache = {}
+        weights = {}
