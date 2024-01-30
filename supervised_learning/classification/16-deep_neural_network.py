@@ -31,4 +31,3 @@ class DeepNeuralNetwork:
             raise TypeError("layers must be an integer")
         if layers < 1:
             raise ValueError("layers must be a positive integer")
-
