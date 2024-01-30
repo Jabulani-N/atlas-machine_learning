@@ -14,6 +14,7 @@ class DeepNeuralNetwork:
     Attributes:
         L - number of layers
         cache - dictionary holding intermediary values. initialized empty.
+        weights - dictionary holding weights and biases.
 
     """
 
@@ -32,3 +33,6 @@ class DeepNeuralNetwork:
         if all(np.greater_equal(layers, 1)) is False or\
         all(isinstance(item, int) for item in layers) is False:
             raise ValueError("layers must be a list of positive integers")
+
+        L = len(layers)
+        cache = {}

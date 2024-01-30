@@ -188,3 +188,9 @@ This improved method has the option to display a report every `step` iterations.
 Creates class `DeepNeuralNetwork` iniitialized via `def __init__(self, nx, layers):`.
 
 elementwise type checking: https://stackoverflow.com/questions/6009589/how-to-test-if-every-item-in-a-list-of-type-int
+
+Of note:
+
+`weights`: A dictionary to hold all weights and biased[sic] of the network. Upon instantiation:
+* The weights of the network should be initialized using the `He et al.` method and saved in the `weights` dictionary using the key `W{l}` where `{l}` is the hidden layer the weight belongs to
+* The biases of the network should be initialized to 0’s and saved in the weights dictionary using the key `b{l}` where `{l}` is the hidden layer the bias belongs to
