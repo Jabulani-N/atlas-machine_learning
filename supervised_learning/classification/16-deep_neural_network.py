@@ -33,7 +33,6 @@ class DeepNeuralNetwork:
         if all(np.greater_equal(layers, 1)) is False:
             raise ValueError("layers must be a list of positive integers")
 
-
         self.L = len(layers) - 1
         self.cache = {}
         self.weights = {}
