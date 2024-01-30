@@ -98,3 +98,13 @@ class NeuralNetwork:
         return (np.sum(yi * np.log(yhati) +
                 (1 - yi) * (np.log(1.0000001 - yhati)))
                 / -m)
+
+    def evaluate(self, X, Y):
+        """Evaluates one pass of forward propagation.
+        X = input data
+        Y = correct answer, as used by cost function
+
+        considers anything at least 0.5 as 1; else 0.
+        """
+        Prediction = np.greater_equal(self.forward_prop(X), 0.5).astype(int)
+        return Prediction, self.cost(Y, self.__A)

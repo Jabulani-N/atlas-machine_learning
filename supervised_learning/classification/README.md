@@ -152,3 +152,5 @@ See Task 3 for formulae and detials.
 * Currently identical to Task 3, as there is no change in formulae nor implimentation
 
 # Task 12 Evaluate Neural Network
+
+Effectively identical to Task 4, creataing `def evaluate(self, X, Y):`.
