@@ -8,6 +8,8 @@
 
 * For a refresher on basic Pythonic classes, see [my previous repository explaining the subject](https://github.com/Jabulani-N/holbertonschool-higher_level_programming/tree/main/python-classes).
 
+The `Neuron` class simulates a single neuron recieving weighted inputs to learn. The `NeuralNetwork` class simulates a nework of 2 layers of neurons with weighted inputs.
+
 # Task 0
 
 This is essentially a refresher on basic Pythonic techniques.
