@@ -112,5 +112,19 @@ class NeuralNetwork:
 
     def gradient_descent(self, X, Y, A1, A2, alpha=0.05):
         """updates self W1,W2,b1,b2 by learning rate * gradient of cost
-        alpha = α = learning rate"""
-        pass
+        alpha = α = learning rate
+        """
+
+        m = np.shape(Y)[1]
+        dz1 = A1 - Y
+        dw1 = np.dot(X, dz1.T) / m
+        db1 = np.sum(dz1) / m
+        self.__W -= alpha * dw1.T
+        self.__b -= alpha * db1
+
+        m = np.shape(Y)[1]
+        dz2 = A2 - Y
+        dw2 = np.dot(X, dz2.T) / m
+        db2 = np.sum(dz2) / m
+        self.__W -= alpha * dw2.T
+        self.__b -= alpha * db2
