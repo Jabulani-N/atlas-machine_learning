@@ -35,13 +35,14 @@ class DeepNeuralNetwork:
             raise ValueError("layers must be a list of positive integers")
 
         layerCount = len(layers)
-        cache = {}
-        weights = {}
+        self.L = layerCount
+        self.cache = {}
+        self.weights = {}
 
         for layer in range(1, layerCount + 1):
-            weights['W' + str(layer)] = \
+            self.weights['W' + str(layer)] = \
                 np.random.randn(layers[layer],
                                 layers[layer - 1]) * \
                 np.sqrt(2. / layers[layer - 1])
-            weights['b' + str(layer)] = np.zeros((layers[layer], 1))
-        # weights has now been initialized using he et al.
+            self.weights['b' + str(layer)] = np.zeros((layers[layer], 1))
+        # weights initialized using he et al.
