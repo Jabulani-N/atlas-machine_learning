@@ -42,8 +42,8 @@ class DeepNeuralNetwork:
             if isinstance(layers[layer - 1], int) is False:
                 raise ValueError("layers must be a list of positive integers")
             self.weights['W' + str(layer)] = \
-                np.random.randn(layers[layer - 1],
-                                layers[layer - 2]) * \
+                np.random.randn(layers[layer],
+                                layers[layer - 1]) * \
                 np.sqrt(2.0 / layers[layer - 1])
             self.weights['b' + str(layer)] = \
                 np.zeros((layers[layer - 1], 1))
