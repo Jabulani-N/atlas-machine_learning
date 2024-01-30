@@ -154,4 +154,9 @@ class NeuralNetwork:
         for i in range(iterations):
             self.forward_prop(X)
             self.gradient_descent(X, Y, self.__A1, self.__A2, alpha)
+            if verbose:
+                if step % (i + 1) == 0:
+                    print("Cost after", i, "iterations:", self.cost(Y, self.__A2))
+            if graph:
+                pass
         return self.evaluate(X, Y)
