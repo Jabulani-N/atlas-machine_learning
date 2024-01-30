@@ -119,14 +119,14 @@ class NeuralNetwork:
         """
 
         m = np.shape(Y)[1]
-
         dz2 = A2 - Y
         dw2 = np.dot(A1, dz2.T) / m
         db2 = np.sum(dz2, axis=1, keepdims=True) / m
         self.__W2 -= alpha * dw2.T
         self.__b2 -= alpha * db2
 
-        dz1 = np.dot(self.__W2, dz1.T) * (A1 * (1 - A1))
+        m = np.shape(Y)[1]
+        dz1 = np.dot(self.__W2.T, dz2) * (A1 * (1 - A1))
         dw1 = np.dot(X, dz1.T) / m
         db1 = np.sum(dz1, axis=1, keepdims=True) / m
         self.__W1 -= alpha * dw1.T
