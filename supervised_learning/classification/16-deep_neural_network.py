@@ -34,11 +34,11 @@ class DeepNeuralNetwork:
             raise ValueError("layers must be a list of positive integers")
 
         layerCount = len(layers)
-        self.L = layerCount
+        self.L = layerCount - 1
         self.cache = {}
         self.weights = {}
 
-        for layer in range(1, layerCount + 1):
+        for layer in range(1, layerCount):
             if isinstance(layers[layer - 1], int) is False:
                 raise ValueError("layers must be a list of positive integers")
             self.weights['W' + str(layer)] = \
