@@ -45,4 +45,4 @@ class DeepNeuralNetwork:
                                 layers[layer - 1]) * \
                 np.sqrt(2. / layers[layer - 1])
             self.weights['b' + str(layer)] = np.zeros((layers[layer], 1))
-        # weights initialized using he et al.
+        # weights initialized via he et al.
