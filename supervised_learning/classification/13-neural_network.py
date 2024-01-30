@@ -113,7 +113,17 @@ class NeuralNetwork:
     def gradient_descent(self, X, Y, A1, A2, alpha=0.05):
         """updates self W1,W2,b1,b2 by learning rate * gradient of cost
         alpha = α = learning rate
+        This seems to be what's called 'backpropogation,'
+        due to how it uses the lessons learned from
+        corrected following layer/final answer to alter current layer's A
         """
+
+        m = np.shape(Y)[1]
+        dz2 = A2 - Y
+        dw2 = np.dot(X, dz2.T) / m
+        db2 = np.sum(dz2) / m
+        self.__W2 -= alpha * dw2.T
+        self.__b2 -= alpha * db2
 
         m = np.shape(Y)[1]
         dz1 = A1 - Y
@@ -124,10 +134,3 @@ class NeuralNetwork:
         print("the shape of alpha is", np.shape(alpha))
         self.__W1 -= alpha * dw1.T
         self.__b1 -= alpha * db1
-
-        m = np.shape(Y)[1]
-        dz2 = A2 - Y
-        dw2 = np.dot(X, dz2.T) / m
-        db2 = np.sum(dz2) / m
-        self.__W2 -= alpha * dw2.T
-        self.__b2 -= alpha * db2
