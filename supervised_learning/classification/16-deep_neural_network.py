@@ -38,7 +38,7 @@ class DeepNeuralNetwork:
         self.weights = {}
 
         for layer in range(0, self.L + 1):
-            if isinstance(layers[layer], int) is False:
+            if isinstance(layers[layer - 1], int) is False:
                 raise TypeError("layers must be a list of positive integers")
             self.weights['W' + str(layer + 1)] = \
                 np.random.randn(layers[layer],
