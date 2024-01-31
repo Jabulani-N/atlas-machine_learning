@@ -14,6 +14,12 @@ def one_hot_encode(Y, classes):
         seems to be the length of Y
     """
 
+    if not isinstance(Y, np.ndarray) or\
+       not isinstance(classes, int) or\
+       classes < 2 or\
+       classes < max(Y):
+        return None
+
     biggestPossibleClassNumber = max(Y)
     parent = np.zeros((classes, len(Y)))
 
