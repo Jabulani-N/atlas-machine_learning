@@ -205,6 +205,8 @@ Of note:
 
 When the logic of my loop had the ability to double-assign a value to dictionary term `W1`, that resulted in a wong answer. When reordering my code to use an if/else for whether it was the first slot or not, this actually change my output to the correct value.
 
-# Task 16
+# Task 17
 
 This merely changes the public attributes to private, and creates relevant getters.
+
+# Task 18 DeepNeuralNetwork Forward Propagation
