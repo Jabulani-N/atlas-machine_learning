@@ -194,8 +194,9 @@ Of note:
 `weights`: A dictionary to hold all weights and biased[sic] of the network. Upon instantiation:
 * The weights of the network should be initialized using the `He et al.` method and saved in the `weights` dictionary using the key `W{l}` where `{l}` is the hidden layer the weight belongs to
   * [He et al. initialization demonstrated](https://github.com/fanghao6666/neural-networks-and-deep-learning/blob/master/py/Initialization.py). what it has as `parameters` is what we call `weights` in this project. **This will not work if copy-pasted**. You must instead understand the logic of what it's doing.
-    * This provided setup does not consider layer 0. We need to fix that.
-      * furthermore, layer 0 ALSO needs an input layer. it's input layer is the input itself, which has `nx` elements. We use `nx` for the number of how many elements are in the layer before it.
+    * Inside the for loop, you can see the way it's using random with the number of nodes in current layer `l`, and the number of nodes in *the layer before* the current layer, `l - 1`.
+      * This provided setup **does not** consider layer 0. We need to fix that.
+      * layer 0 ALSO needs an input layer. it's input layer is the input itself, which has `nx` elements. We use `nx` for the number of how many elements are in the layer before it.
 * The biases of the network should be initialized to 0’s and saved in the weights dictionary using the key `b{l}` where `{l}` is the hidden layer the bias belongs to
 
 ### Potential pitfalls
@@ -203,3 +204,7 @@ Of note:
 **You will not 1-1 copy the reference linked above**
 
 When the logic of my loop had the ability to double-assign a value to dictionary term `W1`, that resulted in a wong answer. When reordering my code to use an if/else for whether it was the first slot or not, this actually change my output to the correct value.
+
+# Task 16
+
+This merely changes the public attributes to private, and creates relevant getters.
