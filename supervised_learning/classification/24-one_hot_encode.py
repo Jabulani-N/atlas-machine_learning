@@ -9,7 +9,7 @@ def one_hot_encode(Y, classes):
     """binarizes an array Y
     Y = array of class numbers (int)
     classes = number of classes within Y
-        seems to be the length of Y
+        seems to be the length of Y.
     """
 
     import numpy as np
