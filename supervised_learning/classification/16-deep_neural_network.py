@@ -19,7 +19,7 @@ class DeepNeuralNetwork:
     """
 
     def __init__(self, nx, layers):
-        """nx = no of input features
+        """nx = no of input features = no nodes in input layer(?)
         layers = list containing no of nodes in each layer
         """
 
@@ -41,10 +41,11 @@ class DeepNeuralNetwork:
             if isinstance(layers[layer], int) is False:
                 raise TypeError("layers must be a list of positive integers")
             self.weights['W' + str(layer + 1)] = \
-                np.random.randn(layers[layer - 0],
+                np.random.randn(layers[layer],
                                 layers[layer - 1]) *\
                 np.sqrt(2. / layers[layer - 1])
 
+            # I reread the review, and only my W1 answer is incorrect
             if layer == 0:
                 self.weights['W' + str(layer + 1)] = \
                     np.random.randn(layers[layer], nx) *\
