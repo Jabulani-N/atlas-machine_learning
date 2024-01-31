@@ -40,17 +40,18 @@ class DeepNeuralNetwork:
         for layer in range(0, self.L):
             if isinstance(layers[layer], int) is False:
                 raise TypeError("layers must be a list of positive integers")
-            self.weights['W' + str(layer + 1)] = \
-                np.random.randn(layers[layer],
-                                layers[layer - 1]) *\
-                np.sqrt(2. / layers[layer - 1])
-
             # I reread the review, and only my W1 answer is incorrect
             if layer == 0:
                 # print("i'm using the special layer loop")
                 self.weights['W' + str(layer + 1)] = \
                     (np.random.randn(layers[layer], nx) *
                      np.sqrt(2. / nx))
+            else:
+                self.weights['W' + str(layer + 1)] = \
+                np.random.randn(layers[layer],
+                                layers[layer - 1]) *\
+                np.sqrt(2. / layers[layer - 1])
+
             self.weights['b' + str(layer + 1)] = \
                 np.zeros((layers[layer], 1))
         # weights initialized via he et al.
