@@ -49,8 +49,8 @@ class DeepNeuralNetwork:
             if layer == 0:
                 # print("i'm using the special layer loop")
                 self.weights['W' + str(layer + 1)] = \
-                    np.random.randn(layers[layer], nx) *\
-                    np.sqrt(2. / nx)
+                    (np.random.randn(layers[layer], nx) *
+                     np.sqrt(2. / nx))
             self.weights['b' + str(layer + 1)] = \
                 np.zeros((layers[layer], 1))
         # weights initialized via he et al.
