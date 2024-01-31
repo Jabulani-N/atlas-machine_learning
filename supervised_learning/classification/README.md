@@ -193,11 +193,13 @@ Of note:
 
 `weights`: A dictionary to hold all weights and biased[sic] of the network. Upon instantiation:
 * The weights of the network should be initialized using the `He et al.` method and saved in the `weights` dictionary using the key `W{l}` where `{l}` is the hidden layer the weight belongs to
-  * [He et al. initialization demonstrated](https://github.com/fanghao6666/neural-networks-and-deep-learning/blob/master/py/Initialization.py). what it has as `parameters` is what we call `weights` in this project. This does not currently seem to be able to be applied directly to this current project. More consideration and experimentation are needed.
-    * I figured out what was wrong. As you may have noticed from my commit notes, this provided setup does not consider layer 0. We need to fix that.
+  * [He et al. initialization demonstrated](https://github.com/fanghao6666/neural-networks-and-deep-learning/blob/master/py/Initialization.py). what it has as `parameters` is what we call `weights` in this project. **This will not work if copy-pasted**. You must instead understand the logic of what it's doing.
+    * This provided setup does not consider layer 0. We need to fix that.
       * furthermore, layer 0 ALSO needs an input layer. it's input layer is the input itself, which has `nx` elements. We use `nx` for the number of how many elements are in the layer before it.
 * The biases of the network should be initialized to 0’s and saved in the weights dictionary using the key `b{l}` where `{l}` is the hidden layer the bias belongs to
 
 ### Potential pitfalls
+
+**You will not 1-1 copy the reference linked above**
 
 When the logic of my loop had the ability to double-assign a value to dictionary term `W1`, that resulted in a wong answer. When reordering my code to use an if/else for whether it was the first slot or not, this actually change my output to the correct value.
