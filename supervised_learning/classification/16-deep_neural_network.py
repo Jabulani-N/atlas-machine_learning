@@ -47,7 +47,7 @@ class DeepNeuralNetwork:
 
             # I reread the review, and only my W1 answer is incorrect
             if layer == 0:
-                print("i'm using the special layre loop")
+                # print("i'm using the special layer loop")
                 self.weights['W' + str(layer + 1)] = \
                     np.random.randn(layers[layer], nx) *\
                     np.sqrt(2. / nx)
