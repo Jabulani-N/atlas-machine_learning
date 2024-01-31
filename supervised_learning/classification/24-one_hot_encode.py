@@ -19,6 +19,5 @@ def one_hot_encode(Y, classes):
 
     for numberCheckedFor in range(0, biggestPossibleClassNumber):
         parent[numberCheckedFor] = \
-            np.equal(Y, numberCheckedFor)\
-            .astype(int)
+            np.equal(Y, numberCheckedFor)
     return parent
