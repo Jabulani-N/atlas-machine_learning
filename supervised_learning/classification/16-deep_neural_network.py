@@ -37,14 +37,14 @@ class DeepNeuralNetwork:
         self.cache = {}
         self.weights = {}
 
-        for layer in range(1, self.L + 1):
-            if isinstance(layers[layer - 1], int) is False:
+        for layer in range(0, self.L):
+            if isinstance(layers[layer], int) is False:
                 raise TypeError("layers must be a list of positive integers")
-            self.weights['W' + str(layer)] = \
-                np.random.randn(layers[layer - 1],
-                                layers[layer - 2]) *\
-                np.sqrt(2. / layers[layer - 2])
+            self.weights['W' + str(layer + 1)] = \
+                np.random.randn(layers[layer - 0],
+                                layers[layer - 1]) *\
+                np.sqrt(2. / layers[layer - 1])
 
-            self.weights['b' + str(layer)] = \
-                np.zeros((layers[layer - 1], 1))
+            self.weights['b' + str(layer + 1)] = \
+                np.zeros((layers[layer - 0], 1))
         # weights initialized via he et al.
