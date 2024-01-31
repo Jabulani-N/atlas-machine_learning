@@ -4,6 +4,7 @@ one hot encode that converts from an aray of categories to
 an array of 'is it category 1? is it category 2?...'
 """
 
+
 def one_hot_encode(Y, classes):
     """binarizes an array Y
     Y = array of class numbers (int)
