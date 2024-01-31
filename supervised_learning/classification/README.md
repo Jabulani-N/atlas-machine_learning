@@ -197,3 +197,7 @@ Of note:
     * I figured out what was wrong. As you may have noticed from my commit notes, this provided setup does not consider layer 0. We need to fix that.
       * furthermore, layer 0 ALSO needs an input layer. it's input layer is the input itself, which has `nx` elements. We use `nx` for the number of how many elements are in the layer before it.
 * The biases of the network should be initialized to 0’s and saved in the weights dictionary using the key `b{l}` where `{l}` is the hidden layer the bias belongs to
+
+### Potential pitfalls
+
+When the logic of my loop had the ability to double-assign a value to dictionary term `W1`, that resulted in a wong answer. When reordering my code to use an if/else for whether it was the first slot or not, this actually change my output to the correct value.
