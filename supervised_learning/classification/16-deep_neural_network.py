@@ -45,6 +45,10 @@ class DeepNeuralNetwork:
                                 layers[layer - 1]) *\
                 np.sqrt(2. / layers[layer - 1])
 
+            if layer == 0:
+                self.weights['W' + str(layer + 1)] = \
+                    np.random.randn(layers[layer], nx) *\
+                    np.sqrt(2. / nx)
             self.weights['b' + str(layer + 1)] = \
                 np.zeros((layers[layer - 0], 1))
         # weights initialized via he et al.
