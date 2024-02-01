@@ -105,4 +105,5 @@ class DeepNeuralNetwork:
         considers anything at least 0.5 as 1; else 0
         """
         Prediction = np.greater_equal(self.forward_prop(X)[1], 0.5).astype(int)
-        return Prediction, self.cost(Y, self.cache)
+        return Prediction, self.cost(Y,
+                                     self.cache['A' + str(self.L)], self.cache)
