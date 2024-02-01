@@ -93,4 +93,9 @@ class DeepNeuralNetwork:
 
     def cost(self, Y, A):
         """calculates and returns cost of a single forward prop"""
-        pass
+        m = np.shape(A)[1]
+        yhati = A
+        yi = Y
+        return (np.sum(yi * np.log(yhati) +
+                (1 - yi) * (np.log(1.0000001 - yhati)))
+                / -m)
