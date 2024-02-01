@@ -121,7 +121,7 @@ class DeepNeuralNetwork:
         # db = np.sum(dz) / m
         # self.__weights -= alpha * dw.T
         # self.__b -= alpha * db
-        dzPrev = Y[self.L]
+        dzPrev = Y
         for layer in reversed(range(0, self.L)):
             dzCurrent = cache['A' + str(layer)] - dzPrev
             dwCurrent = np.dot(cache['A' + str(layer)], dzCurrent.T) / m
