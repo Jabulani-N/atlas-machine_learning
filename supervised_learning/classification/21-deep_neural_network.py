@@ -123,6 +123,11 @@ class DeepNeuralNetwork:
         # self.__b -= alpha * db
         dzPrev = Y
         for layer in reversed(range(0, self.L)):
+            if layer == self.L:
+                dACurrent = - (np.divide(Y, cache['A' + str(self.L)]) -
+                               np.divide(1 - Y, 1 - cache['A' + str(self.L)]))
+            else:
+                dACurrent = np.dot(self.weights['W' + str(layer + 1)].T, dAPrev)
             dzCurrent = cache['A' + str(layer)] - dzPrev
             dwCurrent = np.dot(cache['A' + str(layer)], dzCurrent.T) / m
             dbCurrent = np.sum(dzCurrent, axis=1, keepdims=True) / m
@@ -130,3 +135,4 @@ class DeepNeuralNetwork:
             self.weights['W' + str(layer)] -= alpha * dwCurrent.T
             self.weights['b' + str(layer)] -= alpha * dbCurrent
             dzPrev = dzCurrent
+            dAPrev = dACurrent
