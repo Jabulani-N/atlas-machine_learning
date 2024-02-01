@@ -127,7 +127,8 @@ class DeepNeuralNetwork:
                 dACurrent = - (np.divide(Y, cache['A' + str(self.L)]) -
                                np.divide(1 - Y, 1 - cache['A' + str(self.L)]))
             else:
-                dACurrent = np.dot(self.weights['W' + str(layer + 1)].T, dAPrev)
+                dACurrent = np.dot(self.weights['W' + str(layer + 1)].T,
+                                   dAPrev)
             dzCurrent = cache['A' + str(layer)] - dzPrev
             dwCurrent = np.dot(cache['A' + str(layer)], dzCurrent.T) / m
             dbCurrent = np.sum(dzCurrent, axis=1, keepdims=True) / m
