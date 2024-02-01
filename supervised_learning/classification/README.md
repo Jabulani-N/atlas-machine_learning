@@ -212,3 +212,4 @@ This merely changes the public attributes to private, and creates relevant gette
 # Task 18 DeepNeuralNetwork Forward Propagation
 
 As a basic reminder, we are doing `A = sigmoid(matmul(weights, input) + bias)`
+* The input to layer 0 is the input: `X`. Due to this, we save `X` into the cache as `cache['A0']`, so layer 0 does not need any special treatment, becuase the output from layer 0 goes into `cache['A1']`.
