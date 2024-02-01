@@ -116,8 +116,10 @@ class DeepNeuralNetwork:
         alpha = α = learning rate
         """
         m = np.shape(Y)[1]
-        dz = cache['A' + str(self.L)] - Y
-        dw = np.dot(cache['A0'], dz.T) / m
-        db = np.sum(dz) / m
-        self.__weights -= alpha * dw.T
+        # dz = cache['A' + str(self.L)] - Y
+        # dw = np.dot(cache['A0'], dz.T) / m
+        # db = np.sum(dz) / m
+        # self.__weights -= alpha * dw.T
         # self.__b -= alpha * db
+        for layer in reversed(range(0, self.L)):
+            pass
