@@ -121,7 +121,12 @@ class DeepNeuralNetwork:
         # db = np.sum(dz) / m
         # self.__weights -= alpha * dw.T
         # self.__b -= alpha * db
+        dzPrev = Y[self.L]
         for layer in reversed(range(0, self.L)):
-            dzCurrent = cache['A' + str(layer)]
-            # be sure to set dzPrev to the current dzCurrent
-            # and other currents to prevs
+            dzCurrent = cache['A' + str(layer)] - dzPrev
+            dwCurrent = np.dot(cache['A' + str(layer)], dzCurrent.T) / m
+            dbCurrent = np.sum(dzCurrent, axis=1, keepdims=True) / m
+            # if this doesn't work, considreremoving axis=1, et al.
+            self.weights['W' + layer] -= alpha * dwCurrent.T
+            self.weights['b' + layer] -= alpha * dbCurrent
+            dzPrev = dzCurrent
