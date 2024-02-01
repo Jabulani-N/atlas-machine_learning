@@ -117,7 +117,7 @@ class DeepNeuralNetwork:
         """
         m = np.shape(Y)[1]
         dz = cache['A' + str(self.L)] - Y
-        dw = np.dot(X, dz.T) / m
+        dw = np.dot(cache['A0'], dz.T) / m
         db = np.sum(dz) / m
         self.__W -= alpha * dw.T
         self.__b -= alpha * db
