@@ -210,3 +210,5 @@ When the logic of my loop had the ability to double-assign a value to dictionary
 This merely changes the public attributes to private, and creates relevant getters.
 
 # Task 18 DeepNeuralNetwork Forward Propagation
+
+As a basic reminder, we are doing `A = sigmoid(matmul(weights, input) + bias)`

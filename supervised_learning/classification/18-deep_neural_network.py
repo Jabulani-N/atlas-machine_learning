@@ -81,4 +81,17 @@ class DeepNeuralNetwork:
 
     def forward_prop(self, X):
         """performs a single pass of forward propagation"""
-        pass
+
+        for layNum in range(self.__L):
+            # we will use x instead of previous layer for layer 1
+            if layNum == 0:
+                self.__cache['A' + str(layNum + 1)] =\
+                    self.sigmoid(np.matmul(self.__weights['W' + str(layNum + 1)],
+                                 X) +
+                                 self.__weights['b' + str(layNum + 1)])
+            else:
+                self.__cache['A' + str(layNum + 1)] =\
+                    self.sigmoid(
+                        np.matmul(self.__weights['W' + str(layNum + 1)],
+                                 self.__cache['A' + str(layNum)]) +
+                                 self.__weights['b' + str(layNum + 1)])
