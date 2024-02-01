@@ -89,4 +89,4 @@ class DeepNeuralNetwork:
                     np.matmul(self.__weights['W' + str(layNum + 1)],
                               self.__cache['A' + str(layNum)]) +
                     self.__weights['b' + str(layNum + 1)])
-        return self.cache()['A' + str(self.L())], self.cache()
+        return self.cache['A' + str(self.L())], self.cache
