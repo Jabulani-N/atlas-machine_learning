@@ -108,4 +108,4 @@ class DeepNeuralNetwork:
         Prediction = np.greater_equal(self.cache['A' + str(self.L)],
                                       0.5).astype(int)
         return Prediction, self.cost(Y,
-                                     self.cache['A' + str(self.L)], self.cache)
+                                     self.cache['A' + str(self.L)])
