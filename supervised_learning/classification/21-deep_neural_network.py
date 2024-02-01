@@ -123,5 +123,5 @@ class DeepNeuralNetwork:
         # self.__b -= alpha * db
         for layer in reversed(range(0, self.L)):
             dzCurrent = cache['A' + str(layer)]
-        # be sure to set dzPrev to the current dzCurrent
-        # and other currents to prevs
+            # be sure to set dzPrev to the current dzCurrent
+            # and other currents to prevs
