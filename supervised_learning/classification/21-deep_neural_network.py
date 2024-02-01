@@ -129,11 +129,11 @@ class DeepNeuralNetwork:
             else:
                 dACurrent = np.dot(self.weights['W' + str(layer + 1)].T,
                                    dAPrev)
-            dzCurrent = cache['A' + str(layer)] - dzPrev
-            dwCurrent = np.dot(cache['A' + str(layer)], dzCurrent.T) / m
-            dbCurrent = np.sum(dzCurrent, axis=1, keepdims=True) / m
-            # if this doesn't work, considreremoving axis=1, et al.
-            self.weights['W' + str(layer)] -= alpha * dwCurrent
-            self.weights['b' + str(layer)] -= alpha * dbCurrent
-            dzPrev = dzCurrent
+                dzCurrent = cache['A' + str(layer)] - dzPrev
+                dwCurrent = np.dot(cache['A' + str(layer)], dzCurrent.T) / m
+                dbCurrent = np.sum(dzCurrent, axis=1, keepdims=True) / m
+
+                self.weights['W' + str(layer)] -= alpha * dwCurrent
+                self.weights['b' + str(layer)] -= alpha * dbCurrent
+                dzPrev = dzCurrent
             dAPrev = dACurrent
