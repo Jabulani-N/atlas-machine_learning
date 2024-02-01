@@ -12,8 +12,8 @@ def one_hot_decode(one_hot):
     answer: the vector of labels"""
     answer = np.zeros(len(one_hot))
     myVal = 0
-    print("the following is onehot:", one_hot)
-    return "this is the return from decode"
+    # print("the following is onehot:", one_hot)
+    # return "this is the return from decode"
     for position in range(0, len(one_hot)):
         # print(one_hot[position])
         # for dim2 in dim1:
@@ -23,5 +23,5 @@ def one_hot_decode(one_hot):
         #         break
         #     answer[dim1] = myVal
         #     myVal = 0
-        answer[position] = one_hot[position].astype(int)
+        answer[position] = one_hot[position]
     return answer
