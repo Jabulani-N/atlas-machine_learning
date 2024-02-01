@@ -116,7 +116,7 @@ class DeepNeuralNetwork:
         alpha = α = learning rate
         """
         m = np.shape(Y)[1]
-        dz = cache - Y
+        dz = cache['A' + str(self.L)] - Y
         dw = np.dot(X, dz.T) / m
         db = np.sum(dz) / m
         self.__W -= alpha * dw.T
