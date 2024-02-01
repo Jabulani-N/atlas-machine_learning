@@ -122,4 +122,6 @@ class DeepNeuralNetwork:
         # self.__weights -= alpha * dw.T
         # self.__b -= alpha * db
         for layer in reversed(range(0, self.L)):
-            pass
+            dzCurrent = cache['A' + str(layer)]
+        # be sure to set dzPrev to the current dzCurrent
+        # and other currents to prevs
