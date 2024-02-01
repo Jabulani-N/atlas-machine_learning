@@ -75,6 +75,10 @@ class DeepNeuralNetwork:
         """returns dictionary holding all weights and biases"""
         return self.__weights
 
+    def sigmoid(self, z):
+        """returns sigmoid function of z"""
+        return (1 / (1 + np.exp(-1 * z)))
+
     def forward_prop(self, X):
         """performs a single pass of forward propagation"""
         pass
