@@ -13,7 +13,7 @@ def one_hot_decode(one_hot):
     answer = np.zeros(len(one_hot))
     myVal = 0
     for position in range (0, len(one_hot)):
-        print(one_hot[position])
+        # print(one_hot[position])
         # for dim2 in dim1:
         #     if dim2 == 0:
         #         myVal += 1
@@ -21,5 +21,5 @@ def one_hot_decode(one_hot):
         #         break
         #     answer[dim1] = myVal
         #     myVal = 0
-        answer[position] = one_hot[position]
+        answer[position] = one_hot[position].astype(int)
     return answer
