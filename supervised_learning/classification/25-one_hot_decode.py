@@ -12,7 +12,7 @@ def one_hot_decode(one_hot):
     answer: the vector of labels"""
     answer = np.zeros(len(one_hot))
     myVal = 0
-    for position in range (0, len(one_hot)):
+    for position in range(0, len(one_hot)):
         # print(one_hot[position])
         # for dim2 in dim1:
         #     if dim2 == 0:
