@@ -122,7 +122,7 @@ class DeepNeuralNetwork:
         # self.__weights -= alpha * dw.T
         # self.__b -= alpha * db
         dzPrev = Y
-        for layer in reversed(range(0, self.L)):
+        for layer in range(self.L, 0, -1):
             if layer == self.L:
                 dACurrent = - (np.divide(Y, cache['A' + str(self.L)]) -
                                np.divide(1 - Y, 1 - cache['A' + str(self.L)]))
