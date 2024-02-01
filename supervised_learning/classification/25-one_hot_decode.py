@@ -13,7 +13,7 @@ def one_hot_decode(one_hot):
     answer = np.zeros(len(one_hot))
     myVal = 0
     print(one_hot)
-    return None
+    return "this is the return from decode"
     for position in range(0, len(one_hot)):
         # print(one_hot[position])
         # for dim2 in dim1:
