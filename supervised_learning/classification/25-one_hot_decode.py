@@ -23,5 +23,5 @@ def one_hot_decode(one_hot):
         #         break
         #     answer[dim1] = myVal
         #     myVal = 0
-        answer[position] = one_hot[position]
+        answer = one_hot
     return answer
