@@ -115,4 +115,9 @@ class DeepNeuralNetwork:
         learning rate * gradient of cost
         alpha = α = learning rate
         """
-        pass
+        m = np.shape(Y)[1]
+        dz = cache - Y
+        dw = np.dot(X, dz.T) / m
+        db = np.sum(dz) / m
+        self.__W -= alpha * dw.T
+        self.__b -= alpha * db
