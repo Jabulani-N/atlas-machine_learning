@@ -12,7 +12,7 @@ def one_hot_decode(one_hot):
     answer: the vector of labels"""
     answer = np.zeros(len(one_hot))
     myVal = 0
-    print(one_hot)
+    print("the following is onehot:", one_hot)
     return "this is the return from decode"
     for position in range(0, len(one_hot)):
         # print(one_hot[position])
