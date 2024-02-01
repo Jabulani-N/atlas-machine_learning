@@ -83,7 +83,7 @@ class DeepNeuralNetwork:
         """performs a single pass of forward propagation"""
 
         for layNum in range(self.__L):
-            # we will use x instead of previous layer for layer 1
+            # we will use x instead of previous layer in layer 1
             if layNum == 0:
                 self.__cache['A' + str(layNum + 1)] =\
                     self.sigmoid(
