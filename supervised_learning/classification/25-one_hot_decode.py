@@ -8,5 +8,16 @@ import numpy as np
 
 
 def one_hot_decode(one_hot):
-    """recieves an encoded array; turns it into a vector of labels"""
-    pass
+    """recieves an encoded array; turns it into a vector of labels
+    answer: the vector of labels"""
+    answer = np.zeros(len(one_hot))
+    myVal = 0
+    for dim1 in one_hot:
+        for dim2 in dim1:
+            if dim2 == 0:
+                myVal += 1
+            else:
+                break
+            answer[dim1] = myVal
+            myVal = 0
+    return answer
