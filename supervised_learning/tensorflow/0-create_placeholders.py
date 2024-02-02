@@ -18,6 +18,6 @@ def create_placeholders(nx, classes):
     x = placeholder for input data
     y = placeholderfor one-hot labels
     """
-    x = nx
-    y = classes
+    x = nx.astype(float)
+    y = classes.astyle(float)
     return x, y
