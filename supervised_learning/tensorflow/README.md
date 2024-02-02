@@ -9,6 +9,44 @@ when assigning attributes to the tensorflow `placeholder` (it's a clas)
 * size: `size=[None, x]` [will make the first dimension undefined](https://stackoverflow.com/questions/42606722/shape-of-placeholder-in-tensorflow), and able to be changed, rather than set in stone.
   * the "size=" is optional
 
+
+tested via
+```
+#!/usr/bin/env python3
+
+import tensorflow.compat.v1 as tf
+tf.disable_eager_execution()
+
+create_placeholders = __import__('0-create_placeholders').create_placeholders
+
+x, y = create_placeholders(784, 10)
+print(x)
+print(y)
+```
+which should output
+```
+Tensor("x:0", shape=(?, 784), dtype=float32)
+Tensor("y:0", shape=(?, 10), dtype=float32)
+```
 # Task 1 Create Layer
 
 [Layer creation](https://github.com/tensorflow/docs/blob/master/site/en/r1/guide/low_level_intro.md#layers)
+
+tested by
+```
+#!/usr/bin/env python3
+
+import tensorflow.compat.v1 as tf
+tf.disable_eager_execution()
+
+create_placeholders = __import__('0-create_placeholders').create_placeholders
+create_layer = __import__('1-create_layer').create_layer
+
+x, y = create_placeholders(784, 10)
+l = create_layer(x, 256, tf.nn.tanh)
+print(l)
+```
+And should output
+```
+Tensor("layer/Tanh:0", shape=(?, 256), dtype=float32)
+```
