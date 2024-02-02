@@ -16,8 +16,10 @@ def create_placeholders(nx, classes):
     classes: the number of classes in our classifier
 
     x = placeholder for input data
-    y = placeholderfor one-hot labels
+    y = placeholder for one-hot labels
+
+    placeholder: Tensorflow class
     """
-    x = [0] * nx
-    y = [0] * classes
+    x = tf.placeholder(float, nx, x)
+    y = tf.placeholder(float, classes, y)
     return x, y
