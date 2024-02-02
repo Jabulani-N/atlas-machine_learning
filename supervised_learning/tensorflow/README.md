@@ -32,6 +32,12 @@ Tensor("y:0", shape=(?, 10), dtype=float32)
 
 [Layer creation](https://github.com/tensorflow/docs/blob/master/site/en/r1/guide/low_level_intro.md#layers)
 
+[Initializing](https://www.tensorflow.org/api_docs/python/tf/keras/initializers/VarianceScaling)
+
+[Densing layers](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense)
+
+* The `kernel_initializer=` segment can be fed an initializer you've already made as a variable via the initializing section above.
+
 tested by
 ```
 #!/usr/bin/env python3
