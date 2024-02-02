@@ -8,6 +8,7 @@ Though classy, it has no class.
 
 
 import tensorflow.compat.v1 as tf
+import numpy as np
 
 
 def create_placeholders(nx, classes):
@@ -18,6 +19,6 @@ def create_placeholders(nx, classes):
     x = placeholder for input data
     y = placeholderfor one-hot labels
     """
-    x = nx.astype(float)
-    y = classes.astyle(float)
+    x = np.zeros(nx)
+    y = np.zeros(classes)
     return x, y
