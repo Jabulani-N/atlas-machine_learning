@@ -7,7 +7,7 @@ Though classy, it has no class.
 """
 
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 def create_placeholders(nx, classes):
