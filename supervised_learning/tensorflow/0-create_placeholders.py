@@ -20,6 +20,6 @@ def create_placeholders(nx, classes):
 
     placeholder: Tensorflow class
     """
-    x = tf.placeholder(tf.float32, size=[None, nx], name='x')
-    y = tf.placeholder(tf.float32, size=[None, classes], name='y')
+    x = tf.placeholder(tf.float32, [None, nx], name='x')
+    y = tf.placeholder(tf.float32, [None, classes], name='y')
     return x, y

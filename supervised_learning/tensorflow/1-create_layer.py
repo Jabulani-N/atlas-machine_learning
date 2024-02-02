@@ -17,7 +17,7 @@ activation is the activation function that the layer should use
 
     initializer = tf.keras.initializers.VarianceScaling(mode='fan_avg')
 
-    layer = tf.keras.layers.Dense(n, activation=activation, kernel_initializer=initializer)
+    layer = tf.keras.layers.Dense(n, activation=activation,
+                                  kernel_initializer=initializer, name='layer')
 
     return layer(prev)
-
