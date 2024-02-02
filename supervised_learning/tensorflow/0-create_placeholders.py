@@ -7,8 +7,7 @@ Though classy, it has no class.
 """
 
 
-import tensorflow.compat.v1 as tf
-import numpy as np
+import tensorflow as tf
 
 
 def create_placeholders(nx, classes):
@@ -19,6 +18,6 @@ def create_placeholders(nx, classes):
     x = placeholder for input data
     y = placeholderfor one-hot labels
     """
-    x = np.zeros(nx)
-    y = np.zeros(classes)
+    x = [0] * nx
+    y = [0] * classes
     return x, y
