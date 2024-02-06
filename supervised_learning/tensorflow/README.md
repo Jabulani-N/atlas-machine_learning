@@ -77,5 +77,5 @@ This can be calculated via counting how many times prediction = correct answer, 
 
 [`tf.math.equal`](https://www.tensorflow.org/api_docs/python/tf/math/equal) will allow elementwise comparison. After this, one can simply divide the sum of all elements by the length.
 * in order to avoid counting every single "it is not x" as a correct prediction, we only want to check how many times they both return `1` in the same spot. We can do this with [`tf.argmax`](https://www.tensorflow.org/api_docs/python/tf/math/argmax). (the following  satement needs is my extrapolation and needs testing)This will spit out a list of indices that had the max value: `1`. Wherever the prediciotn and the input list are the same, indicating the guess was correct, it is correct.
-After that, we can find the [mean](https://www.tensorflow.org/api_docs/python/tf/math/reduce_mean), which will divide the numebr  of correct prediciotns by the number of total predictions, granting the accuracy decimal.
+After that, we can find the [mean](https://www.tensorflow.org/api_docs/python/tf/math/reduce_mean), which will divide the numebr  of correct predictions by the number of total predictions, granting the accuracy decimal.
 
