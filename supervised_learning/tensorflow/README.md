@@ -71,3 +71,6 @@ The basic idea of what is going on is explained [here](https://aadimator.github.
 [tensorflow.divide is a funciton of Tensorflow](https://indianaiproduction.com/tensorflow-division-function/)
 
 accuracy = correct_predictions / all_predictions
+* apparently, this means it is the number of correct predictions divided by total number of predictions
+
+This can be calculated via counting how many times prediction = correct answer, and dividing by length.
