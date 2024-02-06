@@ -65,3 +65,9 @@ Each layer will be helping create the subsequent layer.
 * Prediction will be the final layer created.
 
 The basic idea of what is going on is explained [here](https://aadimator.github.io/deep-learning-specialization/1.%20Neural%20Networks%20and%20Deep%20Learning/Week%204/Building+your+Deep+Neural+Network+-+Step+by+Step+v3.html) (search `L_model_forward`), but as long as you remember the concept of forward propagation from the previous project, understanding that concept will be much more helpful than another reading.
+
+# Task 3 Calculate Accuracy
+
+[tensorflow.divide is a funciton of Tensorflow](https://indianaiproduction.com/tensorflow-division-function/)
+
+accuracy = correct_predictions / all_predictions
