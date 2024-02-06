@@ -18,7 +18,6 @@ activations list containing activation functions of each layer of  network
 Returns: the prediction of the network in tensor form
 """
 
-
     if len(layer_sizes) == len(activations):
         layerCount = len(activations)
         prev = x
