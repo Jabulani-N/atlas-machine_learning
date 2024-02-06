@@ -56,3 +56,10 @@ And should output
 ```
 Tensor("layer/Tanh:0", shape=(?, 256), dtype=float32)
 ```
+# Task 2 Forward Propagation
+
+This task is running layer creation multiple times in series.
+Each layer will be helping create the subsequent layer.
+* if we are creating layer `n`, we will feed `create layer` layer `n-1`. 
+  * `x`, the placeholder, will be the very "first" layer.
+* Prediction will be the final layer created.

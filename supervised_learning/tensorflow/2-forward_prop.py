@@ -17,4 +17,11 @@ layer_sizes list containing number of nodes in each layer of  network
 activations list containing activation functions of each layer of  network
 Returns: the prediction of the network in tensor form
 """
-    pass
+
+
+    if len(layer_sizes) == len(activations):
+        layerCount = len(activations)
+        prev = x
+        for lyr in range(0, layerCount):
+            prev = create_layer(prev, layer_sizes[lyr], activations[lyr])
+        return prev
