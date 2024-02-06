@@ -60,6 +60,8 @@ Tensor("layer/Tanh:0", shape=(?, 256), dtype=float32)
 
 This task is running layer creation multiple times in series.
 Each layer will be helping create the subsequent layer.
-* if we are creating layer `n`, we will feed `create layer` layer `n-1`. 
+* if we are creating layer `n`, we will feed `create layer` layer `n-1`.
   * `x`, the placeholder, will be the very "first" layer.
 * Prediction will be the final layer created.
+
+The basic idea of what is going on is explained [here](https://aadimator.github.io/deep-learning-specialization/1.%20Neural%20Networks%20and%20Deep%20Learning/Week%204/Building+your+Deep+Neural+Network+-+Step+by+Step+v3.html) (search `L_model_forward`), but as long as you remember the concept of forward propagation from the previous project, understanding that concept will be much more helpful than another reading.
