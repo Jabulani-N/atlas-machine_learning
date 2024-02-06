@@ -14,6 +14,9 @@ def calculate_accuracy(y, y_pred):
     """returns tensor of accuracy
     y is a placeholder for the labels of the input data
     y_pred is a tensor containing the network’s predictions
+    returns accuracy percentage:
+        number of correct predcitions / total predictions
     """
 
-    return tf.divide(y, y_pred)
+    return tf.divide(tf.math.reduce_sum(tf.math.equal(y, y_pred)),
+                     len(y))

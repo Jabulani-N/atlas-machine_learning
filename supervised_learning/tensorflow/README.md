@@ -74,3 +74,5 @@ accuracy = correct_predictions / all_predictions
 * apparently, this means it is the number of correct predictions divided by total number of predictions
 
 This can be calculated via counting how many times prediction = correct answer, and dividing by length.
+
+[`tf.math.equal`](https://www.tensorflow.org/api_docs/python/tf/math/equal) will allow elementwise comparison. After this, one can simply divide the sum of all elements by the length.
