@@ -17,8 +17,10 @@ def calculate_accuracy(y, y_pred):
     returns accuracy percentage:
         number of correct predcitions / total predictions
     """
+    # tf.divide(tf.math.reduce_sum(
+    #             tf.cast(tf.math.equal(y, y_pred),
+    #                     tf.float32)),
+    #                     tf.cast(tf.size(y), tf.float32))
 
-    return tf.divide(tf.math.reduce_sum(
-            tf.cast(tf.math.equal(y, y_pred),
-                    tf.float32)),
-                     tf.cast(tf.size(y), tf.float32))
+
+    return None
