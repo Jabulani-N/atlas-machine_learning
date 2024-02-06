@@ -22,5 +22,8 @@ def calculate_accuracy(y, y_pred):
     #                     tf.float32)),
     #                     tf.cast(tf.size(y), tf.float32))
 
-
-    return None
+    correct_answers = tf.math.equal(
+        tf.math.argmax(y_pred, 1), tf.argmax(y, 1)
+    )
+    mean = tf.math.reduce_mean(tf.cast(correct_answers, tf.float32))
+    return mean
