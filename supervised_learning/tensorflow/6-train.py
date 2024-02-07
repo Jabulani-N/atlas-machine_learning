@@ -11,8 +11,8 @@ Y_train is a numpy.ndarray containing the training labels
 X_valid is a numpy.ndarray containing the validation input data
 Y_valid is a numpy.ndarray containing the validation labels
 
-layer_sizes is a list containing the number of nodes in each layer of the network
-activations is a list containing the activation functions for each layer of the network
+layer_sizes: list containing  number of nodes in each layer of network
+activations: list containing  activation functions of each layer of the network
 alpha is the learning rate
 iterations is the number of iterations to train over
 save_path designates where to save the model
@@ -30,7 +30,12 @@ forward_prop = __import__('2-forward_prop').forward_prop
 def train(X_train, Y_train, X_valid, Y_valid,
           layer_sizes, activations, alpha,
           iterations, save_path="/tmp/model.ckpt"):
-    """builds, trains, and saves a neural network classifier"""
+    """builds, trains, and saves a neural network classifier
+    Graph has in collection:
+        placeholders: x, y
+        tensors y_pred, loss, and accuracy
+        operation train_op
+    """
 
     # initialize/reset the graph
     tf.compat.v1.reset_default_graph()
