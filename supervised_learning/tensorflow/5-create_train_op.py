@@ -14,4 +14,6 @@ import tensorflow.compat.v1 as tf
 
 def create_train_op(loss, alpha):
     """creates an operation to minimize loss"""
-    pass
+    optimizer = tf.compat.v1.train.GradientDescentOptimizer(alpha)
+    lossMinimizer = optimizer.minimize(loss)
+    return lossMinimizer

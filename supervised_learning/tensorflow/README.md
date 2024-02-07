@@ -144,3 +144,34 @@ step 2: [minimize the loss of that object](https://www.tensorflow.org/versions/r
 loss_minimizer_function = that_object.minimize(loss)
 ```
 baddabing. it's a simple as that.
+
+tested for non-crashing via
+```
+#!/usr/bin/env python3
+
+import tensorflow.compat.v1 as tf
+tf.disable_eager_execution()
+
+create_placeholders = __import__('0-create_placeholders').create_placeholders
+forward_prop = __import__('2-forward_prop').forward_prop
+calculate_loss = __import__('4-calculate_loss').calculate_loss
+create_train_op = __import__('5-create_train_op').create_train_op
+
+
+x, y = create_placeholders(784, 10)
+y_pred = forward_prop(x, [256, 256, 10], [tf.nn.tanh, tf.nn.tanh, None])
+loss = calculate_loss(y, y_pred)
+train_op = create_train_op(loss, 0.01)
+print(train_op)
+```
+and should diplay on the terminal:
+```
+name: "GradientDescent"
+op: "NoOp"
+input: "^GradientDescent/update_layer/kernel/ApplyGradientDescent"
+input: "^GradientDescent/update_layer/bias/ApplyGradientDescent"
+input: "^GradientDescent/update_layer_1/kernel/ApplyGradientDescent"
+input: "^GradientDescent/update_layer_1/bias/ApplyGradientDescent"
+input: "^GradientDescent/update_layer_2/kernel/ApplyGradientDescent"
+input: "^GradientDescent/update_layer_2/bias/ApplyGradientDescent"
+```
