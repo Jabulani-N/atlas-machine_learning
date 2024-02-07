@@ -90,7 +90,7 @@ Cast the inputs of `tf.math.reduce_mean` as float32.  Because if our input tenso
 <img src="https://i0.kym-cdn.com/news/images/desktop/000/000/157/cca.png" alt="This is loss." width="140" height="140">
 
 Tensorflow has an [excellent biult-in function](https://www.tensorflow.org/api_docs/python/tf/nn/softmax_cross_entropy_with_logits) to calculate loss in by itself.
-
+* [This video](https://www.youtube.com/watch?v=dEXPMQXoiLc&list=PLQVvvaa0QuDcjD5BAw2DxE6OF2tius3V3&index=7) explains why the loss functoin is what it is
 ```
 preMean = tf.nn.softmax_cross_entropy_with_logits (logits = [prediction], labels=[correct answers])
 
