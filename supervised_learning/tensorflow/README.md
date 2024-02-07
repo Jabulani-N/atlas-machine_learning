@@ -201,3 +201,6 @@ Graph has in collection:
   * task 3
 * operation train_op
   * task 5
+
+### Step 3: Actually Train
+

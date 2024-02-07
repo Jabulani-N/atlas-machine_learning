@@ -53,4 +53,6 @@ def train(X_train, Y_train, X_valid, Y_valid,
     tf.compat.v1.add_to_collection('loss', loss)
     tf.compat.v1.add_to_collection('accuracy', accuracy)
     tf.compat.v1.add_to_collection('train_op', train_op)
+
+    # step 2: actually train the network
     return save_path
