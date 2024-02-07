@@ -204,3 +204,4 @@ Graph has in collection:
 
 ### Step 3: Actually Train
 
+This will happen within a tensorflow [session](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/Session#run)
