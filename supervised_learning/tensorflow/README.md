@@ -181,7 +181,7 @@ input: "^GradientDescent/update_layer_2/bias/ApplyGradientDescent"
 This is a rather multi-step task.
 
 ### Step 1: create a graph.
-We'll start by [clearing any graph that may exist](https://www.tensorflow.org/api_docs/python/tf/compat/v1/reset_default_graph?hl=en).
+We'll start by [clearing any graph that may exist](https://www.tensorflow.org/api_docs/python/tf/compat/v1/reset_default_graph?hl=en), so that running this twice won't cause unexpected results.
 
 `tf.compat.v1.reset_default_graph()`
 
