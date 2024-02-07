@@ -135,7 +135,7 @@ step 1: [create that object](https://www.tensorflow.org/versions/r2.6/api_docs/p
 
 ```
 
-that_object = tf.compat.v1.train.GradientDescentOptimizer(learning_rate,)
+that_object = tf.compat.v1.train.GradientDescentOptimizer(learning_rate)
 ```
 
 step 2: [minimize the loss of that object](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/train/GradientDescentOptimizer#minimize)
