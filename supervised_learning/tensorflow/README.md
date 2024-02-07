@@ -92,8 +92,30 @@ Cast the inputs of `tf.math.reduce_mean` as float32.  Because if our input tenso
 Tensorflow has an [excellent biult-in function](https://www.tensorflow.org/api_docs/python/tf/nn/softmax_cross_entropy_with_logits) to calculate loss in by itself.
 
 ```
-preMean = f.nn.softmax_cross_entropy_with_logits (logits = [prediction], labels=[correct answers])
+preMean = tf.nn.softmax_cross_entropy_with_logits (logits = [prediction], labels=[correct answers])
 
 loss = tf.math.reduce_mean(preMean)
 
+```
+
+Tested via
+
+```
+#!/usr/bin/env python3
+
+import tensorflow.compat.v1 as tf
+tf.disable_eager_execution()
+
+create_placeholders = __import__('0-create_placeholders').create_placeholders
+forward_prop = __import__('2-forward_prop').forward_prop
+calculate_loss = __import__('4-calculate_loss').calculate_loss
+
+x, y = create_placeholders(784, 10)
+y_pred = forward_prop(x, [256, 256, 10], [tf.nn.tanh, tf.nn.tanh, None])
+loss = calculate_loss(y, y_pred)
+print(loss)
+```
+Should return
+```
+Tensor("softmax_cross_entropy_loss/value:0", shape=(), dtype=float32)
 ```
