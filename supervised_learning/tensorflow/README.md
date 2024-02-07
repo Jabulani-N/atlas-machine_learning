@@ -197,5 +197,7 @@ Graph has in collection:
   * task 0
 * tensors y_pred, loss, and accuracy
   * task 2
+  * task 4
+  * task 3
 * operation train_op
   * task 5
