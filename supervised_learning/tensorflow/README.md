@@ -188,3 +188,11 @@ We'll start by [clearing any graph that may exist](https://www.tensorflow.org/ap
 Step 2: add to graph's [collection](https://www.tensorflow.org/api_docs/python/tf/compat/v1/add_to_collection)
 
 `tf.compat.v1.add_to_collection(name, value)`
+
+Graph has in collection:
+* placeholders: x, y
+  * task 0
+* tensors y_pred, loss, and accuracy
+  * task 2
+* operation train_op
+  * task 5
