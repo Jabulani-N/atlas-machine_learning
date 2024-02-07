@@ -83,3 +83,17 @@ After that, we can find the [mean](https://www.tensorflow.org/api_docs/python/tf
 ## Potential Pitfall:
 
 Cast the inputs of `tf.math.reduce_mean` as float32.  Because if our input tensors will be ints, that fact will override mean's default float output
+
+
+# Task 4 Loss
+
+This *is* loss.
+
+Tensorflow has an [excellent biult-in function](https://www.tensorflow.org/api_docs/python/tf/nn/softmax_cross_entropy_with_logits) to calculate loss in by itself.
+
+```
+preMean = f.nn.softmax_cross_entropy_with_logits (logits = [prediction], labels=[correct answers])
+
+loss = tf.math.reduce_mean(preMean)
+
+```
