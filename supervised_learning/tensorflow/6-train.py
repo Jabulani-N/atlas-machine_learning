@@ -32,6 +32,13 @@ def train(X_train, Y_train, X_valid, Y_valid,
           iterations, save_path="/tmp/model.ckpt"):
     """builds, trains, and saves a neural network classifier"""
 
-    # step 1: add to thegraph's colelctoin
-    # I should probably reset the graph at this point
+    # initialize/reset the graph
+    tf.compat.v1.reset_default_graph()
+    # step 1: fill the graph's collection
+
+    x, y = create_placeholders(X_train.shape[1], Y_train.shape[1])
+    tf.compat.v1.add_to_collection('placeholder', x)
+    tf.compat.v1.add_to_collection('placeholder', y)
+
+    pass
     return save_path
