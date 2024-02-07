@@ -45,10 +45,12 @@ def train(X_train, Y_train, X_valid, Y_valid,
     prediction = forward_prop(x, layer_sizes, activations)
     loss = calculate_loss(Y_valid, prediction)
     accuracy = calculate_accuracy(Y_valid, prediction)
+    train_op = create_train_op(loss, alpha)
 
     tf.compat.v1.add_to_collection('x', x)
     tf.compat.v1.add_to_collection('y', y)
     tf.compat.v1.add_to_collection('prediction', prediction)
     tf.compat.v1.add_to_collection('loss', loss)
     tf.compat.v1.add_to_collection('accuracy', accuracy)
+    tf.compat.v1.add_to_collection('train_op', train_op)
     return save_path
