@@ -205,3 +205,6 @@ Graph has in collection:
 ### Step 3: Actually Train
 
 This will happen within a tensorflow [session](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/Session#run)
+
+We can initialize the graph's settings by running [global variables initializer](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/global_variables_initializer), which is a shortcut for running [variable initializer](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/variables_initializer) on all variables.
+* `tf.compat.v1.global_variables_initializer()`
