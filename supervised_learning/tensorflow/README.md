@@ -87,7 +87,7 @@ Cast the inputs of `tf.math.reduce_mean` as float32.  Because if our input tenso
 
 # Task 4 Loss
 
-This *is* loss.
+<img src="https://i0.kym-cdn.com/news/images/desktop/000/000/157/cca.png" alt="This is loss." width="140" height="140">
 
 Tensorflow has an [excellent biult-in function](https://www.tensorflow.org/api_docs/python/tf/nn/softmax_cross_entropy_with_logits) to calculate loss in by itself.
 
