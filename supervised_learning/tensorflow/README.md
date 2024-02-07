@@ -119,3 +119,28 @@ Should return
 ```
 Tensor("softmax_cross_entropy_loss/value:0", shape=(), dtype=float32)
 ```
+
+# Task 5 Train_Op
+
+Write the function def create_train_op(loss, alpha): that creates the training operation for the network:
+
+* `loss` is the loss of the network’s prediction
+* `alpha` is the learning rate
+* Returns: an operation that trains the network using gradient descent
+
+
+This is a two-step operation in which we use a biult-in tensorflow operation to create an object implimenting out desired learning rate, `alpha`, and then pull the desired training function out of that created object; it's a method of the created object itself.
+
+step 1: [create that object](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/train/GradientDescentOptimizer)
+
+```
+
+that_object = tf.compat.v1.train.GradientDescentOptimizer(learning_rate,)
+```
+
+step 2: [minimize the loss of that object](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/train/GradientDescentOptimizer#minimize)
+
+```
+loss_minimizer_function = that_object.minimize(loss)
+```
+baddabing. it's a simple as that.
