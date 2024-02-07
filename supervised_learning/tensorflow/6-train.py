@@ -42,10 +42,13 @@ def train(X_train, Y_train, X_valid, Y_valid,
     # step 1: fill the graph's collection
 
     x, y = create_placeholders(X_train.shape[1], Y_train.shape[1])
-    tf.compat.v1.add_to_collection('placeholder', x)
-    tf.compat.v1.add_to_collection('placeholder', y)
-
     prediction = forward_prop(x, layer_sizes, activations)
-    tf.compat.v1.add_to_collection('tensor', prediction)
-    pass
+    loss = calculate_loss(Y_valid, prediction)
+    accuracy = calculate_accuracy(Y_valid, prediction)
+
+    tf.compat.v1.add_to_collection('x', x)
+    tf.compat.v1.add_to_collection('y', y)
+    tf.compat.v1.add_to_collection('prediction', prediction)
+    tf.compat.v1.add_to_collection('loss', loss)
+    tf.compat.v1.add_to_collection('accuracy', accuracy)
     return save_path
