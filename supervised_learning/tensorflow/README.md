@@ -175,3 +175,10 @@ input: "^GradientDescent/update_layer_1/bias/ApplyGradientDescent"
 input: "^GradientDescent/update_layer_2/kernel/ApplyGradientDescent"
 input: "^GradientDescent/update_layer_2/bias/ApplyGradientDescent"
 ```
+
+# task 6 Train
+
+This is a rather multi-step task.
+
+Step 1: create a graph.
+We'll start by clearing any graph that may exist

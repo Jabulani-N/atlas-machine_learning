@@ -31,4 +31,7 @@ def train(X_train, Y_train, X_valid, Y_valid,
           layer_sizes, activations, alpha,
           iterations, save_path="/tmp/model.ckpt"):
     """builds, trains, and saves a neural network classifier"""
+
+    # step 1: add to thegraph's colelctoin
+    # I should probably reset the graph at this point
     return save_path
