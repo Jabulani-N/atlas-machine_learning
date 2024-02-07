@@ -45,5 +45,7 @@ def train(X_train, Y_train, X_valid, Y_valid,
     tf.compat.v1.add_to_collection('placeholder', x)
     tf.compat.v1.add_to_collection('placeholder', y)
 
+    prediction = forward_prop(x, layer_sizes, activations)
+    tf.compat.v1.add_to_collection('tensor', prediction)
     pass
     return save_path
