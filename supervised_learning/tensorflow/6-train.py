@@ -63,7 +63,6 @@ def train(X_train, Y_train, X_valid, Y_valid,
     # put iteration 0 included in the if statment for printstats
 
     for iteration in range(0, iterations):
-        # print("I am iteration", str(iteration))
         train_cost, train_acc = sess.run(
             (loss, accuracy), feed_dict={x: X_train, y: Y_train})
         valid_cost, valid_acc = sess.run(
@@ -71,9 +70,15 @@ def train(X_train, Y_train, X_valid, Y_valid,
         if iteration == 0 or\
            (iteration + 1) % 100 == 0 or\
            iteration == (iterations - 1):
-            print("I should print stats under this line")
-            printstats(iteration, train_cost, train_acc,
-                       valid_cost, valid_acc)
+            # printstats(iteration, train_cost, train_acc,
+            #            valid_cost, valid_acc)
+            # had to remove the use of outside function as
+            # grading program cannot import supporting funcitons
+            print("\tafter", str(iteration), "iterations:")
+            print("\tTraining Cost:", str(train_cost))
+            print("\tTraining Accuracy:", str(train_acc))
+            print("\tValidation Cost:", str(valid_cost))
+            print("\tValidation Accuracy:", str(valid_acc))
         sess.run(train_op, feed_dict={x: X_train, y: Y_train})
 
     saver = tf.compat.v1.train.Saver()
