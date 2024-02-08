@@ -61,7 +61,7 @@ def train(X_train, Y_train, X_valid, Y_valid,
     sess.run(clear_graph_op)
     # consider with sessions as sesh
 
-    for iteration in range(0, iterations):
+    for iteration in range(0, iterations + 1):
         if iteration == 0 or\
            (iteration) % 100 == 0 or\
            iteration == (iterations - 1):
@@ -78,13 +78,8 @@ def train(X_train, Y_train, X_valid, Y_valid,
             print("\tTraining Accuracy:", str(train_acc))
             print("\tValidation Cost:", str(valid_cost))
             print("\tValidation Accuracy:", str(valid_acc))
-        sess.run(train_op, feed_dict={x: X_train, y: Y_train})
-
-    print("After", str(iteration), "iterations:")
-    print("\tTraining Cost:", str(train_cost))
-    print("\tTraining Accuracy:", str(train_acc))
-    print("\tValidation Cost:", str(valid_cost))
-    print("\tValidation Accuracy:", str(valid_acc))
+        if iteration <= iterations:
+            sess.run(train_op, feed_dict={x: X_train, y: Y_train})
 
     saver = tf.compat.v1.train.Saver()
     saver.save(sess, save_path)

@@ -220,3 +220,5 @@ We can initialize the graph's settings by running [global variables initializer]
 [this is how you make a saver](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/train/Saver) (example is the third code segment.)
 
 * There's a segment on `restore` in that page to, if you need that later.
+
+Testing: you must have the MNIST.npz file in the `data` directory sibling to this one in order to test this task.
