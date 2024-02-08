@@ -38,7 +38,7 @@ def train(X_train, Y_train, X_valid, Y_valid,
     """
     # return save_path
     # initialize/reset the graph
-    tf.reset_default_graph()
+    tf.compat.v1.reset_default_graph()
     # step 1: fill the graph's collection
 
     x, y = create_placeholders(X_train.shape[1], Y_train.shape[1])
@@ -47,15 +47,15 @@ def train(X_train, Y_train, X_valid, Y_valid,
     accuracy = calculate_accuracy(y, prediction)
     train_op = create_train_op(loss, alpha)
 
-    tf.add_to_collection('x', x)
-    tf.add_to_collection('y', y)
-    tf.add_to_collection('prediction', prediction)
-    tf.add_to_collection('loss', loss)
-    tf.add_to_collection('accuracy', accuracy)
-    tf.add_to_collection('train_op', train_op)
+    tf.compat.v1.add_to_collection('x', x)
+    tf.compat.v1.add_to_collection('y', y)
+    tf.compat.v1.add_to_collection('prediction', prediction)
+    tf.compat.v1.add_to_collection('loss', loss)
+    tf.compat.v1.add_to_collection('accuracy', accuracy)
+    tf.compat.v1.add_to_collection('train_op', train_op)
 
-    clear_graph_op = tf.global_variables_initializer()
-    sess = tf.Session()
+    clear_graph_op = tf.compat.v1.global_variables_initializer()
+    sess = tf.compat.v1.Session()
     with sess.as_default():
         # step 2: actually train the network
 
@@ -82,7 +82,7 @@ def train(X_train, Y_train, X_valid, Y_valid,
             if iteration <= iterations:
                 sess.run(train_op, feed_dict={x: X_train, y: Y_train})
 
-        saver = tf.train.Saver()
+        saver = tf.compat.v1.train.Saver()
 
     return saver.save(sess, save_path)
 

@@ -224,3 +224,5 @@ We can initialize the graph's settings by running [global variables initializer]
 * There's a segment on `restore` in that page to, if you need that later.
 
 Testing: you must have the MNIST.npz file in the `data` directory sibling to this one in order to test this task.
+
+Reportedly, it is possible to have output results with slight numerical differences from the example's intended output and still be counted corect. I have not seen this myself.
