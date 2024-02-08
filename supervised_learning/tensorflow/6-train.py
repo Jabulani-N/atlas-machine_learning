@@ -73,13 +73,18 @@ def train(X_train, Y_train, X_valid, Y_valid,
                 [loss, accuracy], feed_dict={x: X_train, y: Y_train})
             valid_cost, valid_acc = sess.run(
                 [loss, accuracy], feed_dict={x: X_valid, y: Y_valid})
-            print("\tafter", str(iteration), "iterations:")
+            print("After", str(iteration), "iterations:")
             print("\tTraining Cost:", str(train_cost))
             print("\tTraining Accuracy:", str(train_acc))
             print("\tValidation Cost:", str(valid_cost))
             print("\tValidation Accuracy:", str(valid_acc))
         sess.run(train_op, feed_dict={x: X_train, y: Y_train})
 
+    print("After", str(iteration), "iterations:")
+    print("\tTraining Cost:", str(train_cost))
+    print("\tTraining Accuracy:", str(train_acc))
+    print("\tValidation Cost:", str(valid_cost))
+    print("\tValidation Accuracy:", str(valid_acc))
     saver = tf.compat.v1.train.Saver()
     saver.save(sess, save_path)
     return save_path
