@@ -62,19 +62,20 @@ def train(X_train, Y_train, X_valid, Y_valid,
     # put iteration 0 included in the if statment for printstats
 
     for iteration in range(0, iterations):
+
         train_cost, train_acc = tf.compat.v1.session.run(
             [loss, accuracy],
             feed_dict={x: X_train, y: Y_train})
         valid_cost, valid_acc = tf.compat.v1.session.run(
             [loss, accuracy],
             feed_dict={x: X_valid, y: Y_valid})
-        if iteration == 0 or\
-        not 100 % iteration or\
-        iteration == (iterations - 1):
-            printstats(iteration, train_cost, train_acc,
-                   valid_cost, valid_acc)
-        pass
 
+        if iteration == 0 or\
+           not 100 % iteration or\
+           iteration == (iterations - 1):
+            printstats(iteration, train_cost, train_acc,
+                       valid_cost, valid_acc)
+        pass
 
     return save_path
 
