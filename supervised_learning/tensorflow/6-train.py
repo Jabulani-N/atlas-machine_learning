@@ -63,7 +63,7 @@ def train(X_train, Y_train, X_valid, Y_valid,
 
     for iteration in range(0, iterations):
         if iteration == 0 or\
-           (iteration + 1) % 100 == 0 or\
+           (iteration) % 100 == 0 or\
            iteration == (iterations - 1):
             # printstats(iteration, train_cost, train_acc,
             #            valid_cost, valid_acc)
