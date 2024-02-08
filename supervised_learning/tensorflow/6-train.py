@@ -65,9 +65,9 @@ def train(X_train, Y_train, X_valid, Y_valid,
     for iteration in range(0, iterations):
 
         train_cost, train_acc = sess.run(
-            [loss, accuracy],feed_dict={x: X_train, y: Y_train})
+            [loss, accuracy], feed_dict={x: X_train, y: Y_train})
         valid_cost, valid_acc = sess.run(
-            [loss, accuracy],feed_dict={x: X_valid, y: Y_valid})
+            [loss, accuracy], feed_dict={x: X_valid, y: Y_valid})
 
         if iteration == 0 or\
            not (iteration + 1) % 100 or\
