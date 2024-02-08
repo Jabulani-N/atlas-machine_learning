@@ -55,34 +55,36 @@ def train(X_train, Y_train, X_valid, Y_valid,
     tf.compat.v1.add_to_collection('train_op', train_op)
 
     sess = tf.compat.v1.Session()
-    # step 2: actually train the network
+    with sess.as_default():
+        # step 2: actually train the network
 
-    clear_graph_op = tf.compat.v1.global_variables_initializer()
-    sess.run(clear_graph_op)
-    # consider with sessions as sesh
+        clear_graph_op = tf.compat.v1.global_variables_initializer()
+        sess.run(clear_graph_op)
+        # consider with sessions as sesh
 
-    for iteration in range(0, iterations + 1):
-        if iteration == 0 or\
-           (iteration) % 100 == 0 or\
-           iteration == (iterations):
-            # printstats(iteration, train_cost, train_acc,
-            #            valid_cost, valid_acc)
-            # had to remove the use of outside function as
-            # grading program cannot use supporting funcitons
-            train_cost, train_acc = sess.run(
-                [loss, accuracy], feed_dict={x: X_train, y: Y_train})
-            valid_cost, valid_acc = sess.run(
-                [loss, accuracy], feed_dict={x: X_valid, y: Y_valid})
-            print("After", str(iteration), "iterations:")
-            print("\tTraining Cost:", str(train_cost))
-            print("\tTraining Accuracy:", str(train_acc))
-            print("\tValidation Cost:", str(valid_cost))
-            print("\tValidation Accuracy:", str(valid_acc))
-        if iteration <= iterations:
-            sess.run(train_op, feed_dict={x: X_train, y: Y_train})
+        for iteration in range(0, iterations + 1):
+            if iteration == 0 or\
+               (iteration) % 100 == 0 or\
+               iteration == (iterations):
+                # printstats(iteration, train_cost, train_acc,
+                #            valid_cost, valid_acc)
+                # had to remove the use of outside function as
+                # grading program cannot use supporting funcitons
+                train_cost, train_acc = sess.run(
+                    [loss, accuracy], feed_dict={x: X_train, y: Y_train})
+                valid_cost, valid_acc = sess.run(
+                    [loss, accuracy], feed_dict={x: X_valid, y: Y_valid})
+                print("After", str(iteration), "iterations:")
+                print("\tTraining Cost:", str(train_cost))
+                print("\tTraining Accuracy:", str(train_acc))
+                print("\tValidation Cost:", str(valid_cost))
+                print("\tValidation Accuracy:", str(valid_acc))
+            if iteration <= iterations:
+                sess.run(train_op, feed_dict={x: X_train, y: Y_train})
 
-    saver = tf.compat.v1.train.Saver()
-    saver.save(sess, save_path)
+        saver = tf.compat.v1.train.Saver()
+        saver.save(sess, save_path)
+        sess.close()
     return save_path
 
 
