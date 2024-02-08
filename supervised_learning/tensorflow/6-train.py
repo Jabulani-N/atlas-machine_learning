@@ -62,8 +62,9 @@ def train(X_train, Y_train, X_valid, Y_valid,
     # put iteration 0 included in the if statment for printstats
 
     for iteration in range(0, iterations):
-        train_cost, 
+        train_cost = None
     return save_path
+
 
 def printstats(iteration, train_cost, train_acc,
                valid_cost, valid_acc):
