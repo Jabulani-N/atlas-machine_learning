@@ -208,3 +208,13 @@ This will happen within a tensorflow [session](https://www.tensorflow.org/versio
 
 We can initialize the graph's settings by running [global variables initializer](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/global_variables_initializer), which is a shortcut for running [variable initializer](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/variables_initializer) on all variables.
 * `tf.compat.v1.global_variables_initializer()`
+
+## Potential Pitfalls
+
+[Run your session](https://www.tensorflow.org/api_docs/python/tf/compat/v1/Session) by calling it `sess`. It is *so* much easier to look at.
+* `sess = tf.compat.v1.Session()`
+### Step 4 make a saver
+
+[this is how you make a saver](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/train/Saver) (example is the third code segment.)
+
+* There's a segment on `restore` in that page to, if you need that later.
