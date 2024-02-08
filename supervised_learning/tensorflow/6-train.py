@@ -73,7 +73,7 @@ def train(X_train, Y_train, X_valid, Y_valid,
             # printstats(iteration, train_cost, train_acc,
             #            valid_cost, valid_acc)
             # had to remove the use of outside function as
-            # grading program cannot import supporting funcitons
+            # grading program cannot use supporting funcitons
             print("\tafter", str(iteration), "iterations:")
             print("\tTraining Cost:", str(train_cost))
             print("\tTraining Accuracy:", str(train_acc))
