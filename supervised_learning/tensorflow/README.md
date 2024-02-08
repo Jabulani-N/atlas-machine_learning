@@ -213,6 +213,7 @@ We can initialize the graph's settings by running [global variables initializer]
 
 [Run your session](https://www.tensorflow.org/api_docs/python/tf/compat/v1/Session) by calling it `sess`. It is *so* much easier to look at.
 * `sess = tf.compat.v1.Session()`
+[Feed your dict](https://stackoverflow.com/questions/50497724/tensorflow-when-should-i-use-or-not-use-feed-dict).
 ### Step 4 make a saver
 
 [this is how you make a saver](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/train/Saver) (example is the third code segment.)

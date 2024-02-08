@@ -65,16 +65,16 @@ def train(X_train, Y_train, X_valid, Y_valid,
     for iteration in range(0, iterations):
 
         train_cost, train_acc = sess.run(
-            [loss, accuracy],)
+            [loss, accuracy],feed_dict={x: X_train, y: Y_train})
         valid_cost, valid_acc = sess.run(
-            [loss, accuracy],)
+            [loss, accuracy],feed_dict={x: X_valid, y: Y_valid})
 
         if iteration == 0 or\
            not (iteration + 1) % 100 or\
            iteration == (iterations - 1):
             printstats(iteration, train_cost, train_acc,
                        valid_cost, valid_acc)
-        sess.run(train_op)
+        sess.run(train_op, feed_dict={x: X_train, y: Y_train})
 
     saver = tf.compat.v1.train.Saver()
     saver.save(sess, save_path)
