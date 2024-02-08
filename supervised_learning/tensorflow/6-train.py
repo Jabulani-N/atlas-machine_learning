@@ -85,6 +85,7 @@ def train(X_train, Y_train, X_valid, Y_valid,
     print("\tTraining Accuracy:", str(train_acc))
     print("\tValidation Cost:", str(valid_cost))
     print("\tValidation Accuracy:", str(valid_acc))
+
     saver = tf.compat.v1.train.Saver()
     saver.save(sess, save_path)
     return save_path
