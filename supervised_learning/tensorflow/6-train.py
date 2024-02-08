@@ -59,7 +59,6 @@ def train(X_train, Y_train, X_valid, Y_valid,
     with sess.as_default():
         # step 2: actually train the network
 
-        
         sess.run(clear_graph_op)
         # consider with sessions as sesh
 
