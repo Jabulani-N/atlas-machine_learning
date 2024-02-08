@@ -84,7 +84,6 @@ def train(X_train, Y_train, X_valid, Y_valid,
 
         saver = tf.train.Saver()
         saver.save(sess, save_path)
-        sess.close()
     return save_path
 
 
