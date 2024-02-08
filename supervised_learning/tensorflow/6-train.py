@@ -83,8 +83,8 @@ def train(X_train, Y_train, X_valid, Y_valid,
                 sess.run(train_op, feed_dict={x: X_train, y: Y_train})
 
         saver = tf.train.Saver()
-        saver.save(sess, save_path)
-    return save_path
+
+    return saver.save(sess, save_path)
 
 
 def printstats(iteration, train_cost, train_acc,
