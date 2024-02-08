@@ -55,4 +55,21 @@ def train(X_train, Y_train, X_valid, Y_valid,
     tf.compat.v1.add_to_collection('train_op', train_op)
 
     # step 2: actually train the network
+
+    clear_graph_op = tf.compat.v1.global_variables_initializer()
+    tf.compat.v1.session.run(clear_graph_op)
+
+    # put iteration 0 included in the if statment for printstats
+
+    for iteration in range(0, iterations):
+        train_cost, 
     return save_path
+
+def printstats(iteration, train_cost, train_acc,
+               valid_cost, valid_acc):
+    """prints the stats of an iteration of training"""
+    print("\tafter", str(iteration), "iterations:")
+    print("\tTraining Cost:", )
+    print("\tTraining Accuracy:", )
+    print("\tValidation Cost:", )
+    print("\tValidation Accuracy:", )
