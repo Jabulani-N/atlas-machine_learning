@@ -36,7 +36,7 @@ def train(X_train, Y_train, X_valid, Y_valid,
         tensors y_pred, loss, and accuracy
         operation train_op
     """
-    return save_path
+    # return save_path
     # initialize/reset the graph
     tf.reset_default_graph()
     # step 1: fill the graph's collection
@@ -54,11 +54,12 @@ def train(X_train, Y_train, X_valid, Y_valid,
     tf.add_to_collection('accuracy', accuracy)
     tf.add_to_collection('train_op', train_op)
 
+    clear_graph_op = tf.global_variables_initializer()
     sess = tf.Session()
     with sess.as_default():
         # step 2: actually train the network
 
-        clear_graph_op = tf.global_variables_initializer()
+        
         sess.run(clear_graph_op)
         # consider with sessions as sesh
 
