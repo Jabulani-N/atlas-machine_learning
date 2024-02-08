@@ -180,6 +180,8 @@ input: "^GradientDescent/update_layer_2/bias/ApplyGradientDescent"
 
 This is a rather multi-step task.
 
+Note that if you do the `v1` compatibility, all answers will not match those of the spring 2024 Atlasschool grading algorithm.
+
 ### Step 1: create a graph.
 We'll start by [clearing any graph that may exist](https://www.tensorflow.org/api_docs/python/tf/compat/v1/reset_default_graph?hl=en), so that running this twice won't cause unexpected results.
 
