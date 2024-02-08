@@ -63,7 +63,7 @@ def train(X_train, Y_train, X_valid, Y_valid,
     # put iteration 0 included in the if statment for printstats
 
     for iteration in range(0, iterations):
-        print("I am iteration", str(iteration))
+        # print("I am iteration", str(iteration))
         train_cost, train_acc = sess.run(
             (loss, accuracy), feed_dict={x: X_train, y: Y_train})
         valid_cost, valid_acc = sess.run(
