@@ -43,8 +43,8 @@ def train(X_train, Y_train, X_valid, Y_valid,
 
     x, y = create_placeholders(X_train.shape[1], Y_train.shape[1])
     prediction = forward_prop(x, layer_sizes, activations)
-    loss = calculate_loss(Y_valid, prediction)
-    accuracy = calculate_accuracy(Y_valid, prediction)
+    loss = calculate_loss(y, prediction)
+    accuracy = calculate_accuracy(y, prediction)
     train_op = create_train_op(loss, alpha)
 
     tf.compat.v1.add_to_collection('x', x)
@@ -59,6 +59,7 @@ def train(X_train, Y_train, X_valid, Y_valid,
 
     clear_graph_op = tf.compat.v1.global_variables_initializer()
     sess.run(clear_graph_op)
+    # consider with sessions as sesh
 
     for iteration in range(0, iterations):
         if iteration == 0 or\
@@ -69,9 +70,9 @@ def train(X_train, Y_train, X_valid, Y_valid,
             # had to remove the use of outside function as
             # grading program cannot use supporting funcitons
             train_cost, train_acc = sess.run(
-                (loss, accuracy), feed_dict={x: X_train, y: Y_train})
+                [loss, accuracy], feed_dict={x: X_train, y: Y_train})
             valid_cost, valid_acc = sess.run(
-                (loss, accuracy), feed_dict={x: X_valid, y: Y_valid})
+                [loss, accuracy], feed_dict={x: X_valid, y: Y_valid})
             print("\tafter", str(iteration), "iterations:")
             print("\tTraining Cost:", str(train_cost))
             print("\tTraining Accuracy:", str(train_acc))
