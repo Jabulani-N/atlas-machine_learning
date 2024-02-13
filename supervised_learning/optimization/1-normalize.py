@@ -7,6 +7,7 @@ Though classy, it has no class.
 """
 
 
+import tensorflow as tf
 import numpy as np
 
 
@@ -20,4 +21,4 @@ def normalize(X, m, s):
     s = numpy.ndarray shape (nx,)
         contains standard devs of each X feature
     """
-    pass
+    return tf.nn.batch_normalization(X, m, np.square(s))

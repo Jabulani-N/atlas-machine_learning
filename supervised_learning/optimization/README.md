@@ -12,3 +12,5 @@ Though standard deviation and mean are values we calculated in the [math](https:
 
 * [Explanation for why normliaze data](https://www.jeremyjordan.me/batch-normalization/)
 * [How to normalize data](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/nn/batch_normalization)
+  * [As recorded in my previous work](https://github.com/Jabulani-N/holbertonschool-machine_learning/tree/main/math/probability), variance is square of standard deviation.
+    * [numpy will make that easy](https://numpy.org/doc/stable/reference/generated/numpy.square.html)
