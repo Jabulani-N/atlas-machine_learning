@@ -20,3 +20,4 @@ def normalize(X, m, s):
     s = numpy.ndarray shape (nx,)
         contains standard devs of each X feature
     """
+    pass
