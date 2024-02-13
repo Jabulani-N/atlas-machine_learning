@@ -10,4 +10,5 @@ Though standard deviation and mean are values we calculated in the [math](https:
 
 # Task 1 Normalize
 
-[Explanation for why normliaze data](https://www.jeremyjordan.me/batch-normalization/).
+* [Explanation for why normliaze data](https://www.jeremyjordan.me/batch-normalization/)
+* [How to normalize data](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/nn/batch_normalization)
