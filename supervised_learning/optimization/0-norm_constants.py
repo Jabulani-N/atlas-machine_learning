@@ -14,4 +14,4 @@ def normalization_constants(X):
     """This function will calculate and return
     mean, standard deviation
     """
-    return np.mean(X), np.std(X)
+    return np.mean(X, axis=0), np.std(X, axis=0)
