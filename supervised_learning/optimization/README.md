@@ -181,3 +181,5 @@ if __name__ == '__main__':
 
 [How to compile your model](https://www.tensorflow.org/api_docs/python/tf/keras/Model#compile)
 you'll be training your model with [`model_name.fit`](https://www.tensorflow.org/api_docs/python/tf/keras/Model).
+
+This task is currently imcpomete; in the pursuit of creating a minimum viable product, it will only be revisited should the time limit allow.
