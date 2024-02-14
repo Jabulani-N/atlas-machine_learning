@@ -211,3 +211,7 @@ Either my code or the grading algorithm is currently bugged in this task. This h
 ## Task 8
 
 Same import problem as task 6
+
+## Task 9
+
+based on [this](https://stackoverflow.com/questions/61103275/what-is-the-difference-between-tensor-and-tensor-in-pytorch), trying by altering variables themselves, rather than creating and editing copies.
