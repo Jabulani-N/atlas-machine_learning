@@ -87,6 +87,9 @@ Don't let the idea of shuffling intimidate you. Think about what shuffling means
 how to get that random order? [Numpy has you covered.](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.random.permutation.html)
 
 ## Task 3
+
+This task is currently imcpomete; in the pursuit of creating a minimum viable product, it will only be revisited should the time limit allow.
+
 <details>
   <summary>Instructions</summary>
 
@@ -113,12 +116,12 @@ Write the function def train_mini_batch(X_train, Y_train, X_valid, Y_valid, batc
         * accuracy is an op to calculate the accuracy of the model
         * loss is an op to calculate the cost of the model
         * train_op is an op to perform one pass of gradient descent on the model
-  3) loop over epochs:
+  1) loop over epochs:
         * shuffle data
         * loop over the batches:
             * get X_batch and Y_batch from data
             * train your model
-    4) Save session
+    1) Save session
      * You should use `shuffle_data = __import__('2-shuffle_data').shuffle_data`
   * Before the first epoch and after every subsequent epoch, the following should be printed:
         * After {epoch} epochs: where {epoch} is the current epoch
@@ -182,7 +185,6 @@ if __name__ == '__main__':
 [How to compile your model](https://www.tensorflow.org/api_docs/python/tf/keras/Model#compile)
 you'll be training your model with [`model_name.fit`](https://www.tensorflow.org/api_docs/python/tf/keras/Model).
 
-This task is currently imcpomete; in the pursuit of creating a minimum viable product, it will only be revisited should the time limit allow.
 
 ## task 4 Moving Average
 
