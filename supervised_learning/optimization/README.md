@@ -206,3 +206,5 @@ momentum optimizer in tensorflow: [tf.compat.v1.train.MomentumOptimizer](https:/
 Either my code or the grading algorithm is currently bugged in this task. This has been reported, and will be moved past.
 * there are many commits that are attempts at different formattings. One can check the commits made closeley after "what was I even doing..." to see the different ways I attempted to phrase the file before I realized what the problem was.
   * I write this so I have reference to look at if after the import is fixed, there are errors in performance: I will have previous versions to reference.
+
+
