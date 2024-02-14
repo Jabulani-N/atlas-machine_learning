@@ -20,8 +20,8 @@ def moving_average(data, beta):
     mov_avg = []
 
     for k in range(0, n):
-        EMA = beta * avg + (1-beta) * data[k]
-        mov_avg.append(EMA / (1-beta**(k+1)))
+        EMA = beta * avg + (1 - beta) * data[k]
+        mov_avg.append(EMA / (1 - beta**(k + 1)))
     # the following line is bias correction
         avg = EMA
-    return np.array(mov_avg)
+    return mov_avg
