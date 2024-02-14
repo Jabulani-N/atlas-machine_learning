@@ -187,3 +187,5 @@ This task is currently imcpomete; in the pursuit of creating a minimum viable pr
 ## task 4 Moving Average
 
 [This wikipedia article](https://en.wikipedia.org/wiki/Moving_average#Weighted_moving_average) explains the basic idea of a weighted moving average.
+
+[This seems to be a formula for weighted average](https://math.stackexchange.com/questions/4083208/how-is-the-exponential-moving-average-calculated), and is what I am using until further notice.
