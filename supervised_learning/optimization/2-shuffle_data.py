@@ -2,7 +2,6 @@
 """module documentation
 this module creates a function:
     shuffle_data
-Though classy, it has no class.
 
 """
 
