@@ -10,7 +10,11 @@ import numpy as np
 
 
 def moving_average(data, beta):
-    """placeholder documentation"""
+    """calculates the exponential moving average
+    of datalist data.
+    beta = weight
+        this is represented as 'alpha' or 'α' by some.
+    """
     mov_avg = np.zeros(len(data))
     mov_avg[0] = data[0]
 
