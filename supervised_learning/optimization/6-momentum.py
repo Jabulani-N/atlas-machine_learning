@@ -3,13 +3,12 @@
 this module creates a function.
 
 """
-
-
 import tensorflow.compat.v1 as tf
 
 
 def create_momentum_op(loss, alpha, beta1):
-    """loss = loss of the network
+    """
+    loss = loss of the network
     alpha = learning rate
     beta1 = momentum weight
     """
