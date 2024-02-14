@@ -14,4 +14,4 @@ alpha is the learning rate
 beta1 is the momentum weight
 Returns: the momentum optimization operation
 """
-    pass
+    return (tf.keras.optimizers.SGD(learning_rate=alpha, momentum=beta1)).minimize(loss)
