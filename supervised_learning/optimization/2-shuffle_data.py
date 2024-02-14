@@ -9,6 +9,7 @@ Though classy, it has no class.
 
 import numpy as np
 
+
 def shuffle_data(X, Y):
     """placeholder documentation"""
     pass
