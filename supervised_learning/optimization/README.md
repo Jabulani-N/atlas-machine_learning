@@ -208,3 +208,6 @@ Either my code or the grading algorithm is currently bugged in this task. This h
   * I write this so I have reference to look at if after the import is fixed, there are errors in performance: I will have previous versions to reference.
 
 
+## Task 8
+
+Same import problem as task 6
