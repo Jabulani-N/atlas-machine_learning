@@ -191,3 +191,8 @@ you'll be training your model with [`model_name.fit`](https://www.tensorflow.org
 [This wikipedia article](https://en.wikipedia.org/wiki/Moving_average#Weighted_moving_average) explains the basic idea of a weighted moving average.
 
 [This seems to be a formula for weighted average](https://math.stackexchange.com/questions/4083208/how-is-the-exponential-moving-average-calculated), and below it is a snippet of code that can be translated for our own use.
+
+
+### Potential Pitfalls:
+
+if you convert the `return`ed list to an numpy.array, it will round before the 14th decimal place, changing results from those expected by the grading algorithm.
