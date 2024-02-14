@@ -14,6 +14,8 @@ alpha is the learning rate
 beta1 is the momentum weight
 Returns: the momentum optimization operation
 """
+
+
     optimizer = tf.compat.v1.train.MomentumOptimizer(
         learning_rate=alpha, momentum=beta1)
     return optimizer.minimize(loss)
