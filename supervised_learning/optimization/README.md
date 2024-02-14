@@ -19,3 +19,6 @@ The basic structure we will use for this task is `normalized_X = (X - m) / s`. N
 
 ## Task 2 Shuffle Data
 
+Don't let the idea of shuffling intimidate you. Think about what shuffling means for a list: pick a random order to read its elements. We just need to come up with a random *order*, and then read off both matrices in that aforementioned "order."
+
+how to get that random order? [Numpy has you covered.](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.random.permutation.html)
