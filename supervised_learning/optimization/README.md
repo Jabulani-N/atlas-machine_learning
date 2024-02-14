@@ -201,4 +201,6 @@ if you convert the `return`ed list to an numpy.array, it will round before the 1
 
 ## task 6
 
-momentum optimizer in tensorflow: tf.compat.v1.train.MomentumOptimizer
+momentum optimizer in tensorflow: [tf.compat.v1.train.MomentumOptimizer](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf/compat/v1/train/MomentumOptimizer.md)
+
+Either my code or the grading algorithm is currently bugged in this task. This has been reported, and will be moved past.
