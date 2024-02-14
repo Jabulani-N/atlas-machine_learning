@@ -6,7 +6,6 @@ this module creates a function:
 """
 
 
-import numpy as np
 import tensorflow as tf
 
 
@@ -15,4 +14,10 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid, batch_size=32, epochs=5
     trains that model
     saves the trained model"""
     loaded_model = tf.keras.models.load_model(load_path)
-    pass
+    loaded_model.compile()
+    loaded_model.fit(X_train, Y_train,
+                     batch_size=batch_size,
+                     epochs=epochs,
+                     validation_data=(X_valid, Y_valid))
+    loaded_model.save(save_path)
+    return save_path

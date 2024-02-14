@@ -180,3 +180,4 @@ if __name__ == '__main__':
 ----
 
 [How to compile your model](https://www.tensorflow.org/api_docs/python/tf/keras/Model#compile)
+you'll be training your model with [`model_name.fit`](https://www.tensorflow.org/api_docs/python/tf/keras/Model).
