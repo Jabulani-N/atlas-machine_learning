@@ -178,3 +178,5 @@ if __name__ == '__main__':
 </details>
 
 ----
+
+[How to compile your model](https://www.tensorflow.org/api_docs/python/tf/keras/Model#compile)
