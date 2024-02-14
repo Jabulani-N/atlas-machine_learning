@@ -219,3 +219,9 @@ based on [this](https://stackoverflow.com/questions/61103275/what-is-the-differe
 ### Potential Pitfalls:
 
 Returns: the updated variable, the **new** first moment, and the **new** second moment, respectively. NOT THE CORRECTED
+
+## Task 10
+
+Skipping due to high liklihood of grading algorithm errors, similar to the above ones that were reported.
+
+## Task 11 Learning Rate Decay
