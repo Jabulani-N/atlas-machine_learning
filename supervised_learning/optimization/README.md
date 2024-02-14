@@ -183,3 +183,7 @@ if __name__ == '__main__':
 you'll be training your model with [`model_name.fit`](https://www.tensorflow.org/api_docs/python/tf/keras/Model).
 
 This task is currently imcpomete; in the pursuit of creating a minimum viable product, it will only be revisited should the time limit allow.
+
+## task 4 Moving Average
+
+[This wikipedia article](https://en.wikipedia.org/wiki/Moving_average#Weighted_moving_average) explains the basic idea of a weighted moving average.
