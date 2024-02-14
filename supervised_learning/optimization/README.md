@@ -16,3 +16,6 @@ Though standard deviation and mean are values we calculated in the [math](https:
     * [numpy will make that easy](https://numpy.org/doc/stable/reference/generated/numpy.square.html)
 
 The basic structure we will use for this task is `normalized_X = (X - m) / s`. Numpy will make [subtraction](https://numpy.org/doc/stable/reference/generated/numpy.subtract.html) and [division](https://numpy.org/doc/stable/reference/generated/numpy.divide.html) easy.
+
+## Task 2 Shuffle Data
+
