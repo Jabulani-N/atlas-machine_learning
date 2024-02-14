@@ -16,12 +16,12 @@ def moving_average(data, beta):
         this is represented as 'alpha' or 'α' by some.
     """
     n = len(data)
-    mov_avg = np.zeros(n)
-    mov_avg[0] = data[0]
+    avg = 0.0
+    mov_avg = []
 
-    for k in range(1, n):
-        mov_avg[k] = ((1 - beta) ** (n - k)) *\
-                     (beta * data[k]) + data[n - 1]
-        # the following line is bias correction
-        mov_avg[k] = mov_avg[k] / (1 - beta**(k + 1))
-    return mov_avg
+    for k in range(0, n):
+        EMA = beta * avg + (1-beta) * data[k]
+        mov_avg.append(EMA / (1-beta**(k+1)))
+    # the following line is bias correction
+        avg = EMA
+    return np.array(mov_avg)
