@@ -9,7 +9,11 @@ this module creates a function:
 import tensorflow as tf
 
 
-def train_mini_batch(X_train, Y_train, X_valid, Y_valid, batch_size=32, epochs=5, load_path="/tmp/model.ckpt", save_path="/tmp/model.ckpt"):
+def train_mini_batch(X_train, Y_train,
+                     X_valid, Y_valid,
+                     batch_size=32, epochs=5,
+                     load_path="/tmp/model.ckpt",
+                     save_path="/tmp/model.ckpt"):
     """loads a model,
     trains that model
     saves the trained model"""
