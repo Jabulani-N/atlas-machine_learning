@@ -5,7 +5,7 @@ this module creates a function.
 """
 
 
-import numpy as np
+import tensorflow as tf
 
 
 def create_momentum_op(loss, alpha, beta1):
