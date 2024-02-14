@@ -18,4 +18,4 @@ def update_variables_momentum(alpha, beta1, var, grad, v):
     moment = np.add(np.multiply(beta1, v),
                     np.multiply((1 - beta1), grad))
     updated_var = np.subtract(var, np.multiply(alpha, v))
-    return moment, updated_var
+    return updated_var, moment
