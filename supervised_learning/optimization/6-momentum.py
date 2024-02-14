@@ -15,5 +15,5 @@ beta1 is the momentum weight
 Returns: the momentum optimization operation
 """
     optimizer = tf.keras.optimizers.SGD(learning_rate=alpha,
-                                    momentum=beta1)
+                                        momentum=beta1)
     return optimizer.minimize(loss)
