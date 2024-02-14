@@ -198,3 +198,5 @@ you'll be training your model with [`model_name.fit`](https://www.tensorflow.org
 if you convert the `return`ed list to an numpy.array, it will round before the 14th decimal place, changing results from those expected by the grading algorithm.
 
 ## Task 5
+
+## task 6
