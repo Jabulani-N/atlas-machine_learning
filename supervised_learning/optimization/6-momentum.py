@@ -15,4 +15,5 @@ beta1 = momentum weight
 """
     optimizer = tf.train.MomentumOptimizer(alpha,
                                            beta1)
-    return optimizer.minimize(loss)
+    minimizer = optimizer.minimize(loss)
+    return minimizer
