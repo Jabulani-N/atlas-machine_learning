@@ -200,3 +200,5 @@ if you convert the `return`ed list to an numpy.array, it will round before the 1
 ## Task 5
 
 ## task 6
+
+momentum optimizer in tensorflow: tf.compat.v1.train.MomentumOptimizer
