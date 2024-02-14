@@ -16,13 +16,7 @@ def update_variables_RMSProp(alpha, beta2, epsilon, var, grad, s):
     `grad` = numpy.ndarray containing the gradient of var
     `s` = previous second moment of var
     """
-    moment2 = np.multiply(beta2, np.add(s,
-                                        np.multiply((1 - beta2),
-                                                    np.square(grad))))
+    moment2 = beta2 * s + (1 - beta2) * np.square(grad)
     # Update var using the NEW second moment
-    updated_var = np.subtract(var,
-                              np.multiply(alpha,
-                                          (np.divide(grad,
-                                                     (np.add(np.sqrt(moment2),
-                                                             epsilon))))))
+    updated_var = var - alpha * (grad / (np.sqrt(moment2) + epsilon))
     return updated_var, moment2
