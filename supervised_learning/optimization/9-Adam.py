@@ -21,4 +21,10 @@ v = previous first moment of var
 s = previous second moment of var
 t = time step used for bias correction
 """
-    pass
+    vnew = beta1 * v + (1 - beta1) * grad
+    snew = beta2 * s + (1 - beta2) * np.square(grad)
+
+    vcorrect = vnew / (1 - beta1**t)
+    scorrect = snew / (1 - beta2**t)
+    varnew = var - alpha * (vcorrect / (np.sqrt(scorrect) + epsilon))
+    return varnew, vcorrect, scorrect
