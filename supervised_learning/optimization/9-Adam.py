@@ -26,5 +26,5 @@ t = time step used for bias correction
 
     vcorrect = vnew / (1 - beta1**t)
     scorrect = snew / (1 - beta2**t)
-    varnew = var - alpha * (vcorrect / (np.sqrt(scorrect) + epsilon))
-    return varnew, vcorrect, scorrect
+    var = var - alpha * (vcorrect / (np.sqrt(scorrect) + epsilon))
+    return var, vcorrect, scorrect
