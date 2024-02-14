@@ -17,6 +17,6 @@ def moving_average(data, beta):
     for i in range(1, len(data)):
         mov_avg[i] = (beta * data[i]) +\
                      ((1 - beta) * mov_avg[i - 1])
-        #the following line is bias correction
+        # the following line is bias correction
         mov_avg[i] = mov_avg[i] / (1 - beta**(i + 1))
     return mov_avg
