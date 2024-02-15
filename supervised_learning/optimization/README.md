@@ -233,3 +233,5 @@ Skipping due to high liklihood of grading algorithm errors, similar to the above
 ## Task 12 Upgraded Learning Rate Decay
 
 [Inverse Time Decay in Tensorflow](https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/schedules/InverseTimeDecay)
+
+## Task 13 Batch Normalization
