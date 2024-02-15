@@ -235,3 +235,5 @@ Skipping due to high liklihood of grading algorithm errors, similar to the above
 [Inverse Time Decay in Tensorflow](https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/schedules/InverseTimeDecay)
 
 ## Task 13 Batch Normalization
+
+case 3 here: https://towardsdatascience.com/understanding-batch-normalization-with-examples-in-numpy-and-tensorflow-with-interactive-code-7f59bb126642, shows the basic formula of the batched normals is mean / sqrt(variance + epsilon[theirs is 1e_-8])
