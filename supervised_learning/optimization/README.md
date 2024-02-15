@@ -97,7 +97,6 @@ This task is currently imcpomete; in the pursuit of creating a minimum viable pr
 
 ```
 Write the function def train_mini_batch(X_train, Y_train, X_valid, Y_valid, batch_size=32, epochs=5, load_path="/tmp/model.ckpt", save_path="/tmp/model.ckpt"): that trains a loaded neural network model using mini-batch gradient descent:
-* 
 * X_train is a numpy.ndarray of shape (m, 784) containing the training data
 * m is the number of data points
 * 784 is the number of input features
