@@ -23,4 +23,3 @@ def batch_norm(Z, gamma, beta, epsilon):
     """
     mean = np.mean(Z, axis=0, keepdims=True)
     variance = np.var(Z, axis=0, keepdims=True)
-
