@@ -15,3 +15,4 @@ def create_batch_norm_layer(prev, n, activation):
                                    initializers.
                                    VarianceScaling(mode='fan_avg'),
                                    use_bias=False)
+    Z = densed(prev)
