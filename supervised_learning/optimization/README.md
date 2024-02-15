@@ -240,4 +240,4 @@ case 3 here: https://towardsdatascience.com/understanding-batch-normalization-wi
 
 * my math directory will explain how to get variance
 
-Tensorflow version is just below the numpy version
+Tensorflow version is just below the numpy version, and you'll be using [layers.dense](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense).
