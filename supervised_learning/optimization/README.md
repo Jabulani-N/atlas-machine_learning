@@ -2,7 +2,7 @@
 
 This direcetory's parameters are hyper.
 
-Due to multiple compatibility errors and a time crunch, this directory was not able to be written in a manner comprehensively enough for one to learn the entire project. My apologies.
+Due to multiple compatibility errors, this directory was not able to be written in a manner comprehensively enough for one to learn the entire project. My apologies.
 
 # Task 0 Normalization Constants
 
