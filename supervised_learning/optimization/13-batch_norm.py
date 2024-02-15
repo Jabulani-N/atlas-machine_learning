@@ -23,3 +23,6 @@ def batch_norm(Z, gamma, beta, epsilon):
     """
     mean = np.mean(Z, axis=0, keepdims=True)
     variance = np.var(Z, axis=0, keepdims=True)
+    Z_norm = (Z - mean) / np.sqrt(variance + epsilon)
+    # scale it with gamma and beta (offsets (basically bias))
+    Z_norm_scaled = Z_norm * gamma + beta
