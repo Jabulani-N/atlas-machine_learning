@@ -43,3 +43,5 @@ That's the 0th dimension in our confusion array. The 1st dimension is the same t
 # Task 2 Precision
 
 [Precision](https://en.wikipedia.org/wiki/Precision_and_recall): the percentage of how many of the items that should have been reported as "A" actually were reported as "A."
+
+The code used can be tremendously similar to that in Task 1, due to the similarity in formulae.
