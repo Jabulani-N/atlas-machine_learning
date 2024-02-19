@@ -35,3 +35,7 @@ array([2, 2])
 ```
 we can use this by only looking at one "row" of `labels` at a time, to use argmax to find which index of that row has the 1.
 That's the 0th dimension in our confusion array. The 1st dimension is the same thing bbut with `logits`.
+
+# Task 1 Sensitivity
+
+[Sensitivity](https://en.wikipedia.org/wiki/Sensitivity_and_specificity): ability to predict true positives (as opposed to false positive.)
