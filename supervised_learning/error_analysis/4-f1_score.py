@@ -13,4 +13,11 @@ def f1_score(confusion):
     """placeholder documentation"""
     sensitivity = __import__('1-sensitivity').sensitivity
     precision = __import__('2-precision').precision
-    pass
+
+    product = np.multiply(sensitivity(confusion),
+                          precision(confusion))
+    sum = np.add(sensitivity(confusion),
+                 precision(confusion))
+    quotient = np.divide(product, sum)
+    f1 = np.multiply(2, quotient)
+    return f1
