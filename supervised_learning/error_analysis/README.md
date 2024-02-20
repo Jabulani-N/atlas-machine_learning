@@ -52,3 +52,26 @@ The code used can be tremendously similar to that in Task 1, due to the similari
 
 [F1 score](https://en.wikipedia.org/wiki/F-score) is  the "[Harmonic Mean](https://www.cuemath.com/data/harmonic-mean/)" of results, and is calculated here via `F1 Score = 2 * (Precision * Sensitivity) / (Precision + Sensitivity)`.
 * `Sensitivity = Recall`. Interchangeable terminology.
+
+
+# Task 5 Dealing with Error
+
+This is a multiple choice questionaire for how one might handle errors.
+
+Scenarios:
+```
+1. High Bias, High Variance
+2. High Bias, Low Variance
+3. Low Bias, High Variance
+4. Low Bias, Low Variance
+```
+
+Approaches:
+```
+A. Train more
+B. Try a different architecture
+C. Get more data
+D. Build a deeper network
+E. Use regularization
+F. Nothing
+```
