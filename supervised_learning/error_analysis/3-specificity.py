@@ -25,7 +25,7 @@ def specificity(confusion):
         true_negatives = np.sum(confusion) -\
             np.sum(confusion[class_num, :]) -\
             np.sum(confusion[:, class_num]) +\
-                confusion[class_num, class_num]
+            confusion[class_num, class_num]
         actual_negatives = np.sum(confusion) - np.sum(confusion[class_num, :])
         if actual_negatives != 0:
             specty[class_num] =\
