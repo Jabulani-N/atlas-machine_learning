@@ -36,12 +36,18 @@ array([2, 2])
 we can use this by only looking at one "row" of `labels` at a time, to use argmax to find which index of that row has the 1.
 That's the 0th dimension in our confusion array. The 1st dimension is the same thing bbut with `logits`.
 
-# Task 1 Sensitivity
+# Task 1, 3 Sensitivity, Specificity
 
 [Sensitivity](https://en.wikipedia.org/wiki/Sensitivity_and_specificity): ability to predict `true positives` (as opposed to false positive.) If the correct answer is "A," Sensitivity is the chances the model will predict "A."
+
+Specificity is to negatives what Sensitivity is to positives
 
 # Task 2 Precision
 
 [Precision](https://en.wikipedia.org/wiki/Precision_and_recall): the percentage of how many of the items that should have been reported as "A" actually were reported as "A."
 
 The code used can be tremendously similar to that in Task 1, due to the similarity in formulae.
+
+# Task 4 F1 score
+
+placeholder content
