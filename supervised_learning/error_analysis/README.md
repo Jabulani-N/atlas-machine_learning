@@ -50,4 +50,4 @@ The code used can be tremendously similar to that in Task 1, due to the similari
 
 # Task 4 F1 score
 
-placeholder content
+[F1 score](https://en.wikipedia.org/wiki/F-score)
