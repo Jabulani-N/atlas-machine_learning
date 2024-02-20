@@ -56,7 +56,7 @@ The code used can be tremendously similar to that in Task 1, due to the similari
 
 # Task 5 Dealing with Error
 
-This is a multiple choice questionaire for how one might handle errors.
+This is a multiple choice questionaire for how one might handle errors. A given scenario may have multiple appropriate approaches.
 
 Scenarios:
 ```
