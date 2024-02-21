@@ -12,7 +12,7 @@ def l2_reg_cost(cost, lambtha, weights, L, m):
     """
     cost = cost of network without L2 regularization
     lambtha = regularization parameter
-    weights = dictionary of weights and biases (numpy.ndarrays) of neural network
+    weights = dictionary of weights & biases (numpy.ndarrays) of neural network
     L = number of layers in neural network
     m = number of data points used
     """
