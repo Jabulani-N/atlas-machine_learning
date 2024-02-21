@@ -20,4 +20,4 @@ def l2_reg_gradient_descent(Y, weights, cache, alpha, lambtha, L):
     use tanh activations on each layer
         except the last, which uses a softmax activation
     """
-    pass
+    classes, m = np.shape (Y)
