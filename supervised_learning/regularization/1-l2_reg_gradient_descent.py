@@ -21,3 +21,7 @@ def l2_reg_gradient_descent(Y, weights, cache, alpha, lambtha, L):
         except the last, which uses a softmax activation
     """
     classes, m = np.shape(Y)
+    dz = cache["A" + str(L)] - Y
+    # dz = cost of last activation slot
+    # Remember from the previous weeks that cache[A0] is input
+    #   so each layer is naturally enumerated (layer 1 = cache[A1])
