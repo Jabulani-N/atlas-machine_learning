@@ -10,5 +10,6 @@ Basic idea:
 
 ## Task 1 Gradient Descent with L2 Regularization
 
+dz = cost of last activation slot
 * Remember from the previous weeks that `cache[A0]` is input
   * therefore, each layer is naturally enumerated (layer 1 activation = `cache[A1]`)
