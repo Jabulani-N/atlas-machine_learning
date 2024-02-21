@@ -10,6 +10,5 @@ Basic idea:
 
 ## Task 1 Gradient Descent with L2 Regularization
 
-dz = cost of last activation slot
-* Remember from the previous weeks that `cache[A0]` is input
-  * therefore, each layer is naturally enumerated (layer 1 activation = `cache[A1]`)
+Remember from the [Classification Project](https://github.com/Jabulani-N/atlas-machine_learning/blob/main/supervised_learning/classification/13-neural_network.py) and other previous weeeks that `dz = cost of last activation slot`
+*  `cache[A0]`, so each layer is naturally enumerated (layer 1 activation = `cache[A1]`)
