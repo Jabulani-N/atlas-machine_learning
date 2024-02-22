@@ -31,6 +31,10 @@ The reason this task gives so much less information is because we are using `Ten
 [This is a good reference for defining releavnt parameters](https://stackoverflow.com/questions/46205516/forward-propagation-with-dropout)
 * this person is using relu activation function. We are using tanh.
 
+## Potential Pitfalls
+
+* Don't forget to convert your Dropout masks, which will be boolean, to binary ints, via [`numpy.astype`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.astype.html)
+
 # Task 7 Early Stopping
 Early stopping is used to prevent wasting resoures on ineffective trainig. Should the gradient descent fail to improve cost significantly, even after many ( read: `patience`) repititions, losses are cut by "Early Stopping." We'll have an `optimal cost`: the best result we've gotten so far, and a `threshold`: how much better than `optimal cost` we want our new cost to be. a "score to beat" so to speak. `threshold` acts as a buffer so you can't farm "way to go improving" by doing like a single molecule's worth of improvement a ton of times. It has to do *significantly* better. Once it does, we can reset the `count`, becaue we've got a new `optimal cost`!
 
