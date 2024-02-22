@@ -14,3 +14,4 @@ Remember from the [Classification Project](https://github.com/Jabulani-N/atlas-m
 *  `cache[A0]`, so each layer is naturally enumerated (layer 1 activation = `cache[A1]`)
 
 # Task 2 L2 Regularization Cost
+The reason this task gives so much less information is because we are using `Tensorflow`, not numpy
