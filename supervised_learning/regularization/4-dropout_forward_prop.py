@@ -17,7 +17,7 @@ def dropout_forward_prop(X, weights, L, keep_prob):
 
     Last layer uses softmax activation function
     """
-    cache = {"A0" : X}  # will hold all outputs and dropout masks
+    cache = {"A0": X}  # will hold all outputs and dropout masks
     Activation = X
     for layer in range(1, L):  # excludes last layer
         W = weights["W" + str(layer)]
