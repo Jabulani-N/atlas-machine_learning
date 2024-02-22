@@ -39,7 +39,9 @@ def dropout_forward_prop(X, weights, L, keep_prob):
     Activation = softmax(Z)
     return cache
 
+
 def softmax(z):
     """support function"""
-    exp_z = np.exp(z - np.max(z))  # Subtracting the maximum value for numerical stability
+    # Subtract the maximum value for numerical stability
+    exp_z = np.exp(z - np.max(z))
     return exp_z / exp_z.sum(axis=0, keepdims=True)
