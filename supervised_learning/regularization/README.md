@@ -2,6 +2,8 @@
 
 Regularization is used to prevent a prediction model from overfitting: becoming so extremely good at predicting a given data set that it becomes less useful when applied to others.
 
+![Overfitting](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/6/689c11afbc30eaa89b50.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240222%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240222T040915Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c2678a3ee0ec2258b717122e22378ee2fe8f55afd38d9a787cabb0bc5f876ae3)
+
 L2 Regularization proportoinately alters the weights to prevent them from ever perfectly fitting a given dataset.
 
 ## Task 0 L2 Regularization Cost
@@ -33,7 +35,7 @@ The reason this task gives so much less information is because we are using `Ten
 
 ## Potential Pitfalls
 
-* Don't forget to convert your Dropout masks, which will be boolean, to binary ints, via [`numpy.astype`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.astype.html)
+* Don't forget to convert your Dropout Masks, which will be boolean, to binary ints, via [`numpy.astype`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.astype.html)
 
 # Task 7 Early Stopping
 Early stopping is used to prevent wasting resoures on ineffective trainig. Should the gradient descent fail to improve cost significantly, even after many ( read: `patience`) repititions, losses are cut by "Early Stopping." We'll have an `optimal cost`: the best result we've gotten so far, and a `threshold`: how much better than `optimal cost` we want our new cost to be. a "score to beat" so to speak. `threshold` acts as a buffer so you can't farm "way to go improving" by doing like a single molecule's worth of improvement a ton of times. It has to do *significantly* better. Once it does, we can reset the `count`, becaue we've got a new `optimal cost`!
