@@ -2,7 +2,7 @@
 
 Regularization is used to prevent a prediction model from overfitting: becoming so extremely good at predicting a given data set that it becomes less useful when applied to others.
 
-![Overfitting](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/6/689c11afbc30eaa89b50.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240222%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240222T040915Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c2678a3ee0ec2258b717122e22378ee2fe8f55afd38d9a787cabb0bc5f876ae3)
+<img src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/6/689c11afbc30eaa89b50.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240222%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240222T040915Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c2678a3ee0ec2258b717122e22378ee2fe8f55afd38d9a787cabb0bc5f876ae3" alt="Overfitting">
 
 L2 Regularization proportoinately alters the weights to prevent them from ever perfectly fitting a given dataset.
 
