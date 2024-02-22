@@ -37,4 +37,4 @@ Early stopping is used to prevent wasting resoures on ineffective trainig. Shoul
 ## Potential Pitfalls:
 
 "Once it does, we can reset the `count`, becaue we've got a new `optimal cost`!"
-* This is not a suggestion.
+* This was not a suggestion.
