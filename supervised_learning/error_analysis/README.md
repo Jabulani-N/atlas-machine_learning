@@ -5,6 +5,8 @@
 
 ![example confusion matrix](https://www.dataschool.io/content/images/2015/01/confusion_matrix_simple2.png)
 
+![from visual matrix to python matrix](https://raw.githubusercontent.com/Jabulani-N/atlas-machine_learning/main/supervised_learning/error_analysis/images/Confusion%20Matrix.jpg)
+
 We'll be creating a [Confusion Matrix](https://machinelearningmastery.com/confusion-matrix-machine-learning/).
 
 These are used evaluate performance. "That's what accuracy is for?" That's what I thought too, before I read that article and learned that merely looking at accuracy won't necassarily tell *where* the problems are located. That's like knowing a student's GPA, but not knowing which classes they excelled in and which were less successful. Furthermore, in the case of classification/prediction models, it may simply be a matter of "guessing C" so often it gets a reasonably high score merely by the frequency of C being correct, and actually has no idea how to compute the answer.
