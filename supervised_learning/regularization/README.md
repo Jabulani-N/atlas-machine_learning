@@ -15,3 +15,8 @@ Remember from the [Classification Project](https://github.com/Jabulani-N/atlas-m
 
 # Task 2 L2 Regularization Cost
 The reason this task gives so much less information is because we are using `Tensorflow`, not numpy
+
+* [making a regularizer](https://www.tensorflow.org/api_docs/python/tf/keras/regularizers/L2)
+* [identifying all weights variables](https://www.tensorflow.org/api_docs/python/tf/compat/v1/trainable_variables)
+  * `all_weights = [v for v in tf.trainable_variables() if "weights" in v.name]`
+  * [add regularization penalty](https://www.typeerror.org/docs/tensorflow~1.15/contrib/layers/apply_regularization)
