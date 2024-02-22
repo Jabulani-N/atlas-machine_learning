@@ -2,7 +2,7 @@
 """this module creates a function."""
 
 
-import tensorflow.compat.v1 as tf
+import numpy as np
 
 
 def dropout_forward_prop(X, weights, L, keep_prob):
