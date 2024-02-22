@@ -6,3 +6,5 @@ L2 Regularization proportoinately alters the weights to prevent them from ever p
 The basic idea is
 * `L2_cost = sum of (all individual weights squared)`
 * `L2_regularization = (lambtha / (2 * m)) * l2_cost`
+
+The resultant `L2 regularization` can then be added to each weight in a backpropagation step.
