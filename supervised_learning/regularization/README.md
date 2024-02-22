@@ -26,3 +26,4 @@ The reason this task gives so much less information is because we are using `Ten
   * [add regularization penalty](https://www.typeerror.org/docs/tensorflow~1.15/contrib/layers/apply_regularization)
 
 # Task 4 Forward Propagation with Dropout
+**Dropout** is a means of ensuring no one node holds too much power in a neural network. If the whole thing falls apart when a given node is gone, that's not good. To counteract this, dropout removes random nodes when training the network. This way, every node is trained in a way such that it can function "well enough" when any given node(s) is removed.
