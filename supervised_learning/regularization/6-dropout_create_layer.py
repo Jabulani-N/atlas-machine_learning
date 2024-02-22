@@ -2,7 +2,7 @@
 """this module creates a function."""
 
 
-import numpy as np
+import tensorflow.compat.v1 as tf
 
 
 def dropout_create_layer(prev, n, activation, keep_prob):
