@@ -8,3 +8,4 @@ The basic idea is
 * `L2_regularization = (lambtha / (2 * m)) * l2_cost`
 
 The resultant `L2 regularization` can then be added to each weight in a backpropagation step.
+To create an `L2_regularization` for each weight in a backpropagation step, add `(lambtha / m) * weights["W" + str(layer_num)]` to `dW` and then backpropagate as normal.

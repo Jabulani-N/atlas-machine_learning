@@ -12,3 +12,5 @@ Basic idea:
 
 Remember from the [Classification Project](https://github.com/Jabulani-N/atlas-machine_learning/blob/main/supervised_learning/classification/13-neural_network.py) and other previous weeeks that `dz = cost of last activation slot`
 *  `cache[A0]`, so each layer is naturally enumerated (layer 1 activation = `cache[A1]`)
+
+# Task 2 L2 Regularization Cost
