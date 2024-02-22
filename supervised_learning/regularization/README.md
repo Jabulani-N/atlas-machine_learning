@@ -30,3 +30,5 @@ The reason this task gives so much less information is because we are using `Ten
 
 [This is a good reference for defining releavnt parameters](https://stackoverflow.com/questions/46205516/forward-propagation-with-dropout)
 * this person is using relu activation function. We are using tanh.
+
+# Task 7 Early Stopping

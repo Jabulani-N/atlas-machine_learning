@@ -26,7 +26,7 @@ def dropout_forward_prop(X, weights, L, keep_prob):
         b = weights["b" + str(layer)]
         Z = np.dot(W, Activation) + b
         Activation = np.tanh(Z)
-        D = np.random.rand(Activation.shape)
+        D = np.random.rand(Activation.shape[0], Activation.shape[1])
         D = (D < keep_prob)
         Activation = np.multiply(Activation[0], D)
         Activation = Activation / keep_prob
