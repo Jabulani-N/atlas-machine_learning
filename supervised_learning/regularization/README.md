@@ -1,5 +1,8 @@
 # Regularization
 
+Regularization is used to prevent a prediction model from overfitting: becoming so extremely good at predicting a given data set that it becomes less useful when applied to others.
+
+L2 Regularization proportoinately alters the weights to prevent them from ever perfectly fitting a given dataset.
 
 ## Task 0 L2 Regularization Cost
 
@@ -14,9 +17,12 @@ Remember from the [Classification Project](https://github.com/Jabulani-N/atlas-m
 *  `cache[A0]`, so each layer is naturally enumerated (layer 1 activation = `cache[A1]`)
 
 # Task 2 L2 Regularization Cost
+- currently incomplete
 The reason this task gives so much less information is because we are using `Tensorflow`, not numpy
 
 * [making a regularizer](https://www.tensorflow.org/api_docs/python/tf/keras/regularizers/L2)
 * [identifying all weights variables](https://www.tensorflow.org/api_docs/python/tf/compat/v1/trainable_variables)
   * `all_weights = [v for v in tf.trainable_variables() if "weights" in v.name]`
   * [add regularization penalty](https://www.typeerror.org/docs/tensorflow~1.15/contrib/layers/apply_regularization)
+
+# Task 4 Forward Propagation with Dropout
