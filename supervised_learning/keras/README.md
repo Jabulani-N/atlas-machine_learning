@@ -81,3 +81,6 @@ You can `add()` a layer this way:
 * `model.add(layers.Dense(2, activation="relu"))`
 * `model.add(layers.Dense(3, activation="relu"))`
 * `model.add(layers.Dense(4))`
+
+[Dropout Layers](https://keras.io/api/layers/regularization_layers/dropout/) follow this format:
+* `keras.layers.Dropout(rate, noise_shape=None, seed=None, **kwargs)`
