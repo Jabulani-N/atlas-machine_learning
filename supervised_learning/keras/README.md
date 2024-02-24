@@ -75,3 +75,9 @@ model = keras.Sequential(
 x = ops.ones((3, 3))
 y = model(x)
 ```
+
+You can `add()` a layer this way:
+* `model = keras.Sequential()`
+* `model.add(layers.Dense(2, activation="relu"))`
+* `model.add(layers.Dense(3, activation="relu"))`
+* `model.add(layers.Dense(4))`
