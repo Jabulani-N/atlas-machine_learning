@@ -6,7 +6,13 @@ import tensorflow.keras as K
 
 
 def build_model(nx, layers, activations, lambtha, keep_prob):
-    """placeholder documentation"""
+    """
+    nx = number of input features to the network
+    layers = list containing number of nodes in each layer
+    activations = list containing activation functions used for each layer
+    lambtha = L2 regularization parameter
+    keep_prob = probability that a node will be kept for dropout
+    """
     model = K.models.Sequential()
 
     for i in range(len(layers)):
