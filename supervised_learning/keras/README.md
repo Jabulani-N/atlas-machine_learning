@@ -181,3 +181,11 @@ layer = 1
 layer = layer + 1
 ```
 Layers can do the same idea as integers in that they can have a layer defined by saying "the layer i used to be assigned to is now my input." Just like integers can say "the value i used to have? add 1 to that and that is now my value."
+
+## Task 2 Optimize
+
+[This is how you make an Adam Optimizer](https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adam).
+* we are given the necesary inputs.
+* it returns an Optimizer object.
+
+[This is how you run the optimizer in your model](https://keras.io/api/models/model_training_apis/)
