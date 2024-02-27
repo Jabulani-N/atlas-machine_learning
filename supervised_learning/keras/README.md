@@ -33,21 +33,21 @@
 </details>
 <details>
   <summary>expected output</summary>
-    
+
   ```python
 Model: "sequential"
 _________________________________________________________________
-Layer (type)                 Output Shape              Param #   
+Layer (type)                 Output Shape              Param #
 =================================================================
-dense (Dense)                (None, 256)               200960    
+dense (Dense)                (None, 256)               200960
 _________________________________________________________________
-dropout (Dropout)            (None, 256)               0         
+dropout (Dropout)            (None, 256)               0
 _________________________________________________________________
-dense_1 (Dense)              (None, 256)               65792     
+dense_1 (Dense)              (None, 256)               65792
 _________________________________________________________________
-dropout_1 (Dropout)          (None, 256)               0         
+dropout_1 (Dropout)          (None, 256)               0
 _________________________________________________________________
-dense_2 (Dense)              (None, 10)                2570      
+dense_2 (Dense)              (None, 10)                2570
 =================================================================
 Total params: 269,322
 Trainable params: 269,322
@@ -117,23 +117,23 @@ if __name__ == '__main__':
 </details>
 <details>
   <summary>expected output</summary>
-    
+
   ```python
 Model: "model"
 _________________________________________________________________
-Layer (type)                 Output Shape              Param #   
+Layer (type)                 Output Shape              Param #
 =================================================================
-input_1 (InputLayer)         [(None, 784)]             0         
+input_1 (InputLayer)         [(None, 784)]             0
 _________________________________________________________________
-dense (Dense)                (None, 256)               200960    
+dense (Dense)                (None, 256)               200960
 _________________________________________________________________
-dropout (Dropout)            (None, 256)               0         
+dropout (Dropout)            (None, 256)               0
 _________________________________________________________________
-dense_1 (Dense)              (None, 256)               65792     
+dense_1 (Dense)              (None, 256)               65792
 _________________________________________________________________
-dropout_1 (Dropout)          (None, 256)               0         
+dropout_1 (Dropout)          (None, 256)               0
 _________________________________________________________________
-dense_2 (Dense)              (None, 10)                2570      
+dense_2 (Dense)              (None, 10)                2570
 =================================================================
 Total params: 269,322
 Trainable params: 269,322
@@ -243,7 +243,7 @@ one_hot = __import__('3-one_hot').one_hot
 if __name__ == '__main__':
     labels = np.load('../data/MNIST.npz')['Y_train'][:10]
     print(labels)
-    print(one_hot(labels))   
+    print(one_hot(labels))
 
 
 ```
