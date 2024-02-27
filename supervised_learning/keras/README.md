@@ -90,7 +90,7 @@ You can `add()` a layer this way:
 
 <details>
   <summary>test code</summary>
-  
+
   ```python
 #!/usr/bin/env python3
 
@@ -143,3 +143,17 @@ _________________________________________________________________
 
 ```
 </details>
+
+To make this [keras model](https://www.tensorflow.org/api_docs/python/tf/keras/Model), we'll need to put together all the input and output objects it needs.
+
+For example:
+```
+import tensorflow as tf
+
+inputs = tf.keras.Input(shape=(3,))
+x = tf.keras.layers.Dense(4, activation=tf.nn.relu)(inputs)
+outputs = tf.keras.layers.Dense(5, activation=tf.nn.softmax)(x)
+model = tf.keras.Model(inputs=inputs, outputs=outputs)
+```
+
+* note that in our work, we'll be immporting keras as `K`, so we'll have that instead of "tf.keras"
