@@ -174,3 +174,10 @@ Let's break this down.
     * the input layer for the layer `outputs` is the layer `x`
 * `model = tf.keras.Model(inputs=inputs, outputs=outputs)`: creates model `model` with the inputs layer `inputs` and the output layer `outputs`.
   * If we wanted, we could make any layer the output layer to see what that layer did.
+
+Hint for how you can design/assign your layers:
+```
+layer = 1
+layer = layer + 1
+```
+Layers can do the same idea as integers in that they can have a layer defined by saying "the layer i used to be assigned to is now my input." Just like integers can say "the value i used to have? add 1 to that and that is now my value."
