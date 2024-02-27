@@ -189,3 +189,8 @@ Layers can do the same idea as integers in that they can have a layer defined by
 * it returns an Optimizer object.
 
 [This is how you run the optimizer in your model](https://keras.io/api/models/model_training_apis/)
+* you don't have to return anything. This changes the model itself.
+
+### Potential Pitfalls
+
+`crossentropy` is different from `categorical_crossentropy`
