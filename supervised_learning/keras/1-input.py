@@ -29,12 +29,13 @@ def build_model(nx, layers, activations, lambtha, keep_prob):
                                activation=activations[0],
                                kernel_regularizer=regularizer)(X)
 
-    # Hidden layers
+    # Other layers
     for i in range(1, layerCount):
         layer = K.layers.Dense(layers[i],
                                activation=activations[i],
                                kernel_regularizer=regularizer)(layer)
-        layer = K.layers.Dropout(1 - keep_prob)(layer)
+        if i < len(layers) - 1:
+            layer = K.layers.Dropout(1 - keep_prob)(layer)
 
     model = K.Model(inputs=X, outputs=layer)
     return model
