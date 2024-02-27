@@ -10,17 +10,7 @@ def one_hot(labels, classes=None):
     converts a list of labels (int)
     into a one-hot matrix
     """
-    hottie = []
-    class_count = len(labels)
-    potential_classes = labels[0]
-    for num in labels:
-        if num > potential_classes:
-            potential_classes = num
-
-    # initialize one-hot matrix with 0s
-    for dim0 in range(potential_classes):
-        hottie.append([])
-        for dim1 in range(class_count):
-            hottie[dim0].append(0)
-        hottie[dim0][labels[dim0]] = 1
+    hottie = K.utils.to_categorical(labels,
+                                    num_classes=classes,
+                                    dtype='float32')
     return hottie

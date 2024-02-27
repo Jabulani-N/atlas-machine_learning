@@ -266,5 +266,4 @@ if __name__ == '__main__':
 ```
 </details>
 
-This is a basic programming exercise of converting data from one format to another.
-You've likely done this before.
+[There is a Keras method for this](https://www.tensorflow.org/api_docs/python/tf/keras/utils/to_categorical).
