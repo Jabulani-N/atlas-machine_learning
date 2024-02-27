@@ -184,6 +184,39 @@ Layers can do the same idea as integers in that they can have a layer defined by
 
 ## Task 2 Optimize
 
+<details>
+  <summary>test code</summary>
+
+  ```python
+#!/usr/bin/env python3
+
+import tensorflow as tf
+
+build_model = __import__('1-input').build_model
+optimize_model = __import__('2-optimize').optimize_model
+
+if __name__ == '__main__':
+    model = build_model(784, [256, 256, 10], ['tanh', 'tanh', 'softmax'], 0.001, 0.95)
+    optimize_model(model, 0.01, 0.99, 0.9)
+    print(model.loss)
+    opt = model.optimizer
+    print(opt.__class__)
+    print(tuple(map(lambda x: x.numpy(),(opt.lr, opt.beta_1, opt.beta_2))))
+
+```
+</details>
+<details>
+  <summary>expected output</summary>
+
+  ```python
+categorical_crossentropy
+<class 'keras.optimizer_v2.adam.Adam'>
+(0.01, 0.99, 0.9)
+
+
+```
+</details>
+
 [This is how you make an Adam Optimizer](https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adam).
 * we are given the necesary inputs.
 * it returns an Optimizer object.
@@ -197,3 +230,41 @@ Layers can do the same idea as integers in that they can have a layer defined by
 
 
 ## Task 2 One Hot
+
+<details>
+  <summary>test code</summary>
+
+  ```python
+#!/usr/bin/env python3
+
+import numpy as np
+one_hot = __import__('3-one_hot').one_hot
+
+if __name__ == '__main__':
+    labels = np.load('../data/MNIST.npz')['Y_train'][:10]
+    print(labels)
+    print(one_hot(labels))   
+
+
+```
+</details>
+<details>
+  <summary>expected output</summary>
+
+  ```python
+[5 0 4 1 9 2 1 3 1 4]
+[[0. 0. 0. 0. 0. 1. 0. 0. 0. 0.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [0. 0. 1. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]]
+```
+</details>
+
+This is a basic programming exercise of converting data from one format to another.
+You've likely done this before.
