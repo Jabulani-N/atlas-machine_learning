@@ -159,9 +159,18 @@ model = tf.keras.Model(inputs=inputs, outputs=outputs)
 * note that in our work, we'll be immporting keras as `K`, so we'll have that instead of "tf.keras"
 
 Let's break this down.
-* `inputs = tf.keras.Input(shape=(3,))` We want our input to work for the "number of input features," `nx`, so the shape of `shape=(nx,)` will be perfect.
-* `x = tf.keras.layers.Dense(4, activation=tf.nn.relu)(inputs)` `x` is going to be a single layer.
+* `inputs = tf.keras.Input(shape=(3,))`: We want our input to work for the "number of input features," `nx`, so the shape of `shape=(nx,)` will be perfect.
+* `x = tf.keras.layers.Dense(4, activation=tf.nn.relu)(inputs)`: `x` is going to be a single layer with `inputs` assigned as the input layer.
   * `4` is the number of nodes
-    * our project will have this number stored in the list `layers` we are given as input
+    * our project will have this number provided in the list `layers` we are given as input
   * `activation=tf.nn.relu` is making the activation function reLu.
-    * our project will have this value stored in the list `layers` we are given as input
+    * our project will have this value provided in the list `activations` we are given as input
+  * `(inputs)`
+    * the input layer for the layer `x` is the layer `(inputs)`
+* `outputs = tf.keras.layers.Dense(5, activation=tf.nn.softmax)(x)`: creates the layer  `outputs` and assigns `x` to it as the input layer.
+    * `5` is the number of nodes
+    * `activation=tf.nn.softmax`: this layer uses softmax activaiton
+      * our project will have this value provided in the list `activations` we are given as input.
+    * the input layer for the layer `outputs` is the layer `x`
+* `model = tf.keras.Model(inputs=inputs, outputs=outputs)`: creates model `model` with the inputs layer `inputs` and the output layer `outputs`.
+  * If we wanted, we could make any layer the output layer to see what that layer did.
