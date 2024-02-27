@@ -160,3 +160,8 @@ model = tf.keras.Model(inputs=inputs, outputs=outputs)
 
 Let's break this down.
 * `inputs = tf.keras.Input(shape=(3,))` We want our input to work for the "number of input features," `nx`, so the shape of `shape=(nx,)` will be perfect.
+* `x = tf.keras.layers.Dense(4, activation=tf.nn.relu)(inputs)` `x` is going to be a single layer.
+  * `4` is the number of nodes
+    * our project will have this number stored in the list `layers` we are given as input
+  * `activation=tf.nn.relu` is making the activation function reLu.
+    * our project will have this value stored in the list `layers` we are given as input
