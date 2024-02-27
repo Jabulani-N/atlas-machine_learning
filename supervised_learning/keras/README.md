@@ -194,3 +194,6 @@ Layers can do the same idea as integers in that they can have a layer defined by
 ### Potential Pitfalls
 
 `crossentropy` is different from `categorical_crossentropy`
+
+
+## Task 2 One Hot
