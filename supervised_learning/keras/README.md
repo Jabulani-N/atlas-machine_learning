@@ -144,7 +144,7 @@ _________________________________________________________________
 ```
 </details>
 
-To make this [keras model](https://www.tensorflow.org/api_docs/python/tf/keras/Model), we'll need to put together all the input and output objects it needs.
+To make this [keras model](https://www.tensorflow.org/api_docs/python/tf/keras/Model), we'll need to put together all the [input](https://www.tensorflow.org/api_docs/python/tf/keras/Input) and output objects it needs.
 
 For example:
 ```

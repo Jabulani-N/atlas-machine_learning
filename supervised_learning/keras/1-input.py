@@ -15,3 +15,26 @@ def build_model(nx, layers, activations, lambtha, keep_prob):
     keep_prob = probability that a node will be kept for dropout
     """
     X = K.Input(shape=(nx,))
+    regularizer = K.regularizers.l2(lambtha)
+    layerCount = len(layers)
+
+    # First layer
+    if layerCount != 1:
+        layer = K.layers.Dense(layers[0],
+                               activation=activations[0],
+                               kernel_regularizer=regularizer)(X)
+        layer = K.layers.Dropout(1 - keep_prob)(layer)
+    else:
+        layer = K.layers.Dense(layers[0],
+                               activation=activations[0],
+                               kernel_regularizer=regularizer)(X)
+
+    # Hidden layers
+    for i in range(1, layerCount):
+        layer = K.layers.Dense(layers[i],
+                               activation=activations[i],
+                               kernel_regularizer=regularizer)(layer)
+        layer = K.layers.Dropout(1 - keep_prob)(layer)
+
+    model = K.Model(inputs=X, outputs=layer)
+    return model
