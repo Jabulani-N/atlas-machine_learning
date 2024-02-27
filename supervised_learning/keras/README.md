@@ -157,3 +157,6 @@ model = tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
 
 * note that in our work, we'll be immporting keras as `K`, so we'll have that instead of "tf.keras"
+
+Let's break this down.
+* `inputs = tf.keras.Input(shape=(3,))` We want our input to work for the "number of input features," `nx`, so the shape of `shape=(nx,)` will be perfect.
