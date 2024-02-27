@@ -12,8 +12,13 @@ def one_hot(labels, classes=None):
     """
     hottie = []
     class_count = len(labels)
+    potential_classes = labels[0]
+    for num in labels:
+        if num > potential_classes:
+            potential_classes = num
+
     # initialize one-hot matrix with 0s
-    for dim0 in range(class_count):
+    for dim0 in range(potential_classes):
         hottie.append([])
         for dim1 in range(class_count):
             hottie[dim0].append(0)
