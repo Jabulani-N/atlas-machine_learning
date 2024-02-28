@@ -268,6 +268,8 @@ if __name__ == '__main__':
 
 [There is a Keras method for this](https://www.tensorflow.org/api_docs/python/tf/keras/utils/to_categorical).
 
-## Task 4 Train, 5 Validate
+## Task 4 Train, 5 Validate, 6 Early Stopping
 
 Just put all the provided parameters into the inputted model via [`Keras.model.fit`](https://www.tensorflow.org/api_docs/python/tf/keras/Model). They're even provided in order.
+
+[Early Stopping](https://keras.io/api/callbacks/early_stopping/) is a `callback` object created and fed to the model via `callbacks=callback_object` in the model's `fit` kwargs.
