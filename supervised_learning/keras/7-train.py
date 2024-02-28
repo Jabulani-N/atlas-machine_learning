@@ -38,7 +38,7 @@ def train_model(network, data, labels,
                                                            decay_steps,
                                                            decay_rate,
                                                            staircase=True)
-        callbacks.append(K.callbacks.LearningRateScheduler(schedule[0],
+        callbacks.append(K.callbacks.LearningRateScheduler(schedule[0].numpy,
                                                            verbose=1))
 
     if validation_data is not None and early_stopping and patience < epochs:
