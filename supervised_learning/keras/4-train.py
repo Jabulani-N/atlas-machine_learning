@@ -15,7 +15,7 @@ def train_model(network, data, labels, batch_size,
         shape (m, classes) containing labels of data
     batch_size = size of batch used for mini-batch gradient descent
     epochs = number of passes through data for mini-batch gradient descent
-    verbose = boolean that determines if output should be printed during training
+    verbose = boolean that determines if output is printed
     shuffle
     """
     return network.fit(data, labels, batch_size=batch_size,
