@@ -9,9 +9,11 @@ def train_model(network, data, labels, batch_size,
                 epochs, verbose=True, shuffle=False):
     """
     network = model to train
-    data = numpy.ndarray of shape (m, nx) containing the input data
-    labels = one-hot numpy.ndarray of shape (m, classes) containing labels of data
-    batch_size = size of the batch used for mini-batch gradient descent
+    data = numpy.ndarray
+        shape (m, nx) containing  input data
+    labels = one-hot numpy.ndarray
+        shape (m, classes) containing labels of data
+    batch_size = size of batch used for mini-batch gradient descent
     epochs = number of passes through data for mini-batch gradient descent
     verbose = boolean that determines if output should be printed during training
     shuffle
