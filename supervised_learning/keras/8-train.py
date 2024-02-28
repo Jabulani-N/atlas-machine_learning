@@ -12,17 +12,18 @@ def train_model(network, data, labels,
                 save_best=False, filepath=None, verbose=True, shuffle=False):
     """
     New features:
-    save_best = boolean for whether to save the model after each epoch if it is the best
-        model is the best if its validation loss is the lowest the model has obtained
+    save_best = whether to save  model after each epoch if it is best
+        model is best if validation loss is the lowest yet
     filepath is the file path where the model should be saved
     """
-
 
     callbacks = []
     decay_steps = 1
 
     if save_best:
-        chk = K.callbacks.ModelCheckpoint(filepath, monitor="val_loss", save_best_only=True)
+        chk = K.callbacks.ModelCheckpoint(filepath,
+                                          monitor="val_loss",
+                                          save_best_only=True)
         callbacks.append(chk)
 
     if validation_data is not None and learning_rate_decay:
