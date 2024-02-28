@@ -24,28 +24,26 @@ def train_model(network, data, labels,
     learning_rate_decay = boolean for if learning rate decay is used
         learning rate decay only performed if validation_data exists
         performed using inverse time decay
-        learning rate  decay is a stepwise fashion after each epoch
+        learning rate  decay is a stepwise fashion
+            after each epoch
         each time the learning rate updates, Keras prints a message
         alpha is the initial learning rate
     decay_rate is the decay rate
     """
+    callbacks = []
+    decay_steps = 1  # if this does not work, try epochs
     # learning rate decay code goes here
     if validation_data is not None and learning_rate_decay:
-        decay_steps = 1
-        optimizer = K.optimizers.schedules.InverseTimeDecay(alpha,
-                                                            decay_steps,
-                                                            decay_rate,
-                                                            staircase=True)
-        verbose = True
-    else:
-        optimizer = None
+        schedule = K.optimizers.schedules.InverseTimeDecay(alpha,
+                                                           decay_steps,
+                                                           decay_rate,
+                                                           staircase=True)
+        callbacks.append(K.callbacks.LearningRateScheduler(schedule, verbose=1))
 
     if validation_data is not None and early_stopping and patience < epochs:
-        callbacks = K.callbacks.EarlyStopping(patience=patience)
+        callbacks.append(K.callbacks.EarlyStopping(patience=patience))
 
-    else:
-        callbacks = None
     return network.fit(data, labels, batch_size=batch_size,
                        epochs=epochs, verbose=verbose,
                        shuffle=shuffle, validation_data=validation_data,
-                       callbacks=callbacks, optimizer=optimizer)
+                       callbacks=callbacks)

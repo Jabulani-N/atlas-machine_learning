@@ -268,10 +268,15 @@ if __name__ == '__main__':
 
 [There is a Keras method for this](https://www.tensorflow.org/api_docs/python/tf/keras/utils/to_categorical).
 
-## Task 4 Train, 5 Validate, 6 Early Stopping, 7 Learning Rate Decay
+## Task 4 Train, 5 Validate, 6 Early Stopping
 
 Just put all the provided parameters into the inputted model via [`Keras.model.fit`](https://www.tensorflow.org/api_docs/python/tf/keras/Model). They're even provided in order.
 
 [Early Stopping](https://keras.io/api/callbacks/early_stopping/) is a `callback` object created and fed to the model via `callbacks=callback_object` in the model's `fit` kwargs.
 
-[Inverse Time Decay](https://keras.io/api/optimizers/learning_rate_schedules/inverse_time_decay/) learning rate decay returns an optimizer. That optimizer can be fed to the model via [`model.compile(optimizer, loss='mse', steps_per_execution=10)`](https://www.tensorflow.org/api_docs/python/tf/keras/Model) before using `model.fit`
+## Task 7 Learning Rate Decay
+
+[Inverse Time Decay](https://keras.io/api/optimizers/learning_rate_schedules/inverse_time_decay/) learning rate decay returns an optimizer. That optimizer can be fed to the model via [`model.compile(optimizer, loss='mse', steps_per_execution=10)`](https://www.tensorflow.org/api_docs/python/tf/keras/Model) before using `model.fit`.
+
+You'll need to use the [Learning Rate Scheduler](https://keras.io/api/callbacks/learning_rate_scheduler/) to create a new `callback` to append to whatever it currently has.
+* we feed it a "schedule," and [Inverse Time Decay Schedule](https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/schedules/InverseTimeDecay)
