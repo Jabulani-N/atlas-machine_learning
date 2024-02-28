@@ -284,3 +284,7 @@ You'll need to use the [Learning Rate Scheduler](https://keras.io/api/callbacks/
 ## Task 8 Save onlt the Best
 
 [This is the callback for saving best as a checkpoint](https://keras.io/api/callbacks/model_checkpoint/).
+
+## Task 9 Save and Load Model
+
+[Saving and Loading documentation](https://keras.io/api/models/model_saving_apis/model_saving_and_loading/)
