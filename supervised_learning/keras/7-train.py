@@ -26,7 +26,20 @@ def train_model(network, data, labels,
         performed using inverse time decay
         learning rate  decay is a stepwise fashion after each epoch
         each time the learning rate updates, Keras prints a message
+        alpha is the initial learning rate
+    decay_rate is the decay rate
     """
+    # learning rate decay code goes here
+    if validation_data is not None and learning_rate_decay:
+        decay_steps = 1
+        optimizer = K.optimizers.schedules.InverseTimeDecay(alpha,
+                                                            decay_steps,
+                                                            decay_rate,
+                                                            staircase=True)
+    else:
+        optimizer = None
+
+
     if validation_data is not None and early_stopping and patience < epochs:
         callbacks = K.callbacks.EarlyStopping(patience=patience)
 
@@ -35,4 +48,4 @@ def train_model(network, data, labels,
     return network.fit(data, labels, batch_size=batch_size,
                        epochs=epochs, verbose=verbose,
                        shuffle=shuffle, validation_data=validation_data,
-                       callbacks=callbacks)
+                       callbacks=callbacks, optimizer=optimizer)
