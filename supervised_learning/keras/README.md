@@ -268,8 +268,6 @@ if __name__ == '__main__':
 
 [There is a Keras method for this](https://www.tensorflow.org/api_docs/python/tf/keras/utils/to_categorical).
 
-## Task 4 Train
+## Task 4 Train, 5 Validate
 
 Just put all the provided parameters into the inputted model via [`Keras.model.fit`](https://www.tensorflow.org/api_docs/python/tf/keras/Model). They're even provided in order.
-
-## Task 5 Validate
