@@ -12,4 +12,4 @@ def save_model(network, filename):
 
 def load_model(filename):
     """loads a model"""
-    pass
+    return K.saving.load_model(filename)
