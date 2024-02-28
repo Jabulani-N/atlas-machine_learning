@@ -296,3 +296,6 @@ You'll need to use the [Learning Rate Scheduler](https://keras.io/api/callbacks/
 [Saving and Loading weights documentation](https://keras.io/api/models/model_saving_apis/weights_saving_and_loading/)
 
 ## Task 11 Save and Load Configuration
+
+This is a subfunction of [saving and loading](https://keras.io/guides/serialization_and_saving/)
+* basic structure `json_config = model.to_json()`, which can be found in the above page
