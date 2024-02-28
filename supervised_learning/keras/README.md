@@ -269,3 +269,5 @@ if __name__ == '__main__':
 [There is a Keras method for this](https://www.tensorflow.org/api_docs/python/tf/keras/utils/to_categorical).
 
 ## Task 4 Train
+
+Just put all the provided parameters into [Keras.model.fit](https://www.tensorflow.org/api_docs/python/tf/keras/Model).
