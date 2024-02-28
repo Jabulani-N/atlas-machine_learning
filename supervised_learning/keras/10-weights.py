@@ -13,4 +13,4 @@ def save_weights(network, filename, save_format='h5'):
 
 def load_weights(network, filename):
     """loads a model’s weights"""
-    pass
+    network.load_weights(filename)
