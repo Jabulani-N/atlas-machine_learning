@@ -288,3 +288,4 @@ You'll need to use the [Learning Rate Scheduler](https://keras.io/api/callbacks/
 ## Task 9 Save and Load Model
 
 [Saving and Loading documentation](https://keras.io/api/models/model_saving_apis/model_saving_and_loading/)
+* `keras.saving.load_model` will not work. Use `keras.models.load_model` instead.
