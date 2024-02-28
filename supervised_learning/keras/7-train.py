@@ -36,6 +36,7 @@ def train_model(network, data, labels,
                                                             decay_steps,
                                                             decay_rate,
                                                             staircase=True)
+        verbose = True
     else:
         optimizer = None
 
