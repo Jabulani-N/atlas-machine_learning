@@ -281,7 +281,7 @@ Just put all the provided parameters into the inputted model via [`Keras.model.f
 You'll need to use the [Learning Rate Scheduler](https://keras.io/api/callbacks/learning_rate_scheduler/) to create a new `callback` to append to whatever it currently has.
 * we feed it a "schedule," and [Inverse Time Decay Schedule](https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/schedules/InverseTimeDecay)
 
-## Task 8 Save onlt the Best
+## Task 8 Save only the Best
 
 [This is the callback for saving best as a checkpoint](https://keras.io/api/callbacks/model_checkpoint/).
 
@@ -289,3 +289,8 @@ You'll need to use the [Learning Rate Scheduler](https://keras.io/api/callbacks/
 
 [Saving and Loading documentation](https://keras.io/api/models/model_saving_apis/model_saving_and_loading/)
 * `keras.saving.load_model` will not work. Use `keras.models.load_model` instead.
+
+
+## Task 10 Save and Load Weights
+
+[Saving and Loading weights documentation](https://keras.io/api/models/model_saving_apis/weights_saving_and_loading/)
