@@ -10,4 +10,5 @@ def test_model(network, data, labels, verbose=True):
     tests a neural network
         loss, accuracy
     """
-    pass
+    results = network.evaluate(data, labels, verbose=verbose)
+    return results[0], results[1]

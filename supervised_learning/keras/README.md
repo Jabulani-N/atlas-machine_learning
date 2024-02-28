@@ -1,5 +1,22 @@
 # Keras
 
+<details>
+  <summary>test code structure</summary>
+<details>
+  <summary>test code</summary>
+
+  ```python
+content
+```
+</details>
+<details>
+  <summary>expected output</summary>
+
+  ```python
+content
+```
+</details>
+</details>
 
 ## Task 0 Sequential
 
@@ -269,6 +286,52 @@ if __name__ == '__main__':
 [There is a Keras method for this](https://www.tensorflow.org/api_docs/python/tf/keras/utils/to_categorical).
 
 ## Task 4 Train, 5 Validate, 6 Early Stopping
+
+<details>
+  <summary> task test code</summary>
+
+  ```python
+content
+```
+</details>
+<details>
+  <summary> task 4 expected output</summary>
+
+  ```python
+content
+```
+</details>
+
+<details>
+  <summary>task 5 test code</summary>
+
+  ```python
+content
+```
+</details>
+<details>
+  <summary>task 5expected output</summary>
+
+  ```python
+content
+```
+</details>
+
+<details>
+  <summary>task 6 test code</summary>
+
+  ```python
+content
+```
+</details>
+<details>
+  <summary>task 6expected output</summary>
+
+  ```python
+content
+```
+</details>
+
 
 Just put all the provided parameters into the inputted model via [`Keras.model.fit`](https://www.tensorflow.org/api_docs/python/tf/keras/Model). They're even provided in order.
 
