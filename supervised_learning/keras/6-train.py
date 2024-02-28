@@ -20,7 +20,7 @@ def train_model(network, data, labels,
     verbose = boolean that determines if output is printed
     validation_data = validation data
     """
-    if validation_data != None and early_stopping and patience < epochs:
+    if validation_data is not None and early_stopping and patience < epochs:
         callbacks = K.callbacks.EarlyStopping(patience=patience)
 
     else:
