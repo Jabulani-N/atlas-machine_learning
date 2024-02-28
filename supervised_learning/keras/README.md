@@ -271,3 +271,5 @@ if __name__ == '__main__':
 ## Task 4 Train
 
 Just put all the provided parameters into the inputted model via [`Keras.model.fit`](https://www.tensorflow.org/api_docs/python/tf/keras/Model). They're even provided in order.
+
+## Task 5 Validate
