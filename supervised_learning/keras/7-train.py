@@ -39,7 +39,6 @@ def train_model(network, data, labels,
     else:
         optimizer = None
 
-
     if validation_data is not None and early_stopping and patience < epochs:
         callbacks = K.callbacks.EarlyStopping(patience=patience)
 
