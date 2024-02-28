@@ -7,7 +7,10 @@ import tensorflow.keras as K
 
 def save_config(network, filename):
     """saves a model’s configuration in JSON format"""
-    network.to_json(filename)
+    json_config = network.to_json(filename)
+    with open(filename, 'w') as file:
+        file.write(json_config)
+
 
 
 def load_config(filename):
