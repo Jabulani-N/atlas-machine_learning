@@ -294,3 +294,5 @@ You'll need to use the [Learning Rate Scheduler](https://keras.io/api/callbacks/
 ## Task 10 Save and Load Weights
 
 [Saving and Loading weights documentation](https://keras.io/api/models/model_saving_apis/weights_saving_and_loading/)
+
+## Task 11 Save and Load Configuration
