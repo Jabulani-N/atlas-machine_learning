@@ -7,4 +7,4 @@ import tensorflow.keras as K
 
 def predict(network, data, verbose=False):
     """makes a prediction using a neural network"""
-    pass
+    return network.predict(data, verbose=verbose)

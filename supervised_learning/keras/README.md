@@ -552,3 +552,5 @@ This is a subfunction of [saving and loading](https://keras.io/guides/serializat
 * `y_test` is correct one-hot labels
 
 ## task 13 Predict
+
+[Here]([Model.predict](https://keras.io/api/models/model_training_apis/)) you'll find information on `model.predict()`.
