@@ -544,3 +544,11 @@ callback.append(K.callbacks.LearningRateScheduler(lambda epoch: alpha / (1 + dec
 
 This is a subfunction of [saving and loading](https://keras.io/guides/serialization_and_saving/)
 * basic structure `json_config = model.to_json()`, which can be found in the above page
+
+## Task 12 Test
+
+[This](https://keras.io/guides/training_with_built_in_methods/) is how you evaluate a model with test data.
+* `x_test` is input data
+* `y_test` is correct one-hot labels
+
+## task 13 Predict
