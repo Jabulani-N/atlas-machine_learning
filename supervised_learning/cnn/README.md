@@ -16,3 +16,6 @@ When testing code, you may need to use a particular lib file of data. If it is d
 A [Convolutional Neural Network](https://www.youtube.com/watch?v=YRhxdVk_sIs) (cnn) is an artificial neural network that has "convolotional layers" as hidden layers. These are specialized in pattern recognition. This happens via "filters" that look for particular traits based on the filter's type. filters may look for things like edges, vertical lines, circles, etc. these filters go from as basic as that, to recognizing patterns created by certain patterns of filter triggers.
 
 ## Task 0 Convolutional Forward Prop
+
+![Convolutoinal Forward Propagation](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*wqZ0Q4mBaHKjqWx45GPIow.gif)
+* [source](https://becominghuman.ai/back-propagation-in-convolutional-neural-networks-intuition-and-code-714ef1c38199)
