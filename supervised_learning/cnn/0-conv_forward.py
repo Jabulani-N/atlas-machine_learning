@@ -39,7 +39,7 @@ def conv_forward(A_prev, W, b, activation,
                 kernel = W[:, :, :, c]
                 a_slice_prev = np.multiply(A_prev_padded[:, vert_start:vert_end,
                                                          horiz_start:horiz_end, kernel])
-                Z[:, h, w, c] = np.sum(a_slice_prev, axis=(1,2,3))
+                Z[:, h, w, c] = (np.sum(a_slice_prev, axis=(1,2,3)))
 
     A = activation(Z + b)
 
