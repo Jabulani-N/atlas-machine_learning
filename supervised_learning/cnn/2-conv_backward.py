@@ -26,14 +26,14 @@ def conv_backward(dZ, A_prev, W, b, padding="same", stride=(1, 1)):
                                (pad_h, pad_h),
                                (pad_w, pad_w), (0, 0)),
                                mode='constant', constant_values=(0, 0))
-        dA_prev_padded = np.pad(dA_prev, ((0, 0),
-                                (pad_h, pad_h),
-                                (pad_w, pad_w), (0, 0)),
-                                mode='constant', constant_values=(0, 0))
     else:
         A_prev_padded = A_prev
         dA_prev_padded = dA_prev
 
+    dA_prev_padded = np.pad(dA_prev, ((0, 0),
+                            (pad_h, pad_h),
+                            (pad_w, pad_w), (0, 0)),
+                            mode='constant', constant_values=(0, 0))
     for i in range(m):
         for h in range(h_new):
             for w in range(w_new):
