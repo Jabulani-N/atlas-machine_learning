@@ -19,3 +19,6 @@ A [Convolutional Neural Network](https://www.youtube.com/watch?v=YRhxdVk_sIs) (c
 
 ![Convolutoinal Forward Propagation](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*wqZ0Q4mBaHKjqWx45GPIow.gif)
 * [source](https://becominghuman.ai/back-propagation-in-convolutional-neural-networks-intuition-and-code-714ef1c38199)
+
+
+## Task 1 Pooling Forward Prop
