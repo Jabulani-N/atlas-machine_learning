@@ -38,7 +38,7 @@ def conv_forward(A_prev, W, b, activation,
                 horiz_end = horiz_start + kw
                 kernel = W[:, :, :, c]
                 a_slice_prev = np.multiply(A_prev_padded[:, vert_start:vert_end,
-                                             horiz_start:horiz_end, kernel])
+                                                         horiz_start:horiz_end, kernel])
                 Z[:, h, w, c] = np.sum(a_slice_prev, axis=(1,2,3))
 
     A = activation(Z + b)
