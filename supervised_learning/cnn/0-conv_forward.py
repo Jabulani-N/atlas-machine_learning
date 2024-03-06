@@ -23,8 +23,8 @@ def conv_forward(A_prev, W, b, activation,
         A_prev_padded = A_prev
         pad_h, pad_w = 0, 0
 
-    h_out = int((h_prev - kh + 2 * pad_h) / sh) + 1
-    w_out = int((w_prev - kw + 2 * pad_w) / sw) + 1
+    h_out = int((h_prev - kh + 2 * pad_h) // sh) + 1
+    w_out = int((w_prev - kw + 2 * pad_w) //sw) + 1
 
     Z = np.zeros((m, h_out, w_out, c_new))
 
