@@ -13,9 +13,13 @@ When testing code, you may need to use a particular lib file of data. If it is d
 * and altering the `lib` import line to be
   * `lib = np.load(io.BytesIO(response.content))`
 
-A [Convolutional Neural Network](https://www.youtube.com/watch?v=YRhxdVk_sIs) (cnn) is an artificial neural network that has "convolotional layers" as hidden layers. These are specialized in pattern recognition. This happens via "filters" that look for particular traits based on the filter's type. filters may look for things like edges, vertical lines, circles, etc. these filters go from as basic as that, to recognizing patterns created by certain patterns of filter triggers.
+A [Convolutional Neural Network](https://www.youtube.com/watch?v=YRhxdVk_sIs) (cnn) is an artificial neural network that has "convolotional layers" as hidden layers. These are specialized in pattern recognition. This happens via "filters" that look for particular traits based on the filter's type. filters may look for things like edges, vertical lines, circles, etc. these filters go from as basic as that, to recognizing patterns created by certain patterns of filter triggers. Not all cnn layers will be convolutional layers.
 
 Convolutional Neural Networks [use the same structure](https://medium.com/technologymadeeasy/the-best-explanation-of-convolutional-neural-networks-on-the-internet-fbb8b1ad5df8) as the neural netweorks we're already familiar with. They have nodes (neurons) with "learnable weights and biases." They recieve an input, run it through the activation function, and generate an output. The cnn claim to fame is they recieve a vector as an input, and generate a vector output.
+
+**Parameter Sharing** "[is sharing of weights by all neurons in a particular feature map](https://medium.com/technologymadeeasy/the-best-explanation-of-convolutional-neural-networks-on-the-internet-fbb8b1ad5df8)."
+
+**Local connectivity** refers to having a given neuronh only look at relevant porition of input data, rather than the entire input, image in the case. This increases efficiency.
 
 ## Task 0 Convolutional Forward Prop
 
@@ -47,7 +51,29 @@ Returns: the output of the convolutional layer
 </details>
 
 
-**Convolution** is a type of filtering that takes the dot product of a chunk of an array. This is done over every "chunk," and the outputs create a new "dot product filtered" array. The "convolutional layer" is where these convolutions take place in a cnn.
+**Convolution** is a type of filtering that takes the dot product of a chunk of an array. This is done over every "chunk," and the outputs create a new "dot product filtered" array. A "convolutional layer" is where these convolutions take place in a cnn. There can be multiple convolutionary filters in a single layer.
 
 
 ## Task 1 Pooling Forward Prop
+
+![Pooling Layer illustration](https://miro.medium.com/v2/resize:fit:828/format:webp/1*gags_WLu961iw6I0ZX6iQA.png)
+
+<details>
+<summary>Task</summary>
+Function <code>def pool_forward(A_prev, kernel_shape, stride=(1, 1), mode='max'):</code> performs forward propagation over a pooling layer of a neural network.
+
+* A_prev is a numpy.ndarray of shape (m, h_prev, w_prev, c_prev) containing the output of the previous layer
+*   m is the number of examples
+*   h_prev is the height of the previous layer
+*   w_prev is the width of the previous layer
+*   c_prev is the number of channels in the previous layer
+* kernel_shape is a tuple of (kh, kw) containing the size of the kernel for the pooling
+*   kh is the kernel height
+*   kw is the kernel width
+* stride is a tuple of (sh, sw) containing the strides for the pooling
+*   sh is the stride for the height
+*   sw is the stride for the width
+* mode is a string containing either max or avg, indicating whether to perform maximum or average pooling, respectively
+*   you may import numpy as np
+* Returns: the output of the pooling layer
+</details>
