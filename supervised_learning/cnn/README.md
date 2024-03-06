@@ -15,10 +15,39 @@ When testing code, you may need to use a particular lib file of data. If it is d
 
 A [Convolutional Neural Network](https://www.youtube.com/watch?v=YRhxdVk_sIs) (cnn) is an artificial neural network that has "convolotional layers" as hidden layers. These are specialized in pattern recognition. This happens via "filters" that look for particular traits based on the filter's type. filters may look for things like edges, vertical lines, circles, etc. these filters go from as basic as that, to recognizing patterns created by certain patterns of filter triggers.
 
+Convolutional Neural Networks [use the same structure](https://medium.com/technologymadeeasy/the-best-explanation-of-convolutional-neural-networks-on-the-internet-fbb8b1ad5df8) as the neural netweorks we're already familiar with. They have nodes (neurons) with "learnable weights and biases." They recieve an input, run it through the activation function, and generate an output. The cnn claim to fame is they recieve a vector as an input, and generate a vector output.
+
 ## Task 0 Convolutional Forward Prop
 
 ![Convolutoinal Forward Propagation](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*wqZ0Q4mBaHKjqWx45GPIow.gif)
 * [source](https://becominghuman.ai/back-propagation-in-convolutional-neural-networks-intuition-and-code-714ef1c38199)
+
+<details>
+<summary>Task</summary>
+Function <code>def conv_forward(A_prev, W, b, activation, padding="same", stride=(1, 1)):</code> performs forward propagation over a convolutional layer of a neural network
+    - A_prev is a numpy.ndarray of shape (m, h_prev, w_prev, c_prev) containing the output of the previous layer
+        - m is the number of examples
+        - h_prev is the height of the previous layer
+        - w_prev is the width of the previous layer
+        - c_prev is the number of channels in the previous layer
+    - W is a numpy.ndarray of shape (kh, kw, c_prev, c_new) containing the kernels for the convolution
+        - kh is the filter height
+        - kw is the filter width
+        - c_prev is the number of channels in the previous layer
+        - c_new is the number of channels in the output
+    - b is a numpy.ndarray of shape (1, 1, 1, c_new) containing the biases applied to the convolution
+    - activation is an activation function applied to the convolution
+    - padding is a string that is either same or valid, indicating the type of padding used
+    - stride is a tuple of (sh, sw) containing the strides for the convolution
+        - sh is the stride for the height
+        - sw is the stride for the width
+**you may import numpy as np**
+Returns: the output of the convolutional layer
+
+</details>
+
+
+**Convolution** is a type of filtering that takes the dot product of a chunk of an array. This is done over every "chunk," and the outputs create a new "dot product filtered" array. The "convolutional layer" is where these convolutions take place in a cnn.
 
 
 ## Task 1 Pooling Forward Prop
