@@ -28,19 +28,19 @@ def conv_forward(A_prev, W, b, activation,
 
     Z = np.zeros((m, h_out, w_out, c_new))
 
-    for i in range(m):
-        for h in range(h_out):
-            for w in range(w_out):
-                for c in range(c_new):
-                    vert_start = h * sh
-                    vert_end = vert_start + kh
-                    horiz_start = w * sw
-                    horiz_end = horiz_start + kw
-                    a_slice_prev = A_prev_padded[i, vert_start:vert_end,
-                                                 horiz_start:horiz_end, :]
-                    Z[i, h, w, c] = np.sum(a_slice_prev *
-                                           W[:, :, :, c]) + b[:, :, :, c]
 
-    A = activation(Z)
+    for h in range(h_out):
+        for w in range(w_out):
+            for c in range(c_new):
+                vert_start = h * sh
+                vert_end = vert_start + kh
+                horiz_start = w * sw
+                horiz_end = horiz_start + kw
+                kernel = W[:, :, :, k]
+                a_slice_prev = np.multiply(A_prev_padded[:, vert_start:vert_end,
+                                             horiz_start:horiz_end, kernel])
+                Z[:, h, w, c] = np.sum(a_slice_prev, axis=(1,2,3))
+
+    A = activation(Z + b)
 
     return A
