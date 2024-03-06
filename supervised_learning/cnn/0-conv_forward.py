@@ -42,6 +42,6 @@ def conv_forward(A_prev, W, b, activation,
                     Z[i, h, w, c] = np.sum(a_slice_prev *
                                            W[:, :, :, c]) + b[:, :, :, c]
 
-    A = activation(Z)
+    A = activation(Z + b)
 
     return A
