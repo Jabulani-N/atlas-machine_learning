@@ -77,3 +77,10 @@ Function <code>def pool_forward(A_prev, kernel_shape, stride=(1, 1), mode='max')
 *   you may import numpy as np
 * Returns: the output of the pooling layer
 </details>
+
+The goal of a **Pooling Layer** is to reduce the size of the input, allowing faster, less burdened computations. A chunk is taken and a pooling operation is applied to it. The result takes the place of the pooled indices. The chunks taken when pooling do not overlap.
+
+![Max Pooling](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*jU_Mp73fXzh9_ffvtnbrDQ.png)
+* [Max Pooling](https://medium.com/technologymadeeasy/the-best-explanation-of-convolutional-neural-networks-on-the-internet-fbb8b1ad5df8)
+
+## Task 2 Convolutinoal Back Prop
