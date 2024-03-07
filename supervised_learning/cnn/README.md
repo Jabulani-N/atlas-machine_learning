@@ -83,4 +83,4 @@ The goal of a **Pooling Layer** is to reduce the size of the input, allowing fas
 ![Max Pooling](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*jU_Mp73fXzh9_ffvtnbrDQ.png)
 * [Max Pooling](https://medium.com/technologymadeeasy/the-best-explanation-of-convolutional-neural-networks-on-the-internet-fbb8b1ad5df8)
 
-## Task 2 Convolutinoal Back Prop
+## Task 2 Convolutional Back Prop
