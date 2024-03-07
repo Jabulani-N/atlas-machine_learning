@@ -11,7 +11,7 @@ def pool_backward(dA, A_prev, kernel_shape, stride=(1, 1), mode='max'):
         over a pooling layer of a neural network
     """
     m, h_new, w_new, c = dA.shape
-    m, h_prev, w_prev, c = A_prev.shape
+    m_prev, h_prev, w_prev, c_prev = A_prev.shape
     kh, kw = kernel_shape
     sh, sw = stride
 
@@ -20,7 +20,7 @@ def pool_backward(dA, A_prev, kernel_shape, stride=(1, 1), mode='max'):
     for i in range(m):
         for h in range(h_new):
             for w in range(w_new):
-                for c in range(c):
+                for c_i in range(c):
                     vert_start = h * sh
                     vert_end = vert_start + kh
                     horiz_start = w * sw
@@ -29,13 +29,13 @@ def pool_backward(dA, A_prev, kernel_shape, stride=(1, 1), mode='max'):
                     if mode == 'max':
                         a_prev_slice = A_prev[i, vert_start:vert_end,
                                               horiz_start:horiz_end,
-                                              c]
+                                              c_i]
                         mask = (a_prev_slice == np.max(a_prev_slice))
                     elif mode == 'avg':
                         mask = np.ones((kh, kw)) / (kh * kw)
 
-                    da = dA[i, h, w, c]
-                    dA_prev[i, vert_start:vert_end, horiz_start:horiz_end, c]\
+                    da = dA[i, h, w, c_i]
+                    dA_prev[i, vert_start:vert_end, horiz_start:horiz_end, c_i]\
                         += mask * da
 
     return dA_prev
