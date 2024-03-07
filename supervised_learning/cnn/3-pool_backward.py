@@ -35,7 +35,10 @@ def pool_backward(dA, A_prev, kernel_shape, stride=(1, 1), mode='max'):
                         mask = np.ones((kh, kw)) / (kh * kw)
 
                     da = dA[i, h, w, c_i]
-                    dA_prev[i, vert_start:vert_end, horiz_start:horiz_end, c_i]\
+                    dA_prev[i,
+                            vert_start:vert_end,
+                            horiz_start:horiz_end,
+                            c_i]\
                         += mask * da
 
     return dA_prev
