@@ -32,11 +32,20 @@ def inception_block(A_prev, filters):
     # above is 1x1 layer filter before 3x3 filter
     convf3 = K.layers.Conv2D(F3, (3, 3),
                              padding="same",
-                             activation="ReLU")(A_prev)
+                             activation="ReLU")(convf3r)
     convf5r = K.layers.Conv2D(F5R, (1, 1),
                              padding="same",
                              activation="ReLU")(A_prev)
     # above is 1x1 layer filter before 5x5 filter
     convf5 = K.layers.Conv2D(F5, (5, 5),
                              padding="same",
-                             activation="ReLU")(A_prev)
+                             activation="ReLU")(convf5r)
+    poolpp = K.layers.MaxPooling2D(pool_size=(3, 3), strides=None,
+                                   padding="same", data_format=None,
+                                   name=None,)
+    afterpool = K.layers.Conv2D(FPP, (1, 1),
+                             padding="same",
+                             activation="ReLU")(poolpp)
+    filterConc = K.layers.Concatenate(3)([convf1, convf3, convf5, afterpool])
+    return filterConc
+
