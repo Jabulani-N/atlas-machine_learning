@@ -25,12 +25,14 @@ def inception_network():
     X = K.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same')(X)
 
     # Second Layer
+    X = K.layers.Conv2D(64, (3, 3), strides=(1, 1), padding='same',
+                        activation='relu')(X)
     X = K.layers.Conv2D(192, (3, 3), strides=(1, 1), padding='same',
                         activation='relu')(X)
     X = K.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same')(X)
     X = inception_block(X, (64, 96, 128, 16, 32, 32))
     X = inception_block(X, (128, 128, 192, 32, 96, 64))
-    # double check this
+    # double check the above
 
     X = K.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same')(X)
     X = inception_block(X, (192, 96, 208, 16, 48, 64))
