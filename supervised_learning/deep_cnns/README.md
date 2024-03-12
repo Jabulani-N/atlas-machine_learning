@@ -68,3 +68,6 @@ Write a function `def inception_network():` that builds the inception network as
 
 ![layerset](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/12/1165affa2943a7a330b1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240312%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240312T052929Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=47df55b957db52a573f98e2fe0a1a34c28a7d76dfae0cbeb11ead98e42649b28)
 * layerset to be used
+
+
+This task is mostly pasting the contents of the above layerset, but will also make use of [`keras.layers.AveragePooling2D](https://keras.io/api/layers/pooling_layers/average_pooling2d/).
