@@ -71,3 +71,7 @@ Write a function `def inception_network():` that builds the inception network as
 
 
 This task is mostly pasting the contents of the above layerset, but will also make use of [`keras.layers.AveragePooling2D](https://keras.io/api/layers/pooling_layers/average_pooling2d/).
+
+### Potential pitfalls
+
+When doing a layer with depth greater than one, such as the second convolutional layer, the filters before the final one are of shape `(1, 1)`.
