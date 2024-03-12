@@ -40,7 +40,7 @@ def inception_block(A_prev, filters):
     convf5 = K.layers.Conv2D(F5, (5, 5),
                              padding="same",
                              activation="ReLU")(convf5r)
-    poolpp = K.layers.MaxPooling2D(pool_size=(3, 3), strides=None,
+    poolpp = K.layers.MaxPool2D(pool_size=(3, 3), strides=None,
                                    padding="same", data_format=None,
                                    name=None,)
     afterpool = K.layers.Conv2D(FPP, (1, 1),
