@@ -19,4 +19,5 @@ def inception_block(A_prev, filters):
     All convolutions inside the inception block should use a rectified linear activation (ReLU)
     Returns: the concatenated output of the inception block
     """
-    pass
+    F1, F3R, F3,F5R, F5, FPP = filters
+    # extract variables from list filters via direct assignment
