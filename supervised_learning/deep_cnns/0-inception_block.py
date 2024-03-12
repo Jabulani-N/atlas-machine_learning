@@ -21,14 +21,8 @@ def inception_block(A_prev, filters):
     Returns: concatenated output of inception block
     """
     F1, F3R, F3, F5R, F5, FPP = filters
-    # extract parameters from list filters via direct assignment
+    # extract filters from list filters via direct assignment
 
-    convf1 = K.layers.Conv2D(filters,
-    kernel_size=(1, 1),
-    strides=(1, 1),
-    padding="same",
-    data_format=None,
-    dilation_rate=(1, 1),
-    groups=1,
-    activation="ReLU",
-    kernel_regularizer=None,)
+    convf1 = K.layers.Conv2D(F1, (1, 1),
+                             padding="same",
+                             activation="ReLU")(A_prev)
