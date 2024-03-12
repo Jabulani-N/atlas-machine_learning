@@ -51,5 +51,5 @@ def inception_network():
     X = K.layers.Dropout(0.4)(X)
     X = K.layers.Dense(1000, activation='softmax')(X)
 
-    model = K.models.Model(inputs=x_input, outputs=X, name='inception_network')
+    model = K.models.Model(inputs=x_input, outputs=X, name='model')
     return model
