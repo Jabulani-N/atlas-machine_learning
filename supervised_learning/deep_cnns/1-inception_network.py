@@ -42,12 +42,11 @@ def inception_network():
     X = inception_block(X, (256, 160, 320, 32, 128, 128))
     X = inception_block(X, (384, 192, 384, 48, 128, 128))
 
-    # Final Layers
     X = K.layers.AveragePooling2D((7, 7), strides=(1, 1))(X)
-    X = K.layers.Flatten()(X)
-    X = K.layers.Dense(1000, activation='relu')(X)
+    # X = K.layers.Flatten()(X)
+    # X = K.layers.Dense(1000, activation='relu')(X)
     X = K.layers.Dropout(0.4)(X)
-    X = K.layers.Dense(1000, activation='relu')(X)
+    X = K.layers.Dense(1000, activation='softmax')(X)
 
     model = K.models.Model(inputs=x_input, outputs=X, name='inception_network')
     return model
