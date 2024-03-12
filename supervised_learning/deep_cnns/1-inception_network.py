@@ -16,11 +16,11 @@ def inception_network():
     you may inception_block = __import__('0-inception_block').inception_block
     Returns: the keras model
     """
-    X_input = K.Input(shape=(224, 224, 3))
+    x_inputs = K.Input(shape=(224, 224, 3))
 
     # First Layer
     X = K.layers.Conv2D(64, (7, 7), strides=(2, 2), padding='same',
-                        activation='relu')(X_input)
+                        activation='relu')(x_inputs)
     X = K.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same')(X)
 
     # Second Layer
@@ -50,6 +50,6 @@ def inception_network():
     X = K.layers.Dropout(0.4)(X)
     X = K.layers.Dense(1000, activation='relu')(X)
 
-    model = K.models.Model(inputs=X_input, outputs=X, name='inception_network')
+    model = K.models.Model(inputs=x_inputs, outputs=X, name='inception_network')
 
     return model
