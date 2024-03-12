@@ -59,7 +59,7 @@ This task is a tutorial on using [`keras.layers.Conv2D`]([Conv2D](https://keras.
 
 Write a function `def inception_network():` that builds the inception network as described in [Going Deeper with Convolutions](https://arxiv.org/pdf/1409.4842.pdf) (2014):
 
-- You can assume the input data will have shape (224, 224, 3)
+- You can assume the input data will have shape `(224, 224, 3)`
 - All convolutions inside and outside the inception block should use a rectified linear activation (ReLU)
 - You may use `inception_block = __import__('0-inception_block').inception_block`
 - Returns: the keras model
