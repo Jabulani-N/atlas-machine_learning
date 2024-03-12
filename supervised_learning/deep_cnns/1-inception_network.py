@@ -10,6 +10,7 @@ def inception_network():
     """
     builds the inception network as described in
         https://arxiv.org/pdf/1409.4842.pdf
+            see readme for specific layers replicated
     You can assume  input data will have shape (224, 224, 3)
     All convolutions inside and outside inception block
         use ReLU activation
@@ -24,8 +25,6 @@ def inception_network():
     X = K.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same')(X)
 
     # Second Layer
-    X = K.layers.Conv2D(64, (1, 1), strides=(1, 1), padding='same',
-                        activation='relu')(X)
     X = K.layers.Conv2D(192, (3, 3), strides=(1, 1), padding='same',
                         activation='relu')(X)
     X = K.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same')(X)
@@ -39,7 +38,9 @@ def inception_network():
     X = inception_block(X, (128, 128, 256, 24, 64, 64))
     X = inception_block(X, (112, 144, 288, 32, 64, 64))
     X = inception_block(X, (256, 160, 320, 32, 128, 128))
+
     X = K.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same')(X)
+
     X = inception_block(X, (256, 160, 320, 32, 128, 128))
     X = inception_block(X, (384, 192, 384, 48, 128, 128))
 
@@ -51,5 +52,4 @@ def inception_network():
     X = K.layers.Dense(1000, activation='relu')(X)
 
     model = K.models.Model(inputs=x_input, outputs=X, name='inception_network')
-
     return model
