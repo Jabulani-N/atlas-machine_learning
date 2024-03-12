@@ -19,12 +19,15 @@ def inception_network():
     X_input = K.Input(shape=(224, 224, 3))
 
     # First Layer
-    X = K.layers.Conv2D(64, (7, 7), strides=(2, 2), padding='same', activation='relu')(X_input)
+    X = K.layers.Conv2D(64, (7, 7), strides=(2, 2), padding='same',
+                        activation='relu')(X_input)
     X = K.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same')(X)
 
     # Second Layer
-    X = K.layers.Conv2D(64, (1, 1), strides=(1, 1), padding='valid', activation='relu')(X)
-    X = K.layers.Conv2D(192, (3, 3), strides=(1, 1), padding='same', activation='relu')(X)
+    X = K.layers.Conv2D(64, (1, 1), strides=(1, 1), padding='valid',
+                        activation='relu')(X)
+    X = K.layers.Conv2D(192, (3, 3), strides=(1, 1), padding='same',
+                        activation='relu')(X)
     X = K.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same')(X)
 
     # Inception Blocks
