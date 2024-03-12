@@ -24,18 +24,11 @@ def inception_block(A_prev, filters):
     # extract parameters from list filters via direct assignment
 
     convf1 = K.layers.Conv2D(filters,
-    kernel_size,
+    kernel_size=(1, 1),
     strides=(1, 1),
-    padding="valid",
+    padding="same",
     data_format=None,
     dilation_rate=(1, 1),
     groups=1,
-    activation=None,
-    use_bias=True,
-    kernel_initializer="glorot_uniform",
-    bias_initializer="zeros",
-    kernel_regularizer=None,
-    bias_regularizer=None,
-    activity_regularizer=None,
-    kernel_constraint=None,
-    bias_constraint=None)
+    activation="ReLU",
+    kernel_regularizer=None,)
