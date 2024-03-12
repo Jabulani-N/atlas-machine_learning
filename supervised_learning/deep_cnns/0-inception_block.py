@@ -21,8 +21,22 @@ def inception_block(A_prev, filters):
     Returns: concatenated output of inception block
     """
     F1, F3R, F3, F5R, F5, FPP = filters
-    # extract filters from list filters via direct assignment
+    # extract filters from list `filters` via direct assignment
 
     convf1 = K.layers.Conv2D(F1, (1, 1),
+                             padding="same",
+                             activation="ReLU")(A_prev)
+    convf3r = K.layers.Conv2D(F3R, (1, 1),
+                             padding="same",
+                             activation="ReLU")(A_prev)
+    # above is 1x1 layer filter before 3x3 filter
+    convf3 = K.layers.Conv2D(F3, (3, 3),
+                             padding="same",
+                             activation="ReLU")(A_prev)
+    convf5r = K.layers.Conv2D(F5R, (1, 1),
+                             padding="same",
+                             activation="ReLU")(A_prev)
+    # above is 1x1 layer filter before 5x5 filter
+    convf5 = K.layers.Conv2D(F5, (5, 5),
                              padding="same",
                              activation="ReLU")(A_prev)
