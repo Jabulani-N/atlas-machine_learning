@@ -20,7 +20,7 @@ def inception_block(A_prev, filters):
     All convolutions inside inception block should use a rectified linear activation (ReLU)
     Returns: concatenated output of inception block
     """
-    F1, F3R, F3,F5R, F5, FPP = filters
+    F1, F3R, F3, F5R, F5, FPP = filters
     # extract parameters from list filters via direct assignment
 
     convf1 = K.layers.Conv2D()
