@@ -54,6 +54,17 @@ This task is a tutorial on using [`keras.layers.Conv2D`]([Conv2D](https://keras.
 [`maxpooling2d` is not the same as `maxpool2d`]
 
 ## task 1 Inception Network
+<details>
+<summary>Tasks</summary>
+
+Write a function `def inception_network():` that builds the inception network as described in [Going Deeper with Convolutions](https://arxiv.org/pdf/1409.4842.pdf) (2014):
+
+- You can assume the input data will have shape (224, 224, 3)
+- All convolutions inside and outside the inception block should use a rectified linear activation (ReLU)
+- You may use `inception_block = __import__('0-inception_block').inception_block`
+- Returns: the keras model
+
+</details>
 
 ![layerset](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/12/1165affa2943a7a330b1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240312%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240312T052929Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=47df55b957db52a573f98e2fe0a1a34c28a7d76dfae0cbeb11ead98e42649b28)
 * layerset to be used
