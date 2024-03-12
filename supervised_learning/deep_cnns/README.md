@@ -25,6 +25,8 @@ Returns: the concatenated output of the inception block
 This task is a tutorial on using [`keras.layers.Conv2D`]([Conv2D](https://keras.io/api/layers/convolution_layers/convolution2d/)), [`keras.layers.MaxPooling2D`](https://keras.io/api/layers/pooling_layers/max_pooling2d/), and [`keras.layers.concatenate`](https://keras.io/api/layers/merging_layers/concatenate/).
 
 
-## Potential Pitfalls
+### Potential Pitfalls
 
 [`maxpooling2d` is not the same as `maxpool2d`]
+
+## task 1 Inception Network
