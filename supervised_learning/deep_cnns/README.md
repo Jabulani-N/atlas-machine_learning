@@ -95,3 +95,25 @@ Write a function `def identity_block(A_prev, filters):` that builds an identity 
 * Returns: the activated output of the identity block
 
 </details>
+
+![Ideneity Block](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/12/a884dfda60c795f11df7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240313%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240313T211912Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=80a36b7260ca2f662d0ea44a7cb0a4408855df6767d6e8213674f0180e6d622a)
+
+## Task 3 Projection Block
+
+<details>
+<summary>Task</summary>
+
+Write a function `def projection_block(A_prev, filters, s=2):` that builds a projection block as described in [Deep Residual Learning for Image Recognition (2015)](https://arxiv.org/pdf/1512.03385.pdf):
+
+- A_prev is the output from the previous layer
+- filters is a tuple or list containing F11, F3, F12, respectively:
+  - F11 is the number of filters in the first 1x1 convolution
+  - F3 is the number of filters in the 3x3 convolution
+  - F12 is the number of filters in the second 1x1 convolution as well as the 1x1 convolution in the shortcut connection
+- s is the stride of the first convolution in both the main path and the shortcut connection
+- All convolutions inside the block should be followed by batch normalization along the channels axis and a rectified linear activation (ReLU), respectively.
+- All weights should use he normal initialization
+- Returns: the activated output of the projection block
+
+</details>
+
