@@ -75,3 +75,23 @@ This task is mostly pasting the contents of the above layerset, but will also ma
 ### Potential pitfalls
 
 When doing a layer with depth greater than one, such as the second convolutional layer, the filters before the final one are of shape `(1, 1)`.
+
+## task 2 Identity Block
+
+<details>
+<summary>Task</summary>
+
+Write a function `def identity_block(A_prev, filters):` that builds an identity block as described in [Deep Residual Learning for Image Recognition (2015)](https://arxiv.org/pdf/1512.03385.pdf):
+
+
+
+* `A_prev` is the output from the previous layer
+* `filters` is a tuple or list containing `F11`, `F3`, `F12`, respectively:
+* `F11` is the number of filters in the first 1x1 convolution
+* `F3` is the number of filters in the 3x3 convolution
+* `F12` is the number of filters in the second 1x1 convolution
+* All convolutions inside the block should be followed by batch normalization along the channels axis and a rectified linear activation (ReLU), respectively.
+* All weights should use he normal initialization
+* Returns: the activated output of the identity block
+
+</details>
