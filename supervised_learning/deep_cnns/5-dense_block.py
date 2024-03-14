@@ -14,23 +14,31 @@ def dense_block(X, nb_filters, growth_rate, layers):
     all convolutions are precedied by
         Batch Nrmalization
         relu
-    """
-    concatenated_outputs = [X]
-    for _ in range(layers):
-        X = K.layers.BatchNormalization(axis=3)(X)
-        X = K.layers.Activation('relu')(X)
-        X = K.layers.Conv2D(filters=4 * growth_rate,
-                            kernel_size=(1, 1), strides=(1, 1),
-                            padding='same', kernel_initializer='he_normal')(X)
+    X = output from  previous layer
+    nb_filters = integer number of filters in X
+    growth_rate = growth rate for dense block
+    layers = number of layers in dense block
 
-        X = K.layers.BatchNormalization(axis=3)(X)
-        X = K.layers.Activation('relu')(X)
-        X = K.layers.Conv2D(filters=growth_rate,
+    Returns:
+        concatenated output of each layer within Dense Block
+        number of filters within concatenated outputs
+    """
+
+    for _ in range(layers):
+        out = K.layers.BatchNormalization(axis=3)(X)
+        out = K.layers.Activation('relu')(out)
+        out = K.layers.Conv2D(filters=4 * growth_rate,
+                            kernel_size=(1, 1), strides=(1, 1),
+                            kernel_initializer='he_normal')(out)
+
+        out = K.layers.BatchNormalization(axis=3)(out)
+        out = K.layers.Activation('relu')(out)
+        out = K.layers.Conv2D(filters=growth_rate,
                             kernel_size=(3, 3), strides=(1, 1),
                             padding='same', kernel_initializer='he_normal')(X)
 
-        concatenated_outputs.append(X)
-        X = K.layers.Concatenate(axis=3)(concatenated_outputs)
+        X = K.layers.Concatenate(axis=3)([X, out])
+
         nb_filters += growth_rate
 
     return X, nb_filters
