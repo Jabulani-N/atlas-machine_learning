@@ -100,6 +100,9 @@ Write a function `def identity_block(A_prev, filters):` that builds an identity 
 
 ## Task 3 Projection Block
 
+The code document for this task is potentially incomplete.
+ * though it tests sucessfully localy, results from the checker are imprerfect.
+
 <details>
 <summary>Task</summary>
 
@@ -119,3 +122,22 @@ Write a function `def projection_block(A_prev, filters, s=2):` that builds a pro
 
 ![Projection Block](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/12/058c583d20b067c344c9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240313%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240313T211912Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a107e3f5c37033ca4391f1e9ad335d013d064758eede1e6fd6b837f59a94c0a7)
 
+## Task 5 Dense Block
+
+<details>
+<summary>Task 5</summary>
+
+Write a function `def dense_block(X, nb_filters, growth_rate, layers):` that builds a dense block as described in [Densely Connected Convolutional Networks](https://arxiv.org/pdf/1608.06993.pdf):
+
+- `X` is the output from the previous layer
+- `nb_filters` is an integer representing the number of filters in `X`
+- `growth_rate` is the growth rate for the dense block
+- `layers` is the number of layers in the dense block
+- You should use the bottleneck layers used for DenseNet-B
+- All weights should use he normal initialization
+- All convolutions should be preceded by Batch Normalization and a rectified linear activation (ReLU), respectively
+- Returns: The concatenated output of each layer within the Dense Block and the number of filters within the concatenated outputs, respectively
+
+</details>
+
+![Densely Connected Convolutional Networks](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/1/553bd4eebc1423fc0b72.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240314%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240314T021215Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=bc12c59a52ab84cd502fedd815ecaf42df0d702ed9d8b033509e6ef91917e56b)
