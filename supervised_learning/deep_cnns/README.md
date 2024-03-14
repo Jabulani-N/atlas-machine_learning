@@ -117,3 +117,5 @@ Write a function `def projection_block(A_prev, filters, s=2):` that builds a pro
 
 </details>
 
+![Projection Block](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/12/058c583d20b067c344c9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240313%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240313T211912Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a107e3f5c37033ca4391f1e9ad335d013d064758eede1e6fd6b837f59a94c0a7)
+
