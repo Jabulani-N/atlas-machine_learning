@@ -56,12 +56,14 @@ Returns: the concatenated output of the inception block
 This task is a tutorial on using [`keras.layers.Conv2D`]([Conv2D](https://keras.io/api/layers/convolution_layers/convolution2d/)), [`keras.layers.MaxPooling2D`](https://keras.io/api/layers/pooling_layers/max_pooling2d/), and [`keras.layers.concatenate`](https://keras.io/api/layers/merging_layers/concatenate/).
 
 Background informaton:
-* Inception layers improve performace by using multiple filter sizes, as well as using a pooling layer all together.
+* Inception layers improve performace by using multiple filter sizes, as well as using a pooling layer all together. Results are concatenated end-to-end.
   * [These will all go through a 1x1 filter to avoid exponentially stacking the computational costs](https://maelfabien.github.io/deeplearning/inception/#).
     * When this does not happen, the output of the 5x5 filter will perform an extreme number of calculations. This 1x1 convolution reduces the calculation count to about 10% of what it otherwise would be.
       * the 1x1 conv later is sometimes called a `bottleneck` layer.
+      * The Max Pool layer is followed by a 1x1 bottleneck layer for the same reason: it would otherwise be outputting a 28x28x192 block, which is not only massive, but the entire size of what each layer wants for an input, preventing other layers from contributing.
+        * The bottleneck here shrinks it to a useable size, outputting a concatenation totataling slightly larger than input: 28x28x256.
   * the pooling layer will need to use [`same` padding and stride of `(1, 1)`](https://youtu.be/C86ZXvgpejM?si=35lWzSFkKxI9E_6L&t=140) to ensure the same/correct shape of output.
-
+* also, there are [softmax layers to the side of each one](https://youtu.be/KfV8CJh7hE0?si=azn7wD6EGa4mqHhH&t=290). They are thought to regularize the model, preventing overfitting.
 ### Potential Pitfalls
 
 [`maxpooling2d` is not the same as `maxpool2d`]
