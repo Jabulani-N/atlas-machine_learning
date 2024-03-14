@@ -27,6 +27,10 @@ Assorted Resources:
 Identity Block
 * https://machinelearningknowledge.ai/keras-implementation-of-resnet-50-architecture-from-scratch/#Implementation_of_Identity_Block
 
+ResNet
+* https://medium.com/@easylearn.ai/neural-networks-how-resnet-works-a-gif-animation-illustration-no-code-2856fc7f27b4
+  * ResNet blocks send a copy of the input added to it's own activation. This way, even if one layer had zero activations to ocntribute, there is still information to pass to the following layers.
+
 ## Task 0 Inception Block
 
 ![Inception Block](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/12/4a550a5b5501521f794b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240312%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240312T000948Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=1057b914f04521b444a82a5e509bc47a63c28e81a1052f4b8330525a438f9299)
@@ -51,6 +55,9 @@ Returns: the concatenated output of the inception block
 
 This task is a tutorial on using [`keras.layers.Conv2D`]([Conv2D](https://keras.io/api/layers/convolution_layers/convolution2d/)), [`keras.layers.MaxPooling2D`](https://keras.io/api/layers/pooling_layers/max_pooling2d/), and [`keras.layers.concatenate`](https://keras.io/api/layers/merging_layers/concatenate/).
 
+Background informaton:
+* Inception layers improve performace by using multiple filter sizes, as well as using a pooling layer all together.
+  * [These will all go through a 1x1 filter to avoid stacking the computational costs](https://maelfabien.github.io/deeplearning/inception/#)
 
 ### Potential Pitfalls
 
