@@ -37,7 +37,7 @@ def dense_block(X, nb_filters, growth_rate, layers):
                             padding='same',
                             kernel_initializer='he_normal')(out)
 
-        out = K.layers.Concatenate(axis=3)([X, out])
+        X = K.layers.Concatenate(axis=3)([X, out])
         nb_filters += growth_rate
 
-    return out, nb_filters
+    return X, nb_filters
