@@ -58,6 +58,7 @@ This task is a tutorial on using [`keras.layers.Conv2D`]([Conv2D](https://keras.
 Background informaton:
 * Inception layers improve performace by using multiple filter sizes, as well as using a pooling layer all together.
   * [These will all go through a 1x1 filter to avoid stacking the computational costs](https://maelfabien.github.io/deeplearning/inception/#)
+  * the pooling layer will need to use [`same` padding and stride of `(1, 1)`](https://youtu.be/C86ZXvgpejM?si=35lWzSFkKxI9E_6L&t=140) to ensure the same/correct shape of output.
 
 ### Potential Pitfalls
 
