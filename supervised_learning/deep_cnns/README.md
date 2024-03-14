@@ -22,7 +22,10 @@ Requirements
 - All your files must be executable
 - The length of your files will be tested using wc
 
+Assorted Resources:
 
+Identity Block
+* https://machinelearningknowledge.ai/keras-implementation-of-resnet-50-architecture-from-scratch/#Implementation_of_Identity_Block
 
 ## Task 0 Inception Block
 
@@ -53,7 +56,7 @@ This task is a tutorial on using [`keras.layers.Conv2D`]([Conv2D](https://keras.
 
 [`maxpooling2d` is not the same as `maxpool2d`]
 
-## task 1 Inception Network
+## Task 1 Inception Network
 <details>
 <summary>Tasks</summary>
 
