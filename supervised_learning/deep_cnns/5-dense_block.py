@@ -7,7 +7,7 @@ import tensorflow.keras as K
 
 def dense_block(X, nb_filters, growth_rate, layers):
     """
-    builds a denseblock as described in
+    builds a dense block as described in
         https://arxiv.org/pdf/1608.06993.pdf
 
     all weights use normal initialization
@@ -24,21 +24,22 @@ def dense_block(X, nb_filters, growth_rate, layers):
         number of filters within concatenated outputs
     """
 
-    for layerNum in range(layers):
-        out = K.layers.BatchNormalization()(X)
-        out = K.layers.Activation('relu')(out)
-        out = K.layers.Conv2D(filters=4 * growth_rate,
-                              kernel_size=(1, 1), strides=(1, 1),
-                              kernel_initializer='he_normal')(out)
+    out = [X]
+    for _ in range(layers):
+        X = K.layers.BatchNormalization(axis=3)(X)
+        X = K.layers.Activation('relu')(X)
+        X = K.layers.Conv2D(4 * growth_rate, (1, 1), (1, 1),
+                            padding='same',
+                            kernel_initializer='he_normal')(X)
 
-        out = K.layers.BatchNormalization()(out)
-        out = K.layers.Activation('relu')(out)
-        out = K.layers.Conv2D(filters=growth_rate,
-                              kernel_size=(3, 3), strides=(1, 1),
-                              padding='same', kernel_initializer='he_normal')(out)
+        X = K.layers.BatchNormalization(axis=3)(X)
+        X = K.layers.Activation('relu')(X)
+        X = K.layers.Conv2D(growth_rate, (3, 3), (1, 1),
+                            padding='same',
+                            kernel_initializer='he_normal')(X)
 
-        X = K.layers.Concatenate([X, out])
-
+        out.append(X)
+        X = K.layers.Concatenate(axis=3)(out)
         nb_filters += growth_rate
 
     return X, nb_filters
