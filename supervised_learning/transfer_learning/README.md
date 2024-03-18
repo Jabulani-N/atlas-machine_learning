@@ -35,4 +35,10 @@ The more pictures you have for training, the more layers you can afford to let g
 
 ### Motivation for Transfer Learning
 
-The idea behind transfer learning it to have a network utilize old knowledge when new training is performed. Similar to how humans and other logical beings can transfer knowledge from one lesson to the next.
+The idea behind transfer learning it to have a network utilize old knowledge when new training is performed. Similar to how humans and other logical beings can transfer knowledge from one lesson to the next, and dissimilar to deep learning training being done in isolation. It is not a new concept. It is synonymous with "Learning to Learn", "Knowledge Consolidation", and "Inductive Transfer", and "Generalization."
+
+
+### Understading Transfer Learning
+
+![Transfer Learning visual aid from the same article](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*9GTEzcO8KxxrfutmtsPs3Q.png)
+
