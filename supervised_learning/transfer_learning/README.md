@@ -27,6 +27,6 @@ The more pictures you have for training, the more layers you can afford to let g
 - at most, you can still even use the entire database as it's own initial weight.
 
 
-## [Nuts and Bolts of AI Applications using Deep Learning](https://youtu.be/wjqaz6m42wU)
+## [Nuts and Bolts of AI Applications using Deep Learning by Andrew Ng](https://youtu.be/wjqaz6m42wU)
 
 ## [Comprehensive Hands-on Guide to Transfer Learning](https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a)
