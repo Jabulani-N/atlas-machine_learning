@@ -42,3 +42,32 @@ The idea behind transfer learning it to have a network utilize old knowledge whe
 
 ![Transfer Learning visual aid from the same article](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*9GTEzcO8KxxrfutmtsPs3Q.png)
 
+As no knowledge is retained in traditional learning, traditionally, it all starts from the ground up, and is only trained in the specific way intended for at the time. Work done today is of no help tomorrow, so to speak.
+
+#### For example
+
+Task `T1` is identifying features present in a restaurant; Task `T2` is identifying features in a park. There may be some overlap, but if we pull all of `T1`, it'll be biased towards identifying things as being resetaraunt-associated features. That said, some low level things like edges and corners might be transferrable. We can preserve the earlier layers that are likely to identify such low levels of patterns, and then our park `T2` will have a launching point to work with.
+
+![mathematic description of the above](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*J5GsN8izqdRR4sdxt6mwEg.png)
+
+![more of the mathematic description of the above](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*KgkqmR18XoFUkzmy-UjjKw.png)
+
+Domain Vs Task
+
+![Visual aid](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*vE8VO6isG0fSVYzgci3DuQ.png)
+
+### Understanding Transfer LEarning Key Takeaways
+
+What to transfer:
+* how much of the source will be useful to the target task?
+
+When to transfer:
+* There may be situations where transferring acatually degrades performance, rather than imrpoving results.
+
+How to transfer:
+* Whne transfer has been confirmed, there are a selection of usable algorithms and techniquese to choose from. they are described later in the article.
+
+
+### Transfer Learning Strategies
+
+`placeholder for content`
