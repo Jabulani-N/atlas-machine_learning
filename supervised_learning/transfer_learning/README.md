@@ -15,7 +15,7 @@ freeze the parameters of the network you downloaded, and only train the output l
 Many deep learning frameworks support this, so just search around for one that allows you to do this. Ideally, find one that has "trainable parameter = 0" or "freeze = 1" so you can mess with whether or not you train the earlier layers, and you just train your custom output layer.
 
 
-### "precompute" AKA "save-to-disk" method
+### "Precompute" AKA "Save-to-Disk" Method
  one trick that can be used on this situation is to save the computed output of the earlier layers, since they won't be getting trained. One can directly calculate what they'll behave like a function with an input and output.
 
 - preferred for if you have a small training dataset
@@ -25,3 +25,8 @@ Many deep learning frameworks support this, so just search around for one that a
 
 The more pictures you have for training, the more layers you can afford to let get trained.
 - at most, you can still even use the entire database as it's own initial weight.
+
+
+## [Nuts and Bolts of AI Applications using Deep Learning](https://youtu.be/wjqaz6m42wU)
+
+## [Comprehensive Hands-on Guide to Transfer Learning](https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a)
