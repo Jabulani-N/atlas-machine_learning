@@ -28,5 +28,8 @@ The more pictures you have for training, the more layers you can afford to let g
 
 
 ## [Nuts and Bolts of AI Applications using Deep Learning by Andrew Ng](https://youtu.be/wjqaz6m42wU)
+* [Slides](https://media.nips.cc/Conferences/2016/Slides/6203-Slides.pdf)
 
 ## [Comprehensive Hands-on Guide to Transfer Learning](https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a)
+ Reading notes:
+
