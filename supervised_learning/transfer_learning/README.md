@@ -33,3 +33,6 @@ The more pictures you have for training, the more layers you can afford to let g
 ## [Comprehensive Hands-on Guide to Transfer Learning](https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a)
  Reading notes:
 
+### Motivation for Transfer Learning
+
+The idea behind transfer learning it to have a network utilize old knowledge when new training is performed. Similar to how humans and other logical beings can transfer knowledge from one lesson to the next.
