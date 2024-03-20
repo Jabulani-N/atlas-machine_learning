@@ -120,3 +120,26 @@ Deep Learning models represent "inductive learning." Inductive learning algorith
 These inductive biases can be characterized by factors, including "the hypothesis space it restricts to and the search process ythrough the hypothesis space." They impact how and what is learned by the model.
 
 
+Inductive transfer tecniquesa use these inductive biases via a number of ways, such narrowing hypothesis space, making adjustments to search process itself.
+
+![image example of the above](https://miro.medium.com/v2/resize:fit:1210/format:webp/1*yjBaWnApTg_4Mz1xrHBJZg.png)
+
+#### Deep Transfer Learning Strategies
+
+There is a need for speed among deep models. Pre-trained networkds/models are part of the solution, the basis of "deep transfer learning."
+
+One method of using these models is described as "**Off-the-shelf Pre-trained Models as Feature Extractors**." Essentially, we take an entire model, and then don't use it's final (labelling) layer.
+
+![visual example of off the shelf model as feature extractor](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*qfQ3hmHLwApXZBN-A85r8g.png)
+
+* "The key idea here is to just leverage the pre-trained model’s weighted layers to extract features but not to update the weights of the model’s layers during training with new data for the new task."
+
+AlexNet without it's final classifiation layer can transform images from a new domain and get its features for a new task. Doing this is popular.
+
+They're "surprisingly effective":
+
+![efficacy of off-the-shelf models as feature extractors](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*cdqFwsX3ol0WPfkqDEfKiA.png)
+
+![closeup of above](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*d__1oSbHOSEq6m4bFflE5g.png)
+
+Another approach is **Fine-tuning Off-the-shelf Pre-trained Models**, a more involved technique were we select previous layers to retrain, alongiside replacing the model's final layer.
