@@ -142,4 +142,31 @@ They're "surprisingly effective":
 
 ![closeup of above](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*d__1oSbHOSEq6m4bFflE5g.png)
 
-Another approach is **Fine-tuning Off-the-shelf Pre-trained Models**, a more involved technique were we select previous layers to retrain, alongiside replacing the model's final layer.
+Another approach is **Fine-tuning Off-the-shelf Pre-trained Models**, a more involved technique were we select previous layers to retrain, alongiside replacing the model's final layer. Deep neural networks generally have iintial layers to capture generic features, and later layers are specified to the identification task they were trained for. This method freezes the early layers, which will be sufficiently trained for the current new task, and retrains the rest.
+
+![freezing image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*AUI4rH8_tbb7x4xkBsHu2Q.png)
+
+**Pre-trained Models** are mercifully available, with open source models of high quality being commonly available in the form of the parameters/weights they were trained into having. Keras even has an interface for downloading some more popular models.
+
+Some computer vision models are
+
+* [VGG-16](https://www.kaggle.com/keras/vgg16/home)
+* [VGG-19](https://www.kaggle.com/keras/vgg19/home)
+* [Inception V3](https://arxiv.org/abs/1512.00567)
+* [XCeption](https://arxiv.org/abs/1610.02357)
+* [ResNet-50](https://www.kaggle.com/keras/resnet50/home)
+
+
+Some word embedding models, which may help for some natural language processing (nlp) related tasks are
+
+* [Word2Vec](https://en.wikipedia.org/wiki/Word2vec)
+* [GloVe](https://nlp.stanford.edu/projects/glove/)
+* [FastText](https://fasttext.cc/)
+
+these represent progress towarfds nlp transfer learning
+
+* [Universal Sentence Encoder by Google](https://arxiv.org/abs/1803.11175)
+* [Bidirectional Encoder Representations from Transformers (BERT) by Google](https://arxiv.org/abs/1810.04805)
+
+### Types of Deep Transfer Learning
+
