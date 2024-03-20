@@ -12,6 +12,8 @@
 
 ## [Introdtion to Transfer Learning](https://www.youtube.com/watch?v=FQM13HkEfBk&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF&index=20:)
 
+![Trasfer Learning: idea image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Ww3AMxZeoiB84GVSRBr4Bw.png)
+
 * you basically go to someone's github and download an open source implimentation of a neural network. both code and weights. look for something doesn't have to be the same as what you're loking to categotrize on.
 
 You can get rid of the current output layer at the end, and replace it with your own, that'll output categories relevant to what you want
@@ -110,3 +112,11 @@ The "transfer learning strategies" and "what to transfer" relate as according to
 ![TL strategies vs what to transfer table](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xK81ohzG-tLRKVexowUvgw.png)
 
 ### Transfer Learning for Deep Learning
+
+![DL banner image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*nMEcHwB18CTqfY0mTd-s1g.png)
+
+Deep Learning models represent "inductive learning." Inductive learning algorithms infer a mapping from a set of training examples. With classification, it maps input features that result in class labels. They make assumptions based on the training data called "inductive bias" in order to apply the lessons of training to unseen entities.
+
+These inductive biases can be characterized by factors, including "the hypothesis space it restricts to and the search process ythrough the hypothesis space." They impact how and what is learned by the model.
+
+
