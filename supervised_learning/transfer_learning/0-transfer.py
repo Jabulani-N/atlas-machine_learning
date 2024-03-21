@@ -6,7 +6,11 @@ import tensorflow.keras as K
 
 
 def preprocess_data(X, Y):
-    """runs preprocessing on input dataset (images)"""
+    """
+    runs preprocessing on input dataset
+    recieves a keras.datasets.datasetName.load_data()
+        which returns two objects when run
+    """
     X_p = K.applications.efficientnet.preprocess_input(X)
     Y_p = K.utils.to_categorical(Y, 10)
     return X_p, Y_p
