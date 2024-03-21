@@ -31,4 +31,4 @@ def make_model():
     model = K.applications.EfficientNetB7(weights='imagenet', include_top=True)
 
 if __name__ == '__main__':
-    madeModel = make_model()
+    model = make_model()
