@@ -27,8 +27,40 @@ def make_model():
     x_train, y_train = preprocess_data(x_train, y_train)
     x_test, y_test = preprocess_data(x_test, y_test)
 
+    input_shape = (32, 32, 3)
+
     # Create the EfficientNetB7 model
-    model = K.applications.EfficientNetB7(weights='imagenet', include_top=True)
+    inputs = K.layers.Input(shape=input_shape)
+    base_model = K.applications.EfficientNetB7(weights='imagenet', include_top=False, input_shape=input_shape, input_tensor=inputs)
+
+    # Freezing
+    base_model.trainable = False
+
+    # Rebuild Top
+    x = K.layers.GlobalAveragePooling2D(name="avg_pool")(base_model.output)
+    x = K.layers.BatchNormalization()(x)
+    x = K.layers.Dropout(0.25)(x)  # Dropout layer with a dropout rate of 0.25
+    x = K.layers.Dense(256, activation='relu')(x)
+    outputs = K.layers.Dense(10, activation='softmax')(x)  # Using 'outputs' for the final layer
+
+    # Create the model
+    model = K.Model(inputs=inputs, outputs=outputs, name="EfficientNet")
+
+    # Compile the model
+    optimizer = K.optimizers.Adam()
+    model.compile(optimizer=optimizer, loss="categorical_crossentropy", metrics=["accuracy"])
+
+    # Use the model to predict labels for the test data
+    predictions = model.predict(x_test)
+
+    # Convert the predictions to class labels
+    predicted_labels = K.backend.argmax(predictions, axis=1)
+
+    # Display the predicted labels
+    print(predicted_labels)
+
+    # Fit the model
+    model.fit(x_train, y_train, batch_size=128, epochs=11, validation_data=(x_test, y_test))
 
 if __name__ == '__main__':
     model = make_model()
