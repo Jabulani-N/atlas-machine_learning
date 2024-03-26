@@ -15,6 +15,8 @@ def preprocess_data(X, Y):
     Y_p = K.utils.to_categorical(Y, 10)
     return X_p, Y_p
 # the above preprocess_data() seems to work
+
+
 def make_model():
     """
     makes an EfficientNetB7 model
@@ -46,23 +48,28 @@ def make_model():
     # Rebuild Top
     x = K.layers.GlobalAveragePooling2D(name="avg_pool")(base_model.output)
     x = K.layers.BatchNormalization()(x)
-    x = K.layers.Dropout(0.25)(x)  # Dropout layer with a dropout rate of 0.25
+    # Dropout layer with a dropout rate of 0.25
+    x = K.layers.Dropout(0.25)(x)
     x = K.layers.Dense(256, activation='relu')(x)
-    outputs = K.layers.Dense(10, activation='softmax')(x)  # Using 'outputs' for the final layer
-
+    # Using 'outputs' for the final layer
+    outputs = K.layers.Dense(10, activation='softmax')(x)
     # Create the model
     model = K.Model(inputs=inputs, outputs=outputs, name="EfficientNet")
 
     # Compile the model
     # Default learning rate = 0.001
     optimizer = K.optimizers.Adam(learning_rate=0.0005)
-    model.compile(optimizer=optimizer, loss="categorical_crossentropy", metrics=["accuracy"])
+    model.compile(optimizer=optimizer,
+                  loss="categorical_crossentropy",
+                  metrics=["accuracy"])
 
     # Apply data augmentation to the training data
     datagen.fit(x_train)
 
     # Define early stopping callback
-    early_stopping = K.callbacks.EarlyStopping(monitor='val_loss', patience=9, restore_best_weights=True)
+    early_stopping = K.callbacks.EarlyStopping(monitor='val_loss',
+                                               patience=9,
+                                               restore_best_weights=True)
 
     # Fit the model with data augmentation and early stopping
     model.fit(datagen.flow(x_train, y_train, batch_size=256),
