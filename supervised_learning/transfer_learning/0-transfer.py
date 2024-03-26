@@ -64,4 +64,3 @@ def make_model():
 
 if __name__ == '__main__':
     model = make_model()
-
