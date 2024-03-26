@@ -40,7 +40,10 @@ def make_model():
 
     # Create the EfficientNetB7 model
     inputs = K.layers.Input(shape=input_shape)
-    base_model = K.applications.EfficientNetB7(weights='imagenet', include_top=False, input_shape=input_shape, input_tensor=inputs)
+    base_model = K.applications.EfficientNetB7(weights='imagenet',
+                                               include_top=False,
+                                               input_shape=input_shape,
+                                               input_tensor=inputs)
 
     # Freezing
     base_model.trainable = False
@@ -73,7 +76,7 @@ def make_model():
 
     # Fit the model with data augmentation and early stopping
     model.fit(datagen.flow(x_train, y_train, batch_size=256),
-              epochs=17, validation_data=(x_test, y_test),
+              epochs=27, validation_data=(x_test, y_test),
               callbacks=[early_stopping])
 
     # Save trained model
