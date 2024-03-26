@@ -20,6 +20,13 @@ def make_model():
     makes an EfficientNetB7 model
     retrains it for the cifar10 dataset
     """
+    # Define the data augmentation parameters
+    datagen = K.preprocessing.image.ImageDataGenerator(
+        rotation_range=15,
+        width_shift_range=0.1,
+        height_shift_range=0.1,
+        horizontal_flip=True,
+    )
     # Load the CIFAR10 dataset
     (x_train, y_train), (x_test, y_test) = K.datasets.cifar10.load_data()
 
@@ -47,20 +54,24 @@ def make_model():
     model = K.Model(inputs=inputs, outputs=outputs, name="EfficientNet")
 
     # Compile the model
-    optimizer = K.optimizers.Adam()
+    # Default learning rate = 0.001
+    optimizer = K.optimizers.Adam(learning_rate=0.0005)
     model.compile(optimizer=optimizer, loss="categorical_crossentropy", metrics=["accuracy"])
 
-    # Use the model to predict labels for the test data
-    predictions = model.predict(x_test)
+    # Apply data augmentation to the training data
+    datagen.fit(x_train)
 
-    # Convert the predictions to class labels
-    predicted_labels = K.backend.argmax(predictions, axis=1)
+    # Define early stopping callback
+    early_stopping = K.callbacks.EarlyStopping(monitor='val_loss', patience=9, restore_best_weights=True)
 
-    # Display the predicted labels
-    print(predicted_labels)
+    # Fit the model with data augmentation and early stopping
+    model.fit(datagen.flow(x_train, y_train, batch_size=256),
+              epochs=17, validation_data=(x_test, y_test),
+              callbacks=[early_stopping])
 
-    # Fit the model
-    model.fit(x_train, y_train, batch_size=128, epochs=11, validation_data=(x_test, y_test))
+    # Save trained model
+    model.save('cifar10.h5')
+
 
 if __name__ == '__main__':
     model = make_model()

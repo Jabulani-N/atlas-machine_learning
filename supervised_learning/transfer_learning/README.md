@@ -170,3 +170,6 @@ these represent progress towarfds nlp transfer learning
 
 ### Types of Deep Transfer Learning
 
+## Potential Pitfalls
+
+Be sure you have `scipy` installed: `pip install scipy`
