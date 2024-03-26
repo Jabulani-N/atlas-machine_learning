@@ -173,3 +173,5 @@ these represent progress towarfds nlp transfer learning
 ## Potential Pitfalls
 
 Be sure you have `scipy` installed: `pip install scipy`
+
+If you accidentally attempt to push a created model to Git, causing `Large files detected` becuase `this exceeds GitHub's file size limit of 100.00 MB`, follow [these instrucitons](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)

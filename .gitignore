@@ -1,3 +1,5 @@
+# own additions to remove trained keras models
+*.h5
 # own additions to GitHub's python preset
 *-main.py
 *executrix*
