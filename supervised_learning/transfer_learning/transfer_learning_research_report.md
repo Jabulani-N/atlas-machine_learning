@@ -14,6 +14,8 @@ Following guidance of multiple sources, I imported the EfficientNetB7 Keras mode
 
 ## Introduction
 
+The success criterion of this project is the creation of a neural network that will classify the CIFAT10 dataset. In theory, this could be done by creating and training a model from scratch, but the *purpose* of this project is learning how much better a choice it is to Transfer Learning from another, already-made neural network model. Doing this, we'll utilize the open-source and freely distributed work of others to give our own work a head start. Heightening our perspective by standing on the shoulders of giants, so to speak.
+
 ## Materials and Methods
 
 ## Results
