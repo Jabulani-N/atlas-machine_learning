@@ -16,6 +16,10 @@ Following guidance of multiple sources, I imported the EfficientNetB7 Keras mode
 
 The success criterion of this project is the creation of a neural network that will classify the CIFAT10 dataset. In theory, this could be done by creating and training a model from scratch, but the *purpose* of this project is learning how much better a choice it is to Transfer Learning from another, already-made neural network model. Doing this, we'll utilize the open-source and freely distributed work of others to give our own work a head start. Heightening our perspective by standing on the shoulders of giants, so to speak.
 
+A lambda layer and output layer should be used to prepare the data to match the trained layers, and to direct the labelling to be relevant for the task at hand.
+
+To train the models specificaly for the domain of the CIFAR10 dataset, I trained it as normal, but kept the weaights of the layers I downloaded frozen, so their work is not wasted. 
+
 ## Materials and Methods
 
 ## Results
