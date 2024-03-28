@@ -1,5 +1,7 @@
 # Implimenting Transfer Learning to Train a Keras Model to Label the CIFAR10 Dataset
 
+![visual example of off the shelf model as feature extractor](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*qfQ3hmHLwApXZBN-A85r8g.png)
+
 ## Contents
 - [Abstract](#abstract)
 - [Introduction](#introduction)
@@ -52,3 +54,15 @@ Due to the lack of a lambda layer to convert training images into a more useful 
 Various dropout rates may produce different results if the number of trainable layers is changed.
 
 ## Literature Cited
+
+[you.com](you.com)'s was referenced for interpretation, syntax corrections, and terminology.
+
+[Introdtion to Transfer Learning](https://www.youtube.com/watch?v=FQM13HkEfBk&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF&index=20:) was heavily referenced for conceptual understanding.
+
+[Nuts and Bolts of AI Applications](#nuts-and-bolts-of-ai-applications-using-deep-learning-by-andrew-ng) was referenced for conceptual understanding.
+
+A [Comprehensive Hands-on Guide to Transfer Learning](https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a) to Transfer Learning was heavily referenced for conceptual understanding and for visual aides.
+
+[stack**overflow**](https://stackoverflow.com/questions/72927229/nameerror-name-scipy-is-not-defined-when-trying-to-create-a-model) was referenced for multiple solutions to simple problems, such as prerequisite installs for running training locally
+
+[Google Colab](https://colab.research.google.com/drive/1FqqntBh4D66uG2p6p8Kj6loOfP71WtoV?usp=sharing) was used as a testing environment and recordkeeper.
