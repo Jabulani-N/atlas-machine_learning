@@ -54,6 +54,8 @@ Due to the lack of a lambda layer to convert training images into a more useful 
 
 Various dropout rates may produce different results if the number of trainable layers is changed.
 
+As all later training sessions ended via early stopping, it is unlikely that increasing epoch count would improve results, unless other parameters were simultaneously changed.
+
 ## Literature Cited
 
 [you.com](you.com)'s was referenced for interpretation, syntax corrections, and terminology.
