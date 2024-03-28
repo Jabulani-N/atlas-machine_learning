@@ -30,10 +30,25 @@ The "Transfer Learning" part of the project came in the form of importing the `E
 
 To replace the omitted top layer, a pooling keras layer is created, recieving the previous, frozen model as input. Following this are a normlaization layer with dropout, a dense ReLu layer, and finally a softmax output layer. All layers are put into creating a single Keras model, compiled with an Adam optimizer, and `model.fit` was used in creating a model to save under the name `cifar10.h5`.
 
+These are the steps taken for the purposes of creating a model. The follwoing was done to improve training efficacy and efficiency:
 
+* multiple learning rates were used, including `0.0005`, `0.0007`, the default `0.001`, and `0.0015`.
+* Data augmentation was used to train on rotated, stretched, and flipped versions of traing images.
+* Early Stopping was utilized when training, limiting resource waste potentially caused by a large epoch count.
+* Dropout was used on trainable layers, including rates of `0.35`, and `0.25`
 
 ## Results
 
+All training methods peaked at a validation accuracy of approximately `0.32 ±0.01`.
+
+Comparing learning rates: 0.0005 was the most effective tested rate, followed by 0.0007, the default, 0.001 and greater than default values respectively. Early stopping was used with settings to preserve weights producing the best results when testing. 
+
+Comparing results of dropout settings, the lower setting of 0.25 provided better results than 0.35. 0.35 dropout rate never exceeded validation accuracy of 0.3 in any epohch tested.
+
 ## Discussion
+
+Due to the lack of a lambda layer to convert training images into a more useful size, the efficacy of training was lightly ceilinged, despite the use of data augmentation. It is possible that utilizing a different number of custom trainable layers would have influenced results, though testing is needed. 
+
+Various dropout rates may produce different results if the number of trainable layers is changed.
 
 ## Literature Cited
