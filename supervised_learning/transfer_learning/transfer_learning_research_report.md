@@ -13,13 +13,13 @@
 
 ## Abstract
 
-Following guidance of multiple sources, the EfficientNetB7 Keras model was imported, and  parameters manipulated in order to create a new model to identify the CIFAR10 (cifar10, cif10) Dataset. The top layer was not imported; a new top layer was created instead. Techniques utilized include Dropout and Data Augmentation. Early Stopping is utilized to limit wasted resources.
+Following guidance of multiple sources, the EfficientNetB7 Keras model was imported, and  parameters manipulated in order to create a new model to identify the CIFAR10 (cifar10, cif10) Dataset. The top layer was not imported; a new top layer was created instead. A Lambda layer was used to convert the cif10 data into a size EfficientNet is used to categorizing. Techniques utilized include Dropout and Data Augmentation. Early Stopping is utilized to limit wasted resources.
 
 ## Introduction
 
 The success criterion of this project is the creation of a neural network that will classify the CIFAT10 dataset. In theory, this could be done by creating and training a model from scratch, but the *purpose* of this project is learning how much better a choice it is to Transfer Learning from another, already-made neural network model. Doing this, we'll utilize the open-source and freely distributed work of others to give our own work a head start. Heightening our perspective by standing on the shoulders of giants, so to speak.
 
-A lambda layer and output layer should be used to prepare the data to match the trained layers, and to direct the labelling to be relevant for the task at hand.
+A lambda layer and output layer were used to respectively prepare the data to match the trained layers, and to direct the labelling to be relevant for the task at hand.
 
 To train the models specificaly for the domain of the CIFAR10 dataset, it was  trained as normal, but the weights of the layers downloaded were kept frozen, so their training is not wasted.
 
@@ -40,6 +40,7 @@ These are the steps taken for the purposes of creating a model. The follwoing wa
 * Early Stopping was utilized when training, limiting resource waste potentially caused by a large epoch count.
 * Dropout was used on trainable layers, including rates of `0.35`, and `0.25`
 
+A Lambda layer was created to resize the input images. As EfficientNet is trained on images of various sizes, up to 600x600 pixels, a Keras Lambda layer is used to scale up the 32x32 cif10 input.
 ## Results
 
 All training methods peaked at a validation accuracy of approximately `0.32 ±0.01`.
@@ -47,6 +48,8 @@ All training methods peaked at a validation accuracy of approximately `0.32 ±0.
 Comparing learning rates: 0.0005 was the most effective tested rate, followed by 0.0007, the default, 0.001 and greater than default values respectively. Early stopping was used with settings to preserve weights producing the best results when testing. 
 
 Comparing results of dropout settings, the lower setting of 0.25 provided better results than 0.35. 0.35 dropout rate never exceeded validation accuracy of 0.3 in any epohch tested.
+
+After introducing a Lambda layer, validation accuracy never fell below `0.85`.
 
 ## Discussion
 
@@ -56,6 +59,9 @@ Various dropout rates may produce different results if the number of trainable l
 
 As all later training sessions ended via early stopping, it is unlikely that increasing epoch count would improve results, unless other parameters were simultaneously changed.
 
+After the addition of a lambda layer, results were immediately improved, and training time was drastically increased per epoch. The massive increase in efficacy is too great to decline, so further improvements would perhaps best be targeted in increasing training speed instead of validation accuracy.
+
+Following
 ## Literature Cited
 
 [you.com](you.com)'s was referenced for interpretation, syntax corrections, and terminology.
