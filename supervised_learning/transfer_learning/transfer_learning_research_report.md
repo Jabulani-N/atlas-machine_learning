@@ -47,7 +47,7 @@ Comparing results of dropout settings, the lower setting of 0.25 provided better
 
 ## Discussion
 
-Due to the lack of a lambda layer to convert training images into a more useful size, the efficacy of training was lightly ceilinged, despite the use of data augmentation. It is possible that utilizing a different number of custom trainable layers would have influenced results, though testing is needed. 
+Due to the lack of a lambda layer to convert training images into a more useful size, the efficacy of training was lightly limited, despite the use of data augmentation. It is possible that utilizing a different number of custom trainable layers would have influenced results, though testing is needed. 
 
 Various dropout rates may produce different results if the number of trainable layers is changed.
 
