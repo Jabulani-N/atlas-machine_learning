@@ -1,6 +1,5 @@
 # Implimenting Transfer Learning to Train a Keras Model to Label the CIFAR10 Dataset
 
-![visual example of off the shelf model as feature extractor](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*qfQ3hmHLwApXZBN-A85r8g.png)
 
 ## Contents
 - [Abstract](#abstract)
@@ -9,6 +8,8 @@
 - [Results](#results)
 - [Discussion](#discussion)
 - [Literature Cited](#literature-cited)
+
+![visual example of off the shelf model as feature extractor](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*qfQ3hmHLwApXZBN-A85r8g.png)
 
 ## Abstract
 
