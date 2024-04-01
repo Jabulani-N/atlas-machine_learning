@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""placeholder documentation"""
+"""
+This module contains multiple functions
+The first is a portable function to preprocess image data
+The second creates an EffieientNetB7 model
+    and trains it for CIFAR10 dataset
+"""
 
 
 import tensorflow.keras as K
@@ -37,13 +42,24 @@ def make_model():
     x_test, y_test = preprocess_data(x_test, y_test)
 
     input_shape = (32, 32, 3)
+    # input_shape = (224, 224, 3)
+
+    # create lambda layer
+    # This one has input shape removed entirely.
+    #   compare results to the one that defines it as 224s
+    resize_layer = K.layers.Lambda(lambda image: K.backend.resize_images
+                                   (image,224 // 32, 224 // 32, "channels_last"))
+    # the floor division (//) is to create the multiplier to
+    # apply to the image size so they line up with what the
+    # base model (currently efficient net) expects to recieve
+    # structure is `desired_size // current_size`
 
     # Create the EfficientNetB7 model
     inputs = K.layers.Input(shape=input_shape)
     base_model = K.applications.EfficientNetB7(weights='imagenet',
                                                include_top=False,
                                                input_shape=input_shape,
-                                               input_tensor=inputs)
+                                               input_tensor=resize_layer(inputs))
 
     # Freezing
     base_model.trainable = False
