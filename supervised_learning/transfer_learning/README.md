@@ -8,7 +8,8 @@
 - [Introdtion to Transfer Learning](#introdtion-to-transfer-learning)
 - [Nuts and Bolts of AI Applications](#nuts-and-bolts-of-ai-applications-using-deep-learning-by-andrew-ng)
 - [Comprehensive Hands on Guide](#comprehensive-hands-on-guide-to-transfer-learning)
-- [Potential Pitfalls and large file removal](#potential-pitfalls)
+- [Potential Pitfalls](#potential-pitfalls)
+- [Large File Removal](#large-file-removal)
 
 
 ## [Introdtion to Transfer Learning](https://www.youtube.com/watch?v=FQM13HkEfBk&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF&index=20:)
@@ -174,6 +175,8 @@ these represent progress towarfds nlp transfer learning
 ## Potential Pitfalls
 
 Be sure you have `scipy` installed: `pip install scipy`
+
+## Large File Removal
 
 If you accidentally attempt to push a created model to Git, causing `Large files detected` becuase `this exceeds GitHub's file size limit of 100.00 MB`, follow [these instrucitons](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)
 * You'll move the java file to the top directory of the local repository, and then do `[bfg --delete-files YOUR-FILE-WITH-SENSITIVE-DATA](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)`
