@@ -8,6 +8,7 @@
 - [Introdtion to Transfer Learning](#introdtion-to-transfer-learning)
 - [Nuts and Bolts of AI Applications](#nuts-and-bolts-of-ai-applications-using-deep-learning-by-andrew-ng)
 - [Comprehensive Hands on Guide](#comprehensive-hands-on-guide-to-transfer-learning)
+- [Potential Pitfalls and large file removal](#potential-pitfalls)
 
 
 ## [Introdtion to Transfer Learning](https://www.youtube.com/watch?v=FQM13HkEfBk&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF&index=20:)
