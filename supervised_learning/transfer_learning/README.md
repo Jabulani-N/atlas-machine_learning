@@ -179,6 +179,6 @@ Be sure you have `scipy` installed: `pip install scipy`
 ## Large File Removal
 
 If you accidentally attempt to push a created model to Git, causing `Large files detected` becuase `this exceeds GitHub's file size limit of 100.00 MB`, follow [these instrucitons](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)
-* You'll move the java file to the top directory of the local repository, and then do `[bfg --delete-files YOUR-FILE-WITH-SENSITIVE-DATA](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)`
+* You'll move the java file to the top directory of the local repository, and then do [`bfg --delete-files YOUR-FILE-WITH-SENSITIVE-DATA`](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
   * replace `bfg` with whatever the name of the actual item has
     * for example, mine was `java -jar bfg-1.14.0.jar --delete-files NAME_OF_HUGE_FILE`
