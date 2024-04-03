@@ -29,4 +29,8 @@ Bounding boxes are rectangles highlighting each image. These are found via scori
 
 ### Intersection over Unions (IUO)
 
+This handles the fact that a single object can exist in multiple cells. The IOU discards cells with low enough chances of containing an object. The chance threshold is set by the user.
+
 #### non-max suppression (NMS)
+
+Of cells that made it through IOU filtering, discards cells that have low comparative chances of contraining an object.
