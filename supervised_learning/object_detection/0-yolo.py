@@ -14,7 +14,7 @@ class Yolo:
     model_path = path to where a Darknet Keras model is stored
     classes_path = path to list of class names used for Darknet model
         listed in order of index
-    class_t = float representing the box score threshold for the initial filtering
+    class_t = float representing box score threshold for initial filtering
     nms_t = float representing the IOU threshold for non-max suppression
     anchors is a numpy.ndarray
         shape (outputs, anchor_boxes, 2)
