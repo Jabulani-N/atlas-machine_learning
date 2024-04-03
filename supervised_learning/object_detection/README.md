@@ -1,5 +1,10 @@
 # Object Detection
 
+Contents
+- [Tasks](#tasks)
+  - [Task 0](#task-0---initialize-yolo)
+- [YOLO Explained](#you-only-look-once-yolo-explained)
+
 ## Tasks
 
 ### Task 0 - Initialize Yolo
@@ -22,6 +27,12 @@ Public instance attributes:
     `class_t`: the box score threshold for the initial filtering step
     `nms_t`: the IOU threshold for non-max suppression
     `anchors`: the anchor boxes
+
+Firstly, `class_names`, `class_t`, and `anchors` are provided, so they can be directly assigned.
+
+The `class_names` can be assigned by loading each line separately from `classes_path`.
+
+The model can be loaded by `tesnsorflow.keras.models.load_model(model_path)`
 
 
 ## [You Only Look Once (YOLO) Explained](https://www.datacamp.com/blog/yolo-object-detection-explained)

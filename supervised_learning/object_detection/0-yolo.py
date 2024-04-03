@@ -32,15 +32,16 @@ class Yolo:
         nms_t: the IOU threshold for non-max suppression
         anchors: the anchor boxes
         """
-        # Load the Darknet Keras model
-        self.model = K.models.load_model(model_path)
-        with open(classes_path, 'r') as classes_file:
-            # Read and store the list of class names
-            self.class_names = [line.strip()
-                                for line in classes_file.readlines()]
         # Assign the box score threshold for the initial filtering step
         self.class_t = class_t
         # Assign the IOU threshold for non-max suppression
         self.nms_t = nms_t
         # Assign the anchor boxes
         self.anchors = anchors
+
+        # Load the Darknet Keras model
+        self.model = K.models.load_model(model_path)
+        with open(classes_path, 'r') as classes_file:
+            # Read and store the list of class names
+            self.class_names = [line.strip()
+                                for line in classes_file.readlines()]
