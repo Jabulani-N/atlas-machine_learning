@@ -35,6 +35,26 @@ The `class_names` can be assigned by loading each line separately from `classes_
 
 The model can be loaded by `tesnsorflow.keras.models.load_model(model_path)`
 
+### Task 1 - Process Outputs
+
+Write a class `Yolo` (Based on `0-yolo.py`):
+
+Add public method `def process_outputs(self, outputs, image_size):`
+* `outputs` = list of `numpy.ndarray`s containing the predictions from the Darknet model for a single image:
+* Each output will have the shape `(grid_height, grid_width, anchor_boxes, 4 + 1 + classes)`
+    * `grid_height` & `grid_width` => the height and width of the grid used for the output
+    * `anchor_boxes` => the number of anchor boxes used
+    * `4` => `(t_x, t_y, t_w, t_h)`
+    * `1` => `box_confidence`
+    * `classes` => class probabilities for all classes
+* `image_size` is a numpy.ndarray containing the image’s original size `[image_height, image_width]`
+* Returns a tuple of `(boxes, box_confidences, box_class_probs)`:
+  * `boxes`: a list of `numpy.ndarrays` of shape `(grid_height, grid_width, anchor_boxes, 4)` containing the processed boundary boxes for each output, respectively:
+    * `4` => `(x1, y1, x2, y2)`
+    * `(x1, y1, x2, y2)` should represent the boundary box relative to original image
+  * `box_confidences`: a list of numpy.ndarrays of shape (grid_height, grid_width, anchor_boxes, 1) containing the box confidences for each output, respectively
+  * `box_class_probs`: a list of numpy.ndarrays of shape (grid_height, grid_width, anchor_boxes, classes) containing the box’s class probabilities for each output, respectively
+
 
 ## [You Only Look Once (YOLO) Explained](https://www.datacamp.com/blog/yolo-object-detection-explained)
 
@@ -44,11 +64,15 @@ The algorithm works based on four approaches:
 - [Object Detection](#object-detection)
   - [Tasks](#tasks)
     - [Task 0 - Initialize Yolo](#task-0---initialize-yolo)
+    - [Task 1 - Process Outputs](#task-1---process-outputs)
   - [You Only Look Once (YOLO) Explained](#you-only-look-once-yolo-explained)
     - [Residual Blocks](#residual-blocks)
     - [Bounding-box Regression](#bounding-box-regression)
     - [Intersection over Unions (IUO)](#intersection-over-unions-iuo)
       - [non-max suppression (NMS)](#non-max-suppression-nms)
+  - [Dive Really Deep into Yolo V3](#dive-really-deep-into-yolo-v3)
+    - [Network Architecture](#network-architecture)
+  - [Anchor Box](#anchor-box)
 
 ### Residual Blocks
 
@@ -72,3 +96,28 @@ This handles the fact that a single object can exist in multiple cells. The IOU 
 #### non-max suppression (NMS)
 
 Of cells that made it through IOU filtering, discards cells that have low comparative chances of contraining an object.
+
+## [Dive Really Deep into Yolo V3](https://towardsdatascience.com/dive-really-deep-into-yolo-v3-a-beginners-guide-9e3d2666280e)
+
+These are my notes on the article, made to help better my own understanding. All images used within are located within the linked article unless otherwise noted.
+
+### Network Architecture
+
+![Architecture image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*hULeMGlxnjjvuf7Fx7kuaA.jpeg)
+
+The Feature Extractor used is Darknet. Yolo V3 uses Darknet-53, a 53 layer extractor.
+
+As Darknet is being used for Object Detectoin instead of Classification, Pooling → Softmax "Classification Head" layers are not used. Instead, we have an "Detection Head" (needs to work for multiple scales because Yolo 3 is multi-scaled detector.)
+
+![detection head is to the right in this image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*SzyNALdsE9pDCpCvtqH7ZQ.jpeg)
+* detection head is to the right in this image
+
+The image above shows how we have 3 feature vectors. These are fed into the detector.
+
+But what do the cells in this 52x52x3x(4+1+num_classes) matrix mean? This brings to Anchor Box.
+
+## Anchor Box
+
+"The goal of object detection is to get a bounding box and its class"
+
+    This segment wil continue if relevant and useful to the creation of a project task.
