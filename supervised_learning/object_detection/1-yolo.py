@@ -56,5 +56,5 @@ class Yolo:
             containins predictions from Darknet model
                 prediction (output) shape
                     (grid_height, grid_width, anchor_boxes, 4 + 1 + classes)
-                        grid_height & grid_width => height & width of grid used for output
+                        grid_height & grid_width => height&width of output grid
         """
