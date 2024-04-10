@@ -54,8 +54,8 @@ class Yolo:
 
         outputs = list of numpy.ndarrays
             containins predictions from Darknet model
-                prediction (output) shape
-                    (grid_height, grid_width, anchor_boxes, 4 + 1 + classes)
+                prediction (output)
+                    shape = (grid_height, grid_width, anchor_boxes, 4 + 1 + classes)
                         grid_height & grid_width => height&width of output grid
 
         image_size = numpy.ndarray
@@ -64,10 +64,9 @@ class Yolo:
         boxes = []
         box_confidences = []
         box_class_probs = []
-        # from instrucitons
         image_height, image_width = image_size
         input_height, input_width = self.model.input.shape[1:3]
-        print("initial assignments assigned")
+
 
         for output in outputs:
             # Extracting bounding box coordinates
