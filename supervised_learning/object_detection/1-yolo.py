@@ -47,6 +47,10 @@ class Yolo:
             self.class_names = [line.strip()
                                 for line in classes_file.readlines()]
 
+    def sigmoid(self, z):
+        """returns sigmoid function of z"""
+        return (1 / (1 + np.exp(-1 * z)))
+
     def process_outputs(self, outputs, image_size):
         """
         output shape may not match input shape
@@ -54,7 +58,7 @@ class Yolo:
 
         outputs = list of numpy.ndarrays
             containins predictions from Darknet model
-                prediction (output)
+                prediction (output) shape
                     shape = (grid_height, grid_width, anchor_boxes, 4 + 1 + classes)
                         grid_height & grid_width => height&width of output grid
 
