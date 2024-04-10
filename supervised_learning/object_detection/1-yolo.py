@@ -76,7 +76,7 @@ class Yolo:
             print("self.anchors:", self.anchors)
             print("self.model.input.shape", self.model.input.shape)
             # end debug
-            box_wh = np.multiply(np.exp(box_wh), self.anchors / self.model.input.shape[1:3])
+            box_wh = np.exp(box_wh) * self.anchors / self.model.input.shape[1:3]
 
             # Calculating bounding box coordinates
             box_mins = box_xy - (box_wh / 2)
