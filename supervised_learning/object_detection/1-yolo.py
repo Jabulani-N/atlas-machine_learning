@@ -57,6 +57,9 @@ class Yolo:
                 prediction (output) shape
                     (grid_height, grid_width, anchor_boxes, 4 + 1 + classes)
                         grid_height & grid_width => height&width of output grid
+
+        image_size = numpy.ndarray
+            contains image’s original size [image_height, image_width]
         """
         boxes = []
         box_confidences = []
@@ -65,18 +68,20 @@ class Yolo:
         for output in outputs:
             # Extracting bounding box coordinates
             box_xy = output[..., :2]
-            box_wh = output[..., 2:4]
+            box_wh = np.exp(output[..., 2:4] *
+                            (self.anchors / self.model.input.shape[1:3]))
             box_confidence = output[..., 4:5]
             box_class_probs = output[..., 5:]
 
             # Implementing the logic to calculate bounding box coordinates relative to the original image
             box_xy = 1 / (1 + np.exp(-box_xy))
             # debug
-            print("box_wh:", box_wh)
-            print("self.anchors:", self.anchors)
+            print("box_wh.shape:", box_wh.shape)
+            print("self.anchors.shape: ", self.anchors.shape)
             print("self.model.input.shape", self.model.input.shape)
             # end debug
-            box_wh = np.exp(box_wh) * self.anchors / self.model.input.shape[1:3]
+            # old line below
+            # box_wh = np.exp(box_wh) * self.anchors / self.model.input.shape[1:3]
 
             # Calculating bounding box coordinates
             box_mins = box_xy - (box_wh / 2)

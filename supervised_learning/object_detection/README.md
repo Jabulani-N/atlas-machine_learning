@@ -55,6 +55,7 @@ Add public method `def process_outputs(self, outputs, image_size):`
   * `box_confidences`: a list of numpy.ndarrays of shape (grid_height, grid_width, anchor_boxes, 1) containing the box confidences for each output, respectively
   * `box_class_probs`: a list of numpy.ndarrays of shape (grid_height, grid_width, anchor_boxes, classes) containing the box’s class probabilities for each output, respectively
 
+[This article](https://christianjmills.com/posts/pytorch-train-object-detector-yolox-tutorial/byte-track/) seems to have the struture we'll want to follow
 
 ## [You Only Look Once (YOLO) Explained](https://www.datacamp.com/blog/yolo-object-detection-explained)
 
