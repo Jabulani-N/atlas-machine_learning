@@ -64,6 +64,10 @@ class Yolo:
         boxes = []
         box_confidences = []
         box_class_probs = []
+        # from instrucitons
+        image_height, image_width = image_size
+        input_height, input_width = self.model.input.shape[1:3]
+        print("initial assignments assigned")
 
         for output in outputs:
             # Extracting bounding box coordinates
