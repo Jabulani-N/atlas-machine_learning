@@ -75,7 +75,7 @@ class Yolo:
         for out_idx, output in enumerate(outputs):
             grid_height, grid_width, anchor_boxes = output.shape[:3]
             # store boundary box coords
-            raw_bb_c = output[..., :4]
+            raw_bb_c = np.zeros((grid_height, grid_width, anchor_boxes, 4))
 
             box_confidence = output[..., 4:5]
             current_box_class_probs = output[..., 5:]
