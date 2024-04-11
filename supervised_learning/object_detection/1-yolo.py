@@ -100,8 +100,8 @@ class Yolo:
                         # normalize both pairs
                         bbc_x /= grid_width
                         bbc_y /= grid_height
-                        bb_w /= self.model.input.shape[1]
-                        bb_h /= self.model.input.shape[2]
+                        bb_w /= int(self.model.input.shape[1])
+                        bb_h /= int(self.model.input.shape[2])
                         # convert to original image scale
                         top_left_x = (bbc_x - (bb_w / 2) * image_width)
                         top_left_y = (bbc_y - (bb_h / 2) * image_height)
