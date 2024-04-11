@@ -107,7 +107,7 @@ class Yolo:
                         top_left_y = (bbc_y - (bb_h / 2) * image_height)
                         low_right_x = (bbc_x + (bb_w / 2) * image_width)
                         low_right_y = (bbc_y + (bb_h / 2) * image_height)
-                        raw_bb_c[cell_x, cell_y, anc_idx] =\
+                        raw_bb_c[cell_y, cell_x, anc_idx] =\
                             [top_left_x, top_left_y, low_right_x, low_right_y]
 
             # Appending the calculated values to the respective lists
