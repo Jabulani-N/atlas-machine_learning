@@ -90,8 +90,7 @@ class Yolo:
                     for anc_idx in range(anchor_boxes):
                         anchor_width, anchor_height =\
                             self.anchors[out_idx][anc_idx]
-                        tx, ty = box_xy[cell_y, cell_x, anc_idx]
-                        tw, th = box_wh[cell_y, cell_x, anc_idx]
+                        tx, ty, tw, th = raw_bb_c[cell_y, cell_x, anc_idx]
                         # sigmoid to get boundry box center (bbc) x,y coords
                         bbc_x, bbc_y = self.sigmoid(cell_x), self.sigmoid(cell_y)
                         # boundry box width and height
