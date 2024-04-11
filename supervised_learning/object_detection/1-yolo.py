@@ -110,7 +110,7 @@ class Yolo:
                         raw_bb_c[cell_y, cell_x, anc_idx] =\
                             [top_left_x, top_left_y, low_right_x, low_right_y]
 
-                        # Appending the calculated values to the respective lists
-                        boxes.append(raw_bb_c)
+            # Appending the calculated values to the respective lists
+            boxes.append(raw_bb_c)
 
         return boxes, box_confidences, box_class_probs
