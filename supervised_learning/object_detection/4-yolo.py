@@ -117,3 +117,8 @@ class Yolo:
             boxes.append(raw_bb_c)
 
         return boxes, box_confidences, box_class_probs
+
+
+    def load_images(folder_path):
+        """loads images from folder_path"""
+        pass
