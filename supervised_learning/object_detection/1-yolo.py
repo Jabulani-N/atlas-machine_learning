@@ -109,9 +109,6 @@ class Yolo:
                         low_right_y = (bbc_y + (bb_h / 2) * image_height)
                         raw_bb_c[cell_y, cell_x, anc_idx] =\
                             [top_left_x, top_left_y, low_right_x, low_right_y]
-            # box_mins = box_xy - (box_wh / 2)
-            # box_maxes = box_xy + (box_wh / 2)
-            # box = np.concatenate([box_mins, box_maxes], axis=-1)
 
             # Appending the calculated values to the respective lists
             boxes.append(raw_bb_c)
