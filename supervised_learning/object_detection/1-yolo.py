@@ -59,7 +59,8 @@ class Yolo:
         outputs = list of numpy.ndarrays
             containins predictions from Darknet model
                 prediction (output) shape
-                    shape = (grid_height, grid_width, anchor_boxes, 4 + 1 + classes)
+                    shape = (grid_height, grid_width,
+                             anchor_boxes, 4 + 1 + classes)
                         grid_height & grid_width => height&width of output grid
 
         image_size = numpy.ndarray
@@ -70,7 +71,6 @@ class Yolo:
         box_class_probs = []
         image_height, image_width = image_size
         input_height, input_width = self.model.input.shape[1:3]
-
 
         for out_idx, output in enumerate(outputs):
             grid_height, grid_width, anchor_boxes = output.shape[:3]
@@ -92,7 +92,8 @@ class Yolo:
                             self.anchors[out_idx][anc_idx]
                         tx, ty, tw, th = raw_bb_c[cell_y, cell_x, anc_idx]
                         # sigmoid to get boundry box center (bbc) x,y coords
-                        bbc_x, bbc_y = self.sigmoid(cell_x), self.sigmoid(cell_y)
+                        bbc_x, bbc_y =\
+                            self.sigmoid(cell_x), self.sigmoid(cell_y)
                         # boundry box width and height
                         bb_w = anchor_width * np.exp(tw)
                         bb_h = anchor_height * np.exp(th)
@@ -106,7 +107,8 @@ class Yolo:
                         top_left_y = (bbc_y - (bb_h / 2) * image_height)
                         low_right_x = (bbc_x + (bb_w / 2) * image_width)
                         low_right_y = (bbc_y + (bb_h / 2) * image_height)
-                        raw_bb_c[cell_y, cell_x, anc_idx] = [top_left_x, top_left_y, low_right_x, low_right_y]
+                        raw_bb_c[cell_y, cell_x, anc_idx] =\
+                            [top_left_x, top_left_y, low_right_x, low_right_y]
             # box_mins = box_xy - (box_wh / 2)
             # box_maxes = box_xy + (box_wh / 2)
             # box = np.concatenate([box_mins, box_maxes], axis=-1)
