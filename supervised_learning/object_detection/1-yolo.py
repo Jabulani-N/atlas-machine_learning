@@ -78,11 +78,11 @@ class Yolo:
             raw_bb_c = output[..., :4]
 
             box_confidence = output[..., 4:5]
-            box_class_probs = output[..., 5:]
+            current_box_class_probs = output[..., 5:]
             # confidences and probabilities are straightforward
             # calcs b-box coords relative to original image (like a ratio)
             box_confidences.append(self.sigmoid(box_confidence))
-            box_class_probs = self.sigmoid(box_class_probs)
+            box_class_probs.append(self.sigmoid(current_box_class_probs))
 
             # Calculating bounding box coordinates
             for cell_y in range(grid_height):
