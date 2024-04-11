@@ -72,32 +72,50 @@ class Yolo:
         input_height, input_width = self.model.input.shape[1:3]
 
 
-        for output in outputs:
+        for out_idx, output in enumerate(outputs):
+            grid_height, grid_width, anchor_boxes = output.shape[:3]
+            # store boundary box coords
+            raw_bb_c = output[..., :4]
             # Extracting bounding box coordinates
             box_xy = output[..., :2]
             box_wh = np.exp(output[..., 2:4] *
                             (self.anchors / self.model.input.shape[1:3]))
             box_confidence = output[..., 4:5]
             box_class_probs = output[..., 5:]
-
-            # Implementing the logic to calculate bounding box coordinates relative to the original image
-            box_xy = 1 / (1 + np.exp(-box_xy))
-            # debug
-            print("box_wh.shape:", box_wh.shape)
-            print("self.anchors.shape: ", self.anchors.shape)
-            print("self.model.input.shape", self.model.input.shape)
-            # end debug
-            # old line below
-            # box_wh = np.exp(box_wh) * self.anchors / self.model.input.shape[1:3]
+            # confidences and probabilities are straightforward
+            # calcs b-box coords relative to original image (like a ratio)
+            box_confidences.append(self.sigmoid(box_confidence))
+            box_class_probs.append(self.sigmoid(box_class_probs))
 
             # Calculating bounding box coordinates
-            box_mins = box_xy - (box_wh / 2)
-            box_maxes = box_xy + (box_wh / 2)
-            box = np.concatenate([box_mins, box_maxes], axis=-1)
+            for cell_y in range(grid_height):
+                for cell_x in range(grid_width):
+                    for anc_idx in range(anchor_boxes):
+                        anchor_width, anchor_height =\
+                            self.anchors[out_idx][anc_idx]
+                        tx, ty = box_xy[cell_y, cell_x, anc_idx]
+                        tw, th = box_wh[cell_y, cell_x, anc_idx]
+                        # sigmoid to get boundry box center (bbc) x,y coords
+                        bbc_x, bbc_y = self.sigmoid(cell_x), self.sigmoid(cell_y)
+                        # boundry box width and height
+                        bb_w = anchor_width * np.exp(tw)
+                        bb_h = anchor_height * np.exp(th)
+                        # normalize both pairs
+                        bbc_x /= grid_width
+                        bbc_y /= grid_height
+                        bb_w /= int(self.model.input.shape[1])
+                        bb_h /= int(self.model.input.shape[2])
+                        # convert to original image scale
+                        top_left_x = (bbc_x - (bb_w / 2) * image_width)
+                        top_left_y = (bbc_y - (bb_h / 2) * image_height)
+                        low_right_x = (bbc_x + (bb_w / 2) * image_width)
+                        low_right_y = (bbc_y + (bb_h / 2) * image_height)
+                        raw_bb_c[cell_y, cell_x, anc_idx] = [top_left_x, top_left_y, low_right_x, low_right_y]
+            # box_mins = box_xy - (box_wh / 2)
+            # box_maxes = box_xy + (box_wh / 2)
+            # box = np.concatenate([box_mins, box_maxes], axis=-1)
 
             # Appending the calculated values to the respective lists
-            boxes.append(box)
-            box_confidences.append(box_confidence)
-            box_class_probs.append(box_class_probs)
+            boxes.append(raw_bb_c)
 
         return boxes, box_confidences, box_class_probs
