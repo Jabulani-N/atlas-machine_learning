@@ -93,7 +93,7 @@ class Yolo:
                         tx, ty, tw, th = raw_bb_c[cell_y, cell_x, anc_idx]
                         # sigmoid to get boundry box center (bbc) x,y coords
                         bbc_x, bbc_y =\
-                            self.sigmoid(cell_x), self.sigmoid(cell_y)
+                            self.sigmoid(-tx) + cell_x, self.sigmoid(-ty) + cell_y
                         # boundry box width and height
                         bb_w = anchor_width * np.exp(tw)
                         bb_h = anchor_height * np.exp(th)
