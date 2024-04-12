@@ -9,10 +9,11 @@ where task 1 does not successfully do process_images
 """
 
 
+import cv2
 import numpy as np
 import tensorflow.keras as K
 import os
-from PIL import Image
+
 
 class Yolo:
     """
@@ -126,9 +127,9 @@ class Yolo:
         static method
         """
         image_list = []
+        images = os.listdir(folder_path)
         images_paths = [os.path.join(folder_path, file) for file in images]
-        # images = os.listdir(folder_path)
         for image in images_paths:
-            image_list.append(np.array(Image.open(image)))
-            
+            image_list.append(np.array(cv2.imread(image, 0)))
+
         return image_list, images_paths
