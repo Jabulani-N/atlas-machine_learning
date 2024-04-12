@@ -127,4 +127,6 @@ class Yolo:
         """
         images = os.listdir(folder_path)
         images_paths = [os.path.join(folder_path) for file in images]
+        images_paths = [os.path.join(path, os.path.basename(path))
+                        for path in images_paths]
         return images, images_paths
