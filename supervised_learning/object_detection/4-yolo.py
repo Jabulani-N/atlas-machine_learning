@@ -11,6 +11,7 @@ where task 1 does not successfully do process_images
 
 import numpy as np
 import tensorflow.keras as K
+import os
 
 
 class Yolo:
@@ -119,6 +120,12 @@ class Yolo:
         return boxes, box_confidences, box_class_probs
 
 
+    @staticmethod
     def load_images(folder_path):
-        """loads images from folder_path"""
-        pass
+        """
+        loads images from folder_path
+        static method
+        """
+        images = os.listdir(folder_path)
+        images_paths = [os.path.join(folder_path) for file in images]
+        return images, images_paths
