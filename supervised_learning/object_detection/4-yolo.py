@@ -12,7 +12,7 @@ where task 1 does not successfully do process_images
 import numpy as np
 import tensorflow.keras as K
 import os
-
+from PIL import Image
 
 class Yolo:
     """
@@ -125,6 +125,10 @@ class Yolo:
         loads images from folder_path
         static method
         """
-        images = os.listdir(folder_path)
+        image_list = []
         images_paths = [os.path.join(folder_path, file) for file in images]
-        return images, images_paths
+        # images = os.listdir(folder_path)
+        for image in images_paths:
+            image_list.append(np.array(Image.open(image)))
+            
+        return image_list, images_paths
