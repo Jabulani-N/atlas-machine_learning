@@ -132,6 +132,9 @@ class Yolo:
         # images_paths = [os.path.join(folder_path, file) for file in images]
         images_paths = glob.glob(folder_path + '/*')
         for image in images_paths:
+            # cv2 will be color by default.
+            # using `cv2.imread(image, 0)`
+            # results in grayscale instead.
             image_list.append(cv2.imread(image))
 
         return image_list, images_paths
