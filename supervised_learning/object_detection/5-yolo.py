@@ -146,15 +146,15 @@ class Yolo:
         also...
         """
         new_width, new_height = self.model.input.shape[1],\
-        self.model.input.shape[2]
+            self.model.input.shape[2]
         original_sizes = []
         pimages = []
         # record originals & resize images
         for image in images:
             original_sizes.append((image.shape[1], image.shape[2]))
             pimage = cv2.resize(image,
-                                      (new_width, new_height),
-                                      interpolation=cv2.INTER_CUBIC)
+                                (new_width, new_height),
+                                interpolation=cv2.INTER_CUBIC)
             # rescale images
             pimage = np.divide(pimage, 255.0)
             pimages.append(pimage)
