@@ -151,7 +151,7 @@ class Yolo:
         pimages = []
         # record originals & resize images
         for image in images:
-            original_sizes.append((image.shape[1], image.shape[2]))
+            original_sizes.append((image.shape[0], image.shape[1]))
             pimage = cv2.resize(image,
                                 (new_width, new_height),
                                 interpolation=cv2.INTER_CUBIC)
