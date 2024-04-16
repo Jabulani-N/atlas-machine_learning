@@ -57,6 +57,10 @@ Add public method `def process_outputs(self, outputs, image_size):`
 
 [This article](https://christianjmills.com/posts/pytorch-train-object-detector-yolox-tutorial/byte-track/) seems to have the struture we'll want to follow
 
+## Task 5
+
+to be documented...
+
 ## [You Only Look Once (YOLO) Explained](https://www.datacamp.com/blog/yolo-object-detection-explained)
 
 YOLO is noteworthily fast, accurate, good at generalizing, and open source. These are some notes I'm making for my own reference, from the linked article. All images used in this segment are from the same linked article.
@@ -66,6 +70,7 @@ The algorithm works based on four approaches:
   - [Tasks](#tasks)
     - [Task 0 - Initialize Yolo](#task-0---initialize-yolo)
     - [Task 1 - Process Outputs](#task-1---process-outputs)
+  - [Task 5](#task-5)
   - [You Only Look Once (YOLO) Explained](#you-only-look-once-yolo-explained)
     - [Residual Blocks](#residual-blocks)
     - [Bounding-box Regression](#bounding-box-regression)
