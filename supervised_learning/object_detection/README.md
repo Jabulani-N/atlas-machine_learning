@@ -59,7 +59,7 @@ Add public method `def process_outputs(self, outputs, image_size):`
 
 ## Task 5
 
-to be documented...
+[putting text in cv2 (this is cv documentation)](https://docs.opencv.org/4.x/d6/d6e/group__imgproc__draw.html#ga5126f47f883d730f633d74f07456c576)
 
 ## [You Only Look Once (YOLO) Explained](https://www.datacamp.com/blog/yolo-object-detection-explained)
 
