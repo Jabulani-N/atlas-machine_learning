@@ -183,10 +183,11 @@ class Yolo:
 
             # Add class name and score
             text = f"{class_name} {score}"
+            font = cv2.FONT_HERSHEY_SIMPLEX
             font_scale = 0.5
-            cv2.putText(image, text, (box[0], box[1] - 5),
-                        cv2.FONT_HERSHEY_SIMPLEX,
-                        font_scale, (0, 0, 255), 1, cv2.LINE_AA)
+            cv2.putText(image, text, (int(box[0]), int(box[1]) - 5),
+                        font, font_scale,
+                        (0, 0, 255), 1, cv2.LINE_AA)
 
         # Display the image
         cv2.imshow(file_name, image)
