@@ -161,7 +161,6 @@ class Yolo:
 
         return np.array(pimages), np.array(original_sizes)
 
-
     def show_boxes(self, image, boxes, box_classes, box_scores, file_name):
         """
         displayes image with boundary boxes
@@ -175,17 +174,19 @@ class Yolo:
         for i in range(len(boxes)):
             box = boxes[i]
             class_index = box_classes[i]
-            class_name = self.class_names[class_index]  # Assuming class_names is a property containing class names
+            class_name = self.class_names[class_index]
             score = round(box_scores[i], 2)
-
             # Draw box
-            cv2.rectangle(image, (int(box[0]), int(box[1])), (int(box[2]), int(box[3])), (255, 0, 0), 2)
+            start_point = (int(box[0]), int(box[1]))
+            end_point = (int(box[2]), int(box[3]))
+            cv2.rectangle(image, start_point, end_point, (255, 0, 0), 2)
 
             # Add class name and score
             text = f"{class_name} {score}"
             font = cv2.FONT_HERSHEY_SIMPLEX
             font_scale = 0.5
-            cv2.putText(image, text, (int(box[0]), int(box[1]) - 5),
+            cv2.putText(image, text,
+                        (int(box[0]), int(box[1]) - 5),
                         font, font_scale,
                         (0, 0, 255), 1, cv2.LINE_AA)
 
