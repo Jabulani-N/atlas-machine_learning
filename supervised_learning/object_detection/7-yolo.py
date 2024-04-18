@@ -5,6 +5,8 @@ creates the public method show_boxes
 There are no import restrictions
 
 Duplicates from task 6
+completion of this task requires
+all perevious tasks correct
 """
 
 
