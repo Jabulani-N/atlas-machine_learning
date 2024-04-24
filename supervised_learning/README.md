@@ -1,5 +1,5 @@
 # Supervised Learning
 
-This is Machine Learning "supervised" by a human.
+**Supervised Learning** is Machine Learning "supervised" by a human.
 
-The human will evaluate the accuracy of results.
+The human evaluates the accuracy of results.
