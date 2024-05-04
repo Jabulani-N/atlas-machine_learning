@@ -18,7 +18,11 @@ at it's simplist, a `submat` that is a 2x2 matrix, determinant will be
 First, I will want to determine the shape of `matrix`.Since no imports are allowed, we cacn use
 ```
 def matrix_shape(matrix):
-    rows = len(matrix)
+    """returns shape of matrix"""
+    if type(matrix) is list:
+        rows = len(matrix)
+    else:
+        rows = None
     if type(matrix[0]) is list:
             cols = len(matrix[0])
     else: cols = None

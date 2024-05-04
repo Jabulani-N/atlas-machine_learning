@@ -32,7 +32,11 @@ def simple_det(submatrix):
 
 
 def matrix_shape(matrix):
-    rows = len(matrix)
+    """returns shape of matrix"""
+    if type(matrix) is list:
+        rows = len(matrix)
+    else:
+        rows = None
     if type(matrix[0]) is list:
             cols = len(matrix[0])
     else: cols = None
