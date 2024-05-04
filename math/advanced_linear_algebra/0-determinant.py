@@ -12,7 +12,7 @@ def determinant(matrix):
         raise TypeError("matrix must be a list of lists")
     for item in matrix:
         if type(item) is not list and\
-            type(item) is not int:
+           type(item) is not int:
             raise TypeError("matrix must be a list of lists")
     for item in matrix:
         if type(item) is list:
