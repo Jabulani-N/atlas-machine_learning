@@ -38,6 +38,7 @@ def matrix_shape(matrix):
     else:
         rows = None
     if type(matrix[0]) is list:
-            cols = len(matrix[0])
-    else: cols = None
+        cols = len(matrix[0])
+    else:
+        cols = None
     return rows, cols
