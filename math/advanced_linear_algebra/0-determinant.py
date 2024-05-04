@@ -20,6 +20,9 @@ def determinant(matrix):
                 raise ValueError("matrix must be a square matrix")
         elif matrix_shape(matrix)[0] != (1,):
             raise ValueError("matrix must be a square matrix")
+    # basic checks are done
+    # if matrix is 2x2, send to simple det calculator
+    pass
 
 
 def simple_det(submatrix):

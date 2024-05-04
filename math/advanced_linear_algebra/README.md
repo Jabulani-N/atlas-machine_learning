@@ -28,3 +28,7 @@ def matrix_shape(matrix):
     else: cols = None
     return rows, cols
 ```
+
+if `matrix` is 2x2, we can directly calculat determinant.
+
+If `matrix` is bigger than 2x2, we'l have to do a whole chain of recursion where we find the determinant by finding each cell's minor individually, by recursively sending the submatrix to the determinant calculator.
