@@ -15,4 +15,10 @@ at it's simplist, a `submat` that is a 2x2 matrix, determinant will be
 * **requires**
   * identifying size of a matrix
 
-First, I will want to determine the shape of `matrix`, via `np.shape(matrix)`
+First, I will want to determine the shape of `matrix`.Since no imports are allowed, we cacn use
+```
+def matrix_shape(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0]) if matrix else 0
+    return rows, cols
+```
