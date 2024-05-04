@@ -8,14 +8,15 @@ def determinant(matrix):
     """matrix is list of lists"""
     if matrix == [[]]:
         return 1
-    if type(matrix) is not list or\
-    type(matrix[0]) is not list:
+    if type(matrix) is not list:
         raise TypeError("matrix must be a list of lists")
     for item in matrix:
         if type(item) is not list:
             raise TypeError("matrix must be a list of lists")
-    if matrix_shape(matrix)[0] != matrix_shape(matrix)[1]:
-        raise ValueError("matrix must be a square matrix")
+        mandatoryShape = matrix_shape(matrix)[0]
+        for item in matrix:
+            if matrix_shape(item) != mandatoryShape:
+                raise ValueError("matrix must be a square matrix")
 
 
 def simple_det(submatrix):
@@ -25,6 +26,7 @@ def simple_det(submatrix):
               (submatrix[0][1] * submatrix[1][0])
         return det
     return 0
+
 
 def matrix_shape(matrix):
     rows = len(matrix)
