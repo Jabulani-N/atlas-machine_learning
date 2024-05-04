@@ -11,11 +11,15 @@ def determinant(matrix):
     if type(matrix) is not list:
         raise TypeError("matrix must be a list of lists")
     for item in matrix:
-        if type(item) is not list:
+        if type(item) is not list and\
+            type(item) is not int:
             raise TypeError("matrix must be a list of lists")
     mandatoryShape = matrix_shape(matrix)[0]
     for item in matrix:
-        if matrix_shape(item) != mandatoryShape:
+        if type(item) is list:
+            if matrix_shape(item) != mandatoryShape:
+                raise ValueError("matrix must be a square matrix")
+        elif mandatoryShape != 1:
             raise ValueError("matrix must be a square matrix")
 
 
