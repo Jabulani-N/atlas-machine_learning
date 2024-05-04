@@ -19,6 +19,8 @@ First, I will want to determine the shape of `matrix`.Since no imports are allow
 ```
 def matrix_shape(matrix):
     rows = len(matrix)
-    cols = len(matrix[0]) if matrix else 0
+    if type(matrix[0]) is list:
+            cols = len(matrix[0])
+    else: cols = None
     return rows, cols
 ```
