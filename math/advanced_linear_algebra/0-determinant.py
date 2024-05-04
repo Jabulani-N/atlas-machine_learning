@@ -6,13 +6,16 @@ this module, 0-determinant.py, calculates a matrix's determinant
 
 def determinant(matrix):
     """matrix is list of lists"""
+    if matrix == [[]]:
+        return 1
     if type(matrix) is not list or\
     type(matrix[0]) is not list:
         raise TypeError("matrix must be a list of lists")
+    for item in matrix:
+        if type(item) is not list:
+            raise TypeError("matrix must be a list of lists")
     if matrix_shape(matrix)[0] != matrix_shape(matrix)[1]:
         raise ValueError("matrix must be a square matrix")
-    if matrix == [[]]:
-        return 1
 
 
 def simple_det(submatrix):
