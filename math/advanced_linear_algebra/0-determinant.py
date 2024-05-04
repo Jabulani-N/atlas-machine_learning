@@ -13,10 +13,10 @@ def determinant(matrix):
     for item in matrix:
         if type(item) is not list:
             raise TypeError("matrix must be a list of lists")
-        mandatoryShape = matrix_shape(matrix)[0]
-        for item in matrix:
-            if matrix_shape(item) != mandatoryShape:
-                raise ValueError("matrix must be a square matrix")
+    mandatoryShape = matrix_shape(matrix)[0]
+    for item in matrix:
+        if matrix_shape(item) != mandatoryShape:
+            raise ValueError("matrix must be a square matrix")
 
 
 def simple_det(submatrix):
