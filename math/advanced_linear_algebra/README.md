@@ -15,4 +15,4 @@ at it's simplist, a `submat` that is a 2x2 matrix, determinant will be
 * **requires**
   * identifying size of a matrix
 
-First, I will want to determine the shape of `matrix`, 
+First, I will want to determine the shape of `matrix`, via `np.shape(matrix)`
