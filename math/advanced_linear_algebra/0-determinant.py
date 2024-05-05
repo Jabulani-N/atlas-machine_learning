@@ -35,25 +35,33 @@ def determinant(matrix):
         # for loop to shave each row/col
         withoutRow = []
         for rowNum in range(length):
-        # get content of the array excluding rowNum
+            # get content of the array excluding rowNum
             withoutRow = matrix[:rowNum]
             withoutRow += matrix[rowNum + 1:]
             # withoutRow is a list of lists
             # it is identitcal to matrix except it omits the relevant row
             print("withoutrow:", withoutRow)
             withoutCol = []
+            submatrix = []
             for colNum in range(length):
-                submatrix = []
                 for row in withoutRow:
+                    det = 0
                     # get content of the row excluding colNum
                     print("withoutCol before appending:", withoutCol)
-                    print("withoutCol will append from row:",row)
-                    withoutCol.append(row[:colNum])
-                    withoutCol.append(row[colNum + 1:])
-                    print("withoutCol after appending:",withoutCol)
-                # withoutCol now contains one row of submatrix
-                print("withoutCol:",withoutCol)
-                submatrix.append(withoutCol)
+                    print("withoutCol will append from row:", row)
+                    if row[:colNum] != []:
+                        withoutCol.append(row[:colNum])
+                    if row[colNum + 1:] != []:
+                        withoutCol.append(row[colNum + 1:])
+                    print("withoutCol after appending:", withoutCol)
+                # withoutCol now contains every row of submatrix
+                print("withoutCol:", withoutCol)
+                print("submatrix before assigning withoutCol:", submatrix)
+                submatrix = withoutCol
+                print("submatrix after assigning:", submatrix)
+                withoutCol = []
+                det += ((-1) ** (rowNum + colNum)) * matrix[rowNum][colNum * determinant(submatrix)]
+                return det
             # submatrix now contains matrix excluding
             #   row rowNum and col colNum
             print("submatrix:", submatrix)
