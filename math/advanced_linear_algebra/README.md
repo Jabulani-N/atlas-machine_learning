@@ -32,3 +32,13 @@ def matrix_shape(matrix):
 if `matrix` is 2x2, we can directly calculat determinant.
 
 If `matrix` is bigger than 2x2, we'l have to do a whole chain of recursion where we find the determinant by finding each cell's minor individually, by recursively sending the submatrix to the determinant calculator.
+
+You can use this to make a quick 4x4 matrix to experiment with:
+```
+B = np.zeros((4,4))
+count = 0
+for col in B:
+  for i in range(len(col)):
+    col[i] = count
+    count += 1
+```

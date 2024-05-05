@@ -30,7 +30,35 @@ def determinant(matrix):
     elif length == 2:
         return simple_det(matrix)
     # we are done for 1x1 and 2x2
-    # now we just need hte ones that chain
+    # now we just need the ones that chain
+    else:
+        # for loop to shave each row/col
+        withoutRow = []
+        for rowNum in range(length):
+        # get content of the array excluding rowNum
+            withoutRow = matrix[:rowNum]
+            withoutRow += matrix[rowNum + 1:]
+            # withoutRow is a list of lists
+            # it is identitcal to matrix except it omits the relevant row
+            print("withoutrow:", withoutRow)
+            withoutCol = []
+            for colNum in range(length):
+                submatrix = []
+                for row in withoutRow:
+                    # get content of the row excluding colNum
+                    print("withoutCol before appending:", withoutCol)
+                    print("withoutCol will append from row:",row)
+                    withoutCol.append(row[:colNum])
+                    withoutCol.append(row[colNum + 1:])
+                    print("withoutCol after appending:",withoutCol)
+                # withoutCol now contains one row of submatrix
+                print("withoutCol:",withoutCol)
+                submatrix.append(withoutCol)
+            # submatrix now contains matrix excluding
+            #   row rowNum and col colNum
+            print("submatrix:", submatrix)
+            return determinant(submatrix)
+
 
 
 def simple_det(submatrix):
