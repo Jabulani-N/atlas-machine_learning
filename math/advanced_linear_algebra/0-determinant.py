@@ -21,9 +21,13 @@ def determinant(matrix):
         elif matrix_shape(matrix)[0] != (1,):
             raise ValueError("matrix must be a square matrix")
     # basic checks are done
-    # if matrix is 2x2, send to simple det calculator
+
     length = len(matrix)
-    if length == 2:
+    # if matrix is 1x1, determinant is the content
+    if length == 1:
+        return matrix[0][0]
+    # if matrix is 2x2, send to simple det calculator
+    elif length == 2:
         return simple_det(matrix)
     # we are done for 1x1 and 2x2
     # now we just need hte ones that chain
