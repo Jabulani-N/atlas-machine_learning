@@ -16,7 +16,7 @@ def determinant(matrix):
             raise TypeError("matrix must be a list of lists")
     for item in matrix:
         if type(item) is list:
-            if matrix_shape(item) != matrix_shape(matrix)[0]:
+            if len(item) != len(matrix)[0]:
                 raise ValueError("matrix must be a square matrix")
         elif matrix_shape(matrix)[0] != (1,):
             raise ValueError("matrix must be a square matrix")
@@ -25,6 +25,8 @@ def determinant(matrix):
     length = len(matrix)
     if length == 2:
         return simple_det(matrix)
+    # we are done for 1x1 and 2x2
+    # now we just need hte ones that chain
 
 
 def simple_det(submatrix):
