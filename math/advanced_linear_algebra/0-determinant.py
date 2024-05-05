@@ -43,7 +43,7 @@ def determinant(matrix):
                    row[colNum + 1:] != []:
                     submatrix.append(row[:colNum] + row[colNum + 1:])
                 elif row[:colNum] != []:
-                        submatrix.append(row[:colNum])
+                    submatrix.append(row[:colNum])
                 elif row[colNum + 1:] != []:
                     submatrix.append(row[colNum + 1:])
                 # submatrix just gained one exclusive row
@@ -51,8 +51,6 @@ def determinant(matrix):
             # print("submitted submatrix:", submatrix)
             detTotal += (-1) ** (colNum) * coeff * determinant(submatrix)
     return detTotal
-
-
 
 
 def simple_det(submatrix):
