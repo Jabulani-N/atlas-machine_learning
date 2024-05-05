@@ -16,7 +16,7 @@ def determinant(matrix):
             raise TypeError("matrix must be a list of lists")
     for item in matrix:
         if type(item) is list:
-            if len(item) != len(matrix)[0]:
+            if len(item) != len(matrix):
                 raise ValueError("matrix must be a square matrix")
         elif matrix_shape(matrix)[0] != (1,):
             raise ValueError("matrix must be a square matrix")
