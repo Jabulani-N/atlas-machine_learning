@@ -22,7 +22,9 @@ def determinant(matrix):
             raise ValueError("matrix must be a square matrix")
     # basic checks are done
     # if matrix is 2x2, send to simple det calculator
-    pass
+    length = len(matrix)
+    if length == 2:
+        return simple_det(matrix)
 
 
 def simple_det(submatrix):
