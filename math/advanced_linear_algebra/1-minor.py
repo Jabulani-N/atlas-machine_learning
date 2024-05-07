@@ -12,7 +12,7 @@ def minor(matrix):
     if matrix == [[]]:
         raise ValueError("matrix must be a non-empty square matrix")
     if type(matrix) is not list or\
-        matrix == []:
+       matrix == []:
         raise TypeError("matrix must be a list of lists")
     for item in matrix:
         if type(item) is not list:
