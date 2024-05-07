@@ -70,3 +70,6 @@ We can use the previous task's deterinant calculator to run the determinant part
 
 ## Potential Pitfalls
 * The required checks and error messages are slightly different in this task than they were in task-0, so you cannot simply copy and paste them.
+*  ~~there is potential for finicky interaction when using `array[row][column]`, so it may be best to append entire rows directly, rather than attempt to assign element by element~~
+*  it is VITAL to append CONTENTS of arrays, and not arrays themselves.
+   *  If you append an *array* to multiple locatoins, any time you aler any of them, you alter everywhere it was used. You MUST create new arrays to be used as `lists` within the list of `lists`.

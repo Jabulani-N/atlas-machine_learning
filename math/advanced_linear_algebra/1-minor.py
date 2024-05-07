@@ -25,7 +25,6 @@ def minor(matrix):
     if length == 1:
         return [[1]]
 
-    sublength = length - 1
     underage = zerosquare(length)
     for rowNum in range(length):
         for colNum in range(length):
@@ -43,6 +42,9 @@ def trim_matrix(forbidden, matrix, length):
         column forbiddenCol
     returns resultant submatrix
     """
+    # print("trim matrix recieved the following:")
+    # print("matrix:", matrix)
+    # print("forbidden:", forbidden)
     forbiddenRow, forbiddenCol = forbidden
     sublength = length - 1
     # create zeroes submatrix
@@ -52,6 +54,8 @@ def trim_matrix(forbidden, matrix, length):
     # insert a number as long as it is not in a
     #   forbiden row or forbidden column
     for row in range(sublength):
+        # new row: new set of columns
+        passedCol = False
         for col in range(sublength):
             # once we arrive at forbidden row/col,
             # add one to the position from which we draw from the matrix
@@ -59,19 +63,27 @@ def trim_matrix(forbidden, matrix, length):
                 passedRow = True
             if col == forbiddenCol:
                 passedCol = True
-            submatrix[col][row] =\
-                matrix[col + int(passedCol)][row + int(passedRow)]
+            submatrix[row][col] =\
+                matrix[row + int(passedRow)][col + int(passedCol)]
+            # print("trim matrix says:")
+            # print("passed row: ", passedRow)
+            # print("passed col: ", passedCol)
+            # print("trim matrix assigned to position: ", row, ",", col, ":")
+            # print("from position: ", row + int(passedRow), ",",\
+            # col + int(passedCol), ":")
+            # print("which is: ",
+            # matrix[row + int(passedRow)][col + int(passedCol)])
+        # print("trim matrix finished a row")
+        # print("the submatrix is currently:", submatrix)
+    # print("trim matrix created the following matrix:", submatrix)
     return submatrix
 
 
 def zerosquare(length):
     """creates a square matrix of zeros"""
     submatrix = []
-    subrow = []
-    for x in range(length):
-        subrow.append(0)
     for y in range(length):
-        submatrix.append(subrow)
+        submatrix.append([0] * length)
     return submatrix
 
 
