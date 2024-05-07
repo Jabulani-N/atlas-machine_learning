@@ -42,3 +42,12 @@ for col in B:
     col[i] = count
     count += 1
 ```
+
+# Task 1 - Minor
+
+The `minor` of `matrix` is a matrix the same size as `matrix` where each cell is occupied by the determinant of the matrix created when removing the cell's row and column from `matrix`.
+
+we can scan the size of `matrix` to crete a "zeros" matrix and then populate each cell with the relevant determinant. As we are not allowed to import anything, including numpy, we can just write a quick function to make an equivalent array (list of lists.)
+
+We can use the previous task's deterinant calculator to run the determinant part.
+* due to no importing, we'll have to copy-paste our own code into this task.
