@@ -20,22 +20,48 @@ def minor(matrix):
         if type(item) is list:
             if len(item) != len(matrix):
                 raise ValueError("matrix must be a non-empty square matrix")
-
     length = len(matrix)
-    for rowNum in range(length):
-        for colNum in range(length):
+    if length == 1:
+        return [[1]]
+
+    sublength = length - 1
+    underage = zerosquare(sublength)
+    for rowNum in range(sublength):
+        for colNum in range(sublength):
             coordinates = (rowNum, colNum)
+            submatrix = trim_matrix(coordinates, matrix, length)
+            underage[rowNum][colNum] = determinant(submatrix)
+
+    return underage
 
 
-def trim_matrix(rowNum, colNum, matrix, length):
+
+
+def trim_matrix(forbidden, matrix, length):
     """
     removes from matrix matrix
-        row rowNum
-        column colNum
+        row forbiddenRow
+        column forbiddenCol
     returns resultant submatrix
     """
+    forbiddenRow, forbiddenCol = forbidden
+    sublength = length - 1
     # create zeroes submatrix
-    submatrix = zerosquare(length - 1)
+    submatrix = zerosquare(sublength)
+    passedRow, passedCol = False, False
+
+    # insert a number as long as it is not in a
+    #   forbiden row or forbidden column
+    for row in range(sublength):
+        for col in range(sublength):
+            # once we arrive at forbidden row/col,
+            # add one to the position from which we draw from the matrix
+            if row == forbiddenRow:
+                passedRow = True
+            if col == forbiddenCol:
+                passedCol = True
+            submatrix[col][row] = matrix[col + int(passedCol)][row + int(passedRow)]
+    return submatrix
 
 
 def zerosquare(length):
