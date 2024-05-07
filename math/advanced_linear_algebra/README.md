@@ -52,7 +52,8 @@ we can scan the size of `matrix` to crete a "zeros" matrix and then populate eac
 We can use the previous task's deterinant calculator to run the determinant part.
 * due to no importing, we'll have to copy-paste our own code into this task.
 
-1. go over each cell in a for loop:
+1. scan matrix to ensure it is square and valid as according to task requirements
+2. go over each cell in a for loop:
    * if length of matrix side (assuming square shape is already checked) is `length`,
     ```
     for rowNum in range(length):
