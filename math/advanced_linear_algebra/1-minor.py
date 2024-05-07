@@ -11,7 +11,8 @@ def minor(matrix):
     # preliminary validity checks
     if matrix == [[]]:
         raise ValueError("matrix must be a non-empty square matrix")
-    if type(matrix) is not list:
+    if type(matrix) is not list or\
+        matrix == []:
         raise TypeError("matrix must be a list of lists")
     for item in matrix:
         if type(item) is not list:
@@ -25,9 +26,9 @@ def minor(matrix):
         return [[1]]
 
     sublength = length - 1
-    underage = zerosquare(sublength)
-    for rowNum in range(sublength):
-        for colNum in range(sublength):
+    underage = zerosquare(length)
+    for rowNum in range(length):
+        for colNum in range(length):
             coordinates = (rowNum, colNum)
             submatrix = trim_matrix(coordinates, matrix, length)
             underage[rowNum][colNum] = determinant(submatrix)
