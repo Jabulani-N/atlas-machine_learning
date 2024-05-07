@@ -51,3 +51,21 @@ we can scan the size of `matrix` to crete a "zeros" matrix and then populate eac
 
 We can use the previous task's deterinant calculator to run the determinant part.
 * due to no importing, we'll have to copy-paste our own code into this task.
+
+1. go over each cell in a for loop:
+   * if length of matrix side (assuming square shape is already checked) is `length`,
+    ```
+    for rowNum in range(length):
+        for colNum in range(length):
+            coordinates = (rowNum, colNum)
+            submatrix = remove_lines(coordinates)
+            # above function takes 2 arguments, rowNum and colNum.
+            # we can create it by copying what we did to filter in task 0
+            # this function, once made htis way, will be portable to other tasks
+            minorMatrix[rowNum][colNum] = determinant(submatrix)
+
+    return minorMatrix
+    ```
+
+## Potential Pitfalls
+* The required checks and error messages are slightly different in this task than they were in task-0, so you cannot simply copy and paste them.
