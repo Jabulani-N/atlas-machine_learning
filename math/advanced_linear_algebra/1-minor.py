@@ -35,8 +35,6 @@ def minor(matrix):
     return underage
 
 
-
-
 def trim_matrix(forbidden, matrix, length):
     """
     removes from matrix matrix
@@ -60,7 +58,8 @@ def trim_matrix(forbidden, matrix, length):
                 passedRow = True
             if col == forbiddenCol:
                 passedCol = True
-            submatrix[col][row] = matrix[col + int(passedCol)][row + int(passedRow)]
+            submatrix[col][row] =\
+                matrix[col + int(passedCol)][row + int(passedRow)]
     return submatrix
 
 
