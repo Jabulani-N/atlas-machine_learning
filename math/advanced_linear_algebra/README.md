@@ -54,13 +54,13 @@ We can use the previous task's deterinant calculator to run the determinant part
 
 1. scan matrix to ensure it is square and valid as according to task requirements
 2. go over each cell in a for loop:
-   * if length of matrix side (assuming square shape is already checked) is `length`,
+   * if length of matrix side is `length`,
     ```
     for rowNum in range(length):
         for colNum in range(length):
             coordinates = (rowNum, colNum)
             submatrix = remove_lines(coordinates)
-            # above function takes 2 arguments, rowNum and colNum.
+            # above function takes 3 arguments: rowNum, colNum and hte matirx to be trimmed.
             # we can create it by copying what we did to filter in task 0
             # this function, once made htis way, will be portable to other tasks
             minorMatrix[rowNum][colNum] = determinant(submatrix)

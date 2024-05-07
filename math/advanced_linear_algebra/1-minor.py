@@ -8,7 +8,45 @@ copies task 0's code to calculates each matrix's determinant
 
 def minor(matrix):
     """calculates the minor of matrix"""
-    pass
+    # preliminary validity checks
+    if matrix == [[]]:
+        raise ValueError("matrix must be a non-empty square matrix")
+    if type(matrix) is not list:
+        raise TypeError("matrix must be a list of lists")
+    for item in matrix:
+        if type(item) is not list:
+            raise TypeError("matrix must be a list of lists")
+    for item in matrix:
+        if type(item) is list:
+            if len(item) != len(matrix):
+                raise ValueError("matrix must be a non-empty square matrix")
+
+    length = len(matrix)
+    for rowNum in range(length):
+        for colNum in range(length):
+            coordinates = (rowNum, colNum)
+
+
+def trim_matrix(rowNum, colNum, matrix, length):
+    """
+    removes from matrix matrix
+        row rowNum
+        column colNum
+    returns resultant submatrix
+    """
+    # create zeroes submatrix
+    submatrix = zerosquare(length - 1)
+
+
+def zerosquare(length):
+    """creates a square matrix of zeros"""
+    submatrix = []
+    subrow = []
+    for x in range(length):
+        subrow.append(0)
+    for y in range(length):
+        submatrix.append(subrow)
+    return submatrix
 
 
 def determinant(matrix):
