@@ -10,11 +10,18 @@ it's best to create a new matrix for this, to avoid assignment accidents
 
 def inverse(matrix):
     """calcualtes inverse = adjugate / determinnat"""
-    # uses same checks as determinant, so watch this
-    if determinant(matrix) == 0:
+    # determinant handles error checking
+    det = determinant(matrix)
+    if det == 0:
         return None
     else:
-        pass
+        addy = adjugate(matrix)
+        length = len(matrix)
+        UnderNight = zerosquare(length)
+        for y in range(length):
+            for x in range(length):
+                UnderNight[y][x] = addy[y][x] / det
+        return UnderNight
 
 
 def adjugate(matrix):
