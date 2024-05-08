@@ -73,3 +73,6 @@ We can use the previous task's deterinant calculator to run the determinant part
 *  ~~there is potential for finicky interaction when using `array[row][column]`, so it may be best to append entire rows directly, rather than attempt to assign element by element~~
 *  it is VITAL to append CONTENTS of arrays, and not arrays themselves.
    *  If you append an *array* to multiple locatoins, any time you aler any of them, you alter everywhere it was used. You MUST create new arrays to be used as `lists` within the list of `lists`.
+# Task 2 - Cofactor
+
+Cofactor is a minor matrix where each cell is multiplied by `(-1) ** (y + x)`.  x and y = `column + 1` and `row + 1` respectively. The plus 1 is because in python, the first row is considered row 0 instead of row 1.

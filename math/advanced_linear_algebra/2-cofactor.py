@@ -8,7 +8,16 @@ copies task 1's code so all that's needed is assigning the sign to each cell
 
 def cofactor(matrix):
     """calculates cofactor of matrix matrix"""
-    pass
+    underage = minor(matrix)
+    length = len(matrix)
+    cof = zerosquare(length)
+    for rowNum in range(length):
+        for colNum in range(length):
+            x = colNum + 1
+            y = rowNum + 1
+            cof[rowNum][colNum] = underage[rowNum][colNum] *\
+                                  (-1) ** (x + y)
+    return cof
 
 
 def minor(matrix):
