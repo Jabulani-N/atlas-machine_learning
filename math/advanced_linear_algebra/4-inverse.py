@@ -10,8 +10,11 @@ it's best to create a new matrix for this, to avoid assignment accidents
 
 def inverse(matrix):
     """calcualtes inverse = adjugate / determinnat"""
-    # determinant handles error checking
-    det = determinant(matrix)
+    # determinant handles most error checking
+    try:
+        det = determinant(matrix)
+    except ValueError:
+        raise ValueError("matrix must be a non-empty square matrix")
     if det == 0:
         return None
     else:
