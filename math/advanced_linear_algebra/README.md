@@ -79,4 +79,36 @@ Cofactor is a minor matrix where each cell is multiplied by `(-1) ** (y + x)`.  
 
 # Task 3 - Adjugate
 
+* Note: `Adjugate` is AKA `Adjoint`
+
 The adjugate of an array is the transpose of its Cofactor, so you simply need swap the row/col coordinates of each cell. If a cell has position `[row][col]`, the position of it's transpose will be `[col][row]`
+
+# Task 4 - [Iverse](https://www.youtube.com/watch?v=W4Nh0QGrugY)
+
+
+
+
+[![Video explanatoin of the by-hand version](http://img.youtube.com/vi/Fg7_mv3izR0/mqdefault.jpg)](https://www.youtube.com/watch?v=Fg7_mv3izR0)
+
+Calculating the `inverse` of a matrix is done by finding what line operations will convert square matrix `A` into matrix `In` where `n` is the length of the matrices.
+* Matrix `I` is the base inverse matrix, shaped like
+
+```
+[[1,0,0]
+[0,1,0]
+[0,0,1]]
+```
+
+Where the 1 creates the diagonal line through the otherwise zeroes matrix.
+
+The answer's correctness can be checked by dot multiplying the original matrix with the inverse. The result should be the relevant `I` matrix.
+
+
+The Inverse only exists if the matrix has a non-0 determinant, so we can perform that check first.
+
+* This is a hint that we can use our previous formulae to calculate the inverse much easier than the above demonstration:
+
+## Inverse = Adjugate / determinant
+[![Video explanatoin of the adjugate determinant version](http://img.youtube.com/vi/W4Nh0QGrugY/mqdefault.jpg)](https://www.youtube.com/watch?v=W4Nh0QGrugY).
+
+Determinant is a constant, so you can just divide each cell by that value. if you'd be dividing by zero, the matrix is what's called "singlular."
