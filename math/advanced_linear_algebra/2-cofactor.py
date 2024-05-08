@@ -16,7 +16,7 @@ def cofactor(matrix):
             x = colNum + 1
             y = rowNum + 1
             cof[rowNum][colNum] = underage[rowNum][colNum] *\
-                                  (-1) ** (x + y)
+                (-1) ** (x + y)
     return cof
 
 
