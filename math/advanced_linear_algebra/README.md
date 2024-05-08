@@ -76,3 +76,7 @@ We can use the previous task's deterinant calculator to run the determinant part
 # Task 2 - Cofactor
 
 Cofactor is a minor matrix where each cell is multiplied by `(-1) ** (y + x)`.  x and y = `column + 1` and `row + 1` respectively. The plus 1 is because in python, the first row is considered row 0 instead of row 1.
+
+# Task 3 - Adjugate
+
+The adjugate of an array is the transpose of its Cofactor, so you simply need swap the row/col coordinates of each cell. If a cell has position `[row][col]`, the position of it's transpose will be `[col][row]`
