@@ -14,3 +14,7 @@ basic idea you'll want to code:
 
 * P(x = k) = \binom{n}{k} \times p^k \times (1-p)^{n-k}
   * \binom{n}{k} = \frac{n!}{k!(n-k)!}
+
+# Task 1
+
+Intersection = liklihood / Pr
