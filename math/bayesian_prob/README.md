@@ -9,3 +9,8 @@
 [This](https://stats.stackexchange.com/questions/181035/how-to-derive-the-likelihood-function-for-binomial-distribution-for-parameter-es) seems to be the liklihood formula
 
 * We are likely multiplying the function's liklihood by binomial coefficient because "You can assume that `x` follows a binomial distribution.
+
+basic idea you'll want to code:
+
+* P(x = k) = \binom{n}{k} \times p^k \times (1-p)^{n-k}
+  * \binom{n}{k} = \frac{n!}{k!(n-k)!}
