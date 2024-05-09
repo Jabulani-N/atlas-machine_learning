@@ -4,3 +4,8 @@
 
   [source](https://towardsdatascience.com/what-is-bayes-rule-bb6598d8a2fd)
 
+# Task 0
+
+[This](https://stats.stackexchange.com/questions/181035/how-to-derive-the-likelihood-function-for-binomial-distribution-for-parameter-es) seems to be the liklihood formula
+
+* We are likely multiplying the function's liklihood by binomial coefficient because "You can assume that `x` follows a binomial distribution.
