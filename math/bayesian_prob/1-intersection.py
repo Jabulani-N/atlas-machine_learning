@@ -11,6 +11,8 @@ def intersection(x, n, P, Pr):
     """calculates the intersection with `Pr`ior beliefs"""
     if not np.isclose(np.sum(Pr), 1):
         raise ValueError("Pr must sum to 1")
+    if type(P) is not np.ndarray or np.ndim(P) != 1:
+        raise TypeError("P must be a 1D numpy.ndarray")
     if type(Pr) is not np.ndarray or\
        np.shape(P) != np.shape(Pr):
         raise TypeError(
