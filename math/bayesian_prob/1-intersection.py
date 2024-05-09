@@ -11,6 +11,18 @@ def intersection(x, n, P, Pr):
     """calculates the intersection with `Pr`ior beliefs"""
     if not np.isclose(np.sum(Pr), 1):
         raise ValueError("Pr must sum to 1")
+    if type(Pr) is not np.ndarray or\
+       np.shape(P) != np.shape(Pr):
+        raise TypeError(
+            "Pr must be a numpy.ndarray with the same shape as P")
+    for p in P:
+        if p < 0 or p > 1:
+            raise ValueError(
+                "All values in P must be in the range [0, 1]")
+    for p in Pr:
+        if p < 0 or p > 1:
+            raise ValueError(
+                "All values in Pr must be in the range [0, 1]")
     inter = likelihood(x, n, P) * Pr
     # inter /= np.sum(inter)
     return inter
