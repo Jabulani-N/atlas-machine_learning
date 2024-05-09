@@ -10,7 +10,7 @@ import numpy as np
 def posterior(x, n, P, Pr):
     """calculates posterior probability"""
     lik = likelihood(x, n, P)
-    prior = intersection(x, n, P, Pr)
+    prior = Pr
     marge = marginal(x, n, P, Pr)
     post = (lik * prior) / marge
     return post
