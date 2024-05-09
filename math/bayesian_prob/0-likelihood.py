@@ -37,7 +37,7 @@ def likelihood(x, n, P):
     likelihoods = []
     for p in P:
         likelihoods.append(binCoeff *
-                           (1 - p) ** (n - k))
+                           ((p ** k) *(1 - p) ** (n - k)))
     return likelihoods
 
 
