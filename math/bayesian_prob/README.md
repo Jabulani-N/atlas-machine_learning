@@ -18,3 +18,7 @@ basic idea you'll want to code:
 # Task 1
 
 Intersection = liklihood / Pr
+
+# Task 2
+
+Marginal Probability = sum of intersections
