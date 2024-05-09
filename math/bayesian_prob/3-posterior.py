@@ -16,7 +16,6 @@ def posterior(x, n, P, Pr):
     return post
 
 
-
 def marginal(x, n, P, Pr):
     """calculates the marginal probability of obtaining the data"""
     inter = intersection(x, n, P, Pr)
