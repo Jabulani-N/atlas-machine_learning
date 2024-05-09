@@ -36,11 +36,9 @@ def likelihood(x, n, P):
     binCoeff = binomial(n, k)
     likelihoods = np.array([])
     for p in P:
-        phrase = ((p ** k) *(1 - p) ** (n - k))
+        phrase = ((p ** k) * (1 - p) ** (n - k))
         lik = binCoeff * phrase
         likelihoods = np.append(likelihoods, lik)
-        # likelihoods.append(binCoeff *
-        #                    ((p ** k) * (1 - p) ** (n - k)))
     return likelihoods
 
 
