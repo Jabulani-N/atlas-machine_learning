@@ -2,7 +2,7 @@
 
 ![Bayes Formula](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*oKi6F9CNeCyhLajj_RRSoA.jpeg)
 
-  [source](https://towardsdatascience.com/what-is-bayes-rule-bb6598d8a2fd)
+  [image source](https://towardsdatascience.com/what-is-bayes-rule-bb6598d8a2fd)
 
 # Task 0
 
@@ -22,3 +22,9 @@ Intersection = liklihood / Pr
 # Task 2
 
 Marginal Probability = sum of intersections
+
+# Task 3
+
+![Bayes Formula](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*oKi6F9CNeCyhLajj_RRSoA.jpeg)
+
+Posterior probability = (liklihood * `Pr`ior) / Marginal probability
