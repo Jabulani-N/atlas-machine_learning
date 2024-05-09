@@ -17,11 +17,11 @@ def definiteness(matrix):
     try:
         if check_symmetric(matrix) is False:
             return None
-    except:
+    except Exception:
         return None
     try:
         eigenvalues = np.linalg.eigvals(matrix)
-    except:
+    except Exception:
         return None
 
     positives, negatives, = False, False
