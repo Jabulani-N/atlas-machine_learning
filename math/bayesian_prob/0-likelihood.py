@@ -25,5 +25,5 @@ def likelihood(x, n, P):
     if type(P) is not np.ndarray or np.shape(P) != (1,):
         raise TypeError("P must be a 1D numpy.ndarray")
     for value in P:
-        if value < 0 or value >= 1:
+        if value < 0 or value > 1:
             raise ValueError("All values in P must be in the range [0, 1]")
