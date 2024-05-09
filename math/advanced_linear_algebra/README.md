@@ -2,6 +2,16 @@
 
 This directory contains code that will perform matrix operations.
 
+- [Advanced Linear Algebra](#advanced-linear-algebra)
+- [Task 0 - Determinant](#task-0---determinant)
+- [Task 1 - Minor](#task-1---minor)
+  - [Potential Pitfalls](#potential-pitfalls)
+- [Task 2 - Cofactor](#task-2---cofactor)
+- [Task 3 - Adjugate](#task-3---adjugate)
+- [Task 4 - Iverse](#task-4---iverse)
+  - [Inverse = Adjugate / determinant](#inverse--adjugate--determinant)
+- [Task 5 - Definiteness](#task-5---definiteness)
+  - [Determining Definiteness](#determining-definiteness)
 
 # Task 0 - Determinant
 
@@ -112,3 +122,19 @@ The Inverse only exists if the matrix has a non-0 determinant, so we can perform
 [![Video explanatoin of the adjugate determinant version](http://img.youtube.com/vi/W4Nh0QGrugY/mqdefault.jpg)](https://www.youtube.com/watch?v=W4Nh0QGrugY).
 
 Determinant is a constant, so you can just divide each cell by that value. if you'd be dividing by zero, the matrix is what's called "singlular."
+
+
+# Task 5 - Definiteness
+
+Definiteness is caluclated using a matrix's Eigien values and symmetry, but as `numpy` is permitted, we don't have to learn how to calculate them ourselves. [`numpy` can do that math for us](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eig.html).
+
+1. do basic checks, such as input `matrix` being a `numpy.ndarray`.
+2. if `matrix` is not symmetric (matrix != transpose(matrix)), return `None`
+   * also return `None` if `matrix` is not square, which is also invalid
+      * can be done via `try` on the operation AFTER CHECKING TYPE that finds us an inverse, and any exception we `except` with `return None`
+
+## [Determining Definiteness](https://www.youtube.com/watch?v=FoiU6rguhyM&t=8s)
+`matrix` is
+* `Positive definite` if all eigen values are positive
+* `Negative definite` if all eigen values are negative
+* 
