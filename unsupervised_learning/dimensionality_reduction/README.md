@@ -1,5 +1,7 @@
 # Dimensionality Reduction
 
+task 0, task 1 are currently incomplete.
+
 # Task 0 - PCA
 * PCA stands for "Principle Component Analysis."
 
