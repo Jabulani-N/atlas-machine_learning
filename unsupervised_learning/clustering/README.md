@@ -9,6 +9,8 @@
 [![this 5 min video explains how K-means clustering works](http://img.youtube.com/vi/_aWzGGNrcic/0.jpg)](http://www.youtube.com/watch?v=_aWzGGNrcic)
 * this 5 min video explains how K-means clustering works.
 
+[![this video shows the optimum number of clusters](http://img.youtube.com/vi/xNfOheh-res/0.jpg)](https://www.youtube.com/watch?v=xNfOheh-res)
+* This videos shows the optimal/optimum number of clusters
 # Task 0
 
 ## Instructions
