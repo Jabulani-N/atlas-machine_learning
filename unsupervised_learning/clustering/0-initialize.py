@@ -13,6 +13,7 @@ def initialize(X, k):
         d = number of dimensions for each data point
         k = number of clusters
     """
+    centroids = None
     try:
         n, d = np.shape(X)
         maxima = np.max(X, 0)
