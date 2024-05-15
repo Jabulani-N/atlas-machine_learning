@@ -13,6 +13,9 @@
 
 ## Instructions
 
+<details>
+<summary>Instructions</summary>
+
 Write a function `def initialize(X, k):` that initializes cluster centroids for K-means:
 
 
@@ -25,9 +28,14 @@ The cluster centroids should be initialized with a multivariate uniform distribu
 The minimum values for the distribution should be the minimum values of `X` along each dimension in `d`
 The maximum values for the distribution should be the maximum values of `X` along each dimension in `d`
 You should use [`numpy.random.uniform`](https://numpy.org/doc/stable/reference/random/generated/numpy.random.uniform.html) exactly once
+
 You are not allowed to use any loops
+
 Returns: a numpy.ndarray of shape `(k, d)` containing the initialized centroids for each cluster, or `None` on failure
 
+</details>
+
+## Notes
 
 This task only cares about initializing the centroids. You are not running the entire clustering.
 
@@ -42,3 +50,36 @@ This way, we don't "explicitly" say how many dimensions we're working with. We j
 
 
 Watch the [5-minute video above](#k-means-clustering) to understand the basic idea.
+
+# Task 1
+
+## Instructions
+<details>
+<summary>Instructions</summary>
+
+Write a function `def kmeans(X, k, iterations=1000):` that performs K-means on a dataset:
+
+* `X` is a `numpy.ndarray` of shape (n, d) containing the dataset
+    * `n` is the number of data points
+    * `d` is the number of dimensions for each data point
+    * `k` is a positive integer containing the number of clusters
+
+`iterations` is a positive integer containing the maximum number of iterations that should be performed
+
+If no change in the cluster centroids occurs between iterations, your function should `return`
+
+Initialize the cluster centroids using a multivariate uniform distribution (based on`0-initialize.py`)
+
+If a cluster contains no data points during the update step, reinitialize its centroid
+
+You should use `numpy.random.uniform` exactly twice
+
+You may use at most 2 loops
+
+Returns: `C`, `clss`, or `None`, `None` on failure
+
+`C` is a numpy.ndarray of shape (k, d) containing the centroid means for each cluster
+
+`clss` is a numpy.ndarray of shape (n,) containing the index of the cluster in C that each data point belongs to
+
+</details>
