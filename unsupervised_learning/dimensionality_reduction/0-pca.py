@@ -17,20 +17,49 @@ def pca(X, var=0.95):
             across all data points
     var = fraction of the variance PCA transformation maintains
     """
-    # break dataset into parts
-    # I think these are U, sigma, VTranspose respectively
-    _, Sing, Vh = np.linalg.svd(X, full_matrices=False)
 
-    # explained variance ratio
-    explained_variance_ratio = (Sing ** 2) / np.sum(Sing ** 2)
+    x_standardized = Standardize_data(X)
+    x_cov = covariance(x_standardized)
+    # find eigen composition
+    eig_vals, eig_vecs = np.linalg.eig(x_cov)
 
-    # cumulative sum of explained variance
-    cum_explained_variance = np.cumsum(explained_variance_ratio)
-
-    # Find number of components needed to maintain given variance
-    nd = np.argmax(cum_explained_variance >= var) + 1
-
-    # Return the weights matrix
-    W = Vh[:nd + 1].T
-
+    # make eigenvectors (loadings) largest in absolute value positive
+    max_abs_idx = np.argmax(np.abs(eig_vecs), axis=0)
+    signs = np.sign(eig_vecs[max_abs_idx, range(eig_vecs.shape[0])])
+    eig_vecs = eig_vecs * signs[np.newaxis, :]
+    eig_vecs = eig_vecs.T
+    # rearrange eigen comp
+    # make a list of (eigenvalue, eigenvector) tuples
+    eig_pairs = [(np.abs(eig_vals[i]),
+                  eig_vecs[i, :])
+                 for i in range(len(eig_vals))]
     return W
+
+
+def mean(x):
+    """
+    standardization step 3
+    np.mean(X, axis = 0)
+    """
+    return sum(x)/len(x)
+
+
+def std(x):
+    """
+    standardization step 2
+    np.std(X, axis = 0)
+    """
+    return (sum((i - mean(x))**2 for i in x)/len(x))**0.5
+
+
+def Standardize_data(X):
+    """standardization all together"""
+    return (X - mean(X))/std(X)
+
+
+def covariance(x):
+    """
+    returns covariance matrix of x
+    np.cov(x_standardized.T)
+    """
+    return (x.T @ x)/(x.shape[0]-1)

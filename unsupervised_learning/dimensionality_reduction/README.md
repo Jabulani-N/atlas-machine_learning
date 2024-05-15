@@ -3,7 +3,11 @@
 # Task 0 - PCA
 * PCA stands for "Principle Component Analysis."
 
-## Instrucitons
+We use PCA to reduce the number of dimensions we keep track of when looking at data. It attempts to reduce the size of information while keeping as much important information as possible.
+
+A bit like a "line of best fit" is a way to easily summarize a scatter plot, dimensionality reduction summarizes the distances between data points in fewer dimensions than they were presented in.
+
+## Instructions
 
 Write a function def pca(X, var=0.95): that performs PCA on a dataset:
 
@@ -34,3 +38,6 @@ Unitary array(s). The first a.ndim - 2 dimensions have the same size as those of
 
 [![How to implement PCA (Principal Component Analysis) from scratch with Python](http://img.youtube.com/vi/Rjr62b_h7S4/0.jpg)](https://www.youtube.com/watch?v=Rjr62b_h7S4)
 * explains concept well
+
+[PCA with the Covariance Method](https://bagheri365.github.io/blog/Principal-Component-Analysis-from-Scratch/)
+
