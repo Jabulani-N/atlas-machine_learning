@@ -8,8 +8,8 @@ import numpy as np
 def kmeans(X, k, iterations=1000):
     """runs iteratsions iterations of k-means clustering"""
     centroid = initialize(X, k)
-    if centroid == None or\
-        iterations <= 0:
+    if centroid is None or\
+       iterations <= 0:
         return None, None
 
 
