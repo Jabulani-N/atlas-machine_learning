@@ -35,7 +35,7 @@ you can think of the contents of X as dimension 0 has the coordinate for a list,
 
 ![example of 3 dimensional lists](./images/clustering%20-%20task%200%20-%20coords.jpg)
 
-This way, we don't "explicitly" say how many dimensions we're working with. We just have a format that flexes itself to work with any count.
+This way, we don't "explicitly" say how many dimensions we're working with. We just have a format that flexes itself to work with any count. A 2D list might be worded as "X = 3, Y = 5", or (3, 5) for short. Large dimension numbers take this further. For example, we could say (3, 5, 9, 17, 33, ...)
 
 `np.random.uniform` can take an array-like of floats, so we can put the array of maxima for each dimension as first argument, array of minima for each dimension as asecond argument, and `(k, length of how many dimensions there are)` for size.
 * `length of how many dimensions there are` = `np.shape(X)[1]` = `d`
