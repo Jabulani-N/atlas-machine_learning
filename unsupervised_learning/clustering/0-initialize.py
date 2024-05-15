@@ -17,5 +17,5 @@ def initialize(X, k):
     maxima = np.max(X, 0)
     minima = np.min(X, 0)
 
-    centroids = np.random.uniform(maxima, minima, (k, d))
+    centroids = np.random.uniform(minima, maxima, (k, d))
     return centroids
