@@ -31,6 +31,12 @@ Returns: a numpy.ndarray of shape `(k, d)` containing the initialized centroids 
 
 This task only cares about initializing the centroids. You are not running the entire clustering.
 
+you can think of the contents of X as dimension 0 has the coordinate for a list, and that list is a list of coordinates. if it were 2D, we might have x dimension and y dimension. We're potentially working with *many* dimensions, however, so we just have a whole list reprsented like this.
+
+![example of 3 dimensional lists](./images/clustering%20-%20task%200%20-%20coords.jpg)
+
+This way, we don't "explicitly" say how many dimensions we're working with. We just have a format that flexes itself to work with any count.
+
 `np.random.uniform` can take an array-like of floats, so we can put the array of maxima for each dimension as first argument, array of minima for each dimension as asecond argument, and `(k, length of how many dimensions there are)` for size.
 * `length of how many dimensions there are` = `np.shape(X)[1]` = `d`
 
