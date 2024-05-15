@@ -40,10 +40,13 @@ def pca(X, var=0.95):
     eig_vals_sorted = np.array([x[0] for x in eig_pairs])
     eig_vecs_sorted = np.array([x[1] for x in eig_pairs])
     # choose principal components
-    # Select top k eigenvectors
-    k = 2
+    # Select top k eigenvectors based on the variance
+    cumulative_variance = np.cumsum(eig_vals_sorted) /\
+                          np.sum(eig_vals_sorted)
+    # Add 1 to start from 1 component
+    k = np.argmax(cumulative_variance >= var) + 1
     # W = Projection matrix
-    W = eig_vecs_sorted[:k, :]
+    W = eig_vecs_sorted[:k, :].T
     return W
 
 
