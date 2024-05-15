@@ -15,6 +15,9 @@ def initialize(X, k):
     """
     centroids = None
     try:
+        if type(k) is not int or\
+           k <= 0:
+            return None
         n, d = np.shape(X)
         maxima = np.max(X, 0)
         minima = np.min(X, 0)
