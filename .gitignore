@@ -1,3 +1,5 @@
+# own additions for ignoreing designated files
+*ignoreme*
 # own additions to remove trained keras models
 *.h5
 # own additions to GitHub's python preset
