@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""task 0"""
+"""task 1"""
 
 
 import numpy as np
@@ -7,7 +7,10 @@ import numpy as np
 
 def kmeans(X, k, iterations=1000):
     """runs iteratsions iterations of k-means clustering"""
-    pass
+    centroid = initialize(X, k)
+    if centroid == None or\
+        iterations <= 0:
+        return None, None
 
 
 def initialize(X, k):
