@@ -41,7 +41,12 @@ This task only cares about initializing the centroids. You are not running the e
 
 you can think of the contents of X as dimension 0 has the coordinate for a list, and that list is a list of coordinates. if it were 2D, we might have x dimension and y dimension. We're potentially working with *many* dimensions, however, so we just have a whole list reprsented like this.
 
+<details>
+    <summary> whiteboarding image of how the dimensions work</summary>
+
 ![example of 3 dimensional lists](./images/clustering%20-%20task%200%20-%20coords.jpg)
+
+</details>
 
 This way, we don't "explicitly" say how many dimensions we're working with. We just have a format that flexes itself to work with any count. A 2D list might be worded as "X = 3, Y = 5", or (3, 5) for short. Large dimension numbers take this further. For example, we could say (3, 5, 9, 17, 33, ...)
 
@@ -83,3 +88,10 @@ Returns: `C`, `clss`, or `None`, `None` on failure
 `clss` is a numpy.ndarray of shape (n,) containing the index of the cluster in C that each data point belongs to
 
 </details>
+
+## Notes
+
+There are two main parts to each iteration.
+1. find which centroid (k position) is closest (d values) to the data point and associate it with said centroid number (k position)
+2. relocate that centroid (change the d values of the k position, *preferably via making a new array*, to being the average of all the data points)
+   * if every single new set of d values is the same as old, immediately return
