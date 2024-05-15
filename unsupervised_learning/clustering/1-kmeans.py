@@ -5,6 +5,11 @@
 import numpy as np
 
 
+def kmeans(X, k, iterations=1000):
+    """runs iteratsions iterations of k-means clustering"""
+    pass
+
+
 def initialize(X, k):
     """initializes cluster centroids for K-means
     X is a numpy.ndarray of shape (n, d)
