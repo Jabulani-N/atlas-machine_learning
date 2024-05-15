@@ -13,9 +13,12 @@ def initialize(X, k):
         d = number of dimensions for each data point
         k = number of clusters
     """
-    n, d = np.shape(X)
-    maxima = np.max(X, 0)
-    minima = np.min(X, 0)
+    try:
+        n, d = np.shape(X)
+        maxima = np.max(X, 0)
+        minima = np.min(X, 0)
 
-    centroids = np.random.uniform(minima, maxima, (k, d))
+        centroids = np.random.uniform(minima, maxima, (k, d))
+    except Exception:
+        pass
     return centroids
