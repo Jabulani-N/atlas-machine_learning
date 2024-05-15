@@ -33,6 +33,17 @@ def pca(X, var=0.95):
     eig_pairs = [(np.abs(eig_vals[i]),
                   eig_vecs[i, :])
                  for i in range(len(eig_vals))]
+    # sort the from  highest to  lowest
+    # based on eigenvalues magnitude
+    eig_pairs.sort(key=lambda x: x[0], reverse=True)
+    # For further usage
+    eig_vals_sorted = np.array([x[0] for x in eig_pairs])
+    eig_vecs_sorted = np.array([x[1] for x in eig_pairs])
+    # choose principal components
+    # Select top k eigenvectors
+    k = 2
+    # W = Projection matrix
+    W = eig_vecs_sorted[:k, :]
     return W
 
 
