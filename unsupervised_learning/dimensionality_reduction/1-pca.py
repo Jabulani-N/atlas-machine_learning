@@ -7,7 +7,7 @@ task 1
 import numpy as np
 
 
-def pca(X, var=0.95):
+def pca(X, ndim):
     """
     performs PCA on a dataset
     X = numpy.ndarray of shape (n, d)
@@ -15,7 +15,6 @@ def pca(X, var=0.95):
         d = number of dimensions in each point
         all dimensions have mean of 0
             across all data points
-            This means it's already standardized
     var = fraction of the variance PCA transformation maintains
     """
 
@@ -48,7 +47,7 @@ def pca(X, var=0.95):
     cumulative_variance = np.cumsum(eig_vals_sorted) /\
         np.sum(eig_vals_sorted)
     # Add 1 to start from 1 component
-    k = np.argmax(cumulative_variance >= var + 0) + 2
+    k = ndim
     # W = Projection matrix
     W = eig_vecs_sorted[:k, :].T
     # multiplying the first two columns by -1
