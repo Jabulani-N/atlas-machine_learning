@@ -1,6 +1,6 @@
 # Dimensionality Reduction
 
-task 0, task 1 are currently incomplete.
+task 1 is currently incomplete.
 
 # Task 0 - PCA
 * PCA stands for "Principle Component Analysis."
@@ -43,3 +43,8 @@ Unitary array(s). The first a.ndim - 2 dimensions have the same size as those of
 
 [PCA with the Covariance Method](https://bagheri365.github.io/blog/Principal-Component-Analysis-from-Scratch/)
 
+# Task 1 - PCA
+
+## Potential Pitfalls
+
+Be sure you take advantage of `np.mean(X)`. Using `sum(X)/len(X)` will result in superfluous complex numbers that will trigger problems with the grading program.
