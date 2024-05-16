@@ -13,13 +13,10 @@ def pca(X, ndim):
     X = numpy.ndarray of shape (n, d)
         n = number of data points
         d = number of dimensions in each point
-        all dimensions have mean of 0
-            across all data points
     var = fraction of the variance PCA transformation maintains
     """
 
-    # x_standardized = Standardize_data(X)
-    x_standardized = X
+    x_standardized = Standardize_without_std(X)
     x_cov = covariance(x_standardized)
     # find eigen composition
     preeig_vals, preeig_vecs = np.linalg.eig(x_cov)
@@ -40,19 +37,16 @@ def pca(X, ndim):
     # based on eigenvalues magnitude
     eig_pairs.sort(key=lambda x: x[0], reverse=True)
     # For further usage
-    eig_vals_sorted = np.array([x[0] for x in eig_pairs])
     eig_vecs_sorted = np.array([x[1] for x in eig_pairs])
     # choose principal components
-    # Select top k eigenvectors based on the variance
-    cumulative_variance = np.cumsum(eig_vals_sorted) /\
-        np.sum(eig_vals_sorted)
-    # Add 1 to start from 1 component
+    # Select top k=ndim eigenvectors
     k = ndim
     # W = Projection matrix
     W = eig_vecs_sorted[:k, :].T
     # multiplying the first two columns by -1
     W[:, 0:2] *= -1
-    return W
+    transformed = np.matmul(x_standardized, W)
+    return transformed
 
 
 def mean(x):
@@ -75,6 +69,11 @@ def std(x):
 def Standardize_data(X):
     """standardization all together"""
     return (X - mean(X))/std(X)
+
+
+def Standardize_without_std(X):
+    """standardization without using std"""
+    return (X - mean(X))
 
 
 def covariance(x):
