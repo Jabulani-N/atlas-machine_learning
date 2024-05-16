@@ -15,8 +15,9 @@ def pca(X, ndim):
         d = number of dimensions in each point
     var = fraction of the variance PCA transformation maintains
     """
-
-    x_standardized = Standardize_without_std(X)
+    x_mean = np.mean(X, axis=0)
+    x_centered = center(X)
+    x_standardized = x_centered
     x_cov = covariance(x_standardized)
     # find eigen composition
     preeig_vals, preeig_vecs = np.linalg.eig(x_cov)
@@ -71,9 +72,9 @@ def Standardize_data(X):
     return (X - mean(X))/std(X)
 
 
-def Standardize_without_std(X):
-    """standardization without using std"""
-    return (X - mean(X))
+def center(X):
+    """centers X"""
+    return (X - np.mean(X, axis=0))
 
 
 def covariance(x):
