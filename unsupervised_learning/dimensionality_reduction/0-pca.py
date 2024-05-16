@@ -21,7 +21,9 @@ def pca(X, var=0.95):
     x_standardized = Standardize_data(X)
     x_cov = covariance(x_standardized)
     # find eigen composition
-    eig_vals, eig_vecs = np.linalg.eig(x_cov)
+    preeig_vals, preeig_vecs = np.linalg.eig(x_cov)
+    eig_vals = np.copy(preeig_vals)
+    eig_vecs = np.copy(preeig_vecs)
 
     # make eigenvectors (loadings) largest in absolute value positive
     max_abs_idx = np.argmax(np.abs(eig_vecs), axis=0)
@@ -46,7 +48,7 @@ def pca(X, var=0.95):
     # Add 1 to start from 1 component
     k = np.argmax(cumulative_variance >= var) + 1
     # W = Projection matrix
-    W = eig_vecs_sorted[:k, :].T
+    W = eig_vecs_sorted[:,:k]
     return W
 
 

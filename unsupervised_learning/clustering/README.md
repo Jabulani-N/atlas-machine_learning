@@ -96,4 +96,8 @@ Returns: `C`, `clss`, or `None`, `None` on failure
 There are two main parts to each iteration.
 1. find which centroid (k position) is closest (d values) to the data point and associate it with said centroid number (k position)
 2. relocate that centroid (change the d values of the k position, *preferably via making a new array*, to being the average of all the data points)
+   * for centroid in centroids------?
+        * for k_pos in range (len(closest)) sum += X[k_pos]
+          * sum has to be an array to hold all the coordinates
+        * divide sum by len(closest) to get average position for the given
    * if every single new set of d values is the same as old, immediately return
