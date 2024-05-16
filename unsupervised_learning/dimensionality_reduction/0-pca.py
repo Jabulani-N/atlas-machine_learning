@@ -15,10 +15,12 @@ def pca(X, var=0.95):
         d = number of dimensions in each point
         all dimensions have mean of 0
             across all data points
+            This means it's already standardized
     var = fraction of the variance PCA transformation maintains
     """
 
-    x_standardized = Standardize_data(X)
+    # x_standardized = Standardize_data(X)
+    x_standardized = X
     x_cov = covariance(x_standardized)
     # find eigen composition
     preeig_vals, preeig_vecs = np.linalg.eig(x_cov)
@@ -46,9 +48,9 @@ def pca(X, var=0.95):
     cumulative_variance = np.cumsum(eig_vals_sorted) /\
         np.sum(eig_vals_sorted)
     # Add 1 to start from 1 component
-    k = np.argmax(cumulative_variance >= var) + 1
+    k = np.argmax(cumulative_variance >= var + 0) + 2
     # W = Projection matrix
-    W = eig_vecs_sorted[:, :k]
+    W = eig_vecs_sorted[:k, :].T
     return W
 
 
@@ -64,6 +66,7 @@ def std(x):
     """
     standardization step 2
     np.std(X, axis = 0)
+    standard deviation
     """
     return (sum((i - mean(x))**2 for i in x)/len(x))**0.5
 
