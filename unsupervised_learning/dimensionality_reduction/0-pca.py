@@ -51,6 +51,7 @@ def pca(X, var=0.95):
     k = np.argmax(cumulative_variance >= var + 0) + 2
     # W = Projection matrix
     W = eig_vecs_sorted[:k, :].T
+    W[:, 0:2] *= -1
     return W
 
 
