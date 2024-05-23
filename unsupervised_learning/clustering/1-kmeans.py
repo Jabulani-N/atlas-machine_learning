@@ -31,9 +31,11 @@ def kmeans(X, k, iterations=1000):
                 minima = np.min(X, axis=0)
                 maxima = np.max(X, axis=0)
                 centroids[i] = np.random.uniform(minima, maxima)
-                # add to a count or something where if it equals the amount of total centroids
+                # add to a count or something
+                # if it equals the amount of total centroids
                 # then it instantly returns the final answer.
-                # we can do above part after we finish what an iteration looks like
+                # we can do above part
+                # after we finish what an iteration looks like
     return centroids, closest
 
 
