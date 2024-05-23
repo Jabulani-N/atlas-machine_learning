@@ -9,6 +9,7 @@ def kmeans(X, k, iterations=1000):
     """runs iteratsions iterations of k-means clustering"""
     centroids = initialize(X, k)
     if centroids is None or\
+       type(iterations) is not int or\
        iterations <= 0:
         return None, None
     # print("sent centroids", centroids)
