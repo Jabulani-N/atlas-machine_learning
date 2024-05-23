@@ -16,6 +16,9 @@ def optimum_k(X, kmin=1, kmax=None, iterations=1000):
     for k in range(kmin, kmax + 1):
         # Run K-means for the current cluster size
         centroids, clusters = kmeans(X, k, iterations)
+        if centroids is None or\
+        clusters is None:
+            return None, None
 
         # Calculate the total intra-cluster variance
         total_variance = variance(X, centroids)
