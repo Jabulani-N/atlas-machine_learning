@@ -20,4 +20,3 @@ def variance(X, C):
     # Calculate the total variance
     var = np.sum(distances)
     return var
-
