@@ -25,9 +25,7 @@ def optimum_k(X, kmin=1, kmax=None, iterations=1000):
 
         results.append((centroids, clusters))
 
-        # Calculate the difference in variance from the smallest cluster size
-        if k == kmin:
-            base_variance = total_variance
-        d_vars.append(total_variance - base_variance)
+        base_variance = variance(X, results[0][0])
+        d_vars.append(base_variance - total_variance)
 
     return results, d_vars
