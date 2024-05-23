@@ -14,9 +14,13 @@ def variance(X, C):
     C = numpy.ndarray of shape (k, d) containing
         centroid means of each cluster
     """
-    n, d = np.shape(X)
-    k = np.shape(C)[0]
-    distances = np.min(np.sum((X[:, np.newaxis] - C) ** 2, axis=2), axis=1)
-    # Calculate the total variance
-    var = np.sum(distances)
+    var = None
+    try:
+        n, d = np.shape(X)
+        k = np.shape(C)[0]
+        distances = np.min(np.sum((X[:, np.newaxis] - C) ** 2, axis=2), axis=1)
+        # Calculate the total variance
+        var = np.sum(distances)
+    except Exception:
+        pass
     return var
