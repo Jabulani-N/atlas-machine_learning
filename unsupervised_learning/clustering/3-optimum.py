@@ -13,6 +13,12 @@ def optimum_k(X, kmin=1, kmax=None, iterations=1000):
         kmax = X.shape[0]
     results = []
     d_vars = []
+    if type(kmin) is not int or \
+       type(kmax) is not int or\
+       kmin >= kmax:
+        return None, None
+    if type(X) is not np.ndarray:
+        return None, None
 
     for k in range(kmin, kmax + 1):
         # Run K-means for the current cluster size
