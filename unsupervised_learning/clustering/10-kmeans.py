@@ -7,5 +7,9 @@ import sklearn.cluster
 
 def kmeans(X, k):
     """performs K-means on a dataset
-        viasklearn"""
-    pass
+        via sklearn"""
+    skl_kmeans = sklearn.cluster.KMeans(n_clusters=k)
+    skl_kmeans.fit(X)
+    C = skl_kmeans.cluster_centers_
+    clss = skl_kmeans.labels_
+    return C, clss
