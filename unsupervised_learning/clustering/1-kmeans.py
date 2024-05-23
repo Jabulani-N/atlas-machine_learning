@@ -52,7 +52,7 @@ def find_closest_centroid(centroids, X):
     # Compute Euclidean distance btwn each data point and  centroid
     distances = np.sqrt(np.sum((X[:, np.newaxis] - centroids) ** 2,
                                axis=2))
-    # Find the index of the closest centroid for each data point
+    # Find the index of the closest centroid f0r each data point
     closest_centroid_indices = np.argmin(distances, axis=1)
     return closest_centroid_indices
 
