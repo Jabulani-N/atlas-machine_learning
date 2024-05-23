@@ -28,13 +28,10 @@ def initialize(X, k):
         # Initialize priors evenly
         pri = np.full(k, 1/k)
 
-        # Initialize centroid means with the centroids from K-means
-        m = centroids
+        m = centroids.reshape(k, 1, d)
 
         # Initialize covariance matrices as identity matrices
-        S = np.zeros((k, d, d))
-        for i in range(k):
-            S[i] = np.identity(d)
+        S = np.tile(np.identity(d, dtype=float), (k, 1, 1))
 
     except Exception:
         pass
