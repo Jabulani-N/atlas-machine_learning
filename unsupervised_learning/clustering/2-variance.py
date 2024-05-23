@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""task 1"""
+"""task 2"""
 
 
 import numpy as np
