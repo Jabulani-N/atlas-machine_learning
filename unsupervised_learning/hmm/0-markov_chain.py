@@ -13,6 +13,9 @@ def markov_chain(P, s, t=1):
             shape (n, n)
             representing the transition matrix
             P[i, j] = probability of transitioning from state i to state j
+        s is a numpy.ndarray
+            shape (1, n)
+            represents probability of starting in each state
         """
     if not isinstance(P, np.ndarray) or not isinstance(s, np.ndarray):
         return None  # Return None on failure
