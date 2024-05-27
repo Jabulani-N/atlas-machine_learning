@@ -14,4 +14,4 @@ Write the function `def markov_chain(P, s, t=1):` that determines the probabilit
 Returns: a `numpy.ndarray` of shape `(1, n)` representing the probability of being in a specific state after `t` iterations, or `None` on failure
 </detials>
 
-You'll 
+You'll be able to find the chance of any given position via dot product of `s` and `P`.
