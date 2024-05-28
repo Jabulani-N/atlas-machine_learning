@@ -13,7 +13,8 @@ def regular(P):
         return None  # Return None on failure
     if P.shape[0] != P.shape[1]:
         return None
-
+    if P.any() <= 0:
+        return None
     try:
         return steady_state_prop(P.transpose())
     except Exception:
@@ -28,4 +29,4 @@ def steady_state_prop(P):
     q = np.c_[q, ones]
     QTQ = np.dot(q, q.T)
     bQT = np.ones(dim)
-    return np.linalg.solve(QTQ, bQT)
+    return np.round(np.linalg.solve(QTQ, bQT), 8)
