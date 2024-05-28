@@ -29,6 +29,11 @@ def diagonal_check(P, target=1):
     dia = np.diag(P)
     return np.any(np.equal(dia, target))
 
-def list_absorptions(P, prev_list):
-    """returns list of effectively absorbing positions"""
-    pass
+
+def who_absorbs(P):
+    """returns list of absorbing positions
+    each position holding True is absorbing
+    """
+    dia = np.diag(P)
+    return np.equal(dia, 1)
+
