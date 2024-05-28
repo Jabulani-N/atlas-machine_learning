@@ -14,7 +14,10 @@ def regular(P):
     if P.shape[0] != P.shape[1]:
         return None
 
-    return steady_state_prop(P.transpose())
+    try:
+        return steady_state_prop(P.transpose())
+    except Exception:
+        return None
 
 
 def steady_state_prop(P):
