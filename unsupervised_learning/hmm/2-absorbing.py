@@ -20,6 +20,7 @@ def absorbing(P):
     if diagonal_check(P, 1) is False:
         return False
 
+
 def diagonal_check(P, target=1):
     """checks 2D array P
         for any instance of target
