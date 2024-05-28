@@ -13,8 +13,11 @@ def regular(P):
         return None  # Return None on failure
     if P.shape[0] != P.shape[1]:
         return None
-    if P.any() <= 0:
+    if np.any(np.less_equal(P, 0)):
         return None
+    for subarray in P:
+        if np.any(np.less_equal(subarray, 0)):
+            return None
     try:
         return steady_state_prop(P.transpose())
     except Exception:
