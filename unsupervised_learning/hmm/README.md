@@ -49,3 +49,14 @@ Steady state (stationary [in this text](https://towardsdatascience.com/markov-ch
 ![steady state formula](https://miro.medium.com/v2/resize:fit:396/format:webp/1*zbWBjSC1Xba9zODUDMkftA.png)
 
 [This](https://stackoverflow.com/questions/52137856/steady-state-probabilities-markov-chain-python-implementation) is one python code application example I found.
+
+## Task 2
+
+### Resources
+
+Absorbing:
+
+* "[Absorbing State: a state `i` is called absorbing if it is impossible to leave this state. Therefore, the state '`i`' is absorbing if `p`<sub>`ii`</sub>` = 1` and `p`<sub>`ij`</sub>` = 0` for `i ≠ j`. If every state can reach an absorbing state, then the Markov chain is an absorbing Markov chain.
+](https://www.datacamp.com/tutorial/markov-chains-python-tutorial)"
+
+  * this means diagonal matrix, wehre you have a descending diagonal line of `1`s linking top left and bottom right corners, and `0`s everywhere else
