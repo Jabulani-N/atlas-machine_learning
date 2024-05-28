@@ -12,10 +12,10 @@ def absorbing(P):
         return False
     if P.shape[0] != P.shape[1]:
         return False
-    if np.any(np.less_equal(P, 0)):
+    if np.any(np.less(P, 0)):
         return False
     for subarray in P:
-        if np.any(np.less_equal(subarray, 0)):
+        if np.any(np.less(subarray, 0)):
             return False
     if not diagonal_check(P, 1):
         return False
