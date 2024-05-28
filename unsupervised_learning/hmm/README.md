@@ -78,7 +78,9 @@ we can tell a matrix is absorbing, first and foremost, if *any* diagonal value i
 
 first pass: compile all absorption positons. these can be column numbers, so to speak. if positoin `(0,0)` is absorptoin, we add `0` to the list.
 
-next, for row in P, if row can access an absorption, add that row's number to the list of absorption positions.
+next, for rownum in range(P.shape[0])
+
+* if row can access an absorption, add that row's number to the list of absorptions.
 
 * if we added a row to the number of absorption positions, repeat
 
