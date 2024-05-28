@@ -56,7 +56,21 @@ Steady state (stationary [in this text](https://towardsdatascience.com/markov-ch
 
 Absorbing:
 
-* "[Absorbing State: a state `i` is called absorbing if it is impossible to leave this state. Therefore, the state '`i`' is absorbing if `p`<sub>`ii`</sub>` = 1` and `p`<sub>`ij`</sub>` = 0` for `i ≠ j`. If every state can reach an absorbing state, then the Markov chain is an absorbing Markov chain.
+![absorbing chain example](https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Drunkard%E2%80%99s_walk.svg/1920px-Drunkard%E2%80%99s_walk.svg.png)
+
+* [it is absorbing if every given position has a chance of leading to situation where you cannot escape a select set of positions](https://en.wikipedia.org/wiki/Absorbing_Markov_chain)
+
+* "[Absorbing **State**: a state `i` is called absorbing if it is impossible to leave this state. Therefore, the state [position on the matrix] '`i`' is absorbing if `p`<sub>`ii`</sub>` = 1` and `p`<sub>`ij`</sub>` = 0` for `i ≠ j`. If every state can reach an absorbing state, then the Markov chain is an absorbing Markov chain.
 ](https://www.datacamp.com/tutorial/markov-chains-python-tutorial)"
 
-  * this means diagonal matrix, wehre you have a descending diagonal line of `1`s linking top left and bottom right corners, and `0`s everywhere else
+  * This basically means the matrix has at least one position `p`<sub>`ii`</sub>` = 1`, and every position has a chance of eventually landing there.
+
+    * [`numpy.diagonal(matrix)`](https://numpy.org/doc/stable/reference/generated/numpy.diagonal.html) can tell you the value of the diagonal of `matrix` if 2D
+    * [`numpy.diag(matrix, positions)`](https://numpy.org/doc/stable/reference/generated/numpy.diag.html) can help us judge every single other value by doing every possible value of `positions` except `0`(diagonal that is supposed to be 1)
+      * alternatively, we can do diag for everything possible, and make it check for `0`s everywhere except when positions=0, in which case we check for the return to be filled with `1`s
+
+we can tell a matrix is absorbing, first and foremost, if *any* diagonal value is at 1, as that represents being forced back into itself, or being forced to never arrive there, which is also absorbing.
+
+* **this gets cancelled** if any position cannot land  at that position (or another absorbing position) within a finite number of steps.
+
+  * essentially, this seems to mean that every position just needs to have access to a `1` on a diagonal. Must either be a 1, or 
