@@ -73,4 +73,13 @@ we can tell a matrix is absorbing, first and foremost, if *any* diagonal value i
 
 * **this gets cancelled** if any position cannot land  at that position (or another absorbing position) within a finite number of steps.
 
-  * essentially, this seems to mean that every position just needs to have access to a `1` on a diagonal. Must either be a 1, or 
+  * essentially, this seems to mean that every position just needs to have access to a `1` on a diagonal. Must either be a 1.
+
+
+first pass: compile all absorption positons. these can be column numbers, so to speak. if positoin `(0,0)` is absorptoin, we add `0` to the list.
+
+next, for row in P, if row can access an absorption, add that row's number to the list of absorption positions.
+
+* if we added a row to the number of absorption positions, repeat
+
+* if we went through and did *not* add a row to this list (and the list doens't already contain every row) it is not absorbing.
