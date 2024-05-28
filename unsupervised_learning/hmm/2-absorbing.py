@@ -36,4 +36,3 @@ def who_absorbs(P):
     """
     dia = np.diag(P)
     return np.equal(dia, 1)
-
