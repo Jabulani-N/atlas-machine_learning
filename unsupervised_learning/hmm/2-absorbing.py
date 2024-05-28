@@ -9,3 +9,10 @@ def absorbing(P):
     P is 2D numpy.ndarray
     """
     pass
+
+def diagonal_check(P, target=1):
+    """checks 2D array P
+        for any instance of target
+            on a diagonal positoin
+    """
+    pass

@@ -56,7 +56,7 @@ Steady state (stationary [in this text](https://towardsdatascience.com/markov-ch
 
 Absorbing:
 
-![absorbing chain example](https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Drunkard%E2%80%99s_walk.svg/1920px-Drunkard%E2%80%99s_walk.svg.png)
+[![absorbing chain example](https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Drunkard%E2%80%99s_walk.svg/1920px-Drunkard%E2%80%99s_walk.svg.png)](https://en.wikipedia.org/wiki/Absorbing_Markov_chain)
 
 * [it is absorbing if every given position has a chance of leading to situation where you cannot escape a select set of positions](https://en.wikipedia.org/wiki/Absorbing_Markov_chain)
 
