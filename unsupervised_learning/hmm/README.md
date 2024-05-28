@@ -39,8 +39,13 @@ Returns: a numpy.ndarray of shape (1, n) containing the steady state probabiliti
 
 </details>
 
+
+### Resources
+
 Steady State is the term used in the curriculum, but [it seems to be the same as](https://math.stackexchange.com/questions/9325/equilibrium-distribution-steady-state-distribution-stationary-distribution-and) "equilibrium" and "stationary" states.
 
 Steady state (stationary [in this text](https://towardsdatascience.com/markov-chain-analysis-and-simulation-using-python-4507cee0b06e)) is referred to as `pi` or `π` and equals:
 
 ![steady state formula](https://miro.medium.com/v2/resize:fit:396/format:webp/1*zbWBjSC1Xba9zODUDMkftA.png)
+
+[This](https://stackoverflow.com/questions/52137856/steady-state-probabilities-markov-chain-python-implementation) is one python code application example I found.
