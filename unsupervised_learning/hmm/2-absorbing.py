@@ -17,7 +17,7 @@ def absorbing(P):
     for subarray in P:
         if np.any(np.less_equal(subarray, 0)):
             return False
-    if diagonal_check(P, 1) is False:
+    if not diagonal_check(P, 1):
         return False
 
 
