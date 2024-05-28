@@ -9,14 +9,14 @@ def absorbing(P):
     P is 2D numpy.ndarray
     """
     if not isinstance(P, np.ndarray):
-        return None  # Return None on failure
+        return False
     if P.shape[0] != P.shape[1]:
-        return None
+        return False
     if np.any(np.less_equal(P, 0)):
-        return None
+        return False
     for subarray in P:
         if np.any(np.less_equal(subarray, 0)):
-            return None
+            return False
     if diagonal_check(P, 1) is False:
         return False
 
