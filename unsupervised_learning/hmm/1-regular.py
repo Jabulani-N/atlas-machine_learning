@@ -9,4 +9,15 @@ def regular(P):
     determines
     steady state probabilities of regular markov chain
     """
-    pass
+    return steady_state_prop(P.transpose())
+
+
+def steady_state_prop(P):
+    """a step used in steady state"""
+    dim = P.shape[0]
+    q = (P-np.eye(dim))
+    ones = np.ones(dim)
+    q = np.c_[q,ones]
+    QTQ = np.dot(q, q.T)
+    bQT = np.ones(dim)
+    return np.linalg.solve(QTQ,bQT)
