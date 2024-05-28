@@ -15,3 +15,9 @@ Returns: a `numpy.ndarray` of shape `(1, n)` representing the probability of bei
 </detials>
 
 You'll be able to find the chance of any given position via dot product of `s` and `P`.
+
+
+
+## Task 1
+
+Steady State is the term used in the curriculum, but [it seems to be the same as](https://math.stackexchange.com/questions/9325/equilibrium-distribution-steady-state-distribution-stationary-distribution-and) "equilibrium" and "stationary" states.
