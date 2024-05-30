@@ -27,6 +27,8 @@ You'll be able to find the chance of any given position via dot product of `s` a
 
 ## Task 1
 
+[![Markov chain example](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Markovkate_01.svg/390px-Markovkate_01.svg.png)](https://en.wikipedia.org/wiki/Markov_chain)
+
 <details>
     <summary> Instructions </summary>
 
