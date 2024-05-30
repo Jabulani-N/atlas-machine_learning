@@ -27,11 +27,11 @@ def viterbi(Observation, Emission, Transition, Initial):
         shape (N, 1)
         containing the probability of starting in a particular hidden state
         """
-    T = Observation.shape[0]  # Number of observations
-    N = Transition.shape[0]    # Number of hidden states
-    path = []                  # Initialize the path sequence
-    delta = np.zeros((N, T))   # Initialize the delta matrix
-    psi = np.zeros((N, T))     # Initialize the psi matrix
+    T = Observation.shape[0]
+    N = Transition.shape[0]
+    path = []
+    delta = np.zeros((N, T))
+    psi = np.zeros((N, T))
 
     # Initialization
     delta[:, 0] = Initial.flatten() * Emission[:, Observation[0]]
