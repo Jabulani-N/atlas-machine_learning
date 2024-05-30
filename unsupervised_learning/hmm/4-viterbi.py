@@ -38,7 +38,8 @@ def viterbi(Observation, Emission, Transition, Initial):
     # once per observation
     for t in range(1, T):
         for j in range(N):
-            delta[j, t] = np.max(delta[:, t - 1] * Transition[:, j]) * Emission[j, Observation[t]]
+            delta[j, t] = np.max(delta[:, t - 1] * Transition[:, j]) *\
+                          Emission[j, Observation[t]]
             psi[j, t] = np.argmax(delta[:, t - 1] * Transition[:, j])
 
     P = np.max(delta[:, -1])
