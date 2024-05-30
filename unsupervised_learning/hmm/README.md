@@ -85,3 +85,9 @@ next, for rownum in range(P.shape[0])
 * if we added a row to the number of absorption positions, repeat
 
 * if we went through and did *not* add a row to this list (and the list doens't already contain every row) it is not absorbing.
+
+## Task 3
+
+### Resources
+
+[`numpy.ndarray.flatten`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html) puts an ndarray into one dimension.
