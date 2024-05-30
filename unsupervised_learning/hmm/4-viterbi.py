@@ -25,7 +25,8 @@ def viterbi(Observation, Emission, Transition, Initial):
         Transition[i, j] = probability of transitioning hidden state i to j
     Initial = numpy.ndarray
         shape (N, 1)
-        containing the probability of starting in a particular hidden state"""
+        containing the probability of starting in a particular hidden state
+        """
     T = Observation.shape[0]  # Number of observations
     N = Transition.shape[0]    # Number of hidden states
     path = []                  # Initialize the path sequence
