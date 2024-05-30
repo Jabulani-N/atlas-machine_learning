@@ -27,4 +27,24 @@ def backward(Observation, Emission, Transition, Initial):
         shape (N, 1)
         containing the probability of starting in a particular hidden state
     """
-    pass
+    # from instructions
+    T = Observation.shape[0]
+    N = Transition.shape[0]
+    # Initialize the forward path probabilities matrix
+    F = np.zeros((N, T))
+
+    # Initialization
+    F[:, 0] = Initial.flatten() * Emission[:, Observation[0]]
+
+    F[:, -1] = 1
+
+    # Recursion
+    for t in range(T - 2, -1, -1):
+        for i in range(N):
+            F[i, t] = np.sum(F[:, t + 1] *
+                             Transition[i, :] *
+                             Emission[:, Observation[t + 1]])
+
+    # Termination
+    P = np.sum(Initial.flatten() * Emission[:, Observation[0]] * F[:, 0])
+    return P, F
