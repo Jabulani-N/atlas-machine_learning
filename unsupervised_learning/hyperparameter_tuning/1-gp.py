@@ -79,6 +79,17 @@ class GaussianProcess:
         mu = np.zeros(s)
         sigma = np.zeros(s)
         noise = 0
-        for i in range(s):
-            mu[i] = self.K ** (self.K + noise) ** (-(X_s[i]))
+        # Covariance between training and test inputs
+        K_s = self.kernel(self.X, X_s)
+        # Covariance for test inputs
+        K_ss = self.kernel(X_s, X_s)
+        # Inverse of the covariance matrix of training inputs
+        K_inv = np.linalg.inv(self.K)
+
+        # mean
+        mu = K_s.T.dot(K_inv).dot(self.Y).flatten()
+
+        # variance
+        sigma = np.diag(K_ss - K_s.T.dot(K_inv).dot(K_s))  # Standard deviation
+        sigma = np.sqrt(sigma)
         return mu, sigma

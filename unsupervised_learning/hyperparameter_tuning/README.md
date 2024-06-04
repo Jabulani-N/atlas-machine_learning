@@ -72,3 +72,6 @@ Predicting mean for each point:
 * Note: as you study, remember "covariance matrix" is what we calculated in task 0
 
 Predicting standard deviation for each point:
+
+[`numpy.ndarray.flatten`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html) is used to convert a multidimensional array into a 1D array.
+[`numpy.diag(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.diag.html) is used to pull the diagonal of `arr` from the center. It can be offset by a second argument (int).
