@@ -66,4 +66,3 @@ Public instance method `def predict(self, X_s):` that predicts the mean and stan
 `mu` is a `numpy.ndarray` of shape `(s,)` containing the mean for each point in `X_s`, respectively
 `sigma` is a `numpy.ndarray` of shape `(s,)` containing the variance for each point in `X_s`, respectively
 </details>
-
