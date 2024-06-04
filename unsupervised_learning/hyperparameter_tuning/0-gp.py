@@ -5,6 +5,7 @@ import numpy as np
 
 
 class GaussianProcess:
+    """represents a noiseless 1D Gaussian process"""
     def __init__(self, X_init, Y_init, l=1, sigma_f=1):
         """
         X_init = numpy.ndarray
