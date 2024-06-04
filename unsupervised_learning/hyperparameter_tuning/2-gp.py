@@ -95,8 +95,9 @@ class GaussianProcess:
 
     def update(self, X_new, Y_new):
         """
-        reassigns initializatoin values
-        see _init_ for explanation"""
+        appends to current values
+        see _init_ for explanation
+        """
         np.append(self.X, X_new)
         np.append(self.Y, Y_new)
         self.K = self.kernel(self.X, self.X)

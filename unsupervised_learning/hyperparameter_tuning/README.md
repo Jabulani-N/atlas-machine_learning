@@ -81,6 +81,14 @@ Predicting standard deviation for each point:
 <detials>
     <summary>Instructions</summary>
 
+Based on `1-gp.py`, update the class `GaussianProcess`:
+
+Public instance method `def update(self, X_new, Y_new):` that updates a Gaussian Process:
+`X_new` is a `numpy.ndarray` of shape `(1,)` that represents the new sample point
+`Y_new` is a `numpy.ndarray` of shape `(1,)` that represents the new sample function value
+Updates the public instance attributes `X`, `Y`, and `K`
+
+
 </detials>
 
-This task is essentially a repeat of task 0. you can reuse most of its code.
+This task is essentially adding values to the `self.X` and `self.Y` values, and updating the `self.K` based on the result. `numpy.append` should be of use here.
