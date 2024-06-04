@@ -94,5 +94,8 @@ class GaussianProcess:
         return mu, sigma
 
     def update(self, X_new, Y_new):
-        """reassigns initializatoin values"""
-        pass
+        """
+        reassigns initializatoin values
+        see _init_ for explanation"""
+        self.X, self.Y = X_new, Y_new,
+        self.K = self.kernel(X_new, X_new)
