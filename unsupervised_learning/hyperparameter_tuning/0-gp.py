@@ -49,7 +49,5 @@ class GaussianProcess:
         # m, n = np.shape(X1)[0], np.shape(X2)[0]
         norm = np.square(np.linalg.norm(X1[None, :, :] - X2[:, None, :],
                                         axis=2).T)
-        norm = np.linalg.norm(X1[None, :, :] - X2[:, None, :], axis=2)
         kernel_matrix = np.exp(-norm / (2 * np.square(self.sigma_f)))
-        kernel_matrix = np.exp(-0.5 * np.square(norm) / np.square(self.sigma_f))
         return kernel_matrix
