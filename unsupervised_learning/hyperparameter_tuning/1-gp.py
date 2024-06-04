@@ -90,6 +90,5 @@ class GaussianProcess:
         mu = K_s.T.dot(K_inv).dot(self.Y).flatten()
 
         # variance
-        sigma = np.diag(K_ss - K_s.T.dot(K_inv).dot(K_s))  # Standard deviation
-        sigma = np.sqrt(sigma)
+        sigma = np.diag(K_ss - K_s.T.dot(K_inv).dot(K_s))
         return mu, sigma
