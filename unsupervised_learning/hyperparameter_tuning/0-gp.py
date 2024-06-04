@@ -33,7 +33,7 @@ class GaussianProcess:
         """
         # given initialization values
         self.X, self.Y, self.l, self.sigma_f = X_init, Y_init, l, sigma_f
-        self.K = self.kernel(X_init, Y_init)
+        self.K = self.kernel(X_init, X_init)
 
     def kernel(self, X1, X2):
         """calculates and returns the covariance kernal matrix
