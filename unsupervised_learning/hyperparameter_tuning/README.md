@@ -23,10 +23,15 @@ the kernel should use the Radial Basis Function (RBF)
 `Returns`: the covariance kernel matrix as a `numpy.ndarray` of shape `(m, n)`
 </details>
 
+&nbsp;
+
 Most of this task is self-explanatory.
 
 The only thing needing research is "covariance kernal matrix between two matrices" to calculate and assign `self.K`
 
+* "the kernel should use the **Radial Basis Function** (RBF)"
+
 ## Task 0 Resources
 
 * Medium article that [explains covariance kernel matrix ca;culation](https://towardsdatascience.com/gaussian-process-models-7ebce1feb83d)
+  * can search the phrase "covariance kernel matrix"

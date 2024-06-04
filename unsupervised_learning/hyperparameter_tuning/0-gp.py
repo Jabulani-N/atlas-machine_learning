@@ -38,5 +38,12 @@ class GaussianProcess:
         """calculates and returns the covariance kernal matrix
         DO NOT SET IT HERE
             set self.K in the initializer by calling this
+
+        X1 = numpy.ndarray
+            shape (m, 1)
+        X2 = numpy.ndarray
+            shape (n, 1)
+        Returns: covariance kernel matrix as a numpy.ndarray of shape (m, n)
         """
-        pass
+        m, n = np.shape(X1)[0], np.shape(X2)[0]
+        kernmat = np.zeros(m, n)
