@@ -56,7 +56,6 @@ class GaussianProcess:
                     (-(dist / self.l) ** 2) / 2)
         return kernel_matrix
 
-
     def predict(self, X_s):
         """
         predict mean and standard deviation
@@ -81,5 +80,5 @@ class GaussianProcess:
         sigma = np.zeros(s)
         noise = 0
         for i in range(s):
-            mu[i] = self.K^(self.K + noise)^(-(X_s[i]))
+            mu[i] = self.K ^ (self.K + noise) ^ (-(X_s[i]))
             return mu, sigma
