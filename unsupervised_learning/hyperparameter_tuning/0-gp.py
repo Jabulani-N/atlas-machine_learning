@@ -32,3 +32,10 @@ class GaussianProcess:
         """
         # given initialization values
         self.X, self.Y, self.l, self.sigma_f = X_init, Y_init, l, sigma_f
+
+    def kernel(self, X1, X2):
+        """calculates and returns the covariance kernal matrix
+        DO NOT SET IT HERE
+            set self.K in the initializer by calling this
+        """
+        pass
