@@ -39,3 +39,4 @@ The only thing needing research is "covariance kernal matrix between two matrice
 * [this person](https://stackoverflow.com/questions/59893922/gaussian-kernel-performance) wrote a particularly efficient manner of calculation, and was looking to go even further beyond the current efficiency.
   * it is based on `k_ij = exp(-||x_i - x_j||^2 / (2 * sigma^2))`.
   * When applied in our initialization method, is supposed to recieve the X_init value twice.
+  * This particular application does *not* create correct results in practice here.
