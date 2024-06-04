@@ -35,7 +35,6 @@ class GaussianProcess:
         self.X, self.Y, self.l, self.sigma_f = X_init, Y_init, l, sigma_f
         self.K = self.kernel(X_init, Y_init)
 
-
     def kernel(self, X1, X2):
         """calculates and returns the covariance kernal matrix
         DO NOT SET IT HERE
@@ -48,6 +47,6 @@ class GaussianProcess:
         Returns: covariance kernel matrix as a numpy.ndarray of shape (m, n)
         """
         # m, n = np.shape(X1)[0], np.shape(X2)[0]
-        norm = np.square(np.linalg.norm(X1[None, :, :] - X2[:, None, :], axis=2).T)
+        norm = np.square(np.linalg.norm(X1[None, :, :]-X2[:, None, :], axis=2).T)
         kernmat = np.exp(-norm/(2*np.square(self.sigma_f)))
         return kernmat
