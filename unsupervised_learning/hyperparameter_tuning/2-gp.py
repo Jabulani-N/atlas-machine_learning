@@ -95,9 +95,9 @@ class GaussianProcess:
 
     def update(self, X_new, Y_new):
         """
-        appends to current values
-        see _init_ for explanation
+        row_stacks to attach current values
+        see _init_ for explanation of values
         """
-        np.append(self.X, X_new)
-        np.append(self.Y, Y_new)
+        self.X = np.row_stack((self.X, X_new))
+        self.Y = np.row_stack((self.Y, Y_new))
         self.K = self.kernel(self.X, self.X)

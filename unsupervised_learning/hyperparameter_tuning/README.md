@@ -91,4 +91,9 @@ Updates the public instance attributes `X`, `Y`, and `K`
 
 </detials>
 
-This task is essentially adding values to the `self.X` and `self.Y` values, and updating the `self.K` based on the result. `numpy.append` should be of use here.
+This task is essentially adding values to the `self.X` and `self.Y` values, and updating the `self.K` based on the result. [`numpy.vstack`](https://numpy.org/doc/stable/reference/generated/numpy.vstack.html) should be of use here.
+* notice/remember the shape of self.X is [`(t, 1)`](#task-0-initialize-gaussian-process), meaning each entry it it's own row
+
+## Potential Pitfall
+
+you will *not* be needing `numpy.append` for this (unless you do a transpose approach to add the value)
