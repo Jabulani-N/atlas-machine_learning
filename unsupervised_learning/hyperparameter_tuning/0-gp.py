@@ -30,4 +30,5 @@ class GaussianProcess:
                 represent current covariance kernel matrix
                     for the Gaussian process
         """
-        pass
+        # given initialization values
+        self.X, self.Y, self.l, self.sigma_f = X_init, Y_init, l, sigma_f
