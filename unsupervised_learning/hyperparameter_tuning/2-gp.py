@@ -92,3 +92,7 @@ class GaussianProcess:
         # variance
         sigma = np.diag(K_ss - K_s.T.dot(K_inv).dot(K_s))
         return mu, sigma
+
+    def update(self, X_new, Y_new):
+        """reassigns initializatoin values"""
+        pass
