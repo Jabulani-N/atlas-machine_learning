@@ -35,3 +35,5 @@ The only thing needing research is "covariance kernal matrix between two matrice
 
 * Medium article that [explains covariance kernel matrix ca;culation](https://towardsdatascience.com/gaussian-process-models-7ebce1feb83d)
   * can search the phrase "covariance kernel matrix"
+
+* [this person](https://stackoverflow.com/questions/59893922/gaussian-kernel-performance) wrote a particularly efficient manner of calculation, and was looking to go even further beyond the current efficiency.
