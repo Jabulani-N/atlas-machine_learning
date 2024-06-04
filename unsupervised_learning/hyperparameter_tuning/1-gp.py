@@ -79,3 +79,7 @@ class GaussianProcess:
         s = np.shape(X_s)[0]
         mu = np.zeros(s)
         sigma = np.zeros(s)
+        noise = 0
+        for i in range(s):
+            mu[i] = self.K^(self.K + noise)^(-(X_s[i]))
+            return mu, sigma
