@@ -66,3 +66,9 @@ Public instance method `def predict(self, X_s):` that predicts the mean and stan
 `mu` is a `numpy.ndarray` of shape `(s,)` containing the mean for each point in `X_s`, respectively
 `sigma` is a `numpy.ndarray` of shape `(s,)` containing the variance for each point in `X_s`, respectively
 </details>
+
+
+Predicting mean for each point:
+* Note: as you study, remember "covariance matrix" is what we calculated in task 0
+
+Predicting standard deviation for each point:

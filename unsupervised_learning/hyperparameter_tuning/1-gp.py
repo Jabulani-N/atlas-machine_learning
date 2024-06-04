@@ -55,3 +55,27 @@ class GaussianProcess:
                 kernel_matrix[i, j] = self.sigma_f ** 2 * np.exp(
                     (-(dist / self.l) ** 2) / 2)
         return kernel_matrix
+
+
+    def predict(self, X_s):
+        """
+        predict mean and standard deviation
+        of points in a Gaussian process
+
+        X_s = numpy.ndarray
+            contains all points
+            shape (s, 1)
+                s = number of sample points
+
+        return
+            mu, sigma
+                mu = numpy.ndarray
+                    shape (s,)
+                    contains mean for each point in X_s
+                sigma = numpy.ndarray
+                    shape (s,)
+                    contains variance for each point in X_s
+        """
+        s = np.shape(X_s)[0]
+        mu = np.zeros(s)
+        sigma = np.zeros(s)
