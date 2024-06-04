@@ -53,5 +53,5 @@ class GaussianProcess:
             for j in range(n):
                 dist = X1[i] - X2[j]
                 kernel_matrix[i, j] = self.sigma_f ** 2 * np.exp(
-                    (-(dist / self.l) ** 2)/2)
+                    (-(dist / self.l) ** 2) / 2)
         return kernel_matrix
