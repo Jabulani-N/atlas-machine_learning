@@ -46,8 +46,12 @@ class GaussianProcess:
             shape (n, 1)
         Returns: covariance kernel matrix as a numpy.ndarray of shape (m, n)
         """
-        # m, n = np.shape(X1)[0], np.shape(X2)[0]
-        norm = np.square(np.linalg.norm(X1[None, :, :] - X2[:, None, :],
-                                        axis=2).T)
-        kernel_matrix = np.exp(-norm / (2 * np.square(self.sigma_f)))
+        m, n = np.shape(X1)[0], np.shape(X2)[0]
+        kernel_matrix = np.zeros((m, n))
+
+        for i in range(m):
+            for j in range(n):
+                dist = X1[i] - X2[j]
+                kernel_matrix[i, j] = self.sigma_f ** 2 * np.exp(
+                    (-(dist / self.l) ** 2)/2)
         return kernel_matrix

@@ -31,6 +31,15 @@ The only thing needing research is "covariance kernal matrix between two matrice
 
 * "the kernel should use the **Radial Basis Function** (RBF)"
 
+I had to do a relatively brute forced approach to do this one:
+
+* `kernel_matrix[i, j] = self.sigma_f ** 2 * np.exp((-(dist / self.l) ** 2)/2)`
+  * `i` is an index on the first 1D input matrix, and `j` is an index on the second.
+    * `dist` is distance between the two values in the 1D arrays
+      * literally `X1[i] - X2[j]`
+  * `sigma_f` and `l` are given via self's init method we made before.
+  * do this for every coordinate in `kernal_matrix`
+
 ## Task 0 Resources
 
 * Medium article that [explains covariance kernel matrix ca;culation](https://towardsdatascience.com/gaussian-process-models-7ebce1feb83d)
