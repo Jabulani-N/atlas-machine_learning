@@ -29,6 +29,5 @@ class GaussianProcess:
             K
                 represent current covariance kernel matrix
                     for the Gaussian process
-
         """
         pass
