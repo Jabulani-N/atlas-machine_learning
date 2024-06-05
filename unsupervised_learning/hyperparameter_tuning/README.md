@@ -23,6 +23,47 @@ the kernel should use the Radial Basis Function (RBF)
 `Returns`: the covariance kernel matrix as a `numpy.ndarray` of shape `(m, n)`
 </details>
 
+<details>
+    <summary>Test Code</summary>
+
+```
+
+root@alexa-ml2-1:~/hyperparameter_opt# cat 0-main.py
+#!/usr/bin/env python3
+
+GP = __import__('0-gp').GaussianProcess
+import numpy as np
+
+
+def f(x):
+    """our 'black box' function"""
+    return np.sin(5*x) + 2*np.sin(-2*x)
+
+if __name__ == '__main__':
+    np.random.seed(0)
+    X_init = np.random.uniform(-np.pi, 2*np.pi, (2, 1))
+    Y_init = f(X_init)
+
+    gp = GP(X_init, Y_init, l=0.6, sigma_f=2)
+    print(gp.X is X_init)
+    print(gp.Y is Y_init)
+    print(gp.l)
+    print(gp.sigma_f)
+    print(gp.K.shape, gp.K)
+    print(np.allclose(gp.kernel(X_init, X_init), gp.K))
+root@alexa-ml2-1:~/hyperparameter_opt# ./0-main.py
+True
+True
+0.6
+2
+(2, 2) [[4.         0.13150595]
+ [0.13150595 4.        ]]
+True
+root@alexa-ml2-1:~/hyperparameter_opt#
+
+```
+</details>
+
 &nbsp;
 
 Most of this task is self-explanatory.
@@ -67,6 +108,40 @@ Public instance method `def predict(self, X_s):` that predicts the mean and stan
 `sigma` is a `numpy.ndarray` of shape `(s,)` containing the variance for each point in `X_s`, respectively
 </details>
 
+<details>
+    <summary>Test Code</summary>
+
+```
+root@alexa-ml2-1:~/hyperparameter_opt# cat 1-main.py
+#!/usr/bin/env python3
+
+GP = __import__('1-gp').GaussianProcess
+import numpy as np
+
+
+def f(x):
+    """our 'black box' function"""
+    return np.sin(5*x) + 2*np.sin(-2*x)
+
+if __name__ == '__main__':
+    np.random.seed(0)
+    X_init = np.random.uniform(-np.pi, 2*np.pi, (2, 1))
+    Y_init = f(X_init)
+
+    gp = GP(X_init, Y_init, l=0.6, sigma_f=2)
+    X_s = np.random.uniform(-np.pi, 2*np.pi, (10, 1))
+    mu, sig = gp.predict(X_s)
+    print(mu.shape, mu)
+    print(sig.shape, sig)
+root@alexa-ml2-1:~/hyperparameter_opt# ./1-main.py
+(10,) [ 0.20148983  0.93469135  0.14512328 -0.99831012  0.21779183 -0.05063668
+ -0.00116747  0.03434981 -1.15092063  0.9221554 ]
+(10,) [1.90890408 0.01512125 3.91606789 2.42958747 3.81083574 3.99817545
+ 3.99999903 3.9953012  3.05639472 0.37179608]
+root@alexa-ml2-1:~/hyperparameter_opt#
+
+```
+</details>
 
 Predicting mean for each point:
 * Note: as you study, remember "covariance matrix" is what we calculated in task 0
@@ -93,6 +168,53 @@ Updates the public instance attributes `X`, `Y`, and `K`
 
 This task is essentially adding values to the `self.X` and `self.Y` values, and updating the `self.K` based on the result. [`numpy.vstack`](https://numpy.org/doc/stable/reference/generated/numpy.vstack.html) should be of use here.
 * notice/remember the shape of self.X is [`(t, 1)`](#task-0-initialize-gaussian-process), meaning each entry it it's own row
+
+<details>
+    <summary>Test code</summary>
+
+```
+
+root@alexa-ml2-1:~/hyperparameter_opt# cat 2-main.py
+#!/usr/bin/env python3
+
+GP = __import__('2-gp').GaussianProcess
+import numpy as np
+
+
+def f(x):
+    """our 'black box' function"""
+    return np.sin(5*x) + 2*np.sin(-2*x)
+
+if __name__ == '__main__':
+    np.random.seed(0)
+    X_init = np.random.uniform(-np.pi, 2*np.pi, (2, 1))
+    Y_init = f(X_init)
+
+    gp = GP(X_init, Y_init, l=0.6, sigma_f=2)
+    X_new = np.random.uniform(-np.pi, 2*np.pi, 1)
+    print('X_new:', X_new)
+    Y_new = f(X_new)
+    print('Y_new:', Y_new)
+    gp.update(X_new, Y_new)
+    print(gp.X.shape, gp.X)
+    print(gp.Y.shape, gp.Y)
+    print(gp.K.shape, gp.K)
+root@alexa-ml2-1:~/hyperparameter_opt# ./2-main.py
+X_new: [2.53931833]
+Y_new: [1.99720866]
+(3, 1) [[2.03085276]
+ [3.59890832]
+ [2.53931833]]
+(3, 1) [[ 0.92485357]
+ [-2.33925576]
+ [ 1.99720866]]
+(3, 3) [[4.         0.13150595 2.79327536]
+ [0.13150595 4.         0.84109203]
+ [2.79327536 0.84109203 4.        ]]
+root@alexa-ml2-1:~/hyperparameter_opt#
+
+```
+</details>
 
 ## Potential Pitfall
 
