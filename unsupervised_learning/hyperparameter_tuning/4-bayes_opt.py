@@ -58,6 +58,9 @@ class BayesianOptimization:
         # runs predict method of the gp object created in task 2
         mean, variance = self.gp.predict(self.X_s)
         mean_sample = self.gp.predict(self.gp.X)
+
+        variance = variance.reshape(-1, 1)
+
         # pick what we optimize for
         if self.minimize:
             func = np.min
@@ -65,6 +68,10 @@ class BayesianOptimization:
             func = np.max
         mean_sample_opt = func(mean_sample)
 
-        z = (y_pred - best_y) / y_std
-        ei = (y_pred - best_y) * norm.cdf(z) + y_std * norm.pdf(z)
-        return ei
+        with np.errstate(divide='warn'):
+            imp = mean - mean_sample_opt - self.xsi
+            Z = imp / variance
+            EI = imp * norm.cdf(Z) + variance * norm.pdf(Z)
+            EI[variance == 0.0] = 0.0
+
+        return EI

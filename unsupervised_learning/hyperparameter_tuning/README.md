@@ -370,7 +370,8 @@ root@alexa-ml2-1:~/hyperparameter_opt#
 
 [this medium](https://medium.com/@okanyenigun/step-by-step-guide-to-bayesian-optimization-a-python-based-approach-3558985c6818) article has a part that features logic we're likely to use
 
-Looking to basically copy [this](https://krasserm.github.io/2018/03/21/bayesian-optimization/). Where it uses `mu`, I use `mean` for clarity.
+Looking to basically copy [this](https://krasserm.github.io/2018/03/21/bayesian-optimization/). Where it uses `mu`, I use `mean`for clarity.
+* similarly, I use `variance` instead of `sigma`.
 
 # Notes to self
 
