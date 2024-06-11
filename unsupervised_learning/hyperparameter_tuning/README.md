@@ -366,6 +366,10 @@ root@alexa-ml2-1:~/hyperparameter_opt#
 
 `self.X_s` has a length given in an easy-to-read int, so you can direcly utilize [`numpy.linspace`](https://numpy.org/doc/stable/reference/generated/numpy.linspace.html) to generate it.
 
+# Task 4
+
+[this medium](https://medium.com/@okanyenigun/step-by-step-guide-to-bayesian-optimization-a-python-based-approach-3558985c6818) article has a part that features logic we're likely to use
+
 # Notes to self
 
 when optimizing, you should probably utulize your previous projet that optimizes a model
