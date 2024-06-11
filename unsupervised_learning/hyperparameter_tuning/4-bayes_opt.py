@@ -72,6 +72,6 @@ class BayesianOptimization:
             imp = mean - mean_sample_opt - self.xsi
             Z = imp / variance
             EI = imp * norm.cdf(Z) + variance * norm.pdf(Z)
-            EI[variance == 0.0] = 0.0
+            # EI[variance == 0.0] = 0.0
 
         return EI
