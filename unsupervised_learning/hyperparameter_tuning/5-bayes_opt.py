@@ -106,4 +106,18 @@ class BayesianOptimization:
                 shape (1,)
                 representing optimal funciton value
         """
-        pass
+        for i in range(num_iterations):
+            # Fit the Gaussian process model to the sampled points
+            self.gp.fit(self.X_s.reshape(-1, 1), self.gp.Y)
+
+            # Determine the point with the highest observed function value
+            best_idx = np.argmax(sample_y)
+            best_x = sample_x[best_idx]
+            best_y = sample_y[best_idx]
+
+            # Set the value of beta for the UCB acquisition function
+            beta = 2.0
+
+            # Generate the Upper Confidence Bound (UCB) using the Gaussian process model
+            ucb = upper_confidence_bound(x_range, gp_model, beta)
+
