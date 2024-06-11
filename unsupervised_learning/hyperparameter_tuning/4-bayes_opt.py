@@ -42,7 +42,6 @@ class BayesianOptimization:
         # below we convert to 2D array of arrays
         self.X_s = np.array([np.array([val]) for val in self.X_s])
 
-
     def acquisition(self):
         """calculates the next best sample location
         Uses the Expected Improvement acquisition function
