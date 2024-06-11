@@ -40,4 +40,3 @@ class BayesianOptimization:
         # Χ_s above is a 1D array.
         # below we convert to 2D array of arrays
         self.X_s = np.array([np.array([val]) for val in self.X_s])
-
