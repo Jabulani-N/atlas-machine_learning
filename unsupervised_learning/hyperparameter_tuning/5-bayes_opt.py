@@ -107,6 +107,7 @@ class BayesianOptimization:
                 representing optimal funciton value
         """
         Ex_Xes = []
+        Y_opt = None
         for i in range(iterations):
             # Fit the Gaussian process model to the sampled points
             X_next = self.acquisition()
@@ -116,10 +117,14 @@ class BayesianOptimization:
 
             # run black-box function at the X_next
             Y_next = self.f(X_next)
-
-            if Y_opt is None or Y_next < Y_opt:
-                X_opt, Y_opt = X_next, Y_next
-            # Update the Gaussian process with the new sample
+            if self.minimize:
+                    #checks if first entry
+                if Y_opt is None or Y_next < Y_opt:
+                    X_opt, Y_opt = X_next, Y_next
+            else:
+                if Y_opt is None or Y_next > Y_opt:
+                    X_opt, Y_opt = X_next, Y_next
+            # we have a new point in our gp
             self.gp.update(X_next, Y_next)
             np.append(Ex_Xes, X_next)
         return X_opt, Y_opt
