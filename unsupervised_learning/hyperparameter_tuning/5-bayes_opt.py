@@ -121,6 +121,5 @@ class BayesianOptimization:
                 X_opt, Y_opt = X_next, Y_next
             # Update the Gaussian process with the new sample
             self.gp.update(X_next, Y_next)
-            np.append(Ex_Xes,X_next)
+            np.append(Ex_Xes, X_next)
         return X_opt, Y_opt
-
