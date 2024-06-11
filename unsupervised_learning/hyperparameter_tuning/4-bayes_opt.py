@@ -79,8 +79,8 @@ class BayesianOptimization:
             Z_for_X_next = imp / orig_variance
             EI = imp * norm.cdf(Z) + variance * norm.pdf(Z)
             # EI[variance == 0.0] = 0.0
-            EI_for_X_next = imp * norm.cdf(Z_for_X_next) +\
-                orig_variance * norm.pdf(Z_for_X_next)
+            EI_for_X_next = imp * norm.cdf(Z_for_X_next) + orig_variance *\
+                norm.pdf(Z_for_X_next)
         X_next = self.X_s[np.where(EI_for_X_next ==
                                    second_func(EI_for_X_next))[0][0]]
         # X_next = self.X_s[argares(EI)]
