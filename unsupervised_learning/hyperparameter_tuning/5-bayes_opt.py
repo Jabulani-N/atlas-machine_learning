@@ -118,7 +118,7 @@ class BayesianOptimization:
             # run black-box function at the X_next
             Y_next = self.f(X_next)
             if self.minimize:
-                    #checks if first entry
+                # checks if first entry
                 if Y_opt is None or Y_next < Y_opt:
                     X_opt, Y_opt = X_next, Y_next
             else:
