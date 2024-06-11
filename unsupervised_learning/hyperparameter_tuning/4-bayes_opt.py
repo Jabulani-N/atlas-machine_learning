@@ -55,4 +55,16 @@ class BayesianOptimization:
                 containing the expected improvement of each potential sample
 
         """
-        pass
+        # runs predict method of the gp object created in task 2
+        mean, variance = self.gp.predict(self.X_s)
+        mean_sample = self.gp.predict(self.gp.X)
+        # pick what we optimize for
+        if self.minimize:
+            func = np.min
+        else:
+            func = np.max
+        mean_sample_opt = func(mean_sample)
+
+        z = (y_pred - best_y) / y_std
+        ei = (y_pred - best_y) * norm.cdf(z) + y_std * norm.pdf(z)
+        return ei
