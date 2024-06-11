@@ -372,6 +372,7 @@ root@alexa-ml2-1:~/hyperparameter_opt#
 
 Looking to basically copy [this](https://krasserm.github.io/2018/03/21/bayesian-optimization/). Where it uses `mu`, I use `mean`for clarity.
 * similarly, I use `variance` instead of `sigma`.
+* you can find how to get thenew x by searching "next"
 
 # Notes to self
 
