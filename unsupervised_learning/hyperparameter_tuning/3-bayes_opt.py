@@ -36,4 +36,8 @@ class BayesianOptimization:
         min, max = bounds
         self.f, self.minimize, self.xsi = f, minimize, xsi
         self.gp = GP(X_init, Y_init, l, sigma_f)
-        self.X_s = np.linspace(min, max, ac_samples)
+        self.X_s = np.linspace(min, max, ac_samples, axis=-1)
+        # Χ_s above is a 1D array.
+        # below we convert to 2D array of arrays
+        self.X_s = np.array([np.array([val]) for val in self.X_s])
+
