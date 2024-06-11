@@ -374,6 +374,12 @@ Looking to basically copy [this](https://krasserm.github.io/2018/03/21/bayesian-
 * similarly, I use `variance` instead of `sigma`.
 * you can find how to get thenew x by searching "next"
 
+
+# Task 6
+
+copied [my previous model training script](https://github.com/Jabulani-N/atlas-machine_learning/blob/main/supervised_learning/transfer_learning/0-transfer%20-%20with%20lamda%20layer.py) so I'd have somewhere to start
+
+
 # Notes to self
 
-when optimizing, you should probably utulize your previous projet that optimizes a model
+when optimizing, you should probably utulize your previous projet that optimizes a model ([transfer learning](https://github.com/Jabulani-N/atlas-machine_learning/tree/main/supervised_learning/transfer_learning)?)
