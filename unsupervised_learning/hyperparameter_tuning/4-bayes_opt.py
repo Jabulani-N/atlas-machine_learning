@@ -69,7 +69,7 @@ class BayesianOptimization:
         mean_sample_opt = func(mean_sample)
 
         with np.errstate(divide='warn'):
-            imp = mean - mean_sample_opt - self.xsi
+            imp = mean_sample_opt - mean - self.xsi
             Z = imp / variance
             EI = imp * norm.cdf(Z) + variance * norm.pdf(Z)
             # EI[variance == 0.0] = 0.0
