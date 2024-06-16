@@ -71,10 +71,12 @@ def autoencoder(input_dims, filters, latent_dims):
                           name='decoder')
 
     # Define the full autoencoder model
-    autoencoder_input = keras.Input(shape=(input_dims,))
-    encoded_output = encoder(autoencoder_input)
-    decoded_output = decoder(encoded_output)
-    auto = keras.Model(autoencoder_input, decoded_output, name='autoencoder')
+    # autoencoder_input = keras.Input(shape=input_dims)
+    # encoded_output = encoder(autoencoder_input)
+    # decoded_output = decoder(encoded_output)
+    # auto = keras.Model(autoencoder_input, decoded_output, name='autoencoder')
+    # trying a literal logical part here that should be unable to be wrong
+    auto = keras.Model(encoder_input,decoder(encoder(encoder_input)))
 
     # Compile the autoencoder model
     auto.compile(optimizer='adam', loss='binary_crossentropy')
