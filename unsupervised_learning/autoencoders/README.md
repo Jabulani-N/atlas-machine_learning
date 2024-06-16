@@ -1,5 +1,7 @@
 # Autoencoders
 
+[This keras page](https://blog.keras.io/building-autoencoders-in-keras.html) has examples pf how these might look.
+
 # Task 0 - "Vanilla" Autoencoder
 
 <details>
