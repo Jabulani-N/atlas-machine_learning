@@ -5,7 +5,7 @@
 import tensorflow.keras as keras
 
 
-def autoencoder(input_dims, hidden_layers, latent_dims, lambtha):
+def autoencoder(input_dims, filters, latent_dims):
     """creates an autoencoder
 
     input_dims = integer
@@ -24,15 +24,14 @@ def autoencoder(input_dims, hidden_layers, latent_dims, lambtha):
     encoder_input = keras.Input(shape=(input_dims,))
     # must be defined this way
     encoded = encoder_input
-    for nodes in hidden_layers:
-        encoded = keras.layers.Dense(nodes,
-                                     activation='relu')(encoded)
-    # insert activity regularizer to this line from task 0
-    encoder_output =\
-        keras.layers.Dense(latent_dims,
-                           activation='relu',
-                           activity_regularizer=keras.regularizers.l1(lambtha)
-                           )(encoded)
+    for filter in filters:
+        encoded = keras.layers.Conv2D(filter, (3, 3), activation='relu', padding='same')(encoded)
+        encoded = keras.layers.MaxPooling2D((2, 2), padding='same')(encoded)
+        # encoded = keras.layers.Conv2D(filter/2, (3, 3), activation='relu', padding='same')(encoded)
+        # encoded = keras.layers.MaxPooling2D((2, 2), padding='same')(encoded)
+        # encoded = keras.layers.Conv2D(filter/2, (3, 3), activation='relu', padding='same')(encoded)
+    # encoded = keras.layers.MaxPooling2D((2, 2), padding='same')(encoded)
+    encoder_output = encoded
     encoder = keras.Model(encoder_input, encoder_output,
                           name='encoder')
 
@@ -40,11 +39,16 @@ def autoencoder(input_dims, hidden_layers, latent_dims, lambtha):
     decoder_input = keras.Input(shape=(latent_dims,))
     # must be defined this way
     decoded = decoder_input
-    for nodes in reversed(hidden_layers):
-        decoded = keras.layers.Dense(nodes,
-                                     activation='relu')(decoded)
-    decoder_output = keras.layers.Dense(input_dims,
-                                        activation='sigmoid')(decoded)
+    for i in range(len(filters) - 1, -1, -1):
+        if i == 0:
+          padding = 'valid'
+        else:
+          padding = 'same'
+
+        decoded = keras.layers.Conv2D(filters[i-1], (3, 3), activation='relu', padding=padding)(decoded)
+        decoded = keras.layers.UpSampling2D((2, 2))(decoded)
+
+    decoder_output = keras.layers.Conv2D(input_dims[-1], (3, 3), activation='sigmoid', padding='same')(decoded)
     decoder = keras.Model(decoder_input, decoder_output, name='decoder')
 
     # Define the full autoencoder model
