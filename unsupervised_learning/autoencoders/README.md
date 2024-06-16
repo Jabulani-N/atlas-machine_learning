@@ -102,6 +102,7 @@ Epoch 50/50
 
 <details>
     <summary>Instructions</summary>
+
 Write a function def autoencoder(input_dims, hidden_layers, latent_dims, lambtha): that creates a sparse autoencoder:
 
 input_dims is an integer containing the dimensions of the model input
