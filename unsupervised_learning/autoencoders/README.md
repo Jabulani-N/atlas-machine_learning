@@ -199,3 +199,67 @@ Epoch 100/100
 </details>
 
 This model can be created identically to the one in [task 0](#task-0---vanilla-autoencoder), but with the `encoder_output` having an additional paramter: `activity_regularizer=keras.regularizers.l1(lambtha)` as a keword-argument, to utilize the lambtha (provided "regularization parameter") value.
+
+# Task 2
+
+<details>
+    <summary>Test Code</summary>
+
+```
+(x_train, _), (x_test, _) = mnist.load_data()
+x_train = x_train.astype('float32') / 255.
+x_test = x_test.astype('float32') / 255.
+x_train = np.expand_dims(x_train, axis=3)
+x_test = np.expand_dims(x_test, axis=3)
+print(x_train.shape)
+print(x_test.shape)
+np.random.seed(0)
+tf.random.set_seed(0)
+encoder, decoder, auto = autoencoder((28, 28, 1), [16, 8, 8], (4, 4, 8))
+auto.fit(x_train, x_train, epochs=50, batch_size=256, shuffle=True,
+                validation_data=(x_test, x_test))
+encoded = encoder.predict(x_test[:10])
+print(np.mean(encoded))
+reconstructed = decoder.predict(encoded)[:,:,:,0]
+
+for i in range(10):
+    ax = plt.subplot(2, 10, i + 1)
+    ax.axis('off')
+    plt.imshow(x_test[i,:,:,0])
+    ax = plt.subplot(2, 10, i + 11)
+    ax.axis('off')
+    plt.imshow(reconstructed[i])
+
+```
+should result in
+
+```
+
+Epoch 1/50
+60000/60000 [==============================] - 49s 810us/step - loss: 63.9743 - val_loss: 43.5109
+Epoch 2/50
+60000/60000 [==============================] - 48s 804us/step - loss: 39.9287 - val_loss: 37.1333
+Epoch 3/50
+60000/60000 [==============================] - 48s 803us/step - loss: 35.7883 - val_loss: 34.1952
+Epoch 4/50
+60000/60000 [==============================] - 48s 792us/step - loss: 33.4408 - val_loss: 32.2462
+Epoch 5/50
+60000/60000 [==============================] - 47s 791us/step - loss: 31.8871 - val_loss: 30.9729
+
+...
+
+Epoch 46/50
+60000/60000 [==============================] - 45s 752us/step - loss: 23.9016 - val_loss: 23.6926
+Epoch 47/50
+60000/60000 [==============================] - 45s 754us/step - loss: 23.9029 - val_loss: 23.7102
+Epoch 48/50
+60000/60000 [==============================] - 45s 750us/step - loss: 23.8331 - val_loss: 23.5239
+Epoch 49/50
+60000/60000 [==============================] - 46s 771us/step - loss: 23.8047 - val_loss: 23.5510
+Epoch 50/50
+60000/60000 [==============================] - 46s 772us/step - loss: 23.7744 - val_loss: 23.4939
+2.4494107
+
+```
+when run
+</details>
