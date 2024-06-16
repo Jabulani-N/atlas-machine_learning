@@ -5,13 +5,16 @@
 import tensorflow.keras as keras
 
 
-def autoencoder(input_dims, hidden_layers, latent_dims, lambtha):    """creates an autoencoder
+def autoencoder(input_dims, hidden_layers, latent_dims, lambtha):
+    """creates an autoencoder
 
     input_dims = integer
         contains dimensions of the model input
     hidden_layers = list
         contains number of nodes
             for each hidden layer in encoder, respectively
+    lambtha = regularization parameter
+        used for L1 regularization on  encoded output
     the hidden layers should be reversed for the decoder
     latent_dims = integer
         contains dimensions of the latent space representation
