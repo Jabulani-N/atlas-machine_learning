@@ -28,10 +28,11 @@ def autoencoder(input_dims, hidden_layers, latent_dims, lambtha):
         encoded = keras.layers.Dense(nodes,
                                      activation='relu')(encoded)
     # insert activity regularizer to this line from task 0
-    encoder_output = keras.layers.Dense(latent_dims,
-                                        activation='relu',
-                                        activity_regularizer=keras.regularizers.l1(lambtha)
-                                        )(encoded)
+    encoder_output =\
+        keras.layers.Dense(latent_dims,
+                           activation='relu',
+                           activity_regularizer=keras.regularizers.l1(lambtha)
+                           )(encoded)
     encoder = keras.Model(encoder_input, encoder_output,
                           name='encoder')
 
