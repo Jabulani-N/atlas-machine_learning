@@ -4,13 +4,18 @@
 
 import tensorflow.keras as keras
 
+
 def autoencoder(input_dims, hidden_layers, latent_dims):
     """creates an autoencoder
 
-    input_dims = integer containing the dimensions of the model input
-    hidden_layers = list containing the number of nodes for each hidden layer in the encoder, respectively
+    input_dims = integer
+        contains dimensions of the model input
+    hidden_layers = list
+        contains number of nodes
+            for each hidden layer in encoder, respectively
     the hidden layers should be reversed for the decoder
-    latent_dims = integer containing the dimensions of the latent space representation
+    latent_dims = integer
+        contains dimensions of the latent space representation
     """
     # return None
     # we use this input one later, so it needs to be unique
@@ -18,17 +23,22 @@ def autoencoder(input_dims, hidden_layers, latent_dims):
     # must be defined this way
     encoded = encoder_input
     for nodes in hidden_layers:
-        encoded = keras.layers.Dense(nodes, activation='relu')(encoded)
-    encoder_output = keras.layers.Dense(latent_dims, activation='relu')(encoded)
-    encoder = keras.Model(encoder_input, encoder_output, name='encoder')
+        encoded = keras.layers.Dense(nodes,
+                                     activation='relu')(encoded)
+    encoder_output = keras.layers.Dense(latent_dims,
+                                        activation='relu')(encoded)
+    encoder = keras.Model(encoder_input, encoder_output,
+                          name='encoder')
 
     # as above, we need the unique input one
     decoder_input = keras.Input(shape=(latent_dims,))
     # must be defined this way
     decoded = decoder_input
     for nodes in reversed(hidden_layers):
-        decoded = keras.layers.Dense(nodes, activation='relu')(decoded)
-    decoder_output = keras.layers.Dense(input_dims, activation='sigmoid')(decoded)
+        decoded = keras.layers.Dense(nodes,
+                                     activation='relu')(decoded)
+    decoder_output = keras.layers.Dense(input_dims,
+                                        activation='sigmoid')(decoded)
     decoder = keras.Model(decoder_input, decoder_output, name='decoder')
 
     # Define the full autoencoder model
