@@ -103,19 +103,32 @@ Epoch 50/50
 <details>
     <summary>Instructions</summary>
 
-Write a function def autoencoder(input_dims, hidden_layers, latent_dims, lambtha): that creates a sparse autoencoder:
 
-input_dims is an integer containing the dimensions of the model input
-hidden_layers is a list containing the number of nodes for each hidden layer in the encoder, respectively
-the hidden layers should be reversed for the decoder
-latent_dims is an integer containing the dimensions of the latent space representation
-lambtha is the regularization parameter used for L1 regularization on the encoded output
-Returns: encoder, decoder, auto
-encoder is the encoder model
-decoder is the decoder model
-auto is the sparse autoencoder model
+Write a function `def autoencoder(input_dims, hidden_layers, latent_dims, lambtha):` that creates a sparse autoencoder:
+
+
+* `input_dims` is an integer containing the dimensions of the model input
+
+* `hidden_layers` is a list containing the number of nodes for each hidden layer in the encoder, respectively
+
+  * the hidden layers should be reversed for the decoder
+
+* `latent_dims` is an integer containing the dimensions of the latent space representation
+
+* `lambtha` is the regularization parameter used for L1 regularization on the encoded output
+
+Returns: `encoder`, `decoder`, `auto`
+
+* `encoder` is the encoder model
+
+* `decoder` is the decoder model
+
+* `auto` is the sparse autoencoder model
+
 The sparse autoencoder model should be compiled using adam optimization and binary cross-entropy loss
-All layers should use a relu activation except for the last layer in the decoder, which should use sigmoid
+
+All layers should use a `relu` activation except for the last layer in the decoder, which should use `sigmoid`
+
 </details>
 
 
@@ -184,3 +197,5 @@ Epoch 100/100
 
 ```
 </details>
+
+This model can be created identically to the one in [task 0](#task-0---vanilla-autoencoder), but with the `encoder_output` having an additional paramter: `activity_regularizer=keras.regularizers.l1(lambtha)` as a keword-argument, to utilize the lambtha (provided "regularization parameter") value.
