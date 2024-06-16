@@ -43,8 +43,7 @@ def autoencoder(input_dims, filters, latent_dims):
     # encoded = keras.layers.MaxPooling2D((2, 2),
     #                               padding='same')(encoded)
     encoder_output = encoded
-    encoder = keras.Model(encoder_input, encoder_output,
-                          name='encoder')
+    encoder = keras.Model(encoder_input, encoder_output)
 
     # as above, we need the unique input one
     decoder_input = keras.Input(shape=(latent_dims,))
@@ -67,8 +66,7 @@ def autoencoder(input_dims, filters, latent_dims):
                                          activation='sigmoid',
                                          padding='same')(decoded)
     decoder = keras.Model(decoder_input,
-                          decoder_output,
-                          name='decoder')
+                          decoder_output)
 
     # Define the full autoencoder model
     # autoencoder_input = keras.Input(shape=input_dims)
