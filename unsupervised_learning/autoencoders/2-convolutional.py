@@ -8,21 +8,22 @@ import tensorflow.keras as keras
 def autoencoder(input_dims, filters, latent_dims):
     """creates an autoencoder
 
-    input_dims = tuple of integers
+    input_dims = tuple of int
         contains dimensions of the model input
             unlike previous tasks, already intuple form
-    filters = list
+    filters = list of int
         contains number of filters for each convolutional layer in the encoder
             filters should be reversed from given order for the decoder
-    latent_dims = tuple of integers
+    latent_dims = tuple of int
         contains dimensions of the latent space representation
     """
     # we use this input layer later, so it needs to be unique
     encoder_input = keras.Input(shape=input_dims)
     # must be defined this way
     encoded = encoder_input
-
+    # for each filter size requested...
     for filter in filters:
+        # ...create a convolutional layer
         encoded = keras.layers.Conv2D(filter, (3, 3),
                                       activation='relu',
                                       padding='same')(encoded)
@@ -31,17 +32,20 @@ def autoencoder(input_dims, filters, latent_dims):
 
     encoder_output = encoded
     encoder = keras.Model(encoder_input, encoder_output)
-
-    # as above, we need the unique input one
+    # encoder (above) is now done
+    # now we create decoder
+    # as above, we need the unique input layer
     decoder_input = keras.Input(shape=latent_dims)
     # must be defined this way
     decoded = decoder_input
+    # iterate through filters backwards
     for i in range(len(filters) - 1, -1, -1):
+        # this is why we use this loop method
         if i == 0:
             padding = 'valid'
         else:
             padding = 'same'
-
+        # as encoder, create convolutional layer in decoder
         decoded = keras.layers.Conv2D(filters[i],
                                       (3, 3),
                                       activation='relu',
@@ -56,11 +60,7 @@ def autoencoder(input_dims, filters, latent_dims):
                           decoder_output)
 
     # Define the full autoencoder model
-    # autoencoder_input = keras.Input(shape=input_dims)
-    # encoded_output = encoder(autoencoder_input)
-    # decoded_output = decoder(encoded_output)
-    # auto = keras.Model(autoencoder_input, decoded_output, name='autoencoder')
-    # trying a literal logical part here that should be unable to be wrong
+    # literal logical approach that should be unable to be wrong
     auto = keras.Model(encoder_input,
                        decoder(encoder(encoder_input)))
 

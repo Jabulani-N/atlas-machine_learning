@@ -36,7 +36,7 @@ def autoencoder(input_dims, hidden_layers, latent_dims, lambtha):
     encoder = keras.Model(encoder_input, encoder_output,
                           name='encoder')
 
-    # as above, we need the unique input one
+    # as above, we need the unique input layer
     decoder_input = keras.Input(shape=(latent_dims,))
     # must be defined this way
     decoded = decoder_input

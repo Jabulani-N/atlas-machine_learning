@@ -265,3 +265,7 @@ Epoch 50/50
 ```
 when run
 </details>
+
+## Potential Pitfalls
+
+This task's `input_dims` is already a tuple, so don't put into a tuple this time, unlike previous tasks.
