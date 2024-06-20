@@ -18,7 +18,7 @@ def autoencoder(input_dims, hidden_layers, latent_dims):
         contains dimensions of the latent space representation
     """
     # return None
-    # we use this input one later, so it needs to be unique
+    # we use this input layer later, so it needs to be unique
     encoder_input = keras.Input(shape=(input_dims,))
     # must be defined this way
     encoded = encoder_input

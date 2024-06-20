@@ -8,40 +8,27 @@ import tensorflow.keras as keras
 def autoencoder(input_dims, filters, latent_dims):
     """creates an autoencoder
 
-    input_dims = integer
+    input_dims = tuple of integers
         contains dimensions of the model input
-    hidden_layers = list
-        contains number of nodes
-            for each hidden layer in encoder, respectively
-    lambtha = regularization parameter
-        used for L1 regularization on  encoded output
-    the hidden layers should be reversed for the decoder
-    latent_dims = integer
+            unlike previous tasks, already intuple form
+    filters = list
+        contains number of filters for each convolutional layer in the encoder
+            filters should be reversed from given order for the decoder
+    latent_dims = tuple of integers
         contains dimensions of the latent space representation
     """
-    # return None
-    # we use this input one later, so it needs to be unique
+    # we use this input layer later, so it needs to be unique
     encoder_input = keras.Input(shape=input_dims)
     # must be defined this way
     encoded = encoder_input
+
     for filter in filters:
         encoded = keras.layers.Conv2D(filter, (3, 3),
                                       activation='relu',
                                       padding='same')(encoded)
         encoded = keras.layers.MaxPooling2D((2, 2),
                                             padding='same')(encoded)
-        # encoded = keras.layers.Conv2D(filter/2,
-        #                               (3, 3),
-        #                               activation='relu',
-        #                               padding='same')(encoded)
-        # encoded = keras.layers.MaxPooling2D((2, 2),
-        #                               padding='same')(encoded)
-        # encoded = keras.layers.Conv2D(filter/2,
-        #                               (3, 3),
-        #                               activation='relu',
-        #                               padding='same')(encoded)
-    # encoded = keras.layers.MaxPooling2D((2, 2),
-    #                               padding='same')(encoded)
+
     encoder_output = encoded
     encoder = keras.Model(encoder_input, encoder_output)
 
