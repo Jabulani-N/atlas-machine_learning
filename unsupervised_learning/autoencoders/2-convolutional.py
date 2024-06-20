@@ -21,7 +21,7 @@ def autoencoder(input_dims, filters, latent_dims):
     """
     # return None
     # we use this input one later, so it needs to be unique
-    encoder_input = keras.Input(shape=(input_dims,))
+    encoder_input = keras.Input(shape=input_dims)
     # must be defined this way
     encoded = encoder_input
     for filter in filters:
@@ -46,7 +46,7 @@ def autoencoder(input_dims, filters, latent_dims):
     encoder = keras.Model(encoder_input, encoder_output)
 
     # as above, we need the unique input one
-    decoder_input = keras.Input(shape=(latent_dims,))
+    decoder_input = keras.Input(shape=latent_dims)
     # must be defined this way
     decoded = decoder_input
     for i in range(len(filters) - 1, -1, -1):
