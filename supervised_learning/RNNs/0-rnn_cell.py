@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""module documentation
-this module,0-create_placeholders, creates a function:
-    create_placeholders
-Though classy, it has no class.
-
+"""
+This module creates the class RNNCell
+This class illustrates the function of
+a Recurrant Neural Network
 """
 
 import numpy as np
