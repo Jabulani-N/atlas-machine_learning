@@ -7,7 +7,6 @@ Though classy, it has no class.
 """
 
 import numpy as np
-import np.random.rand as random
 
 
 class RNNCell:
@@ -17,9 +16,10 @@ class RNNCell:
         i, h, o = dimensionality of:
             input, hidden state, output
         """
+        random = np.random.rand
         # weights of the cell
         self.Wh = random(h + i, h)
         self.Wy = random(h, o)
         # biases of the cell
-        self.bh = np.zeros(h + i, h)
-        self.by = np.zeros(h, o)
+        self.bh = np.zeros((h + i, h))
+        self.by = np.zeros((h, o))
