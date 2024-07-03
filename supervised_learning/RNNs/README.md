@@ -220,8 +220,15 @@ Create the class `RNNCell` that represents a cell of a simple RNN:
 
 The init method
 
+from the instructoins provided, we can see the shapes of some things
+`Wh` is 25x15
+* (input + hidden dimensionality) x hidden dimensionality
+`Wy` is 15 x 5
+* hidden dimensionality x output dimensionality
 
 [here](https://dev.to/kuthchi/understanding-and-implementing-recurrent-networks-rnns-from-scratch-in-python-46ec) is an example of forward propagation.
+* this will only be a single time step, so we'll only use the part protected by the source's loop.
+* because input aund hidden are concatenated in our project, we'll need to concatenate them in the dot product part
 
 ### Potential Pitfalls
 

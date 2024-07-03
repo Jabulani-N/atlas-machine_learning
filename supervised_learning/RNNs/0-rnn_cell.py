@@ -29,7 +29,14 @@ class RNNCell:
 
     def forward(self, h_prev, x_t):
         """simulates a forward pass"""
-        pass
+        outputs = []
+        # concatenating these because our cell concatenates inputs and hidden layers
+        catted_input = np.concatenate(x_t, h_prev)
+        # this will only be a single time step
+        # so we'll only use the part protected by the source's loop
+        h_next = np.tanh(np.dot(self.Wh, catted_input) + np.dot(self.bh))
+        y = np.dot(self.Wy, h_next) + self.by
+        return h_next, y
 
     @staticmethod
     def softmax(x, axis=-1):
