@@ -217,6 +217,12 @@ Create the class `RNNCell` that represents a cell of a simple RNN:
     $
 </details>
 
+
+The init method
+
+
+[here](https://dev.to/kuthchi/understanding-and-implementing-recurrent-networks-rnns-from-scratch-in-python-46ec) is an example of forward propagation.
+
 ### Potential Pitfalls
 
 `numpy.random.randn` is different from `numpy.random.rand`.

@@ -30,3 +30,10 @@ class RNNCell:
     def forward(self, h_prev, x_t):
         """simulates a forward pass"""
         pass
+
+    @staticmethod
+    def softmax(x, axis=-1):
+        """calculates softmax of x"""
+        # Subtracting max(x) for numerical stability
+        e_x = np.exp(x - np.max(x))
+        return e_x / e_x.sum(axis=axis, keepdims=True)
