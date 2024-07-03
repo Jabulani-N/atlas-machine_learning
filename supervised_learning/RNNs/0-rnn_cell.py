@@ -35,7 +35,8 @@ class RNNCell:
         # this will only be a single time step
         # so we'll only use the part protected by the source's loop
         h_next = np.tanh(np.dot(catted_input, self.Wh) + self.bh)
-        y = np.dot(self.Wy, h_next) + self.by
+        y = np.dot(h_next, self.Wy) + self.by
+        y = self.softmax(y)
         return h_next, y
 
     @staticmethod
