@@ -35,7 +35,9 @@ class RNNCell:
         # this will only be a single time step
         # so we'll only use the part protected by the source's loop
         h_next = np.tanh(np.dot(catted_input, self.Wh) + self.bh)
+        # this is output without an activation function
         y = np.dot(h_next, self.Wy) + self.by
+        # this is output after softmax activation function
         y = self.softmax(y)
         return h_next, y
 
