@@ -34,11 +34,12 @@ class RNNCell:
         catted_input = np.concatenate((h_prev, x_t), axis=1)
         # this will only be a single time step
         # so we'll only use the part protected by the source's loop
+        # the basic idea is tanh(dot product of (input, weights)
         h_next = np.tanh(np.dot(catted_input, self.Wh) + self.bh)
         # this is output without an activation function
-        y = np.dot(h_next, self.Wy) + self.by
+        y = np.dot(h_next, self.Wy)
         # this is output after softmax activation function
-        y = self.softmax(y)
+        y = self.softmax(y) + self.by
         return h_next, y
 
     @staticmethod
