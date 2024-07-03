@@ -21,5 +21,5 @@ class RNNCell:
         self.Wh = random(h + i, h)
         self.Wy = random(h, o)
         # biases of the cell
-        self.bh = np.zeros((h + i, h))
-        self.by = np.zeros((h, o))
+        self.bh = np.zeros((1, h))
+        self.by = np.zeros((1, o))
