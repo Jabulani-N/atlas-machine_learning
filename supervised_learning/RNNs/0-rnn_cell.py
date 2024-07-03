@@ -29,7 +29,7 @@ class RNNCell:
 
     def forward(self, h_prev, x_t):
         """simulates a forward pass"""
-        # concatenating these because our cell concatenates inputs and hidden layers
+        # concatenating because our cell concatenates inputs and hidden layers
         print("shapes:", np.shape(h_prev), np.shape(x_t))
         catted_input = np.concatenate((h_prev, x_t), axis=1)
         # this will only be a single time step
