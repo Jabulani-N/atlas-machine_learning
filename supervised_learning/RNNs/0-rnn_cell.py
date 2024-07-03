@@ -10,7 +10,7 @@ import numpy as np
 
 
 class RNNCell:
-    """reprecents a cell of simple RNN"""
+    """simulates/reprecents a cell of simple RNN"""
     def __init__(self, i, h, o):
         """
         class initiator
@@ -26,3 +26,7 @@ class RNNCell:
         # biases of the cell
         self.bh = np.zeros((1, h))
         self.by = np.zeros((1, o))
+
+    def forward(self, h_prev, x_t):
+        """simulates a forward pass"""
+        pass

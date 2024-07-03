@@ -35,6 +35,8 @@ Create the class `RNNCell` that represents a cell of a simple RNN:
 
     * The biases should be initialized as zeros
 
+&nbsp;
+
   * public instance method `def forward(self, h_prev, x_t):` that performs forward propagation for one time step
 
     * `x_t` is a `numpy.ndarray` of shape `(m, i)` that contains the data input for the cell
