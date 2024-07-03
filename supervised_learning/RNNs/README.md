@@ -214,3 +214,7 @@ Create the class `RNNCell` that represents a cell of a simple RNN:
     2.82459439e-06]]
     $
 </details>
+
+### Potential Pitfalls
+
+`numpy.random.randn` is different from `numpy.random.rand`.

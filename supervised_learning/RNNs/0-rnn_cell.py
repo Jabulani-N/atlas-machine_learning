@@ -17,7 +17,7 @@ class RNNCell:
         i, h, o = dimensionality of:
             input, hidden state, output
         """
-        random = np.random.rand
+        random = np.random.randn
         # weights of the cell
         self.Wh = random(h + i, h)
         self.Wy = random(h, o)
