@@ -27,7 +27,12 @@ class RNNCell:
         self.by = np.zeros((1, o))
 
     def forward(self, h_prev, x_t):
-        """simulates a forward propagation pass"""
+        """
+        simulates a forward propagation pass
+
+        h_prev = previous hidden state
+        x_t = input data
+        """
         # concatenating because our cell concatenates inputs and hidden layers
         # print("shapes:", np.shape(h_prev), np.shape(x_t))
         catted_input = np.concatenate((h_prev, x_t), axis=1)
