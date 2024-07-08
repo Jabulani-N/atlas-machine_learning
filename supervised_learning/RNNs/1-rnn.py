@@ -18,10 +18,21 @@ def rnn(rnn_cell, X, h_0):
     """
     H = np.copy(h_0)
     h_prev = np.copy(h_0)
-    Y = np.empty(0)
+    # Y = np.empty(0)
+    # Y = np.zeros(np.shape(X))
     for time_step in range(np.shape(X)[0] - 1):
         h_next, output_next = rnn_cell.forward(h_prev, X[time_step])
-        H = np.append(H, h_next)
-        Y = np.append(Y, output_next)
+        H = np.append(H, h_next, axis=0)
+        # make sure Y is the right shape for the outputs
+        if time_step == 0:
+            Y = np.zeros((np.shape(X)[0],
+                          np.shape(output_next)[0],
+                          np.shape(output_next)[1]))
+        # print("Y is", Y, "before appednding the output:", output_next)
+        # print("output shape", np.shape(output_next))
+        # Y = np.append(Y, output_next, axis=0)
+        Y[time_step] = np.copy(output_next)
+        # print("after appending, Y is", Y)
         h_prev = h_next
-    return H, np.asarray(Y)
+    # Y = np.reshape(Y, np.shape(X))
+    return H, Y
