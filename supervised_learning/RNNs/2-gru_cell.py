@@ -16,5 +16,11 @@ class GRUCell:
             input data
             hiden state
             outputs
+        z = forget gate
+        r = update gate
+        h = intermediate cell gate
+        h = output gatew
+        y = outputs
         """
-        pass
+        # random NORMAL distribution
+        random = np.random.randn
