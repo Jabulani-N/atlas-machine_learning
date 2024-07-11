@@ -17,7 +17,7 @@ def rnn(rnn_cell, X, h_0):
         shape: (m, h)
     """
     h_prev = np.copy(h_0)
-    for time_step in range(np.shape(X)[0] - 1):
+    for time_step in range(np.shape(X)[0]):
         h_next, output_next = rnn_cell.forward(h_prev, X[time_step])
         # make sure H, Y are correct shape for the outputs
         if time_step == 0:
