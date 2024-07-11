@@ -570,3 +570,10 @@ $
 ```
 
 </details>
+
+### Potential Pitfalls
+
+The shape of the numpy arrays needed is particular, but effectively:
+
+* `H` is an array wehre each time step populates an array the size of each index of `X[index]`
+* `Y` is an array where each time step populates an array the size of h_0
