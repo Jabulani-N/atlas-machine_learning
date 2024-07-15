@@ -1009,3 +1009,6 @@ $
 
 ```
 </details>
+
+
+You'll use the same type of concatenated hidden layer and input shapes as in task 0
