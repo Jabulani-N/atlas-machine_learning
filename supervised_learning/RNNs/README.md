@@ -1012,3 +1012,6 @@ $
 
 
 You'll use the same type of concatenated hidden layer and input shapes as in task 0
+
+[this example](https://github.com/stevenhillis/GRU_By_Hand/blob/master/gru.py) assigns different traits as self attributes, but we can likely use `z` instaed of `self.zt` for the math.
+* they assign sigmoid as their activation function and a whole calss situation, but I did this by just making a sigmoid static method.

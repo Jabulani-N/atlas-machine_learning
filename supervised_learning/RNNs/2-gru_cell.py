@@ -41,8 +41,22 @@ class GRUCell:
     def forward(self, h_prev, x_t):
         """
         simulates one time step of forward propagation
+        h_prev = previous hidden layer
+            shape (m, i)
+                m = batch size for data
+                i = dimentionality of data
+        x_t = input data
+            shape (m, h)
+                m = batch size for data
+                h = dimensionality of hidden state
         """
-        pass
+        # concatenating because our cell concatenates inputs and hidden layers
+        catted_input = np.concatenate((h_prev, x_t), axis=1)
+        r = self.sigmoid(np.dot(catted_input, self.Wr) + self.br)
+        z = self.sigmoid(np.dot(catted_input, self.Wz) + self.bz)
+        htilde = None
+
+
 
     @staticmethod
     def softmax(x, axis=-1):
