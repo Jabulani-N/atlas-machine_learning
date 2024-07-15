@@ -30,3 +30,10 @@ class GRUCell:
         self.Wz = random(h + i, h)
         self.Wr = random(h + i, h)
         self.Wh = random(h + i, h)
+        # output weights
+        self.Wy = random(o, h)
+        # biases
+        self.bz = np.zeros((1, h))
+        self.br = np.zeros((1, h))
+        self.bh = np.zeros((1, h))
+        self.by = np.zeros((1, o))
