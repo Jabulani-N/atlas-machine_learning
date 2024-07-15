@@ -1063,7 +1063,6 @@ public instance method `def forward(self, h_prev, c_prev, x_t):` that performs f
  * `c_prev` is a `numpy.ndarray` of shape `(m, h)` containing the previous cell state
  * The output of the cell should use a softmax activation function
  * Returns: `h_next`, `c_next`, `y`
-
     * `h_next` is the next hidden state
     * `c_next` is the next cell state
     * `y` is the output of the cell
