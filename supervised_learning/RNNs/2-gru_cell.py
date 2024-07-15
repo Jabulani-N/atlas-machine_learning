@@ -22,11 +22,11 @@ class GRUCell:
         z = forget gate
         r = update gate
         h = intermediate hidden state
-        h = output gate
         y = outputs
         """
         # random NORMAL distribution
         random = np.random.randn
-        # I'll assume all gates use hidden state dimensions
-
-
+        # I'll assume all gates use hidden state dimensions sized like to task0
+        self.Wz = random(h + i, h)
+        self.Wr = random(h + i, h)
+        self.Wh = random(h + i, h)
