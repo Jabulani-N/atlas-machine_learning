@@ -20,6 +20,7 @@ class LSTMCell:
         f = forget gate
         u = update gate
         c = intermediate cell state
+        o = output gate
         y = outputs
         """
         # random NORMAL distribution
@@ -27,17 +28,33 @@ class LSTMCell:
         # establish non-output weights
         self.Wf = random(h + i, h)
         self.Wu = random(h + i, h)
+        self.Wc = random(h + i, h)
         self.Wo = random(h + i, h)
         # output weights
         self.Wy = random(h, o)
         # biases
         self.bf = random(h + i, h)
         self.bu = random(h + i, h)
+        self.bc = random(h + i, h)
         self.bo = random(h + i, h)
         self.by = random(h, o)
 
     def forward(self, h_prev, c_prev, x_t):
-        """placeholder doc"""
+        """
+        simulates one time step of forward propagation
+        h_prev = previous hidden layer
+            shape (m, i)
+                m = batch size for data
+                i = dimentionality of data
+        x_t = input data
+            shape (m, h)
+                m = batch size for data
+                h = dimensionality of hidden state
+        c_prev = previous cell state
+            shape (m, h)
+                m = batch size for data
+                h = dimensionality of hidden state
+        """
         pass
 
     @staticmethod
