@@ -16,11 +16,17 @@ class GRUCell:
             input data
             hiden state
             outputs
+        w = weights
+        b = bias
+
         z = forget gate
         r = update gate
-        h = intermediate cell gate
-        h = output gatew
+        h = intermediate hidden state
+        h = output gate
         y = outputs
         """
         # random NORMAL distribution
         random = np.random.randn
+        # I'll assume all gates use hidden state dimensions
+
+
