@@ -55,7 +55,7 @@ class LSTMCell:
                 m = batch size for data
                 h = dimensionality of hidden state
         """
-        pass
+        return h_prev, c_prev, x_t
 
     @staticmethod
     def softmax(x, axis=-1):
