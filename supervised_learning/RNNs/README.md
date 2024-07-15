@@ -1028,6 +1028,8 @@ See this for info on the [reset gate, update gate, candidate hidden state](https
 
 ## Task 3 - LSTM Cell
 
+* Long Short-term Memory
+
 <details>
     <summary>Instructions</summary>
 
