@@ -57,8 +57,10 @@ class GRUCell:
         z = self.sigmoid(np.dot(catted_input, self.Wz) + self.bz)
         # creating the candidate hidden state
         # prereq because we have concatenated input and hidden states
-        catted_x_t_and_reset_times_h_prev = np.concatenate((r * h_prev, x_t), axis=1)
-        h_candidate = np.tanh(np.dot(catted_x_t_and_reset_times_h_prev, self.Wh)
+        catted_x_t_and_reset_times_h_prev = np.concatenate((r * h_prev, x_t),
+                                                           axis=1)
+        h_candidate = np.tanh(np.dot(catted_x_t_and_reset_times_h_prev,
+                                     self.Wh)
                               + self.bh)
         # calculate official current hidden state
         h_next = z * h_candidate + (1 - z) * h_prev
