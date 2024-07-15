@@ -1013,5 +1013,14 @@ $
 
 You'll use the same type of concatenated hidden layer and input shapes as in task 0
 
+### Resources
+
 [this example](https://github.com/stevenhillis/GRU_By_Hand/blob/master/gru.py) assigns different traits as self attributes, but we can likely use `z` instaed of `self.zt` for the math.
 * they assign sigmoid as their activation function and a whole calss situation, but I did this by just making a sigmoid static method.
+
+[Applying and Understanding Gated Recurrent Unit in Python](https://www.youtube.com/watch?v=rdz0UqQz5Sw)
+
+[Applying and Understanding Long Short-term Memory in Python](https://www.youtube.com/watch?v=rmxogwIjOhE&t=215s)
+
+See this for info on the [reset gate, update gate, candidate hidden state](https://www.d2l.ai/chapter_recurrent-modern/gru.html). It has formulae that you can translate to the code equivalents.
+* This resource is relatively difficult to decipher until you already know the code you need to use for each gate, but once you have it, you will understand the explaantion of `10.2.1` - `10.2.3`

@@ -20,8 +20,8 @@ class GRUCell:
         b = bias
 
         z = forget gate
-        r = update gate
-        h = intermediate hidden state
+        r = update gate = reset gate?
+        h = intermediate hidden state = candidate?
         y = outputs
         """
         # random NORMAL distribution
@@ -31,7 +31,7 @@ class GRUCell:
         self.Wr = random(h + i, h)
         self.Wh = random(h + i, h)
         # output weights
-        self.Wy = random(o, h)
+        self.Wy = random(h, o)
         # biases
         self.bz = np.zeros((1, h))
         self.br = np.zeros((1, h))
@@ -52,11 +52,22 @@ class GRUCell:
         """
         # concatenating because our cell concatenates inputs and hidden layers
         catted_input = np.concatenate((h_prev, x_t), axis=1)
+        # create reset, update gates respectively
         r = self.sigmoid(np.dot(catted_input, self.Wr) + self.br)
         z = self.sigmoid(np.dot(catted_input, self.Wz) + self.bz)
-        htilde = None
-
-
+        # creating the candidate hidden state
+        # prereq because we have concatenated input and hidden states
+        catted_x_t_and_reset_times_h_prev = np.concatenate((r * h_prev, x_t), axis=1)
+        h_candidate = np.tanh(np.dot(catted_x_t_and_reset_times_h_prev, self.Wh)
+                              + self.bh)
+        # calculate official current hidden state
+        h_next = z * h_candidate + (1 - z) * h_prev
+        # calculate output based on hidden state
+        # the below is the same as task 0's
+        y = np.dot(h_next, self.Wy)  # this is broken part
+        y += self.by
+        y = self.softmax(y)
+        return h_next, y
 
     @staticmethod
     def softmax(x, axis=-1):
