@@ -43,3 +43,17 @@ class GRUCell:
         simulates one time step of forward propagation
         """
         pass
+
+    @staticmethod
+    def softmax(x, axis=-1):
+        """calculates softmax of x"""
+        # Subtracting max(x) for numerical stability
+        e_x = np.exp(x - np.max(x))
+        return e_x / e_x.sum(axis=axis, keepdims=True)
+
+    @staticmethod
+    def sigmoid(x):
+        """calculates sigmoid of x"""
+        # Subtracting max(x) for numerical stability
+        e_x = np.exp(x - np.max(x))
+        return (1.0 + np.exp(-e_x)) ** -1
