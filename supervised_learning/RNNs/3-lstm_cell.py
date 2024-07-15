@@ -35,3 +35,19 @@ class LSTMCell:
         self.bu = random(h + i, h)
         self.bo = random(h + i, h)
         self.by = random(h, o)
+
+    def forward(self, h_prev, c_prev, x_t):
+        """placeholder doc"""
+        pass
+
+    @staticmethod
+    def softmax(x, axis=-1):
+        """calculates softmax of x"""
+        # Subtracting max(x) for numerical stability
+        e_x = np.exp(x - np.max(x))
+        return e_x / e_x.sum(axis=axis, keepdims=True)
+
+    @staticmethod
+    def sigmoid(x):
+        """calculates sigmoid of x"""
+        return 1 / (1 + np.exp(-x))
