@@ -9,7 +9,7 @@ import numpy as np
 
 
 class LSTMCell:
-    """simulates an Long Term Short Term unit"""
+    """simulates an Long Short-term Memort unit"""
     def __init__(self, i, h, o):
         """initiates the class
         i, h, o = dimensionality of
