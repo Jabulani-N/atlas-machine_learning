@@ -82,5 +82,4 @@ class GRUCell:
     def sigmoid(x):
         """calculates sigmoid of x"""
         # Subtracting max(x) for numerical stability
-        e_x = np.exp(x - np.max(x))
-        return (1.0 + np.exp(-e_x)) ** -1
+        return  1 / (1 + np.exp(-x))
