@@ -26,7 +26,7 @@ class GRUCell:
         """
         # random NORMAL distribution
         random = np.random.randn
-        # I'll assume all gates use hidden state dimensions sized like to task0
+        # I'll assume all gates use hidden state dimensions sized like in task0
         self.Wz = random(h + i, h)
         self.Wr = random(h + i, h)
         self.Wh = random(h + i, h)
