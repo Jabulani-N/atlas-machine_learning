@@ -55,7 +55,8 @@ class LSTMCell:
                 m = batch size for data
                 h = dimensionality of hidden state
         """
-        pass
+        # concatenating because our cell concatenates inputs and hidden layers
+        catted_input = np.concatenate((h_prev, x_t), axis=1)
 
     @staticmethod
     def softmax(x, axis=-1):

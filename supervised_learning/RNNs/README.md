@@ -1572,3 +1572,9 @@ $
 ```
 
 </details>
+
+
+### Resources
+
+[To understand LSTM architecture, code a forward pass with just NumPy
+](https://towardsdatascience.com/the-lstm-reference-card-6163ca98ae87)
