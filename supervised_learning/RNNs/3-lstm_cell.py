@@ -18,9 +18,9 @@ class LSTMCell:
             outputs
 
         f = forget gate
-        u = update gate
+        u = update gate = input gate = learn gate
         c = intermediate cell state
-        o = output gate
+        o = output gate = use gate
         y = outputs
         """
         # random NORMAL distribution
@@ -58,7 +58,23 @@ class LSTMCell:
         # concatenating because our cell concatenates inputs and hidden layers
         catted_input = np.concatenate((h_prev, x_t), axis=1)
 
-        forget_hidden = np.dot(self.Wf, catted_input) + self.bf
+        # because i used concatenated, no separated eventx
+        # both resources seem to use this basic idea
+        # except the entire gate has a single weights matrix
+        # big enough for both hidden and input concatenated
+
+        forget_gate = self.sigmoid(np.dot(self.Wf, catted_input) + self.bf)
+        # update gate AKA update gate AKA learn gate
+        update_gate = self.sigmoid(np.dot(self.Wu, catted_input) + self.bu)
+        output_gate = self.sigmoid(np.dot(self.Wo, catted_input) + self.bo)
+
+        cell_state_candidate = np.tanh(np.dot(self.Wc, catted_input) + self.bc)
+        cell_state = forget_gate * c_prev + update_gate * cell_state_candidate
+        # video example had tanh activation func here
+        hidden_state = output_gate * self.softmax(cell_state)
+        y = np.dot(hidden_state, self.Wy) + self.by
+        y = self.softmax(y)
+        return hidden_state, cell_state, y
 
     @staticmethod
     def softmax(x, axis=-1):

@@ -1020,7 +1020,6 @@ You'll use the same type of concatenated hidden layer and input shapes as in tas
 
 [Applying and Understanding Gated Recurrent Unit in Python](https://www.youtube.com/watch?v=rdz0UqQz5Sw)
 
-[Applying and Understanding Long Short-term Memory in Python](https://www.youtube.com/watch?v=rmxogwIjOhE&t=215s)
 
 See this for info on the [reset gate, update gate, candidate hidden state](https://www.d2l.ai/chapter_recurrent-modern/gru.html). It has formulae that you can translate to the code equivalents.
 * This resource is relatively difficult to decipher until you already know the code you need to use for each gate, but once you have it, you will understand the explaantion of `10.2.1` - `10.2.3`
@@ -1028,11 +1027,19 @@ See this for info on the [reset gate, update gate, candidate hidden state](https
 
 ## Task 3 - LSTM Cell
 
+[![To understand LSTM architecture, code a forward pass with just NumPy](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*1OCrRYMjrlI4J061RD5bqQ.png)](https://towardsdatascience.com/the-lstm-reference-card-6163ca98ae87)
+
 * Long Short-term Memory
 
 These are used in datasets with particularly long sequences, as it can retain memory for longer periods. Also has heightened accuracy.
 
 * It is, however, slower in some ways than a GRU
+
+gates:
+* `forget gate` determines what to keep or forget
+  * 0 = forget; 1 = keep
+* `input gate` = `learn gate` = `update gate` mate. Ain't that great?
+* `output gate` = `use gate`
 
 <details>
     <summary>Instructions</summary>
@@ -1578,3 +1585,11 @@ $
 
 [To understand LSTM architecture, code a forward pass with just NumPy
 ](https://towardsdatascience.com/the-lstm-reference-card-6163ca98ae87)
+
+[Applying and Understanding Long Short-term Memory in Python](https://www.youtube.com/watch?v=rmxogwIjOhE&t=215s)
+
+### Potential Pitfalls
+
+`input gate` = `learn gate` = `update gate` mate. Ain't that great?
+
+`output gate` = `use gate`
