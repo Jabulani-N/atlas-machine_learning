@@ -1030,6 +1030,8 @@ See this for info on the [reset gate, update gate, candidate hidden state](https
 
 * Long Short-term Memory
 
+These are used in datasets with particularly long sequences, as it can retain memory for longer periods. Also has heightened accuracy.
+
 <details>
     <summary>Instructions</summary>
 
