@@ -58,6 +58,8 @@ class LSTMCell:
         # concatenating because our cell concatenates inputs and hidden layers
         catted_input = np.concatenate((h_prev, x_t), axis=1)
 
+        forget_hidden = np.dot(self.Wf, catted_input) + self.bf
+
     @staticmethod
     def softmax(x, axis=-1):
         """calculates softmax of x"""
