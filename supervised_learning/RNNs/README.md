@@ -1032,6 +1032,8 @@ See this for info on the [reset gate, update gate, candidate hidden state](https
 
 These are used in datasets with particularly long sequences, as it can retain memory for longer periods. Also has heightened accuracy.
 
+* It is, however, slower in some ways than a GRU
+
 <details>
     <summary>Instructions</summary>
 
