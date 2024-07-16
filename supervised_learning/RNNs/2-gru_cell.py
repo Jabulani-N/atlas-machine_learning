@@ -66,7 +66,7 @@ class GRUCell:
         h_next = z * h_candidate + (1 - z) * h_prev
         # calculate output based on hidden state
         # the below is the same as task 0's
-        y = np.dot(h_next, self.Wy)  # this is broken part
+        y = np.dot(h_next, self.Wy)  # this was broken part
         y += self.by
         y = self.softmax(y)
         return h_next, y
