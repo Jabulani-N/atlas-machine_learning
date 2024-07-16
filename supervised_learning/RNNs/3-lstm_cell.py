@@ -33,11 +33,11 @@ class LSTMCell:
         # output weights
         self.Wy = random(h, o)
         # biases
-        self.bf = random(h + i, h)
-        self.bu = random(h + i, h)
-        self.bc = random(h + i, h)
-        self.bo = random(h + i, h)
-        self.by = random(h, o)
+        self.bf = np.zeros((1, h))
+        self.bu = np.zeros((1, h))
+        self.bc = np.zeros((1, h))
+        self.bo = np.zeros((1, h))
+        self.by = np.zeros((1, o))
 
     def forward(self, h_prev, c_prev, x_t):
         """
@@ -71,8 +71,8 @@ class LSTMCell:
         cell_state_candidate = np.tanh(np.dot(catted_input, self.Wc) + self.bc)
         cell_state = forget_gate * c_prev + update_gate * cell_state_candidate
         # video example had tanh activation func here
-        hidden_state = output_gate * self.softmax(cell_state)
-        # hidden_state = output_gate * np.tanh(cell_state)
+        # hidden_state = output_gate * self.softmax(cell_state)
+        hidden_state = output_gate * np.tanh(cell_state)
         y = np.dot(hidden_state, self.Wy) + self.by
         y = self.softmax(y)
         return hidden_state, cell_state, y
