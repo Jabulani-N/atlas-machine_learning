@@ -63,10 +63,10 @@ class LSTMCell:
         # except the entire gate has a single weights matrix
         # big enough for both hidden and input concatenated
 
-        forget_gate = self.sigmoid(np.dot(self.Wf, catted_input) + self.bf)
+        forget_gate = self.sigmoid(np.dot(catted_input, self.Wf) + self.bf)
         # update gate AKA update gate AKA learn gate
-        update_gate = self.sigmoid(np.dot(self.Wu, catted_input) + self.bu)
-        output_gate = self.sigmoid(np.dot(self.Wo, catted_input) + self.bo)
+        update_gate = self.sigmoid(np.dot(catted_input, self.Wu) + self.bu)
+        output_gate = self.sigmoid(np.dot(catted_input, self.Wo) + self.bo)
 
         cell_state_candidate = np.tanh(np.dot(self.Wc, catted_input) + self.bc)
         cell_state = forget_gate * c_prev + update_gate * cell_state_candidate
