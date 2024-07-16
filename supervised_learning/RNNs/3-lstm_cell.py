@@ -68,10 +68,11 @@ class LSTMCell:
         update_gate = self.sigmoid(np.dot(catted_input, self.Wu) + self.bu)
         output_gate = self.sigmoid(np.dot(catted_input, self.Wo) + self.bo)
 
-        cell_state_candidate = np.tanh(np.dot(self.Wc, catted_input) + self.bc)
+        cell_state_candidate = np.tanh(np.dot(catted_input, self.Wc) + self.bc)
         cell_state = forget_gate * c_prev + update_gate * cell_state_candidate
         # video example had tanh activation func here
         hidden_state = output_gate * self.softmax(cell_state)
+        # hidden_state = output_gate * np.tanh(cell_state)
         y = np.dot(hidden_state, self.Wy) + self.by
         y = self.softmax(y)
         return hidden_state, cell_state, y
