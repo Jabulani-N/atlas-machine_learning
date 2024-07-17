@@ -26,6 +26,7 @@ class BidirectionalCell:
         self.Whf = random(h + i, h)
         self.Whb = random(h + i, h)
         # output weights
+        # doubled h for forward and backward directions
         self.Wy = random(2 * h, o)
         # biases
         self.bhf = np.zeros((1, h))
@@ -48,8 +49,6 @@ class BidirectionalCell:
         # this is essentially taken from task 0
         catted_input = np.concatenate((h_prev, x_t), axis=1)
         h_next = np.tanh(np.dot(catted_input, self.Whf) + self.bhf)
-        # y = np.dot(h_next, self.Wy) + self.by
-        # y = self.softmax(y)
         return h_next
 
     @staticmethod
