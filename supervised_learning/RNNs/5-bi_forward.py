@@ -26,7 +26,7 @@ class BidirectionalCell:
         self.Whf = random(h + i, h)
         self.Whb = random(h + i, h)
         # output weights
-        self.Wy = random(h, o)
+        self.Wy = random(2 * h, o)
         # biases
         self.bhf = np.zeros((1, h))
         self.bhb = np.zeros((1, h))
