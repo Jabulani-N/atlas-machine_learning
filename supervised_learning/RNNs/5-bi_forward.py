@@ -52,7 +52,6 @@ class BidirectionalCell:
         # y = self.softmax(y)
         return h_next
 
-
     @staticmethod
     def softmax(x, axis=-1):
         """calculates softmax of x"""
