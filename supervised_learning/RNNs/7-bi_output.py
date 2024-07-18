@@ -80,7 +80,10 @@ class BidirectionalCell:
                 m = batch size of data
                 h = dimensionality of hidden states
         """
-        pass
+        # logic copied from task 0
+        y = np.dot(H, self.Wy) + self.by
+        y = self.softmax(y)
+        return y
 
     @staticmethod
     def softmax(x, axis=-1):
