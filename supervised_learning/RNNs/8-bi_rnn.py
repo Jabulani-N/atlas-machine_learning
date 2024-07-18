@@ -40,6 +40,8 @@ def bi_rnn(bi_cell, X, h_0, h_t):
         np.append(hid_backward, h_next)
     hid_backward = np.flip(hid_backward, axis=0)
     H = np.concatenate((hid_forward, hid_backward))
+    print("backward =  ", hid_backward)
+    print("forward = ", hid_forward)
     print("H = ", H)
     Y = bi_cell.output(H)
     return H, Y
