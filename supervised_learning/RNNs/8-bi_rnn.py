@@ -41,7 +41,7 @@ def bi_rnn(bi_cell, X, h_0, h_t):
         h_next = bi_cell.backward(h_next, X[-step_num])
         # hid_backward = np.append(hid_backward, h_next)
         hid_backward[-(step_num + 1)] = h_next
-    hid_backward = np.flip(hid_backward, axis=0)
+    # hid_backward = np.flip(hid_backward, axis=0)
     H = np.concatenate((hid_forward, hid_backward), axis=2)
     # print("backward =  ", hid_backward)
     # print("forward = ", hid_forward)
