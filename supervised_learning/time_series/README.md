@@ -74,11 +74,48 @@ Ideally, a learning model such as an LSTM RNN is used.
 
 There are a number of preprocessing techniques to make data as usable as possible; here are some, and where/when they are used.
 
+**Structuring** date data into `datetime` objects is a useful first step. This can be done via pandas
+
+For example
+```
+import pandas as pd
+data = pd.read_csv('data_file.csv')
+data['Date'] = pd.to_datetime(data['Date'])
+data.sort_values(by=['Date'], inplace=True, ascending=True)
+#Above line will sort the values according to dates.
+
+```
+ * explained [here](https://medium.com/enjoy-algorithm/pre-processing-of-time-series-data-c50f8a3e7a98)
+
+**Imputation Techniques** can be specially implemented for datasets with missing values. The techniques used in most models cannot be used for Time Series.
+
+**Interpolation** is often used to "fill in the blanks" of Time Series data, instead of conventional Imputation techniques.
+
+
+Interpolation Methods include
+* Time-based
+* Spline
+* Linear
+
+For demonstration, [this Medium article](https://medium.com/enjoy-algorithm/pre-processing-of-time-series-data-c50f8a3e7a98) uses passengar data `passengar`, which has been [structured as above](#preprocessing):
+
+```
+from matplotlib.pyplot import figure
+import matplotlib.pyplot as plt
+figure(figsize=(12, 5), dpi=80, linewidth=10)
+plt.plot(passenger['Date'], passenger['Passengers'])
+plt.title('Air Passengers Raw Data with Missing Values')
+plt.xlabel('Years', fontsize=14)
+plt.ylabel('Number of Passengers', fontsize=14)
+plt.show()
+```
+![image of original data with missing values](https://miro.medium.com/v2/resize:fit:1372/format:webp/1*tfqNdrmL6LMjSgeoJdCIWw.png)
+
 **Normalization**: Just about all learning models will include this step as a precaution. Normalization in this context refers to compressing all numeric "input/output" values to between 0 and 1 (`[0,1)`) so that there is minimal chance it is incompatible with anything used in training.
 
 **Data Splitting** is particularly important for Time Series. In order to evaluate the forecast, we'll have to test it on data it has never seen before, but that *we* have. Data Splitting refers to dividing our historical data into "training" and "test" data. This is because we can't just make up or pull new data for testing. Everything will come from the past, and we don't want the model to see the test before it takes the test.
 
-**Imputation Techniques** can be specially implemented for datasets with missing values.
+
 
 ### Resources Consulted
 
