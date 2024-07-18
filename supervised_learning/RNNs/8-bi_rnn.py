@@ -19,4 +19,27 @@ def bi_rnn(bi_cell, X, h_0, h_t):
     h_0 = initial forward hidden state
     h_t = initial backward hidden state
     """
-    (step_count, batch_size, _) = np.shape(X)
+    (time_steps, batch_size, _) = np.shape(X)
+    hid_forward = np.array([])
+    hid_backward = np.array([])
+    h_prev = h_0
+    h_next = h_t
+    np.append(hid_forward, h_prev)
+    np.append(hid_backward, h_next)
+    print("time steps: ", time_steps)
+    for step_num in range(time_steps):
+        # run the forward and backward and append hte hidden states
+        # we'll also want the final value?
+        # we can get that by just outputting after we've finished stackign states
+
+        # terminology is weird, but I want it to prepare it's own next step
+        h_prev = bi_cell.forward(h_prev, X[step_num])
+        np.append(hid_forward, h_next)
+        # minus makes it count form the end backwards
+        h_next = bi_cell.backward(h_next, X[-step_num])
+        np.append(hid_backward, h_next)
+    hid_backward = np.flip(hid_backward, axis=0)
+    H = np.concatenate((hid_forward, hid_backward))
+    print("H = ", H)
+    Y = bi_cell.output(H)
+    return H, Y
