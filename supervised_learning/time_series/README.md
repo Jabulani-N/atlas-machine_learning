@@ -78,6 +78,9 @@ There are a number of preprocessing techniques to make data as usable as possibl
 
 **Data Splitting** is particularly important for Time Series. In order to evaluate the forecast, we'll have to test it on data it has never seen before, but that *we* have. Data Splitting refers to dividing our historical data into "training" and "test" data. This is because we can't just make up or pull new data for testing. Everything will come from the past, and we don't want the model to see the test before it takes the test.
 
+**Imputation Techniques** can be specially implemented for datasets with missing values.
+
 ### Resources Consulted
 
 * [Time Series Prediction](https://www.youtube.com/watch?v=d4Sn6ny_5LI)
+* [Preprocessing of Time Series Data](https://medium.com/enjoy-algorithm/pre-processing-of-time-series-data-c50f8a3e7a98)
