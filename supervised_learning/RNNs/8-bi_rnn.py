@@ -30,7 +30,7 @@ def bi_rnn(bi_cell, X, h_0, h_t):
     for step_num in range(time_steps):
         # run the forward and backward and append hte hidden states
         # we'll also want the final value?
-        # we can get that by just outputting after we've finished stackign states
+        # can get that by outputting after we've finished stackign states
 
         # terminology is weird, but I want it to prepare it's own next step
         h_prev = bi_cell.forward(h_prev, X[step_num])
