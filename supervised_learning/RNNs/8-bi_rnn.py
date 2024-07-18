@@ -47,4 +47,5 @@ def bi_rnn(bi_cell, X, h_0, h_t):
     # print("forward = ", hid_forward)
     # print("H = ", H)
     Y = bi_cell.output(H)
+    # Y value is currently incorrect. shpae is correct
     return H, Y
