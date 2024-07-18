@@ -34,10 +34,10 @@ def bi_rnn(bi_cell, X, h_0, h_t):
 
         # terminology is weird, but I want it to prepare it's own next step
         h_prev = bi_cell.forward(h_prev, X[step_num])
-        np.append(hid_forward, h_next)
+        hid_forward = np.append(hid_forward, h_next)
         # minus makes it count form the end backwards
         h_next = bi_cell.backward(h_next, X[-step_num])
-        np.append(hid_backward, h_next)
+        hid_backward = np.append(hid_backward, h_next)
     hid_backward = np.flip(hid_backward, axis=0)
     H = np.concatenate((hid_forward, hid_backward))
     print("backward =  ", hid_backward)
