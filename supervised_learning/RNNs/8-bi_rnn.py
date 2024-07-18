@@ -16,5 +16,7 @@ def bi_rnn(bi_cell, X, h_0, h_t):
             t = time steps
             m = batch size
             i = dimensionality of input data
+    h_0 = initial forward hidden state
+    h_t = initial backward hidden state
     """
-    pass
+    (step_count, batch_size, _) = np.shape(X)
