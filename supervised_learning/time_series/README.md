@@ -111,7 +111,43 @@ plt.show()
 ```
 ![image of original data with missing values](https://miro.medium.com/v2/resize:fit:1372/format:webp/1*tfqNdrmL6LMjSgeoJdCIWw.png)
 
-**Normalization**: Just about all learning models will include this step as a precaution. Normalization in this context refers to compressing all numeric "input/output" values to between 0 and 1 (`[0,1)`) so that there is minimal chance it is incompatible with anything used in training.
+This code implements the interpolation:
+```
+passenger[‘Linear’] = passenger[‘Passengers’].interpolate(method=’linear’)
+passenger[‘Spline order 3’] = passenger[‘Passengers’].interpolate(method=’spline’, order=3)
+passenger[‘Time’] = passenger[‘Passengers’].interpolate(method=’time’)
+methods = ['Linear', 'Spline order 3', 'Time']
+```
+which can be visualized via
+```
+from matplotlib.pyplot import figure
+import matplotlib.pyplot as plt
+for method in methods:
+    figure(figsize=(12, 4), dpi=80, linewidth=10)
+    plt.plot(passenger["Date"], passenger[method])
+    plt.title('Air Passengers Imputation using: ' + types)
+    plt.xlabel("Years", fontsize=14)
+    plt.ylabel("Number of Passengers", fontsize=14)
+    plt.show()
+```
+![interpolated data](https://miro.medium.com/v2/resize:fit:1374/format:webp/1*kSEMA0kl8CjQiMC2zgocGQ.png)
+
+At this point we can selecet the method whose results make the most sense.
+
+**Denoising** can be used to smooth data and help preserve useful information. This can be done simply with a Rolling Mean. The article demonstrates with pandas obbject representing Google's stock price: `rolling_google = google_stock_price['Open'].rolling(20).mean()`. `rolling_google` here is the denoised data.
+
+```
+plt.plot(google_stock_price['Date'], google_stock_price['Open'])
+plt.plot(google_stock_price['Date'], rolling_google)
+plt.xlabel('Date')
+plt.ylabel('Stock Price')
+plt.legend(['Open','Rolling Mean'])
+plt.show()
+```
+![visual of denoised rolling mean data](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fCxJo661otXxfUO6fPweZA.png)
+
+
+**Normalization**: Just about all learning models will include this precautionary step. Normalization in this context refers to compressing all numeric "input/output" values to between 0 and 1 (`[0,1)`) so that there is minimal chance it is incompatible with anything used in training.
 
 **Data Splitting** is particularly important for Time Series. In order to evaluate the forecast, we'll have to test it on data it has never seen before, but that *we* have. Data Splitting refers to dividing our historical data into "training" and "test" data. This is because we can't just make up or pull new data for testing. Everything will come from the past, and we don't want the model to see the test before it takes the test.
 
