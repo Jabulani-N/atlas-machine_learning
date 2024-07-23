@@ -68,6 +68,9 @@ say you have a list `wordswordswords` of words (he says "dictionary", but descri
 
 In this example, the feature "gender" is highly related to the words "boy", "girl", "king", and "queen". feature "royal", however, is only related to words "king" and "queen".
 * this example is for having a 300 dimensional matrix. think of each "feature" as a dimension, like how we can say each "word" has an `x` value, `y` value, `z` diension value... instead we have a `gender` value, `royal` value, `food` dimension value... each feature is a dimension.
+* This is still significantly **lower dimension** and a **dense matrix** (as opposed to high dimension sparse matrix we'd get froma one-hot representation.)
+
+content
 
 ## Preprocessing
 
