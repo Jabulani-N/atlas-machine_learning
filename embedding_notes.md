@@ -47,6 +47,28 @@ Here we can see it Inverse Document Frequency for "girl" calculated as `ln(3/2)`
 
 `TF-IDF` of a given word *in a given sentence* will be the `TF` of the word times the `IDF` of that word for that sentence. word = feature.
 
+## [Word Embedding](https://www.youtube.com/watch?v=pO_6Jk0QtKw)
+
+with bag of words being method 1, and TF-IDF being method 2, Word Embedding is the method 3, in a list of increasing smeantic understanding.
+* semantic meaning "similar words," like how "man" is similar to "woman" and to "adult".
+
+Word Embedding has 2 techniques:
+* word2vec
+* Glove
+
+from what I can tell, this is info common to both until the presenter specifies he is doing one or the other.
+
+say you have a list `wordswordswords` of words (he says "dictionary", but describes in the form of an ordered list object) and the word you're interested in is "man" and it is in index 5000; you can one-hot-matrix this for "man" as a list the same length as `wordswordswords` that has `0` for every index except position 5000, which has a `1`, representing "man".
+* nevermind, it is not part of embedding at all.
+* matrix with this many zeros vs so many ones is called a "sparse matrix"
+
+**Word Embedding** instead makes a matrix of features vs words to develop associasions between the two.
+
+[![woird-feature matrix visual](./image/embedding%20feature%20matrix%20-%20labelled.PNG)](https://youtu.be/pO_6Jk0QtKw?si=WlT3lOZ03cVP_LQf&t=385)
+
+In this example, the feature "gender" is highly related to the words "boy", "girl", "king", and "queen". feature "royal", however, is only related to words "king" and "queen".
+* this example is for having a 300 dimensional matrix. think of each "feature" as a dimension, like how we can say each "word" has an `x` value, `y` value, `z` diension value... instead we have a `gender` value, `royal` value, `food` dimension value... each feature is a dimension.
+
 ## Preprocessing
 
 
