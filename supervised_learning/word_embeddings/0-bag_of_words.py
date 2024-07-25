@@ -27,7 +27,7 @@ def bag_of_words(sentences, vocab=None):
     onehot_bag = np.zeros((num_of_sentences, num_of_vocab_words))
     for sentence_num in range(num_of_sentences):
         for word_num in range(num_of_vocab_words):
-            if close_enough(words[word_num], sentences[sentence_num]):
+            if words[word_num] in word_preprocessor([sentences[sentence_num]]):
                 onehot_bag[sentence_num][word_num] = 1
     return onehot_bag, words
 
