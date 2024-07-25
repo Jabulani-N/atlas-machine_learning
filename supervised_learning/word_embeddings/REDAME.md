@@ -63,8 +63,22 @@ $
 
 <details>
     <summary>plan</summary>
-if list, tuple, dict, then use " ".join(string to be concatenated)
-else, skip that step
 
-make a list of " " delimitered words
+ - [x] convert all words to lowercase
+
+
+
+ - [x] if list, tuple, dict, then use " ".join(string to be concatenated)
+
+   - [x]  else, skip that step
+
+ - [x] make a list of " " delimitered words
+
+ - [x] alphabetize the list
+
+ - [ ] create zeros arrray to be used in one-hot
+    * yes it is sparse, yes it will feel bad; that is the point
+    * zeros array will be shape (no_sentences, no_words_in_bag-of-words)
+
+ - [ ] for each word_index in words, if the word is in sentance, put that inhdex of the onehot as 1
 </details>

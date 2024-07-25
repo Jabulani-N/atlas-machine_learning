@@ -11,15 +11,24 @@ def bag_of_words(sentences, vocab=None):
     sentences = list of sentences
     vocab = list of words to use for analysis
         if = None, use all words within sentences
+
+    convert each "sentence" into a one-hot array of whether it has each word
+        words in alphabetical order
     """
-    pass
+    if vocab == None:
+        words = word_preprocessor(sentences)
+    else:
+        words = word_preprocessor(vocab)
 
 
-def word_extractor(sentences):
+def word_preprocessor(sentences):
     """
-    returns a list of individual words from a LIST of sentences
-    recieve the list of sentences, make a list of
+    returns a list of individual words from
+        string
+        list of sentences
     slays duplicates via "list(set())"
+    converts to lowercase
+    alphabetizes
     """
     if isinstance(sentences, list) or\
        isinstance(sentences, tuple) or\
@@ -28,6 +37,9 @@ def word_extractor(sentences):
     else:
         catted = sentences
 
-    words_words_words = catted.split(" ")
+    lower_catted = catted.lower()
+    words_words_words = lower_catted.split(" ")
+    # words = non-alphebetized, otherwise formatted list
     words = list(set(words_words_words))
-    return words
+    alphabetized_words = sorted(words)
+    return alphabetized_words
