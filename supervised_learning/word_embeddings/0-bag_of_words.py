@@ -20,19 +20,22 @@ def bag_of_words(sentences, vocab=None):
     num_of_sentences = np.shape(sentences)[0]
     # number_of_sentences = len(sentences)
     if vocab is None:
-        words = word_preprocessor(sentences)
+        words = sent_preprocess(sentences)
+        words = dupe_slayer(words)
     else:
-        words = word_preprocessor(vocab)
+        words = sent_preprocess(vocab)
+        words = dupe_slayer(words)
     num_of_vocab_words = len(words)
     onehot_bag = np.zeros((num_of_sentences, num_of_vocab_words))
     for sentence_num in range(num_of_sentences):
         for word_num in range(num_of_vocab_words):
-            if words[word_num] in word_preprocessor([sentences[sentence_num]]):
-                onehot_bag[sentence_num][word_num] = 1
+            onehot_bag[sentence_num][word_num] =\
+                sent_preprocess([sentences[sentence_num]]).count(
+                    words[word_num])
     return onehot_bag, words
 
 
-def word_preprocessor(sentences):
+def sent_preprocess(sentences):
     """
     returns a list of individual words from
         string
@@ -50,12 +53,16 @@ def word_preprocessor(sentences):
         catted = sentences
 
     lower_catted = catted.lower()
-    words_words_words = lower_catted.split(" ")
+    words = lower_catted.split(" ")
     # words = non-alphebetized, otherwise formatted list
-    deconjugated = deconjugate(words_words_words)
-    words = list(set(deconjugated))
-    alphabetized_words = sorted(words)
+    deconjugated = deconjugate(words)
+    alphabetized_words = sorted(deconjugated)
     return alphabetized_words
+
+
+def dupe_slayer(words_words_words):
+    """slays duplicates"""
+    return list(set(words_words_words))
 
 
 def deconjugate(words):
@@ -80,10 +87,10 @@ def close_enough(word1, word2):
     """
     dec1 = deconjugate(word1)
     dec2 = deconjugate(word2)
-    print("word 1 is", word1)
-    print("word 2 is", word2)
-    print("dec 1 is", dec1)
-    print("dec 2 is", dec2)
+    # print("word 1 is", word1)
+    # print("word 2 is", word2)
+    # print("dec 1 is", dec1)
+    # print("dec 2 is", dec2)
     if dec1 == dec2:
         return True
     else:
