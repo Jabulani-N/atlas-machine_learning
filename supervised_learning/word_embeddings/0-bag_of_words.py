@@ -82,6 +82,7 @@ def deconjugate(words):
     deconjugated = [term.replace("!", "") for term in deconjugated]
     deconjugated = [term.replace(".", "") for term in deconjugated]
     deconjugated = [term.replace("?", "") for term in deconjugated]
+    deconjugated = [term.replace("'", "") for term in deconjugated]
     return deconjugated
 
 
