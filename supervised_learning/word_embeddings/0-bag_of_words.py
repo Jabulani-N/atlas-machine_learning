@@ -27,7 +27,7 @@ def bag_of_words(sentences, vocab=None):
     onehot_bag = np.zeros((num_of_sentences, num_of_vocab_words))
     for sentence_num in range(num_of_sentences):
         for word_num in range(num_of_vocab_words):
-            if words[word_num] in sentences[sentence_num]:
+            if close_enough(words[word_num], sentences[sentence_num]):
                 onehot_bag[sentence_num][word_num] = 1
     return onehot_bag, words
 
@@ -52,10 +52,38 @@ def word_preprocessor(sentences):
     lower_catted = catted.lower()
     words_words_words = lower_catted.split(" ")
     # words = non-alphebetized, otherwise formatted list
-    deconjugated = [term.replace("'s", "") for term in words_words_words]
-    deconjugated = [term.replace("!", "") for term in deconjugated]
-    deconjugated = [term.replace(".", "") for term in deconjugated]
-    deconjugated = [term.replace("?", "") for term in deconjugated]
+    deconjugated = deconjugate(words_words_words)
     words = list(set(deconjugated))
     alphabetized_words = sorted(words)
     return alphabetized_words
+
+
+def deconjugate(words):
+    """
+    removes conjugation
+    from strings
+    in list of strings
+    """
+    deconjugated = [term.replace("'s", "") for term in words]
+    deconjugated = [term.replace("!", "") for term in deconjugated]
+    deconjugated = [term.replace(".", "") for term in deconjugated]
+    deconjugated = [term.replace("?", "") for term in deconjugated]
+    return deconjugated
+
+def close_enough(word1, word2):
+    """
+    if word1 is a conjugated form of word2
+        or vice-versa
+        or identical
+    returns true
+    """
+    dec1 = deconjugate(word1)
+    dec2 = deconjugate(word2)
+    print("word 1 is", word1)
+    print("word 2 is", word2)
+    print("dec 1 is", dec1)
+    print("dec 2 is", dec2)
+    if dec1 == dec2:
+        return True
+    else:
+        return False
