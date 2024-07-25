@@ -14,6 +14,7 @@ def bag_of_words(sentences, vocab=None):
     """
     pass
 
+
 def word_extractor(sentences):
     """
     returns a list of individual words from a LIST of sentences

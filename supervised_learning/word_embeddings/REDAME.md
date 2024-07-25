@@ -66,5 +66,5 @@ $
 if list, tuple, dict, then use " ".join(string to be concatenated)
 else, skip that step
 
-
+make a list of " " delimitered words
 </details>
