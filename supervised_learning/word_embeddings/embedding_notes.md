@@ -33,7 +33,7 @@ This even applies across languages:
 `term frequency = number of times word appears in sentence in question / number of words in sentence`
 * "word" only includes the important words keywords; it's the sentence without the "[stop keywords](#things-to-always-do)."
 
-[![tf-idf with "good" in sentence 1](./image/TF%20Good.PNG)](https://youtu.be/D2V1okCEsiE?si=9CAa3D6Um9rsupSk&t=145)
+[![tf-idf with "good" in sentence 1](../../image/TF%20Good.PNG)](https://youtu.be/D2V1okCEsiE?si=9CAa3D6Um9rsupSk&t=145)
 
 in the image above, you can see that it's a matrix of each word/feature vs which sentence is being investigated.
 
@@ -41,7 +41,7 @@ in the image above, you can see that it's a matrix of each word/feature vs which
 
 `IDF = ln(document sentence count / number of sentences including the word in question)`
 
-[![IDF calculation image](./image/IDF%20girl.PNG)](https://youtu.be/D2V1okCEsiE?si=7p2MgBEe-Tiql1k2&t=236)
+[![IDF calculation image](../../image/IDF%20girl.PNG)](https://youtu.be/D2V1okCEsiE?si=7p2MgBEe-Tiql1k2&t=236)
 
 Here we can see it Inverse Document Frequency for "girl" calculated as `ln(3/2)` for ln(3 sentences total / 2 sentences with "girl")
 
@@ -64,7 +64,7 @@ say you have a list `wordswordswords` of words (he says "dictionary", but descri
 
 **Word Embedding** instead makes a matrix of features vs words to develop associasions between the two.
 
-[![word-feature matrix visual](./image/embedding%20feature%20matrix%20-%20labelled.PNG)](https://youtu.be/pO_6Jk0QtKw?si=WlT3lOZ03cVP_LQf&t=385)
+[![word-feature matrix visual](../../image/embedding%20feature%20matrix%20-%20labelled.PNG)](https://youtu.be/pO_6Jk0QtKw?si=WlT3lOZ03cVP_LQf&t=385)
 
 In this example, the feature "gender" is highly related to the words "boy", "girl", "king", and "queen". feature "royal", however, is only related to words "king" and "queen".
 * this example is for having a 300 dimensional matrix. think of each "feature" as a dimension, like how we can say each "word" has an `x` value, `y` value, `z` diension value... instead we have a `gender` value, `royal` value, `food` dimension value... each feature is a dimension.
