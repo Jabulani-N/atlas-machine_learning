@@ -20,11 +20,15 @@ def bag_of_words(sentences, vocab=None):
     num_of_sentences = np.shape(sentences)[0]
     # number_of_sentences = len(sentences)
     if vocab is None:
-        words = sent_preprocess(sentences)
+        words = dupe_slayer(sentences)
+        words = sent_preprocess(words)
         words = dupe_slayer(words)
+        words = sent_preprocess(words)
     else:
-        words = sent_preprocess(vocab)
+        words = dupe_slayer(vocab)
+        words = sent_preprocess(words)
         words = dupe_slayer(words)
+        words = sent_preprocess(words)
     num_of_vocab_words = len(words)
     onehot_bag = np.zeros((num_of_sentences, num_of_vocab_words))
     for sentence_num in range(num_of_sentences):
@@ -61,7 +65,10 @@ def sent_preprocess(sentences):
 
 
 def dupe_slayer(words_words_words):
-    """slays duplicates"""
+    """
+    slays duplicates
+    items will no longer be in alphabetial order
+    """
     return list(set(words_words_words))
 
 
