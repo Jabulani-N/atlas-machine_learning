@@ -15,7 +15,7 @@ def bag_of_words(sentences, vocab=None):
     convert each "sentence" into a one-hot array of whether it has each word
         words in alphabetical order
     """
-    if vocab == None:
+    if vocab is None:
         words = word_preprocessor(sentences)
     else:
         words = word_preprocessor(vocab)
