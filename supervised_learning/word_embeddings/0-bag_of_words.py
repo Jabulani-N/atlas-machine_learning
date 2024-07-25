@@ -26,9 +26,9 @@ def bag_of_words(sentences, vocab=None):
         words = sent_preprocess(words)
     else:
         words = dupe_slayer(vocab)
-        words = sent_preprocess(words)
-        words = dupe_slayer(words)
-        words = sent_preprocess(words)
+        # words = sent_preprocess(words)
+        # words = dupe_slayer(words)
+        # words = sent_preprocess(words)
     num_of_vocab_words = len(words)
     onehot_bag = np.zeros((num_of_sentences, num_of_vocab_words))
     for sentence_num in range(num_of_sentences):
