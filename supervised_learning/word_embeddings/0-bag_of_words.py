@@ -25,7 +25,7 @@ def bag_of_words(sentences, vocab=None):
         words = dupe_slayer(words)
         words = sent_preprocess(words)
     else:
-        words = dupe_slayer(vocab)
+        # words = dupe_slayer(vocab)
         # words = sent_preprocess(words)
         # words = dupe_slayer(words)
         # words = sent_preprocess(words)
