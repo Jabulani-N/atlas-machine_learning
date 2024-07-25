@@ -70,6 +70,7 @@ def deconjugate(words):
     deconjugated = [term.replace("?", "") for term in deconjugated]
     return deconjugated
 
+
 def close_enough(word1, word2):
     """
     if word1 is a conjugated form of word2
