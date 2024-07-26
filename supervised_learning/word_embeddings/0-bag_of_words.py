@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-This module contains one function
+This module contains
+    string list manipulation functions
 """
 
 import numpy as np
