@@ -13,6 +13,11 @@ def word2vec_model(sentences, size=100, min_count=5,
                    iterations=5, seed=0, workers=1):
     """
     looks like it's time to learn about gensim
+    This trains a genism word2vec model.
+
+    sg = skip gram
+    cbow = continuous bag of words
+    sg = opposite of cbow
     """
     model = Word2Vec(sentences=sentences, vector_size=size,
                      window=window, min_count=min_count,
