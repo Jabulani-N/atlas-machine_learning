@@ -170,3 +170,10 @@ $
    - [ ] TF = number of times `word_in_question` is in sentence number sentenceindex
    - [ ] IDF = log(number of sentences / number of sentences that have `word_in_question`)
 </details>
+
+## Task 3
+
+
+### Resources
+
+While this was [originally pretty easy](https://stackoverflow.com/questions/71044447/attributeerror-keyedvectors-object-has-no-attribute-get-keras-embedding), you can no longer do that, and should instead [replicate the one-functionality via this](https://github.com/piskvorky/gensim/wiki/Using-Gensim-Embeddings-with-Keras-and-Tensorflow)
