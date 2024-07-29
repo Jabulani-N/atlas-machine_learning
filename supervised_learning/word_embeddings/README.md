@@ -177,3 +177,5 @@ $
 ### Resources
 
 While this was [originally pretty easy](https://stackoverflow.com/questions/71044447/attributeerror-keyedvectors-object-has-no-attribute-get-keras-embedding), you can no longer do that, and should instead [replicate the one-functionality via this](https://github.com/piskvorky/gensim/wiki/Using-Gensim-Embeddings-with-Keras-and-Tensorflow)
+
+I sucessfully (as far as I can tell) replicated this approach here: https://colab.research.google.com/drive/1P_uMUoSHx0YHAwb3VPEGINChbMhjQZl4?usp=sharing
