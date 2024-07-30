@@ -2,7 +2,7 @@
 
 Notes on Embedding [here](./embedding_notes.md)
 
-## Task 0
+## Task 0 - Bag Of Words
 
 <details>
     <summary>instructions</summary>
@@ -84,7 +84,7 @@ $
  - [ ] return that one-hot & alphebetized list of words
 </details>
 
-## Task 1
+## Task 1 - TF-IDF
 
 <details>
     <summary>instrucitons</summary>
@@ -171,7 +171,11 @@ $
    - [ ] IDF = log(number of sentences / number of sentences that have `word_in_question`)
 </details>
 
-## Task 3
+## Task 2, 4 - Word2Vec, FastText
+
+These two tasks are adjascent beacuase they are functionally identical, aside from the manner of model to be crafted.
+
+## Task 3 - Extract Word2Vec
 
 
 ### Resources
