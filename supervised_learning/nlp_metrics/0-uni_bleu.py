@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+this module
+    calculates the unigram BLEU score of a sentence
+"""
 
 import numpy as np
 import collections
