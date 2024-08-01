@@ -26,7 +26,6 @@ def ngram_bleu(references, sentence, n):
         reference_ngrams = collections.Counter()
         candidate_ngrams = collections.Counter()
 
-
         for reference in references:
             reference_ngrams.update(
                 zip(*[reference[j:] for j in range(i)]))
