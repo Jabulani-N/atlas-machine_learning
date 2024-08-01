@@ -9,8 +9,36 @@ import collections
 import math
 
 
+
 def ngram_bleu(references, sentence, n):
     """
+    this second attempt was guided by multiple explanations
+    this is a machine translation metric
+
+    references = list of reference translations
+        each is a list of words in the translation
+
+    sentence = list containing the model proposed sentence
+
+    n = size of n-gram used for evaluation
+    """
+    sentence_ngrams = calculate_ngrams(sentence, n)
+
+
+def calculate_ngrams(words, n):
+    """
+    calculates ngrams from list of words
+    words = list of words
+    n = size of n-gram used for evaluation
+    """
+    wordcount = len(words)
+    return [tuple(words[i:i+n]) for i in range(wordcount - n + 1)]
+
+
+def ngram_bleu_old(references, sentence, n):
+    """
+    first attempt that was unsuccessful.
+    kept here for reference as I recreate the function
     this is a machine translation metric
 
     references = list of reference translations
