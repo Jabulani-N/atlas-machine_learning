@@ -9,7 +9,6 @@ import collections
 import math
 
 
-
 def ngram_bleu(references, sentence, n):
     """
     this second attempt was guided by multiple explanations
