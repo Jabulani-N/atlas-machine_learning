@@ -14,7 +14,6 @@ def cumulative_bleu(references, sentence, n):
     calculates cumulative by averaging
     all ngram scores up to n
     """
-    return ngram_bleu(references, sentence, n)
     sky_high_bleu = 0
     for i in range(n, 0, -1):
         sky_high_bleu += ngram_bleu(references, sentence, i)
