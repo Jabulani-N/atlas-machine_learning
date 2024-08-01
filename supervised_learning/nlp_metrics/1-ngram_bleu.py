@@ -22,11 +22,51 @@ def ngram_bleu(references, sentence, n):
     n = size of n-gram used for evaluation
     """
     sentence_ngrams = calculate_ngrams(sentence, n)
+    # dictionary to store  counts for each word
+    sentence_counts = collections.Counter(sentence_ngrams)
+
+    max_counts = {}
+
+    for ref_sentence in references:
+        current_ref_ngrams = calculate_ngrams(ref_sentence, n)
+        current_ref_counts = collections.Counter(current_ref_ngrams)
+        # see the most times each word is used in a given translation
+        for word in current_ref_counts:
+            if word in max_counts:
+                max_counts[word] = max(
+                    max_counts[word],
+                    current_ref_counts[word])
+            else:
+                max_counts[word] = current_ref_counts[word]
+
+    clipped_counts = {word: min(count, max_counts.get(word, 0)) for word,
+                      count in sentence_counts.items()}
+
+    bleu_score = sum(clipped_counts.values())\
+        / max(sum(sentence_counts.values()), 1)
+
+    reference_lengths = [len(ref) for ref in references]
+    closest_ref_length = min(
+      reference_lengths,
+      key=lambda x: abs(len(sentence) - x))
+    # calculate brevery penalty
+    if len(sentence) < closest_ref_length:
+        brevity_penalty = math.exp(1 - closest_ref_length / len(sentence))
+    else:
+        brevity_penalty = 1.0
+
+    bleu_score = brevity_penalty * bleu_score
+    return bleu_score
 
 
 def calculate_ngrams(words, n):
     """
     calculates ngrams from list of words
+        makes a
+            1gram
+            2gram
+            3gram
+            etc...
     words = list of words
     n = size of n-gram used for evaluation
     """
