@@ -13,3 +13,7 @@ The **Math** directory was created to practice and review a number of calculus t
 # [Supervised Learning](./supervised_learning/)
 
 The **Supervised Learning** directory beigns with introductions to various concepts of ML that are done "supervised" by a human and, as of more recent work, features directories demonstrating the utilization of ML Python modules in order to evaluate or create ML models.
+
+# [Unsupervised Learning](./unsupervised_learning/)
+
+**Unsupervised Learning** contains my learning of ML that is not evaluated by a human, instead using structures such as Generative Adversarial Networks (GANs) to use "correct" data as a guide in learning to generate "realistic" data
