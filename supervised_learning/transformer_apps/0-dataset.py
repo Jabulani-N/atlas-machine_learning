@@ -7,7 +7,7 @@ import numpy
 
 class Dataset:
     def __init__(self):
-        """"""
+        """placeholder documentation"""
         self.data_train = tfds.load('ted_hrlr_translate/pt_to_en',
                                     split='train',
                                     as_supervised=True)
@@ -18,6 +18,7 @@ class Dataset:
         self.tokenizer_en = None
 
     def tokenize_dataset(self, data):
+        """placeholder documentation"""
         encoder = tfds.deprecated.text.SubwordTextEncoder
         tokenizer_pt = encoder.build_from_corpus(
             (pt.numpy() for pt, en in data), target_vocab_size=2**15
