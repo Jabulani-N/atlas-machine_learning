@@ -7,10 +7,15 @@ import numpy
 
 class Dataset:
     def __init__(self):
-        """placeholder documentation"""
+        """
+        creates a datasest of what is to be used in mtl
+        """
+        # gets an already created training dataset
+        # training portion
         self.data_train = tfds.load('ted_hrlr_translate/pt_to_en',
                                     split='train',
                                     as_supervised=True)
+        # validation portion
         self.data_valid = tfds.load('ted_hrlr_translate/pt_to_en',
                                     split='validation',
                                     as_supervised=True)
