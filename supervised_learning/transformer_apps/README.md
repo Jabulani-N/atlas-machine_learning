@@ -38,6 +38,10 @@ Returns: `tokenizer_pt`, `tokenizer_en`
 
 </details>
 
+### Potential Pitfalls
+
+Be sure the init method uses the `tokenize_dataset` method you just created in order to assign it's own tokenizers.
+
 ## Task 1
 
 <details>
@@ -52,6 +56,3 @@ detailsText
 </details>
 
 
-### Potential Pitfalls
-
-Be sure the init method from task 0 uses the `tokenize_dataset` method you already created in order to assign it's own tokenizers.
