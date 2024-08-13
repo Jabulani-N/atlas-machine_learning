@@ -28,7 +28,6 @@ class Dataset:
         self.data_valid = tfds.load('ted_hrlr_translate/pt_to_en',
                                     split='validation',
                                     as_supervised=True)
-        # the below must be None for task0, but here we need it
         self.tokenizer_pt, self.tokenizer_en =\
             self.tokenize_dataset(self.data_train)
 
@@ -48,8 +47,6 @@ class Dataset:
         tokenizer_en = encoder.build_from_corpus(
             (en.numpy() for pt, en in data), target_vocab_size=2**15
         )
-        # self.tokenizer_en = tokenizer_en
-        # self.tokenizer_pt = tokenizer_pt
         return tokenizer_pt, tokenizer_en
 
     def encode(self, pt, en):
@@ -58,16 +55,14 @@ class Dataset:
         pt = tf.Tensor holding Pt sentence
         en = tf.Tensor holding En sentence
         """
-        # data = (pt, en)
-        # tokenizer_pt, tokenizer_en = self.tokenize_dataset(data)
         start_token = [self.tokenizer_pt.vocab_size]
         end_token = [self.tokenizer_pt.vocab_size + 1]
-        # start_token = [tokenizer_pt.vocab_size]
-        # end_token = [tokenizer_pt.vocab_size + 1]
-        pt_tokens = np.array(start_token + self.tokenizer_pt.encode(pt.numpy()) + end_token)
+        pt_tokens = np.array(start_token
+                             + self.tokenizer_pt.encode(pt.numpy())
+                             + end_token)
         start_token = [self.tokenizer_en.vocab_size]
         end_token = [self.tokenizer_en.vocab_size + 1]
-        # start_token = [tokenizer_en.vocab_size]
-        # end_token = [tokenizer_en.vocab_size + 1]
-        en_tokens = np.array(start_token + self.tokenizer_en.encode(en.numpy()) + end_token)
+        en_tokens = np.array(start_token
+                             + self.tokenizer_en.encode(en.numpy())
+                             + end_token)
         return pt_tokens, en_tokens
