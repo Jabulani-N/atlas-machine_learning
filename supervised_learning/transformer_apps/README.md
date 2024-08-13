@@ -37,3 +37,21 @@ Returns: `tokenizer_pt`, `tokenizer_en`
 * `tokenizer_en` is the English tokenizer
 
 </details>
+
+## Task 1
+
+<details>
+    <summary>summaryText</summary>
+detailsText
+</details>
+
+
+<details>
+    <summary>summaryText</summary>
+detailsText
+</details>
+
+
+### Potential Pitfalls
+
+Be sure the init method from task 0 uses the `tokenize_dataset` method you already created in order to assign it's own tokenizers.
