@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """
 machine translation module
-expands upon task 0
+expands upon task 1
     class
         Dataset
             add method
-                encode(self, pt, en)
+                tf_encode(self, pt, en):
+            edit method
+                __init__
 """
 
 import tensorflow_datasets as tfds
+import tensorflow as tf
 import numpy as np
 
 
@@ -28,6 +31,10 @@ class Dataset:
                                     as_supervised=True)
         self.tokenizer_pt, self.tokenizer_en =\
             self.tokenize_dataset(self.data_train)
+        # uses tf_encode to turn train/valid data into tensor
+        # so tensorflow can more easily work with it
+        self.data_train = self.data_train.map(self.tf_encode)
+        self.data_valid = self.data_valid.map(self.tf_encode)
 
     def tokenize_dataset(self, data):
         """
@@ -63,4 +70,19 @@ class Dataset:
         en_tokens = np.array(start_token
                              + self.tokenizer_en.encode(en.numpy())
                              + end_token)
+        return pt_tokens, en_tokens
+
+    def tf_encode(self, pt, en):
+        """
+        TensorFlow wrapper for the encode method.
+        essentially turns encode method into a tensor
+        """
+        # seems to be a way to use the encode method
+        pt_tokens, en_tokens = tf.py_function(self.encode, [pt, en], [tf.int64, tf.int64])
+        # pt_tensor = tf.convert_to_tensor(pt_tokens, dtype=tf.int64)
+        # en_tensor = tf.convert_to_tensor(en_tokens, dtype=tf.int64)
+        # Set the shape of the tensors
+        pt_tokens.set_shape([None])
+        en_tokens.set_shape([None])
+        # return pt_tensor, en_tensor
         return pt_tokens, en_tokens
