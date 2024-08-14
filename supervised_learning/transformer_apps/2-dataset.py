@@ -78,7 +78,9 @@ class Dataset:
         essentially turns encode method into a tensor
         """
         # seems to be a way to use the encode method
-        pt_tokens, en_tokens = tf.py_function(self.encode, [pt, en], [tf.int64, tf.int64])
+        pt_tokens, en_tokens = tf.py_function(self.encode,
+                                              [pt, en],
+                                              [tf.int64, tf.int64])
         # pt_tensor = tf.convert_to_tensor(pt_tokens, dtype=tf.int64)
         # en_tensor = tf.convert_to_tensor(en_tokens, dtype=tf.int64)
         # Set the shape of the tensors
