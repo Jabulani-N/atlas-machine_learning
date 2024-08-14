@@ -19,6 +19,7 @@ class Dataset:
     def __init__(self):
         """
         creates a datasest of what is to be used in mtl
+        updated in a way incompatible with solving task 0
         """
         # gets an already created training dataset
         # training portion
