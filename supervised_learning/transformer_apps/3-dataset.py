@@ -36,8 +36,6 @@ class Dataset:
         self.data_valid = self.data_valid.map(self.tf_encode)
 
         # Filter the training data by length
-        # self.data_train = self.data_train.filter(
-        #     Dataset.under_max(max_len, ))
         self.data_train = self.data_train.filter(
             lambda pt, en: tf.logical_and(
                 tf.size(pt) <= max_len,
@@ -55,8 +53,6 @@ class Dataset:
             tf.data.experimental.AUTOTUNE)
 
         # Filter the validation data by length
-        # self.data_valid = self.data_valid.filter(
-        #     Dataset.under_max())
         self.data_valid = self.data_valid.filter(
             lambda pt, en: tf.logical_and(
                 tf.size(pt) <= max_len,
@@ -110,10 +106,7 @@ class Dataset:
         pt_tokens, en_tokens = tf.py_function(self.encode,
                                               [pt, en],
                                               [tf.int64, tf.int64])
-        # pt_tensor = tf.convert_to_tensor(pt_tokens, dtype=tf.int64)
-        # en_tensor = tf.convert_to_tensor(en_tokens, dtype=tf.int64)
         # Set the shape of the tensors
         pt_tokens.set_shape([None])
         en_tokens.set_shape([None])
-        # return pt_tensor, en_tensor
         return pt_tokens, en_tokens
