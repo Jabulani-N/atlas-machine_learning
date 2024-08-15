@@ -14,7 +14,7 @@ import numpy as np
 
 
 class Dataset:
-    def __init__(self):
+    def __init__(self, batch_size, max_len):
         """
         creates a datasest of what is to be used in mtl
         updated in a way incompatible with solving task 0
@@ -34,6 +34,34 @@ class Dataset:
         # so tensorflow can more easily work with it
         self.data_train = self.data_train.map(self.tf_encode)
         self.data_valid = self.data_valid.map(self.tf_encode)
+
+        # Filter the training data by length
+        # self.data_train = self.data_train.filter(
+        #     Dataset.under_max(max_len, ))
+        self.data_train = self.data_train.filter(
+            lambda pt, en: tf.logical_and(tf.size(pt) <= max_len,
+                                        tf.size(en) <= max_len))
+
+        # cache dataset to increase performance
+        self.data_train = self.data_train.cache()
+
+        # Batch the training data
+        self.data_train = self.data_train.padded_batch(
+            batch_size)
+
+        # Prefetch training data to increase performance
+        self.data_train = self.data_train.prefetch(
+            tf.data.experimental.AUTOTUNE)
+
+        # Filter the validation data by length
+        # self.data_valid = self.data_valid.filter(
+        #     Dataset.under_max())
+        self.data_valid = self.data_valid.filter(
+            lambda pt, en: tf.logical_and(tf.size(pt) <= max_len,
+                                        tf.size(en) <= max_len))
+        # Batch the validation data
+        self.data_valid = self.data_valid.padded_batch(
+            batch_size)
 
     def tokenize_dataset(self, data):
         """
