@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-function to create masks for training/validation
-suppliments the dataset class made previously
+This is a version of task4 for testing training
 """
 
 import tensorflow_datasets as tfds
