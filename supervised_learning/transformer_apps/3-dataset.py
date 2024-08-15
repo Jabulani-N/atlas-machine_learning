@@ -39,8 +39,9 @@ class Dataset:
         # self.data_train = self.data_train.filter(
         #     Dataset.under_max(max_len, ))
         self.data_train = self.data_train.filter(
-            lambda pt, en: tf.logical_and(tf.size(pt) <= max_len,
-                                        tf.size(en) <= max_len))
+            lambda pt, en: tf.logical_and(
+                tf.size(pt) <= max_len,
+                tf.size(en) <= max_len))
 
         # cache dataset to increase performance
         self.data_train = self.data_train.cache()
@@ -57,8 +58,9 @@ class Dataset:
         # self.data_valid = self.data_valid.filter(
         #     Dataset.under_max())
         self.data_valid = self.data_valid.filter(
-            lambda pt, en: tf.logical_and(tf.size(pt) <= max_len,
-                                        tf.size(en) <= max_len))
+            lambda pt, en: tf.logical_and(
+                tf.size(pt) <= max_len,
+                tf.size(en) <= max_len))
         # Batch the validation data
         self.data_valid = self.data_valid.padded_batch(
             batch_size)
