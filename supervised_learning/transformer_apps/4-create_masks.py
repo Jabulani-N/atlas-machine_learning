@@ -39,17 +39,17 @@ def create_masks(inputs, target):
     encoder_mask = encoder_mask[:, tf.newaxis, tf.newaxis, :]
     # do the same thing to create target mask
     target_mask = pad_mask(target, 0)[:, tf.newaxis, tf.newaxis, :]
+    # do the same thing to create decoder mask
+    decoder_mask = pad_mask(target, 0)[:, tf.newaxis, tf.newaxis, :]
 
     # Create the lookahead mask for the decoder
     seq_len_out = tf.shape(target)[1]
-    lookahead_mask = 1 - tf.linalg.band_part(tf.ones((seq_len_out, seq_len_out)), -1, 0)  # Shape (seq_len_out, seq_len_out)
-    lookahead_mask = tf.cast(lookahead_mask, tf.float32)  # Convert to float for masking
+    lookahead_mask = 1 - tf.linalg.band_part(tf.ones((seq_len_out, seq_len_out)), -1, 0)
+    # Convert to float for masking  # Shape (seq_len_out, seq_len_out)
+    lookahead_mask = tf.cast(lookahead_mask, tf.float32)
 
     # Combine the lookahead mask and target padding mask
-    combined_mask = tf.maximum(lookahead_mask, target_mask)  # Shape (batch_size, 1, seq_len_out, seq_len_out)
-
-    # Create the decoder mask (same as encoder mask but for target)
-    decoder_mask = tf.cast(tf.equal(target, 0), tf.float32)  # Assuming 0 is the padding token
-    decoder_mask = decoder_mask[:, tf.newaxis, tf.newaxis, :]  # Shape (batch_size, 1, 1, seq_len_out)
+    # Shape (batch_size, 1, seq_len_out, seq_len_out)
+    combined_mask = tf.maximum(lookahead_mask, target_mask)
 
     return encoder_mask, combined_mask, decoder_mask
