@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+script that loops a bot saying 'Q:'
+stops looping when user says a farewell
+"""
 
 prompt = "Q: "
 loop = True
