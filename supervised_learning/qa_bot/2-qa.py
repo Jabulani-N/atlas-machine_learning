@@ -110,4 +110,7 @@ def answer_loop(reference):
             reply(answer)
             continue
         # only triggers if user did not give a farewell
+        answer = question_answer(user_said, reference)
+        if answer == "":
+            answer = "Sorry, I do not understand your question."
         reply(answer)
