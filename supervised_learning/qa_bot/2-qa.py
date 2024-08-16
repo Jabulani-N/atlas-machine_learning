@@ -13,11 +13,6 @@ import tensorflow_hub as hub
 from transformers import BertTokenizer
 
 
-prompt = "Q: "
-loop = True
-answer = None
-
-
 def question_answer(question, reference):
     """
     question = string
@@ -100,6 +95,9 @@ def answer_loop(reference):
     putting in function allows picking a reference
         associated with loop
     """
+    prompt = "Q: "
+    loop = True
+    answer = None
     while loop:
         # Get user input
         user_said = input(prompt)
