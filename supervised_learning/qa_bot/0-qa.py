@@ -21,8 +21,9 @@ def question_answer(question, reference):
     tokenizer = BertTokenizer.from_pretrained(
         'bert-large-uncased-whole-word-masking-finetuned-squad')
     # model from tf hub
-    model = hub.load(
-        "https://www.kaggle.com/models/seesee/bert/TensorFlow2/uncased-tf2-qa/1")
+    model_address = "https://www.kaggle.com/models"
+    model_address += "/seesee/bert/TensorFlow2/uncased-tf2-qa/1"
+    model = hub.load(model_address)
     # token creation
     quest_tokens = tokenizer.tokenize(question)
     ref_tokens = tokenizer.tokenize(reference)
