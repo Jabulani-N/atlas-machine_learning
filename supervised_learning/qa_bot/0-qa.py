@@ -19,12 +19,10 @@ def question_answer(question, reference):
         If no answer is found, return None
     """
     tokenizer = BertTokenizer.from_pretrained(
-        'bert-large-uncased-whole-word-\
-            masking-finetuned-squad')
+        'bert-large-uncased-whole-word-masking-finetuned-squad')
     # model from tf hub
     model = hub.load(
-        "https://www.kaggle.com/models/seesee\
-            /bert/TensorFlow2/uncased-tf2-qa/1")
+        "https://www.kaggle.com/models/seesee/bert/TensorFlow2/uncased-tf2-qa/1")
     # token creation
     quest_tokens = tokenizer.tokenize(question)
     ref_tokens = tokenizer.tokenize(reference)
@@ -37,8 +35,23 @@ def question_answer(question, reference):
     # record the tokens that identify types
     type_ids = [0] * (1 + len(quest_tokens) + 1) +\
                [1] * (len(ref_tokens) + 1)
-
-    word_ids, input_mask, type_ids = map(
+    # convert to tensor
+    token_ids, all_mask, type_ids = map(
         lambda t: tf.expand_dims(
             tf.convert_to_tensor(
-                t, dtype=tf.int32), 0), (word_ids, input_mask, type_ids))
+                t, dtype=tf.int32), 0), (token_ids, all_mask, type_ids))
+    # ask the model our question
+    models_answer = model([token_ids, all_mask, type_ids])
+    # identify start and end points of quoted snippet
+    answer_start, answer_end = bert_answer_coord(models_answer)
+    answer_end = answer_end + 1  # to include idx of last tok
+    answer_tokens = all_tokens[answer_start:answer_end]
+    answer = tokenizer.convert_tokens_to_string(answer_tokens)
+    return answer
+
+
+def bert_answer_coord(models_answer):
+    """returns a model's answer's start and end"""
+    hajimari = tf.argmax(models_answer[0][0][1:]) + 1
+    owari = tf.argmax(models_answer[1][0][1:]) + 1
+    return hajimari, owari
