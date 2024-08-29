@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 """returns a gym environment attirbute"""
 
-# import gym
 import numpy as np
 
 
