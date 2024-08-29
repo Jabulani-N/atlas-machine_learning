@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 """returns a gym environment attirbute"""
 
-import gym
+# import gym
+import numpy as np
 
 
 def q_init(env):
@@ -9,4 +10,8 @@ def q_init(env):
     env = FrozenLakeEnv instance
     Returns:  Q-table as numpy.ndarray of zeros
     """
-    pass
+    # these are dimensions of the q-table
+    obs_count = env.observation_space.n
+    act_count = env.action_space.n
+    empty_q = np.zeros((obs_count, act_count))
+    return empty_q

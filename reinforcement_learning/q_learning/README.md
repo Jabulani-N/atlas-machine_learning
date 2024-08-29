@@ -85,6 +85,8 @@ $
 
 ## Task 1
 
+![q-table example](./img/q-table%20example.PNG)
+
 <details>
     <summary>Instructions</summary>
 
