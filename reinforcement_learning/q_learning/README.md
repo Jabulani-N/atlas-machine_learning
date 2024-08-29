@@ -158,3 +158,52 @@ print("Data Type:", env.action_space.dtype if hasattr(env.action_space, 'dtype')
 
 </details>
 
+## Task 2
+
+<details>
+    <summary>Instructions</summary>
+
+
+Write a function `def epsilon_greedy(Q, state, epsilon):` that uses epsilon-greedy to determine the next action:
+
+
+* `Q` is a `numpy.ndarray` containing the q-table
+
+* `state` is the current state
+
+* `epsilon` is the epsilon to use for the calculation
+
+* You should sample `p` with `numpy.random.uniformn` to determine if your algorithm should explore or exploit
+
+* If exploring, you should pick the next action with `numpy.random.randint` from all possible actions
+Returns: the next action index
+
+</details>
+
+<details>
+    <summary>Test Code</summary>
+
+```
+$ cat 2-main.py
+#!/usr/bin/env python3
+
+load_frozen_lake = __import__('0-load_env').load_frozen_lake
+q_init = __import__('1-q_init').q_init
+epsilon_greedy = __import__('2-epsilon_greedy').epsilon_greedy
+import numpy as np
+
+desc = [['S', 'F', 'F'], ['F', 'H', 'H'], ['F', 'F', 'G']]
+env = load_frozen_lake(desc=desc)
+Q = q_init(env)
+Q[7] = np.array([0.5, 0.7, 1, -1])
+np.random.seed(0)
+print(epsilon_greedy(Q, 7, 0.5))
+np.random.seed(1)
+print(epsilon_greedy(Q, 7, 0.5))
+$ ./2-main.py
+2
+0
+$
+```
+
+</details>
