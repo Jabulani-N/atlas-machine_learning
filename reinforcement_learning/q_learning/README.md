@@ -130,7 +130,7 @@ $
 </details>
 
 <details>
-    <summary>According to AI, this is a list of the possible attributes in a gym environment:</summary>
+    <summary> List of the possible attributes in a gym environment (According to a chatbot:)</summary>
 
 
 ```
