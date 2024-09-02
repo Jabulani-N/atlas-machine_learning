@@ -207,3 +207,20 @@ $
 ```
 
 </details>
+
+Epsilon is the chance of "greeding" to gamble (try new stuff) in hopes of winning it big(ger.) Naturaly, we have to start at Epsilon = 1 at first, if we don't start off with any prior knowledge.
+
+The **Action Index** is just a number; it refers to action we're taking: action ID 0, 1, 2... and so on. it's jsut an int.
+- I can use the Q-table's shape to identify the number of actions possible
+- I'll need to find the formula epsilon greedy uses to weight all the possible actions, since there's more than just 2
+  - it *might* be just debating whether to take the max profit route vs a random route, but we'll want to check.
+
+### Resources
+
+[![vid explaining epsiolon greedy](https://img.youtube.com/vi/mo96Nqlo1L8/0.jpg)](https://youtu.be/mo96Nqlo1L8?si=l6xKlZIOj2O8keVk&t=55)
+
+* vid explaining epsilon greedy
+
+[code example(s?)](https://github.com/simoninithomas/Deep_reinforcement_learning_Course/blob/master/Q%20learning/FrozenLake/Q%20Learning%20with%20FrozenLake.ipynb) exploring frozenlake
+
+* search `Step 3: Create the hyperparameters`

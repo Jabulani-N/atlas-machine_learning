@@ -10,4 +10,5 @@ def epsilon_greedy(Q, state, epsilon):
     state = current state
     epsilon = epsilon used for  calculation
     """
-    pass
+    # clarity rename
+    qtable = Q
