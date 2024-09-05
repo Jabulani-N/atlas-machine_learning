@@ -10,6 +10,8 @@ def epsilon_greedy(Q, state, epsilon):
     state = current state
         int
     epsilon = epsilon used for  calculation
+    returns action_index
+        int
     """
     # clarity
     qtable = Q

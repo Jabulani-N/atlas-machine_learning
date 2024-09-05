@@ -224,3 +224,9 @@ The **Action Index** is just a number; it refers to action we're taking: action 
 [code example(s?)](https://github.com/simoninithomas/Deep_reinforcement_learning_Course/blob/master/Q%20learning/FrozenLake/Q%20Learning%20with%20FrozenLake.ipynb) exploring frozenlake
 
 * search `Step 3: Create the hyperparameters`
+
+## Task 3
+
+#### Resource
+
+https://zoo.cs.yale.edu/classes/cs470/materials/hws/hw7/FrozenLake.html
