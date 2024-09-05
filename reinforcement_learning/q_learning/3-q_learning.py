@@ -35,7 +35,6 @@ def train(env, Q, episodes=5000, max_steps=100,
 
         for step in range(max_steps):
             act_idx = epsilon_greedy(qtable, state, current_epsilon)
-            print("step results: ", env.step(act_idx))
             new_state, episode_reward, done, _, _ = env.step(act_idx)
             print("episode_reward is: ", episode_reward)
 
@@ -59,6 +58,7 @@ def train(env, Q, episodes=5000, max_steps=100,
             current_epsilon = decayed_epsilon
         else:
             current_epsilon = min_epsilon
-        np.append(episode_reward, total_rewards)
+        # np.append(total_rewards, episode_reward)
+        total_rewards.append(episode_reward)
         print("total rewards = ", total_rewards)
         return qtable, total_rewards
