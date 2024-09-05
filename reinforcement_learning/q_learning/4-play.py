@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """plays a game via full ecxploit"""
 
 import numpy as np

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """returns a gym environment attirbute"""
 
 import numpy as np
