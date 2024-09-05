@@ -53,7 +53,8 @@ def train(env, Q, episodes=5000, max_steps=100,
             state = new_state
 
             if done:
-                step = max_steps
+                # step = max_steps
+                break
         # epsilon decay between episodes
         decayed_epsilon = current_epsilon - epsilon_decay
         if decayed_epsilon >= min_epsilon:
