@@ -15,12 +15,12 @@ def play(env, Q, max_steps=100):
     epsilon = 0
     # clarity
     qtable = Q
-    state, _ = env.reset()
+    state = env.reset()
     episode_reward = 0
     for step in range(max_steps):
         print(env.render())
         act_idx = epsilon_greedy(qtable, state, epsilon)
-        new_state, step_reward, done, _, _ = env.step(act_idx)
+        new_state, step_reward, done, _ = env.step(act_idx)
         # display
         episode_reward += step_reward
     # the below is almost exactly pasted from task3

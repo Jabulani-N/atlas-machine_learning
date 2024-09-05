@@ -28,14 +28,14 @@ def train(env, Q, episodes=5000, max_steps=100,
     qtable = Q
     current_epsilon = epsilon
     for episode in range(episodes):
-        state, _ = env.reset()
+        state = env.reset()
         # print("state is: ", state, type(state))
         # episode_reward = 0
         done = False
 
         for step in range(max_steps):
             act_idx = epsilon_greedy(qtable, state, current_epsilon)
-            new_state, episode_reward, done, _, _ = env.step(act_idx)
+            new_state, episode_reward, done, _ = env.step(act_idx)
             # print("act index is: ", act_idx)
             # print("episode_reward is: ", episode_reward)
 
