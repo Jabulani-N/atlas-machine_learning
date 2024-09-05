@@ -31,6 +31,7 @@ def train(env, Q, episodes=5000, max_steps=100,
         state, _ = env.reset()
         print("state is: ", state, type(state))
         # episode_reward = 0
+        done = False
 
         for step in range(max_steps):
             act_idx = epsilon_greedy(qtable, state, current_epsilon)
@@ -45,7 +46,7 @@ def train(env, Q, episodes=5000, max_steps=100,
             # print("qtable updated to: ", qtable)
 
             # When the agent falls in a hole,  reward updated to -1
-            # identified because gameover despite no loot
+            # because gameover despite no loot
             if episode_reward == 0 and done:
                 episode_reward = -1
             state = new_state
@@ -58,5 +59,6 @@ def train(env, Q, episodes=5000, max_steps=100,
             current_epsilon = decayed_epsilon
         else:
             current_epsilon = min_epsilon
-        np.append(total_rewards, episode_reward)
+        np.append(episode_reward, total_rewards)
+        print("total rewards = ", total_rewards)
         return qtable, total_rewards

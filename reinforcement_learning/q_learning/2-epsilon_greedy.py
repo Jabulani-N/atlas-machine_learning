@@ -18,7 +18,7 @@ def epsilon_greedy(Q, state, epsilon):
     _, act_count = np.shape(qtable)
     state_row = qtable[state]
 
-    greed = np.random.uniform(0.0, 1.0) > epsilon
+    greed = np.random.uniform(0.0, 1.0) < epsilon
     if greed:
         return greed_is_good(act_count)
     else:
