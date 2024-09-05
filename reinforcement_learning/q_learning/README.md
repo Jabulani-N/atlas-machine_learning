@@ -1,4 +1,8 @@
-# q learning
+# q learning - Human Readable Rendering Branch
+
+## !
+
+This branch exists with no intent to be merged to Main, but to feature a syntax of code that works after the imports needed for the Deep Q Learning project. This creates results slightly differnt from those expected by the task, due to syntax changes.
 
 ## Installing OpenAI’s Gym
 
