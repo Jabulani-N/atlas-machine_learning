@@ -21,3 +21,5 @@ pip install --user keras-rl
 [Train a Deep Q Network with TF-Agents](https://www.tensorflow.org/agents/tutorials/1_dqn_tutorial)
 
 [this seems to be an example of making an atari environment using keras taht runs any of multiple atari games](https://github.com/keras-rl/keras-rl/blob/master/examples/dqn_atari.py). we should be able to alter it slightly to directly begin breakout.
+
+We'll need to specifically look up how to ipliment the `GreedyQPolicy`
