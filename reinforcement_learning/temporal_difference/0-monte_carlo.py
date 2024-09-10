@@ -42,13 +42,14 @@ def monte_carlo(env, V, policy,
             if terminal:
                 break
 
-        # Calculate return,  update value table estimates
+        # Calculate return, update value table estimates
         G = 0
-        for state, reward in reversed(episode_data):
+        for state_g, reward in reversed(episode_data):
             G = gamma * G + reward
 
-            returns[state].append(G)
+            returns[state_g].append(G)
             # V[state] += alpha * (G - V[state])
-            V[state] += alpha * np.mean(returns[state])
+            V[state_g] += alpha * np.mean(returns[state_g])
+            # V[state] = np.mean(returns[state])
 
     return V
