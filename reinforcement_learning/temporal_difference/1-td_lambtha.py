@@ -30,9 +30,11 @@ def td_lambtha(
     """
     for ep_num in range(episodes):
         elig_trace = np.zeros(V.shape)
-        state = env.reset()
+        current_state = env.reset()
 
         for step in range(max_steps):
             # this bit is hte same as monte carlo
-            action = policy(state)
+            action = policy(current_state)
             next_state, reward, terminal, _ = env.step(action)
+            # TD Error
+            delta = reward + gamma * V[next_state] - V[current_state]
