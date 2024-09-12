@@ -35,6 +35,7 @@ def td_lambtha(
         current_state = env.reset()
 
         for step_num in range(max_steps):
+            # I should make a `step` helper function for clarity
             # this bit is the same as monte carlo
             action = policy(current_state)
             next_state, reward, terminal, _ = env.step(action)
