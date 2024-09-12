@@ -50,4 +50,4 @@ where α is the learning rate, and δ is the TD error, defined as:
   * I believe this is before we've actually updated that section of the V table
 * `V(s)` = estimated value of current state
   * is this simply using the value we already have too?
-    * and hten we update it based on error function?
+    * and then we update it based on error function?
