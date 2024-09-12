@@ -99,7 +99,7 @@ def policy(s):
         else:
             return UP
 
-V = np.where(env.desc == b'H', -1, 1).reshape(64).astype('float64') 
+V = np.where(env.desc == b'H', -1, 1).reshape(64).astype('float64')
 np.set_printoptions(precision=4)
 env.seed(0)
 print(td_lambtha(env, V, policy, 0.9).reshape((8, 8)))
