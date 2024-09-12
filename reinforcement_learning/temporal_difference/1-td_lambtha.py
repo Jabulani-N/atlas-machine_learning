@@ -47,7 +47,7 @@ def td_lambtha(
                 V[statenum] += alpha * delta * elig_trace[statenum]
                 # this can be compressed into a single line by
                 #   directly assigning current state to this value
-                # only if this happens before updating V
+                #   only if this happens before updating V
                 elig_trace[statenum] *= gamma * lambtha
             current_state = next_state
             if terminal:
