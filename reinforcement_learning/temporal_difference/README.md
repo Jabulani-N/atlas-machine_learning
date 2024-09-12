@@ -140,8 +140,10 @@ Value Function Update: The value function estimate `V(s)` is updated for all sta
        * I'm currently using the current state condition in my code, so lambtha bay or may not be used
          * ... although, I could theoretically run a different loop to just calculate all of these
          * I may actually do both of them in series, since all e's start at 0 until we add the 1.
-           * this can be compressed as simply gamma times lambtha
+           * this is what I did.
 
+This blog post has a fun (~~formula~~)filled section going over eligibility traces.
+* search `Eligibility traces and who the hell is to blame for this reward`
 
 where `α` is the learning rate, and `δ` is the TD error, defined as:
 
