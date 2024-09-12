@@ -35,7 +35,7 @@ def td_lambtha(
         current_state = env.reset()
 
         for step_num in range(max_steps):
-            # this bit is hte same as monte carlo
+            # this bit is the same as monte carlo
             action = policy(current_state)
             next_state, reward, terminal, _ = env.step(action)
             # TD Error
@@ -43,9 +43,13 @@ def td_lambtha(
             # eligibility only assigned to sates actually visited
             elig_trace[current_state] += 1
             for statenum in range(num_states):
-                # this can be compressed into a single line by
-                #   directly assigning current state to this value
-                elig_trace[statenum] *= gamma * lambtha
                 # update V
                 V[statenum] += alpha * delta * elig_trace[statenum]
+                # this can be compressed into a single line by
+                #   directly assigning current state to this value
+                # only if this happens before updating V
+                elig_trace[statenum] *= gamma * lambtha
+            current_state = next_state
+            if terminal:
+                break
     return V
