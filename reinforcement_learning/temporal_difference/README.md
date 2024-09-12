@@ -34,11 +34,11 @@ That is the general logic we'll be following to create the monte carlo policy ev
 
 ## Task 1 - TD(λ)
 
-Value Function Update: The value function estimate V(s) is updated for all states s according to the following rule:
+Value Function Update: The value function estimate `V(s)` is updated for all states s according to the following rule:
 
-V(s) = V(s) + α * δ * e(s)
+`V(s) = V(s) + α * δ * e(s)`
 
-where α is the learning rate, and δ is the TD error, defined as:
+where `α` is the learning rate, and `δ` is the TD error, defined as:
 
 `δ = r + γ * V(s') - V(s)`
 
