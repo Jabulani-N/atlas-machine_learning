@@ -14,7 +14,7 @@ def td_lambtha(
         alpha=0.1,
         gamma=0.99):
     """
-    env = openai gym environment
+    env = openai environment environment
     V = initial value estimate
         np.ndarray
             shape = (s,)

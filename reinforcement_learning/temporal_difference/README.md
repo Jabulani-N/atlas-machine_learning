@@ -158,3 +158,10 @@ where `α` is the learning rate, and `δ` is the TD error, defined as:
 * `V(s)` = estimated value of current state
   * is this simply using the value we already have too?
     * and then we update it based on error function?
+
+
+## Task 2 - SARSA(λ)
+
+instruciotns and test code here
+
+[this person](https://github.com/farkoo/N-Step-SARSA-Lambda-SARSA/blob/master/WindyGridworld.py) has an application that seems to utilize the same logic we'll want to use in the funciton `def n_step_sarsa(env, n, alpha, gamma, epsilon, num_episodes):`.
