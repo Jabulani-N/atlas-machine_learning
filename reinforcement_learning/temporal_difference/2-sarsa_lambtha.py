@@ -52,7 +52,8 @@ def sarsa_lambtha(env, Q, lambtha, episodes=5000, max_steps=100,
 
             # TD Error
             delta = reward + gamma * \
-                qtable[next_state, next_action] - qtable[current_state, current_action]
+                qtable[next_state, next_action] -\
+                qtable[current_state, current_action]
             # eligibility only assigned to sates actually visited
             elig_trace[current_state, current_action] += 1
             qtable += alpha * delta * elig_trace
