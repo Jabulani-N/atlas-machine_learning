@@ -18,7 +18,7 @@ def policy(matrix, weight):
 
 def softmax(z):
     """
-    copied from a previous project
+    based on a previous project
     calculate softmax of an array
     """
     # Subtract the maximum value for numerical stability
