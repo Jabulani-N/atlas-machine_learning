@@ -34,3 +34,35 @@ def matrix_softmax(the_list, the_matrix, bias=0):
     bias exists as a 'just in case'
     """
     return softmax(np.dot(the_matrix, the_list) + bias)
+
+
+def policy_gradient(state, weight):
+    """
+    computes monte-carlo policy gradient
+    state = matrix of current observation of env
+    weight = matrix of random weight
+
+    return
+        action
+        gradient
+    """
+    # Get action probabilities from the policy function
+    action_probs = policy(state, weight)
+
+    # Sample an action based on the probabilities
+    action = np.random.choice(np.arange(len(action_probs)), p=action_probs)
+
+    # the below seems irrrelevant
+    # Assume we have a function to get the reward for the action taken
+    # reward = get_reward(state, action)  # Placeholder for actual reward
+    # function
+
+    # Compute the gradient
+    gradient = np.zeros_like(weight)
+    for i in range(len(action_probs)):
+        # The gradient is the reward times the derivative of the log
+        # probability
+        gradient[:, i] = (reward - np.mean(reward)) * \
+            (action_probs[i] * (1 - action_probs[i])) * state
+
+    return action, gradient
