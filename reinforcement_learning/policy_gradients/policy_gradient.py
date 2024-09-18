@@ -13,7 +13,8 @@ def policy(matrix, weight):
     matrix = input matrix
     weight = matrix input policy
     """
-    return matrix_softmax(weight, matrix)
+    policy = matrix_softmax(weight, matrix)
+    return policy
 
 
 def softmax(z):

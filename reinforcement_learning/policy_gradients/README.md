@@ -54,4 +54,6 @@ $
 
 The basic ask here is to make a softmax funciton that runs through using the matrix and weight, like our older neural network projects use for activation funcitons.
 
+* softmax takes a vector (which could be a row or column of a matrix) and transforms it so that the elements sum to 1, making them interpretable as probabilities
+
 I used my previous [implimentation of softmax](https://github.com/Jabulani-N/atlas-machine_learning/blob/43b46625e3b830b60704cec2f7c577ec5a8f5769/supervised_learning/regularization/4-dropout_forward_prop.py#L43) to do the math here, and (effectively) updated it to handle the matrixes and do hte dot products for me.
