@@ -19,11 +19,11 @@ def policy(matrix, weight):
 def softmax(z):
     """
     copied from a previous project
-    calculate softmax of a float
+    calculate softmax of an array
     """
     # Subtract the maximum value for numerical stability
-    exp_z = np.exp(z - np.max(z))
-    return exp_z / exp_z.sum(axis=0, keepdims=True)
+    exp_z = np.exp(z - np.max(z, axis=-1, keepdims=True))
+    return exp_z / exp_z.sum(axis=-1, keepdims=True)
 
 
 def matrix_softmax(the_list, the_matrix, bias=0):
