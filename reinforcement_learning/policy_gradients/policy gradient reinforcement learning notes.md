@@ -1,7 +1,7 @@
 notes from [how policy gradient reinforcement learning works](https://www.youtube.com/watch?v=A_2U6Sx67sE) video
 
-use deep neurla net to approx the policy
-- uses softmax activation funciton
+use deep neural network to approx the policy
+- **uses softmax activation funciton**
 
 uses backpropagation after each episode for updates of 
 
