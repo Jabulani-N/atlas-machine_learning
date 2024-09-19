@@ -73,7 +73,7 @@ def policy_gradient(state, weight):
         # print("state:", state)
         # print("action_probs[i]:", action_probs[i])
         # print("(1 - action_probs[i]):", (1 - action_probs[i]))
-        # print("state * (1 - action_probs[i]):", state * (1 - action_probs[i]))
+        # print("state * (1 - action_probs[i]):",state * (1 - action_probs[i]))
         # print("-state * action_probs[i]:", -state * action_probs[i])
         if i == action:
             # action is seleceted action
