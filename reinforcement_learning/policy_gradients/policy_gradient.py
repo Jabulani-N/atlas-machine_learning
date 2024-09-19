@@ -55,21 +55,11 @@ def policy_gradient(state, weight):
     # Sample an action based on the probabilities
     action = np.random.choice(
         np.arange(len(action_probs)), p=action_probs)
-    # print("action: ", action)
-
     # function
 
     # Compute the gradient
     gradient = np.zeros_like(weight)
     for i in range(len(action_probs)):
-
-        # print("contents:")
-        # print("gradient[:, i]:", gradient[:, i])
-        # print("state:", state)
-        # print("action_probs[i]:", action_probs[i])
-        # print("(1 - action_probs[i]):", (1 - action_probs[i]))
-        # print("state * (1 - action_probs[i]):",state * (1 - action_probs[i]))
-        # print("-state * action_probs[i]:", -state * action_probs[i])
         if i == action:
             # action is seleceted action
             # flatten used to ensure alignment
