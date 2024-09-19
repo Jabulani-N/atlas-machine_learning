@@ -129,6 +129,8 @@ $
 The [Temporal Difference](../temporal_difference/) directory also has a [Monte Carlo](../temporal_difference/0-monte_carlo.py) function, so we can probably base what we do on that.
 * It may not be related. Investigating.
 
+`policy` is the function, so I just have to take the gradient of the function `policy` with respect to
+
 ### resources
 
 https://colab.research.google.com/github/jorditorresBCN/Deep-Reinforcement-Learning-Explained/blob/master/DRL_13_14_Monte_Carlo.ipynb
