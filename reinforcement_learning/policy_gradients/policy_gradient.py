@@ -41,6 +41,7 @@ def policy_gradient(state, weight):
     computes monte-carlo policy gradient
     state = matrix of current observation of env
         shape = (1,4)
+            not set in stone
     weight = matrix of random weight
 
     return
@@ -54,7 +55,7 @@ def policy_gradient(state, weight):
     # Sample an action based on the probabilities
     action = np.random.choice(
         np.arange(len(action_probs)), p=action_probs)
-    print("action: ", action)
+    # sprint("action: ", action)
     # the below seems irrrelevant as we don't have a reward
     # Assume we have a function to get the reward for the action taken
     # reward = get_reward(state, action)  # Placeholder for actual reward
@@ -75,10 +76,10 @@ def policy_gradient(state, weight):
         # print("state * (1 - action_probs[i]):", state * (1 - action_probs[i]))
         # print("-state * action_probs[i]:", -state * action_probs[i])
         if i == action:
-            gradient[:, i] = state.flatten() * (1 - action_probs[i]
-                                                )  # For the selected action
+            # action is seleceted action
+            # flatten used to ensure alignment
+            gradient[:, i] = state.flatten() * (1 - action_probs[i])
         else:
-            # For the non-selected actions
             gradient[:, i] = -state.flatten() * action_probs[i]
 
     return action, gradient
