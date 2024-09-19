@@ -55,19 +55,14 @@ def policy_gradient(state, weight):
     # Sample an action based on the probabilities
     action = np.random.choice(
         np.arange(len(action_probs)), p=action_probs)
-    # sprint("action: ", action)
-    # the below seems irrrelevant as we don't have a reward
-    # Assume we have a function to get the reward for the action taken
-    # reward = get_reward(state, action)  # Placeholder for actual reward
+    # print("action: ", action)
+
     # function
 
     # Compute the gradient
     gradient = np.zeros_like(weight)
     for i in range(len(action_probs)):
-        # The gradient is the reward times the derivative of the log
-        # probability
-        # gradient[:, i] = (reward - np.mean(reward)) * \
-        #     (action_probs[i] * (1 - action_probs[i])) * state
+
         # print("contents:")
         # print("gradient[:, i]:", gradient[:, i])
         # print("state:", state)
