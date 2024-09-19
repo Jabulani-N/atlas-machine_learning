@@ -61,7 +61,7 @@ def policy_gradient(state, weight):
     gradient = np.zeros_like(weight)
     for i in range(len(action_probs)):
         if i == action:
-            # action is seleceted action
+            # if action is seleceted action
             # flatten used to ensure alignment
             gradient[:, i] = state.flatten() * (1 - action_probs[i])
         else:
