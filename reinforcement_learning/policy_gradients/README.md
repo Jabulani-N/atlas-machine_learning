@@ -135,4 +135,4 @@ The [Temporal Difference](../temporal_difference/) directory also has a [Monte C
 
 https://colab.research.google.com/github/jorditorresBCN/Deep-Reinforcement-Learning-Explained/blob/master/DRL_13_14_Monte_Carlo.ipynb
 
-[chain of gpt input](https://you.com/search?q=given+policy+function+%60policy%60%2C+how+do+I+write+a+f&cid=c1_f3c4aeef-3f2e-4ceb-85de-bc9e7eaf1fc0&tbm=youchat)
+[GPT Transcript](https://you.com/search?q=given+policy+function+%60policy%60%2C+how+do+I+write+a+f&cid=c1_f3c4aeef-3f2e-4ceb-85de-bc9e7eaf1fc0&tbm=youchat)
