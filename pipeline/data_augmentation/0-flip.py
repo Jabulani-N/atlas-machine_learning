@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """placeholder doc"""
 
-import numpy as np
 import tensorflow as tf
 
 
