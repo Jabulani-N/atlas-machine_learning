@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""
+pandas dataframe manipulation
+
+converts timestamp column to datetime
+    renmaes it to datetime
+reformats datetime
+extracts specific columns
+"""
 
 import pandas as pd
 from_file = __import__('2-from_file').from_file
