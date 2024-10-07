@@ -2,7 +2,7 @@
 """
 pandas dataframe manipulation
 
-removed a designated col
+removes a designated col
 inferrs designated row,col value by previous row
 inferrs designated row,col vlaue by designated col
 inferrs designated row,col value by defaul value

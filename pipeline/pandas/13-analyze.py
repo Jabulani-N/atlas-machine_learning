@@ -2,9 +2,8 @@
 """
 pandas dataframe manipulation
 
-sorts dataframe
-transposes dataframe
-    meaning rotates so columns become rows & vice-versa
+calculates descriptive stats
+    for specified columns
 """
 
 import pandas as pd
@@ -12,6 +11,6 @@ from_file = __import__('2-from_file').from_file
 
 df = from_file('coinbaseUSD_1-min_data_2014-12-01_to_2019-01-09.csv', ',')
 
-df = df.sort_values(by="Timestamp", ascending=False).transpose()
+stats = None
 
-print(df.tail(8))
+print(stats)
