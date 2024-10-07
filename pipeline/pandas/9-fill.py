@@ -12,6 +12,7 @@ import pandas as pd
 from_file = __import__('2-from_file').from_file
 
 df = from_file('coinbaseUSD_1-min_data_2014-12-01_to_2019-01-09.csv', ',')
+df_backup = df.copy()
 # debug prints
 
 # print(df.head())
@@ -20,11 +21,14 @@ df = from_file('coinbaseUSD_1-min_data_2014-12-01_to_2019-01-09.csv', ',')
 
 # remove col
 col_in_question = "Weighted_Price"
-df_col_slain = df.drop(columns=col_in_question)
+df = df.drop(columns=col_in_question)
 
 # missing Close vales are filled with previous row's version
 col_in_question = "Close"
 df[col_in_question] = df[col_in_question].fillna(method='ffill')
+
+# missing High, Low, Open set to same row's Close
+df["High", "Low", "Open"] = df["High", "Low", "Open"].fillna(df["Close"])
 
 print(df.head())
 print(df.tail())
