@@ -13,11 +13,6 @@ from_file = __import__('2-from_file').from_file
 
 df = from_file('coinbaseUSD_1-min_data_2014-12-01_to_2019-01-09.csv', ',')
 df_backup = df.copy()
-# debug prints
-
-# print(df.head())
-# print(df.tail())
-# print("before drop is above")
 
 # remove col
 col_in_question = "Weighted_Price"
@@ -33,9 +28,7 @@ recip_cols = ["High", "Low", "Open"]
 for recip_col in recip_cols:
     df[recip_col] = df[recip_col].fillna(df[source_col].ffill())
 
-# missing Volume_(BTC), Volume_(Currency)
-# myVal = "myVal"
-# df['col1'] = df['col1'].fillna(myVal)
+# fill missing Volume_(BTC), Volume_(Currency)
 default = 0
 recip_cols = ["Volume_(BTC)", "Volume_(Currency)"]
 df[recip_cols] = df[recip_cols].fillna(default)
