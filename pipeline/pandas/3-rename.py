@@ -15,7 +15,7 @@ df = from_file('coinbaseUSD_1-min_data_2014-12-01_to_2019-01-09.csv', ',')
 
 # my own code begins here
 
-# rneame colum
+# rename colum
 df.rename(columns={'Timestamp': 'Datetime'}, inplace=True)
 
 # convert contents of said column from timestamp to datetime
