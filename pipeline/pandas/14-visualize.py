@@ -38,4 +38,19 @@ df['Date'] = pd.to_datetime(df['Date'], utc=False)
 df.set_index("Date", inplace=True)
 # fill missing values
 # missing values for Close
+# missing Close vales are filled with previous row's version
+col_in_question = "Close"
+df[col_in_question] = df[col_in_question].fillna(method='ffill')
+# missing vals for High, Low, Open
+# missing High, Low, Open set to same row's Close
+source_col = "Close"
+recip_cols = ["High", "Low", "Open"]
+for recip_col in recip_cols:
+    df[recip_col] = df[recip_col].fillna(df[source_col].ffill())
+# missing vals for Volume_(BTC), Volume_(Currency)
+# fill missing Volume_(BTC), Volume_(Currency)
+default = 0
+recip_cols = ["Volume_(BTC)", "Volume_(Currency)"]
+df[recip_cols] = df[recip_cols].fillna(default)
+# plot the data from 2017
 pass
