@@ -7,6 +7,7 @@ performs task 11
 rearranges MultiIndex levels
     timestamp is the first level
 rearanges result into chronological order
+    see task 7
 """
 
 import pandas as pd
