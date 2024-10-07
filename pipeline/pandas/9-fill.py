@@ -20,7 +20,7 @@ df = df.drop(columns=col_in_question)
 
 # missing Close vales are filled with previous row's version
 col_in_question = "Close"
-df[col_in_question] = df[col_in_question].fillna(method='ffill')
+df[col_in_question] = df[col_in_question].ffill()
 
 # missing High, Low, Open set to same row's Close
 source_col = "Close"

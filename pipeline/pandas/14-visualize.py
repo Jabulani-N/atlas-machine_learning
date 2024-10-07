@@ -40,7 +40,7 @@ df.set_index("Date", inplace=True)
 # missing values for Close
 # missing Close vales are filled with previous row's version
 col_in_question = "Close"
-df[col_in_question] = df[col_in_question].fillna(method='ffill')
+df[col_in_question] = df[col_in_question].ffill()
 # missing vals for High, Low, Open
 # missing High, Low, Open set to same row's Close
 source_col = "Close"
@@ -52,5 +52,40 @@ for recip_col in recip_cols:
 default = 0
 recip_cols = ["Volume_(BTC)", "Volume_(Currency)"]
 df[recip_cols] = df[recip_cols].fillna(default)
-# plot the data from 2017
-pass
+# plot the data from 2017 and beyond
+# isolate 2017 and beyond
+df_2017 = df[df.index >= '2017-01-01']
+# group same days (D)
+df_2017 = df_2017.resample('D').agg({
+    'High': 'max',
+    'Low': 'min',
+    'Open': 'mean',
+    'Close': 'mean',
+    'Volume_(BTC)': 'sum',
+    'Volume_(Currency)': 'sum'
+})
+# plot aggregated data
+plt.figure(figsize=(14, 7))
+# Plot Close price
+plt.subplot(2, 1, 1)
+plt.plot(df_2017.index, df_2017['Close'], label='Close Price', color='blue')
+plt.title('Daily Close Price from 2017 Onwards')
+plt.xlabel('Date')
+plt.ylabel('Close Price (USD)')
+plt.legend()
+
+# Plot Volume (BTC)
+plt.subplot(2, 1, 2)
+plt.plot(
+    df_2017.index,
+    df_2017['Volume_(BTC)'],
+    label='Volume (BTC)',
+    color='orange')
+plt.title('Daily Volume (BTC) from 2017 Onwards')
+plt.xlabel('Date')
+plt.ylabel('Volume (BTC)')
+plt.legend()
+
+# Show the plots
+plt.tight_layout()
+plt.show()
