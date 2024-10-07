@@ -35,4 +35,7 @@ df.rename(columns={'Timestamp': 'Date'}, inplace=True)
 # convert timestamps in Date to date values
 df['Date'] = pd.to_datetime(df['Date'], utc=False)
 # index on Date
+df.set_index("Date", inplace=True)
+# fill missing values
+# missing values for Close
 pass
