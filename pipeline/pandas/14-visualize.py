@@ -64,18 +64,21 @@ df_2017 = df_2017.resample('D').agg({
     'Volume_(BTC)': 'sum',
     'Volume_(Currency)': 'sum'
 })
+# print("got past aggregation")
 # plot aggregated data
 plt.figure(figsize=(14, 7))
 # Plot Close price
+# this part is causing core dump
 plt.subplot(2, 1, 1)
+# print("got past first subplot")
 plt.plot(df_2017.index, df_2017['Close'], label='Close Price', color='blue')
 plt.title('Daily Close Price from 2017 Onwards')
 plt.xlabel('Date')
 plt.ylabel('Close Price (USD)')
 plt.legend()
-
 # Plot Volume (BTC)
 plt.subplot(2, 1, 2)
+# print("got past second subplot")
 plt.plot(
     df_2017.index,
     df_2017['Volume_(BTC)'],
@@ -85,7 +88,6 @@ plt.title('Daily Volume (BTC) from 2017 Onwards')
 plt.xlabel('Date')
 plt.ylabel('Volume (BTC)')
 plt.legend()
-
 # Show the plots
 plt.tight_layout()
 plt.show()
