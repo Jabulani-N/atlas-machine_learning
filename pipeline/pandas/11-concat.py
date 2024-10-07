@@ -5,8 +5,7 @@ pandas dataframe manipulation
 index dataframes
     concatenate dataframes on index column
         only up to a given timestamp
-add keys to data labeled bitstamp
-add keys to data labeled coinbase
+        keys = bitstamp, coinbase
 """
 
 import pandas as pd
@@ -19,9 +18,10 @@ df1.set_index("Timestamp", inplace=True)
 df2.set_index("Timestamp", inplace=True)
 # filter dataframes to relevant timestamps
 timestamp_limit = 1417411920
-df1 = df1[df1.index <= timestamp_limit]
+# only bitstamp gets trimmed
+# df1 = df1[df1.index <= timestamp_limit]
 df2 = df2[df2.index <= timestamp_limit]
-# concatenate dataframes
-df = pd.concat([df1, df2], axis=0)
+# concatenate dataframes, label keys
+df = pd.concat([df2, df1], axis=0, keys=["bitstamp", "coinbase"])
 
 print(df)
