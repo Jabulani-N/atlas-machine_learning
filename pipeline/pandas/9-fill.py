@@ -28,11 +28,17 @@ col_in_question = "Close"
 df[col_in_question] = df[col_in_question].fillna(method='ffill')
 
 # missing High, Low, Open set to same row's Close
-# df[["High", "Low", "Open"]] = df[["High", "Low", "Open"]].fillna(df["Close"])
 source_col = "Close"
 recip_cols = ["High", "Low", "Open"]
 for recip_col in recip_cols:
     df[recip_col] = df[recip_col].fillna(df[source_col].ffill())
+
+# missing Volume_(BTC), Volume_(Currency)
+# myVal = "myVal"
+# df['col1'] = df['col1'].fillna(myVal)
+default = 0
+recip_cols = ["Volume_(BTC)", "Volume_(Currency)"]
+df[recip_cols] = df[recip_cols].fillna(default)
 
 print(df.head())
 print(df.tail())
