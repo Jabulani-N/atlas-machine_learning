@@ -28,7 +28,11 @@ col_in_question = "Close"
 df[col_in_question] = df[col_in_question].fillna(method='ffill')
 
 # missing High, Low, Open set to same row's Close
-df["High", "Low", "Open"] = df["High", "Low", "Open"].fillna(df["Close"])
+# df[["High", "Low", "Open"]] = df[["High", "Low", "Open"]].fillna(df["Close"])
+source_col = "Close"
+recip_cols = ["High", "Low", "Open"]
+for recip_col in recip_cols:
+    df[recip_col] = df[recip_col].fillna(df[source_col].ffill())
 
 print(df.head())
 print(df.tail())
