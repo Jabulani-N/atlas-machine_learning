@@ -20,6 +20,6 @@ def sentientPlanets():
         for specie in planet's specieses
             if in sapient species list
                 say "sapient planet" and break
-                    break because we don't care about any remaining entries on that planet
+                    break because don't care about remaining entries on planet
     """
     pass
