@@ -1,7 +1,17 @@
+#!/usr/bin/env python3
+"""
+pulls data from a paginated api
+    manipulates said data
+"""
+
 import requests
 
 
 def availableShips(passengerCount=None):
+    """
+    returns names of star wars vehicles that meet conditions
+        as accorging to SWAPI
+    """
     url = 'https://swapi.dev/api/starships/'
     relevant_names = []
     # entrynum = 0
