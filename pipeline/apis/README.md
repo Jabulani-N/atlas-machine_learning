@@ -8,3 +8,7 @@ SWAPI gives a `response`, and `reponse.json()` gives a usable diciotnary of data
   * on second thought, that will not work if the results are like 100 pages of data I'd be attempting to temporarily store. It is paginated for a reason, after all.
     * likely, it's more efficient to simply scroll through the pages and extract the useful data as I go, so I never spend more than one page's worth of memory.
 
+## Task 1 - Where am I?
+
+Planets don't get a species list. instead, create a list of homeworlds for each entry in sentient species.
+* remove dupes from the list
