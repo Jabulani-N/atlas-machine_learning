@@ -32,7 +32,7 @@ def sentientPlanets():
         for entry in data["results"]:
             # each entry is a species
             if entry['designation'] == "sentient":
-                # swapi returns homeworlds as swapi addresses for the relevant planet
+                # swapi returns homeworld as swapi address for relevant planet
                 # print(entry["name"])
                 if entry["homeworld"]:
                     homeworld_response = requests.get(entry["homeworld"])
