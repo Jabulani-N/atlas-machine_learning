@@ -1,0 +1,1 @@
+-- displays max temperature (value) of each state

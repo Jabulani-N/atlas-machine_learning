@@ -4,4 +4,5 @@
 SELECT score, name
 FROM second_table
 WHERE score >= 10
+-- DESC = descending order
 ORDER BY score DESC;

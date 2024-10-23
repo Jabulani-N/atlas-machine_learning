@@ -54,6 +54,10 @@ id  name
 $
 
 ```
+* `hbtn_0d_tvshows` is the name of the example database being used
+
+
+you can see the fields of table `tablename` inside database `databasename` by using `DESCRIBE tablename;` in mysql. You may need to specify that you want to `USE databasename;` first
 
 ### Comments for your SQL file:
 
@@ -259,3 +263,69 @@ guillaume@ubuntu:~/$
 ```
 
 note to self: essentially, take the average (number) as `average` (column name)
+
+## Task 6. Temperatures #0
+
+[Import](#how-to-run-mysql-and-import-a-sql-dump) in hbtn_0c_0 database [this table dump](./temperatures.sql).
+
+Write a script that displays the average temperature (Fahrenheit) by city ordered by temperature (descending).
+
+testing
+```
+guillaume@ubuntu:~/$ cat 6-avg_temperatures.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+Enter password: 
+city    avg_temp
+Chandler    72.8627
+Gilbert 71.8088
+Pismo beach 71.5147
+San Francisco   71.4804
+Sedona  70.7696
+Phoenix 70.5882
+Oakland 70.5637
+Sunnyvale   70.5245
+Chicago 70.4461
+San Diego   70.1373
+Glendale    70.1225
+Sonoma  70.0392
+Yuma    69.3873
+San Jose    69.2990
+Tucson  69.0245
+Joliet  68.6716
+Naperville  68.1029
+Tempe   67.0441
+Peoria  66.5392
+guillaume@ubuntu:~/$
+```
+
+~~I did this one assuming the sql script I write should run the provided sql script to create the table in the database~~
+
+### Potential Pitfalls
+
+be sure to actually **do the** [**import**](#how-to-run-mysql-and-import-a-sql-dump) to create the database `hbtn_0c_0` and import the table within.
+
+* in mysql, use `CREATE database IF NOT EXISTS hbtn_0c_0;`, and then in terminal, do `cat temperatures.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`. This will prepare the mysql environment for this task to be completed
+
+descending order
+
+```
+ORDER BY [criteria] DESC
+```
+
+## Task 7. Temperatures #2
+* there is no "Temperatures #1"
+
+Import in `hbtn_0c_0` database this table dump: download (same as Temperatures #0)
+
+Write a script that displays the max temperature of each state (ordered by State name).
+
+testing
+
+```
+guillaume@ubuntu:~/$ cat 7-max_state.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+Enter password: 
+state   max_temp
+AZ  110
+CA  110
+IL  110
+guillaume@ubuntu:~/$ 
+```
