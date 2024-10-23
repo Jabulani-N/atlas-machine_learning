@@ -218,12 +218,44 @@ id  name
 89  Holberton School
 89  Holberton School
 89  Holberton School
-guillaume@ubuntu:~/$ 
+guillaume@ubuntu:~/$
 ```
-# Task 4. Select the best
+## Task 4. Select the best
 
 Write a script that lists all records with a score >= 10 in the table second_table in your MySQL server.
 
 Results should display both the score and the name (in this order)
 Records should be ordered by score (top first)
 The database name will be passed as an argument of the mysql command
+
+## Task 5. Average
+
+Write a script that computes the score average of all records in the table second_table in your MySQL server.
+
+The result column name should be average
+The database name will be passed as an argument of the mysql command
+
+testing
+```
+guillaume@ubuntu:~/$ cat setup.sql
+-- Create table and insert data
+CREATE TABLE IF NOT EXISTS second_table (
+    id INT,
+    name VARCHAR(256),
+    score INT
+);
+INSERT INTO second_table (id, name, score) VALUES (1, "Bob", 14);
+INSERT INTO second_table (id, name, score) VALUES (2, "Roy", 5);
+INSERT INTO second_table (id, name, score) VALUES (3, "John", 10);
+INSERT INTO second_table (id, name, score) VALUES (4, "Bryan", 8);
+
+guillaume@ubuntu:~/$ cat setup.sql | mysql -hlocalhost -uroot -p db_0
+Enter password: 
+guillaume@ubuntu:~/$ cat 5-average.sql | mysql -hlocalhost -uroot -p db_0
+Enter password: 
+average
+9.25
+guillaume@ubuntu:~/$ 
+```
+
+note to self: essentially, take the average (number) as `average` (column name)
