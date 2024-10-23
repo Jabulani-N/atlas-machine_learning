@@ -134,3 +134,14 @@ Potential issue if documents creation doesn’t work or this error: `Data direct
 ```
 $ sudo mkdir -p /data/db
 ```
+
+
+## Task 0. Create a database
+
+Write a script that creates the database `db_0` in your MySQL server.
+
+If the database `db_0` already exists, your script should not fail
+You are not allowed to use the SELECT or SHOW statements
+
+File: `1-first_table.sql`
+
