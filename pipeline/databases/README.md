@@ -190,3 +190,33 @@ guillaume@ubuntu:~/$ cat 2-list_values.sql | mysql -hlocalhost -uroot -p db_0
 Enter password: 
 guillaume@ubuntu:~/$ 
 ```
+
+## Task 3. First add
+
+Write a script that inserts a new row in the table first_table in your MySQL server.
+
+New row:
+id = 89
+name = Holberton School
+The database name will be passed as an argument of the mysql command
+
+testing
+```
+guillaume@ubuntu:~/$ cat 3-insert_value.sql | mysql -hlocalhost -uroot -p db_0
+Enter password: 
+guillaume@ubuntu:~/$ cat 2-list_values.sql | mysql -hlocalhost -uroot -p db_0
+Enter password: 
+id  name
+89  Holberton School
+guillaume@ubuntu:~/$ cat 3-insert_value.sql | mysql -hlocalhost -uroot -p db_0
+Enter password: 
+guillaume@ubuntu:~/$ cat 3-insert_value.sql | mysql -hlocalhost -uroot -p db_0
+Enter password: 
+guillaume@ubuntu:~/$ cat 2-list_values.sql | mysql -hlocalhost -uroot -p db_0
+Enter password: 
+id  name
+89  Holberton School
+89  Holberton School
+89  Holberton School
+guillaume@ubuntu:~/$ 
+```
