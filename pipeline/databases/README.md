@@ -153,6 +153,16 @@ File: `1-first_table.sql`
 
 ## Task 1. First table
 
+Write a script that creates a table called first_table in the current database in your MySQL server.
+
+first_table description:
+id INT
+name VARCHAR(256)
+The database name will be passed as an argument of the mysql command
+If the table first_table already exists, your script should not fail
+You are not allowed to use the SELECT or SHOW statements
+
+
 testing:
 
 ```
@@ -163,4 +173,20 @@ Enter password:
 Tables_in_db_0
 first_table
 
+```
+
+## Task 2. List all in table
+
+Write a script that lists all rows of the table first_table in your MySQL server.
+
+All fields should be printed
+The database name will be passed as an argument of the mysql command
+
+
+testing
+
+```
+guillaume@ubuntu:~/$ cat 2-list_values.sql | mysql -hlocalhost -uroot -p db_0
+Enter password: 
+guillaume@ubuntu:~/$ 
 ```
