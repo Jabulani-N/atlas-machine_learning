@@ -135,6 +135,11 @@ Potential issue if documents creation doesn’t work or this error: `Data direct
 $ sudo mkdir -p /data/db
 ```
 
+If `mysql -u root -p` results in `ERROR 1698 (28000): Access denied for user 'root'@'localhost'`, try following the steps [here](https://phoenixnap.com/kb/access-denied-for-user-root-localhost)
+* for the easiest one, you do
+    1. `sudo mysql`
+    2. `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '[password]';`
+       * replace `[password]` with your (very secure, please) password
 
 ## Task 0. Create a database
 
@@ -145,3 +150,17 @@ You are not allowed to use the SELECT or SHOW statements
 
 File: `1-first_table.sql`
 
+
+## Task 1. First table
+
+testing:
+
+```
+cat 1-first_table.sql | mysql -hlocalhost -uroot -p db_0; echo "SHOW TABLES;" | mysql -hlocalhost -uroot -p db_0
+
+Enter password:
+Enter password:
+Tables_in_db_0
+first_table
+
+```
