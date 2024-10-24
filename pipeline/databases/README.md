@@ -398,3 +398,35 @@ Diferences between JOINs:
 * `INNER JOIN` provides a result set that only includes matched records from both tables.
 * `LEFT JOIN` includes all records from the left table, regardless of whether there is a match in the right table
 * `RIGHT JOIN` returns all the rows from the right table, along with the matching rows from the left table. If there are no matches found in the left table, the result will still include all rows from the right table, but with NULL values for the columns from the left table
+
+
+## Task 10. Number of shows by genre
+
+Import the database dump from hbtn_0d_tvshows to your MySQL server: download
+
+Write a script that lists all genres from hbtn_0d_tvshows and displays the number of shows linked to each.
+
+Each record should display: <TV Show genre> - <Number of shows linked to this genre>
+First column must be called genre
+Second column must be called number_of_shows
+Don’t display a genre that doesn’t have any shows linked
+Results must be sorted in descending order by the number of shows linked
+You can use only one SELECT statement
+The database name will be passed as an argument of the mysql command
+
+testing
+
+```
+guillaume@ubuntu:~/$ cat 10-count_shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password: 
+genre   number_of_shows
+Drama   5
+Comedy  4
+Mystery 2
+Crime   2
+Suspense    2
+Thriller    2
+Adventure   1
+Fantasy 1
+guillaume@ubuntu:~/$ 
+```
