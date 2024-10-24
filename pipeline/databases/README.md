@@ -59,6 +59,11 @@ $
 
 you can see the fields of table `tablename` inside database `databasename` by using `DESCRIBE tablename;` in mysql. You may need to specify that you want to `USE databasename;` first
 
+This is how I do it from local files
+```
+cat file_name.sql | mysql -uroot -p databasename
+```
+
 ### Comments for your SQL file:
 
 ```
@@ -543,3 +548,32 @@ id  email   name    country
 bob@dylan:~$ 
 ```
 
+## Task 15. Best band ever!
+
+Write a SQL script that ranks country origins of bands, ordered by the number of (non-unique) fans
+
+Requirements:
+
+Import this table dump: [metal_bands.sql.zip](./metal_bands.sql)
+Column names must be: origin and nb_fans
+Your script can be executed on any database
+**Context**: Calculate/compute something is always power intensive… better to distribute the load!
+
+```
+bob@dylan:~$ cat metal_bands.sql | mysql -uroot -p holberton
+Enter password: 
+bob@dylan:~$ 
+bob@dylan:~$ cat 15-fans.sql | mysql -uroot -p holberton > tmp_res ; head tmp_res
+Enter password: 
+origin  nb_fans
+USA 99349
+Sweden  47169
+Finland 32878
+United Kingdom  32518
+Germany 29486
+Norway  22405
+Canada  8874
+The Netherlands 8819
+Italy   7178
+bob@dylan:~$ 
+```
