@@ -368,3 +368,33 @@ The Last Man on Earth   1
 The Last Man on Earth   5
 guillaume@ubuntu:~/$ 
 ```
+
+## Task 9. No genre
+
+Import the database dump from hbtn_0d_tvshows to your MySQL server: download
+
+Write a script that lists all shows contained in hbtn_0d_tvshows without a genre linked.
+
+Each record should display: tv_shows.title - tv_show_genres.genre_id
+Results must be sorted in ascending order by tv_shows.title and tv_show_genres.genre_id
+You can use only one SELECT statement
+The database name will be passed as an argument of the mysql command
+
+testing
+
+```
+guillaume@ubuntu:~/$ cat 9-no_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password:
+title   genre_id
+Better Call Saul    NULL
+Homeland    NULL
+guillaume@ubuntu:~/$
+
+```
+
+### Potential Pitfalls
+
+Diferences between JOINs:
+* `INNER JOIN` provides a result set that only includes matched records from both tables.
+* `LEFT JOIN` includes all records from the left table, regardless of whether there is a match in the right table
+* `RIGHT JOIN` returns all the rows from the right table, along with the matching rows from the left table. If there are no matches found in the left table, the result will still include all rows from the right table, but with NULL values for the columns from the left table
