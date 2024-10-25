@@ -13,6 +13,7 @@ def list_all(mongo_collection):
     lists all documents
     """
     listy = []
-    for document in mongo_collection:
+    documents = mongo_collection.find()
+    for document in documents:
         listy.append(document)
     return listy
