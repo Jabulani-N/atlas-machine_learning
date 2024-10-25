@@ -1,0 +1,14 @@
+// inserts a document in the collection school
+// Get the database name from the command line arguments
+const dbName = process.argv[2];
+
+// Connect to the database
+const db = connect(`mongodb://localhost:27017/${dbName}`);
+
+// Insert the document into the 'school' collection
+db.school.insertOne({
+    name: "Holberton school"
+});
+
+// Print a confirmation message
+print("Document inserted successfully into the 'school' collection.");
