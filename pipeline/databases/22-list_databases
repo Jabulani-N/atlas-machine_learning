@@ -1,4 +1,2 @@
-#!/bin/bash
-
-# Connect to MongoDB and list all databases
+// displays mongo database list
 mongo --quiet --eval "db.adminCommand('listDatabases')"

@@ -755,3 +755,14 @@ logs         0.005GB
 bye
 guillaume@ubuntu:~/$
 ```
+
+### Potential Pitfalls
+
+If `service mongod start` gives you
+
+```
+Failed to start mongod.service: Interactive authentication required.
+See system logs and 'systemctl status mongod.service' for details.
+```
+
+try `sudo service mongod start
