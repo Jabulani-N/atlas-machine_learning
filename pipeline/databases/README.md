@@ -758,6 +758,9 @@ guillaume@ubuntu:~/$
 
 ### Potential Pitfalls
 
+"[MongoDB is not supported on Windows Subsystem for Linux (WSL). To run MongoDB on Linux, use a supported Linux system.](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/)"
+
+
 If `service mongod start` gives you
 
 ```
