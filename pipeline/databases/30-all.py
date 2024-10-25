@@ -14,5 +14,5 @@ def list_all(mongo_collection):
     """
     listy = []
     for document in mongo_collection:
-        list.append(document)
+        listy.append(document)
     return listy
