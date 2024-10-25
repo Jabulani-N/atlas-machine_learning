@@ -769,3 +769,26 @@ See system logs and 'systemctl status mongod.service' for details.
 ```
 
 try `sudo service mongod start
+
+## Task 27
+
+this explains it:
+
+https://stackoverflow.com/questions/5056190/inserting-new-attribute-to-a-document-using-mongodb-python
+
+To insert a new attribute to all existing documents on a MongoDB collection, we can perform this method on our mongo shell:
+
+```
+db.collection.update( 
+    {}, 
+    {'$set': {"new_attribute":"attribute_value"}}, 
+    false, 
+    true
+)
+```
+{} it's the query criteria, in our case to add our new attribut to all our records, we pass an empty object {}
+{'$set': {"new_attribute":"attribute_value"}} means that using $set operator, insert on our records a new key "new_attribute" that will have this value "attribute_value"
+false it's upsert argument, it tells mongo to not insert a new document when no match is found
+true it's multi argument, it tells mongo to update multiple documents that meet the query criteria
+To find more details check: https://docs.mongodb.com/manual/reference/method/db.collection.update/
+
