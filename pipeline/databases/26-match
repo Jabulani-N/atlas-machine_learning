@@ -1,2 +1,2 @@
 // shows all documents in collection scool with given name
-db.school.find(name="Holberton school")
+db.school.find("Holberton school")
