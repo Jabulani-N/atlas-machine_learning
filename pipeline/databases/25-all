@@ -1,0 +1,2 @@
+// shows all documents in collection scool
+db.school.find()
