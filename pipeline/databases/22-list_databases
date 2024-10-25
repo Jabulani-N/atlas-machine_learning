@@ -1,2 +1,2 @@
 // displays mongo database list
-mongo --quiet --eval "db.adminCommand('listDatabases')"
+show dbs
